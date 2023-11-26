@@ -1,7 +1,7 @@
 {
-  "name": "tekyll",
-  "version": "0.9",
-  "description": "Jekyll template for documentation",
+  "name": "haskyll",
+  "version": "0.0.1",
+  "description": "Beginner's guide to Haskell",
   "main": "index.js",
   "directories": {
     "doc": "doc"
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quacksouls/tekyll.git"
+    "url": "git+https://github.com/quacksouls/haskyll.git"
   },
   "author": "Duck McSouls",
   "license": "CC BY-NC-SA 4.0",
   "bugs": {
-    "url": "https://github.com/quacksouls/tekyll/issues"
+    "url": "https://github.com/quacksouls/haskyll/issues"
   },
-  "homepage": "https://github.com/quacksouls/tekyll",
+  "homepage": "https://github.com/quacksouls/haskyll",
   "devDependencies": {
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
