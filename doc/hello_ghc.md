@@ -8,8 +8,8 @@ is the [Glasgow Haskell Compiler][ghc] (GHC). Refer to the
 Linux, macOS, Windows. Many operating systems provide GHC as part of their
 respective package managers. The main benefit of installing GHC via the native
 package manager of your platform is that you do not need to worry about
-installing any other dependencies required by GHC. However, the downside is
-that the version offered by the package manager is usually out of date.
+installing any other dependencies required by GHC. However, the downside is that
+the version offered by the package manager is usually out of date.
 Alternatively, you can use [GHCup][ghCup] to install the latest, or a specific,
 version of GHC.
 
