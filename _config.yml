@@ -31,11 +31,11 @@ title: Haskell bit by bit
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://quacksouls.github.io/tekyll"
+url: "https://quacksouls.github.io/haskyll"
 
-# The template's site on GitHub.
+# The project page on GitHub.
 github:
-  username: quacksouls/tekyll
+  username: quacksouls/haskyll
 
 # twitter:
 #   username: twitter_username # change to your twitter username
