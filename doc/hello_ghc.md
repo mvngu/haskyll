@@ -13,6 +13,12 @@ that the version offered by the package manager is usually out of date.
 Alternatively, you can use [GHCup][ghCup] to install the latest, or a specific,
 version of GHC.
 
+## Exercises
+
+:exercise: Use the package manager of your operating system to install GHC.
+
+:exercise: Install GHCup on your computer.
+
 [ghc]: https://www.haskell.org/ghc/
 [ghCup]: https://www.haskell.org/ghcup/
 [install]: https://www.haskell.org/downloads/

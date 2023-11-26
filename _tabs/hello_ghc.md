@@ -11,7 +11,14 @@ respective package managers. The main benefit of installing GHC via the native
 package manager of your platform is that you do not need to worry about
 installing any other dependencies required by GHC. However, the downside is
 that the version offered by the package manager is usually out of date.
-Alternatively, you can use [GHCup][ghCup] to install a specific version of GHC.
+Alternatively, you can use [GHCup][ghCup] to install the latest, or a specific,
+version of GHC.
+
+## Exercises
+
+<strong>Exercise 1.</strong> Use the package manager of your operating system to install GHC.
+
+<strong>Exercise 2.</strong> Install GHCup on your computer.
 
 [ghc]: https://www.haskell.org/ghc/
 [ghCup]: https://www.haskell.org/ghcup/
