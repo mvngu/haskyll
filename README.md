@@ -19,8 +19,7 @@ that way. Let's tackle some basic ideas of the language, bit by bit.
 ![CC BY-NC-SA 4.0](assets/img/cc.png "CC BY-NC-SA 4.0")
 
 This work is licensed under the terms of the Creative Commons
-Attribution-NonCommercial-ShareAlike 4.0 International
-([CC BY-NC-SA 4.0][cc]).
+Attribution-NonCommercial-ShareAlike 4.0 International ([CC BY-NC-SA 4.0][cc]).
 
 Unless otherwise stated, code in this project is covered by the [MIT][mit]
 license.
