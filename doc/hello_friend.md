@@ -160,18 +160,19 @@ binary file.
 
 <!--========================================================================-->
 
+<!-- prettier-ignore-start -->
 [ghc]: ../hello_ghc
+[ghci]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html
+[ghciCommands]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-commands
+[ghciHelp]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:help
+[ghciLoad]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:load
+[ghciQuit]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:quit
+[ghciReload]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:reload
 [ipython]: https://ipython.org
-
-<!-- prettier-ignore -->
-[load]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:load
-
-<!-- prettier-ignore -->
+[playground]: https://play.haskell.org
 [print]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:print
-
-<!-- prettier-ignore -->
 [putStr]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStr
-
-<!-- prettier-ignore -->
 [putStrLn]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
 [python]: https://www.python.org
+[runghc]: https://downloads.haskell.org/ghc/latest/docs/users_guide/runghc.html
+<!-- prettier-ignore-end -->
