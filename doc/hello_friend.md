@@ -156,7 +156,7 @@ binary file.
 
 [^c]:
     Various other programming languages have a `main` function. Prominent
-    examples include C, C++, and Java.
+    examples include C, C++, Go, Java, and Rust.
 
 <!--========================================================================-->
 
