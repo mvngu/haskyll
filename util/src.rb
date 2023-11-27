@@ -33,6 +33,18 @@ def create_link(dir)
     return "[`%s`](%s/%s)\n" % [name, github, file]
 end
 
+# Get the content of a text file.
+#
+# @param file Read in this file.
+# @returns The content of the given file.
+def get_content(file)
+    content = ""
+    File.foreach(file) do |line|
+        content += line
+    end
+    return content
+end
+
 # Extract the file name and the short name.
 #
 # @param dir A shortened directive, without the ":include:" or ":script:"
@@ -44,6 +56,18 @@ def get_file_name(dir)
     file = file.scan(/^file="(\S+)"$/).last[-1]
     name = name.scan(/^name="(\S+)"$/).last[-1]
     return [file, name]
+end
+
+# Infer the programming language from the extension of the source file.
+#
+# @param file Path to a source file.
+# @returns The programming language of the source code.
+def infer_language(file)
+    ext = file.split("/")[-1]
+    ext = ext.split(".")[-1]
+    if ext == "hs"
+        return "haskell"
+    end
 end
 
 # Process various script-related directives.  The supported directives are:
@@ -87,30 +111,6 @@ def main()
     # Overwrite the existing content of the file.
     File.open(doc, "w") do |f|
         f.write(content)
-    end
-end
-
-# Get the content of a text file.
-#
-# @param file Read in this file.
-# @returns The content of the given file.
-def get_content(file)
-    content = ""
-    File.foreach(file) do |line|
-        content += line
-    end
-    return content
-end
-
-# Infer the programming language from the extension of the source file.
-#
-# @param file Path to a source file.
-# @returns The programming language of the source code.
-def infer_language(file)
-    ext = file.split("/")[-1]
-    ext = ext.split(".")[-1]
-    if ext == "hs"
-        return "haskell"
     end
 end
 
