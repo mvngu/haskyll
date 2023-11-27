@@ -79,7 +79,7 @@ Hello, world
 
 The Haskell REPL, i.e. GHCi, is suitable for quick experimentation. Sooner or
 later you would want to store Haskell code in a text file. Create a text file
-called `hello.hs` and place the following code in the file:
+called `hello.hs` and save the following code in the file:
 
 :include: file="assets/src/hello/hello.hs", name="hello/hello.hs"
 
@@ -145,7 +145,7 @@ which is assigned as the definition of `main` via the assignment operator `=`.
 The function `main` has a special meaning in Haskell.[^c] The function is the
 entry point of your program. Execution starts from the function `main`. The
 function, if it exists, is automatically called whenever you run the compiled
-binary file or load your source file into GHCi.
+binary file.
 
 <!--========================================================================-->
 
