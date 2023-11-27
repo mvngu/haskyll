@@ -129,10 +129,34 @@ languages that offer a REPL environment.[^b]
 
 <!--========================================================================-->
 
+## The `main` function
+
+Recall the "Hello, world" program from the section
+[Tales from the script](#tales-from-the-script), reproduced below:
+
+:include: file="assets/src/hello/hello.hs", name="hello/hello.hs"
+
+The program creates a function called `main`. The body of the function is the
+line:
+
+`print "Hello, world"`
+
+which is assigned as the definition of `main` via the assignment operator `=`.
+The function `main` has a special meaning in Haskell.[^c] The function is the
+entry point of your program. Execution starts from the function `main`. The
+function, if it exists, is automatically called whenever you run the compiled
+binary file or load your source file into GHCi.
+
+<!--========================================================================-->
+
 [^a]: Tradition is peer pressure from dead (and living) people.
 [^b]:
     For example, the REPL environment of the [Python][python] programming
     language or the enhanced interactive shell provided by [IPython][ipython].
+
+[^c]:
+    Various other programming languages have a `main` function. Prominent
+    examples include C, C++, and Java.
 
 <!--========================================================================-->
 
