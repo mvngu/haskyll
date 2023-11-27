@@ -22,32 +22,64 @@
 ## SOFTWARE.
 ################################################################################
 
-# Include within a section or chapter a source file that has programming code.
-# The inclusion follows this format:
+# Link to a source file.
 #
-# :include: file="/path/to/source/file.extension", name="a short name"
+# @param dir A shortened directive, without the ":include:" or ":script:"
+#     annotations.
+# @returns A link to a source file as contained in the shortened directive.
+def create_link(dir)
+    github = "https://github.com/quacksouls/haskyll/blob/main"
+    file, name = get_file_name(dir)
+    return "[`%s`](%s/%s)\n" % [name, github, file]
+end
+
+# Extract the file name and the short name.
 #
-# The source code will be placed between two sets of triple back ticks.  The
-# extension of the included file will be used to infer syntax highlighting.
+# @param dir A shortened directive, without the ":include:" or ":script:"
+#     annotations.
+# @returns An array containing only the file name and short name, without
+#     annotations.
+def get_file_name(dir)
+    file, name = dir.split(",").map{|str| str.strip}
+    file = file.scan(/^file="(\S+)"$/).last[-1]
+    name = name.scan(/^name="(\S+)"$/).last[-1]
+    return [file, name]
+end
+
+# Process various script-related directives.  The supported directives are:
+#
+# (1) Include within a section or chapter a source file that has programming
+#     code.  The inclusion follows this format:
+#
+#     :include: file="/path/to/source/file.extension", name="a short name"
+#
+#     The source code will be placed between two sets of triple back ticks.
+#     The extension of the included file will be used to infer syntax
+#     highlighting.
+# (2) Link to a source file.  The linking follows this format:
+#
+#     :script: file="/path/to/source/file.extension", name="a short name"
+#
 # This script expects the following command line argument:
 #
 # doc := A section/chapter in the entire document.  Assumed to be located under
 #     the directory "_tabs/".
 def main()
     doc = ARGV[0]
-    ex_delim = ":include:"
+    in_delim = ":include:"
+    sc_delim = ":script:"
     content = ""
-    github = "https://github.com/quacksouls/haskyll/blob/main"
     File.foreach(doc) do |line|
-        if line.strip.start_with?(ex_delim)
+        if line.strip.start_with?(in_delim)
             new_line = line.gsub(/:include:/, "").strip
-            file, name = new_line.split(",").map{|str| str.strip}
-            file = file.scan(/^file="(\S+)"$/).last[-1]
-            name = name.scan(/^name="(\S+)"$/).last[-1]
-            content += "[`%s`](%s/%s)\n" % [name, github, file]
+            file, _ = get_file_name(new_line)
+            content += create_link(new_line)
             content += "```%s\n" % [infer_language(file)]
             content += get_content(file)
             content += "```\n"
+        elsif line.strip.start_with?(sc_delim)
+            new_line = line.gsub(/:script:/, "").strip
+            content += create_link(new_line)
         else
             content += line
         end
