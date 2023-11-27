@@ -20,6 +20,8 @@ own computer. The official site of the Haskell language has a
 your browser. [Tutorials Point][tpPlayground] has a similar playground for you
 to write, compile, and execute your Haskell code in a web browser.
 
+<!--========================================================================-->
+
 ## Exercises
 
 <strong>Exercise 1.</strong> Use the package manager of your operating system to install GHC.
