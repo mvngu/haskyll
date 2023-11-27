@@ -82,9 +82,11 @@ rm -rf "$SUMMARY_URL"
 # Process each section/chapter for the following:
 #
 # (1) Exercises.
-# (2) Links to YouTube videos.
+# (2) Inclusion of source files.
+# (3) Links to YouTube videos.
 for i in $(ls "${TAB}"/*.md); do
     ruby "${UTIL}/exercise.rb" "$i"
+    ruby "${UTIL}/src.rb" "$i"
     ruby "${UTIL}/youtube.rb" "$i"
 done
 
