@@ -32,14 +32,14 @@
 #
 # doc := A section/chapter in the entire document.  Assumed to be located under
 #     the directory "_tabs/".
-def main()
+def main
     doc = ARGV[0]
     ex_delim = ":exercise:"
     n = 1
     content = ""
     File.foreach(doc) do |line|
         if line.strip.start_with?(ex_delim)
-            exercise = "<strong>Exercise %d.</strong>" % [n]
+            exercise = format("<strong>Exercise %d.</strong>", n)
             content += line.gsub(/:exercise:/, exercise)
             n += 1
         else
@@ -56,4 +56,4 @@ end
 # Start here
 ################################################################################
 
-main()
+main

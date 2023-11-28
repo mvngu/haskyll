@@ -30,7 +30,7 @@
 def create_link(dir)
     github = "https://github.com/quacksouls/haskyll/blob/main"
     file, name = get_file_name(dir)
-    return "[`%s`](%s/%s)\n" % [name, github, file]
+    return format("[`%s`](%s/%s)\n", name, github, file)
 end
 
 # Get the content of a text file.
@@ -52,7 +52,7 @@ end
 # @returns An array containing only the file name and short name, without
 #     annotations.
 def get_file_name(dir)
-    file, name = dir.split(",").map{|str| str.strip}
+    file, name = dir.split(",").map{ |str| str.strip }
     file = file.scan(/^file="(\S+)"$/).last[-1]
     name = name.scan(/^name="(\S+)"$/).last[-1]
     return [file, name]
@@ -65,9 +65,9 @@ end
 def infer_language(file)
     ext = file.split("/")[-1]
     ext = ext.split(".")[-1]
-    if ext == "hs"
-        return "haskell"
-    end
+    return unless ext == "hs"
+
+    return "haskell"
 end
 
 # Process various script-related directives.  The supported directives are:
@@ -88,7 +88,7 @@ end
 #
 # doc := A section/chapter in the entire document.  Assumed to be located under
 #     the directory "_tabs/".
-def main()
+def main
     doc = ARGV[0]
     in_delim = ":include:"
     sc_delim = ":script:"
@@ -96,9 +96,9 @@ def main()
     File.foreach(doc) do |line|
         if line.strip.start_with?(in_delim)
             new_line = line.gsub(/:include:/, "").strip
-            file, _ = get_file_name(new_line)
+            file, = get_file_name(new_line)
             content += create_link(new_line)
-            content += "```%s\n" % [infer_language(file)]
+            content += format("```%s\n", infer_language(file))
             content += get_content(file)
             content += "```\n"
         elsif line.strip.start_with?(sc_delim)
@@ -118,4 +118,4 @@ end
 # Start here
 ################################################################################
 
-main()
+main
