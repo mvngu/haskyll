@@ -26,13 +26,23 @@ to write, compile, and execute your Haskell code in a web browser.
 
 <strong>Exercise 1.</strong> Use the package manager of your operating system to install GHC.
 
-<strong>Exercise 2.</strong> Install GHCup on your computer.
+<strong>Exercise 2.</strong> Install [GHCup][ghCup] on your computer.
 
 <strong>Exercise 3.</strong> Search online for websites that allow you to write and run Haskell
 code within a web browser.
 
+<strong>Exercise 4.</strong> [Stack][stack] is a tool to help you manage your Haskell project.
+Browse through the [user guide][stackGuide] to get a general sense of what Stack
+can do for you.
+
+<!--========================================================================-->
+
+<!-- prettier-ignore-start -->
 [ghc]: https://www.haskell.org/ghc/
 [ghCup]: https://www.haskell.org/ghcup/
 [install]: https://www.haskell.org/downloads/
 [playground]: https://play.haskell.org
+[stack]: https://docs.haskellstack.org/en/stable/
+[stackGuide]: https://docs.haskellstack.org/en/stable/GUIDE/
 [tpPlayground]: https://www.tutorialspoint.com/compile_haskell_online.php
+<!-- prettier-ignore-end -->
