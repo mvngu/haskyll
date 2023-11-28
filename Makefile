@@ -30,8 +30,8 @@ build: clean pretty
 # Remove various junk files.
 clean:
 	rm -rf *~
-	rm -rf _site/
 	rm -rf _posts/
+	rm -rf _site/
 	rm -rf _tabs/
 
 # Run Prettier over Markdown files.
