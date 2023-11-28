@@ -35,13 +35,13 @@ clean:
 	rm -rf _tabs/
 	rm -rf util/*~
 
+# Lint and auto-format Ruby files.
+lintrb:
+	util/rubocop.sh
+
 # Run Prettier over Markdown files.
 pretty:
 	npm run clean
-
-# Lint and auto-format Ruby files.
-rubocop:
-	util/rubocop.sh
 
 # View the document locally.
 view: clean pretty
