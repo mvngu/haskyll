@@ -25,7 +25,7 @@ to write, compile, and execute your Haskell code in a web browser.
 
 :exercise: Use the package manager of your operating system to install GHC.
 
-:exercise: Install GHCup on your computer.
+:exercise: Install [GHCup][ghCup] on your computer.
 
 :exercise: Search online for websites that allow you to write and run Haskell
 code within a web browser.
