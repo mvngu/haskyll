@@ -36,6 +36,7 @@ can do for you.
 
 <!--========================================================================-->
 
+<!-- prettier-ignore-start -->
 [ghc]: https://www.haskell.org/ghc/
 [ghCup]: https://www.haskell.org/ghcup/
 [install]: https://www.haskell.org/downloads/
@@ -43,3 +44,4 @@ can do for you.
 [stack]: https://docs.haskellstack.org/en/stable/
 [stackGuide]: https://docs.haskellstack.org/en/stable/GUIDE/
 [tpPlayground]: https://www.tutorialspoint.com/compile_haskell_online.php
+<!-- prettier-ignore-end -->
