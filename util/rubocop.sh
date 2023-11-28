@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ################################################################################
 ## MIT License
 ##
@@ -22,29 +24,8 @@
 ## SOFTWARE.
 ################################################################################
 
-# Build the document.
-build: clean pretty
-	util/process.sh
-	bundle exec jekyll build
-
-# Remove various junk files.
-clean:
-	rm -rf *~
-	rm -rf _site/
-	rm -rf _posts/
-	rm -rf _tabs/
-
-# Run Prettier over Markdown files.
-pretty:
-	npm run clean
-
 # Lint and auto-format Ruby files.
-rubocop:
-	util/rubocop.sh
 
-# View the document locally.
-view: clean pretty
-	util/process.sh
-	bundle exec jekyll serve
-
-.PHONY: build clean view
+for i in $(ls util/*.rb); do
+    rubocop --autocorrect "$i"
+done
