@@ -84,7 +84,7 @@ rm -rf "$SUMMARY_URL"
 # (1) Exercises.
 # (2) Inclusion of source files.
 # (3) Links to YouTube videos.
-for i in $(ls "${TAB}"/*.md); do
+for i in "${TAB}"/*.md; do
     ruby "${UTIL}/exercise.rb" "$i"
     ruby "${UTIL}/src.rb" "$i"
     ruby "${UTIL}/youtube.rb" "$i"
