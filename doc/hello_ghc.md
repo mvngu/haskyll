@@ -34,6 +34,8 @@ code within a web browser.
 Browse through the [user guide][stackGuide] to get a general sense of what Stack
 can do for you.
 
+<!--========================================================================-->
+
 [ghc]: https://www.haskell.org/ghc/
 [ghCup]: https://www.haskell.org/ghcup/
 [install]: https://www.haskell.org/downloads/
