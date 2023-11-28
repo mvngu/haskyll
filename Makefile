@@ -33,6 +33,7 @@ clean:
 	rm -rf _posts/
 	rm -rf _site/
 	rm -rf _tabs/
+	rm -rf util/*~
 
 # Run Prettier over Markdown files.
 pretty:
