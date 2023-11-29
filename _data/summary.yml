@@ -1,24 +1,24 @@
 toc:
 
 - title: Hello, world
-  url: hello_README/
+  url: /hello_README/
   subfolder:
     - title: Glasgow Haskell Compiler
-      url: hello_ghc/
+      url: /hello_ghc/
     - title: Say hello to my little friend
-      url: hello_friend/
+      url: /hello_friend/
     - title: Any comments?
-      url: hello_comment/
+      url: /hello_comment/
 - title: Data, data everywhere
-  url: data_README/
+  url: /data_README/
   subfolder:
     - title: Here's my number
-      url: data_number/
+      url: /data_number/
     - title: The string and I
-      url: data_string/
+      url: /data_string/
     - title: Hello, operator
-      url: data_operator/
+      url: /data_operator/
     - title: Bool-urns
-      url: data_bool/
+      url: /data_bool/
     - title: Compare the pair
-      url: data_compare/
+      url: /data_compare/
