@@ -323,6 +323,93 @@ quot :: Integral a => a -> a -> a
 
 <!--=========================================================================-->
 
+### Syntactic sugar
+
+> _Child:_ [Playing in the rain.]\
+> _Mother:_ Come inside, sweetie. Sugar melts in the rain.
+
+Here is a simple question. How would you negate a number? One way is to multiply
+the number by $-1$. If the number appears within a mathematical expression, you
+could prefix the number with the minus sign `-`. Some programming languages
+allow you to prefix a number with the symbol `-` to indicate negation. Haskell
+allows you to do so as well.
+
+```haskell
+ghci> -2
+-2
+```
+
+So far so good. The expression $3 \times -2$ evaluates to $-6$. Python gives the
+result:
+
+```python
+>>> 3 * -2
+-6
+```
+
+JavaScript produces:
+
+```js
+console.log(3 * -2); //-> -6
+```
+
+And finally, here is Ruby:
+
+```rb
+puts 3 * -2 #-> -6
+```
+
+Haskell complains when we enter the same expression into GHCi.
+
+```haskell
+ghci> 3 * -2
+
+<interactive>:1:1: error:
+    Precedence parsing error
+        cannot mix ‘*’ [infixl 7] and prefix `-' [infixl 6] in the same infix expression
+```
+
+However, the expression $-2 \times 3$ produces the correct result.
+
+```haskell
+ghci> -2 * 3
+-6
+```
+
+The reason is that, in Haskell, `-2` is syntactic sugar for `negate 2`. We have
+seen syntactic sugar before in the section [Infix notation](#infix-notation),
+where we discussed backticks as a way to use a method or function in infix
+notation. Recall that integer division can be written as:
+
+```haskell
+ghci> a = (8 :: Integer)
+ghci> b = (3 :: Integer)
+ghci> div a b -- prefix notation
+2
+ghci> a `div` b -- infix notation
+2
+```
+
+Haskell treats
+
+```haskell
+a `div` b
+```
+
+as syntactic sugar for `div a b`.
+
+As its name implies, the method [`negate`][negate] produces the negation of its
+argument. In effect, the method takes a number and multiplies its argument by
+$-1$. For Haskell to evaluate the expression $3 \times -2$ to $-6$, we must
+surround $-2$ within parentheses like so: $3 \times (-2)$. The symbol `-` in the
+expression $3 \times -2$ is parsed as the subtraction operator and Haskell
+assumes we are using the subtraction operator in infix notation. On the other
+hand, Haskell has no problem parsing expressions such as `3 * negate 2` or
+$-2 \times 3$. Both yield the same, correct result. Keep the above quirks in
+mind to prevent unexpected results in your programs or compilation errors.
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
@@ -342,6 +429,7 @@ quot :: Integral a => a -> a -> a
 [integral]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integral
 [maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
+[negate]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 [prefix]: https://en.wikipedia.org/wiki/Polish_notation
 [quot]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
