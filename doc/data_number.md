@@ -85,6 +85,70 @@ both have the type `Int`.
 
 <!--=========================================================================-->
 
+### Arithmetic operations
+
+The above GHCi session also shows that [`Int`][int] supports integer addition
+and subtraction. What about integer multiplication?
+
+```haskell
+ghci> a = (4 :: Int)
+ghci> b = (2 :: Int)
+ghci> c = a * b
+ghci> :type c
+c :: Int
+ghci> c
+8
+```
+
+So far so good. What about integer division? We know that $4 / 2 = 2$. Let's use
+Haskell to confirm our result.
+
+```haskell
+ghci> a = (4 :: Int)
+ghci> b = (2 :: Int)
+ghci> a / b
+
+<interactive>:3:3: error:
+    • No instance for (Fractional Int) arising from a use of ‘/’
+    • In the expression: a / b
+      In an equation for ‘it’: it = a / b
+```
+
+What is going on here? The type `Int` does not support integer division? In
+fact, the type `Int` does support integer division. You just need to use the
+right method for the job. The operator [`/`][fracDiv] is a method implemented
+for data of type [`Fractional`][fractional], not data of type `Int`. Observe the
+next GHCi session:
+
+```haskell
+ghci> :type (/)
+(/) :: Fractional a => a -> a -> a
+```
+
+The part `(/) :: Fractional` means that `/` is defined for data of type
+`Fractional`. Do not worry about the rest of the above line. We will discuss it
+in the section [Prefix notation](#prefix-notation).
+
+You must use the method [`div`][div] for integer division because that method
+would give you the quotient when dividing an integer by another integer.
+Alternatively, use the method [`quot`][quot] to make it clear that your
+intention is to obtain the quotient when dividing one integer by another
+integer. Observe the following GHCi session.
+
+```haskell
+ghci> a = (5 :: Int)
+ghci> b = (4 :: Int)
+ghci> c = (2 :: Int)
+ghci> div a c
+2
+ghci> div b c
+2
+ghci> quot a b
+1
+```
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
@@ -93,12 +157,16 @@ both have the type `Int`.
 
 <!-- prettier-ignore-start -->
 [bounded]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Bounded
+[div]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
 [double]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
 [float]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
+[fracDiv]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-47-
+[fractional]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Fractional
 [int]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [integer]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
 [maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
+[quot]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
 [type]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:type
 <!-- prettier-ignore-end -->
