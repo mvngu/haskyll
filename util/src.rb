@@ -77,7 +77,7 @@ end
 #
 #     :include: file="/path/to/source/file.extension", name="a short name"
 #
-#     The source code will be placed between two sets of triple back ticks.
+#     The source code will be placed between two sets of triple backticks.
 #     The extension of the included file will be used to infer syntax
 #     highlighting.
 # (2) Link to a source file.  The linking follows this format:
