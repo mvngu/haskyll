@@ -500,6 +500,11 @@ without using string concatenation.
 :exercise: Write a program to print your name, age, and special talent. Each
 piece of information should be on a separate line.
 
+:exercise: We had a cursory discussion of [syntactic sugar](#syntactic-sugar) in
+this section. [This page][sugarList] has a list of syntactic sugar in Haskell.
+For in-depth discussion, see [this page][sugarBrief], [this][sugarTips], or
+[here][sugarCons].
+
 <!--=========================================================================-->
 
 [^a]:
@@ -532,5 +537,9 @@ piece of information should be on a separate line.
 [prefix]: https://en.wikipedia.org/wiki/Polish_notation
 [quot]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
 [show]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:show
+[sugarBrief]: https://wiki.haskell.org/Syntactic_sugar
+[sugarCons]: https://wiki.haskell.org/Syntactic_sugar/Cons
+[sugarList]: https://en.wikibooks.org/wiki/Haskell/Syntactic_sugar
+[sugarTips]: https://wiki.haskell.org/Haskell_programming_tips
 [type]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:type
 <!-- prettier-ignore-end -->
