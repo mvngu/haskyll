@@ -149,6 +149,62 @@ ghci> quot a b
 
 <!--=========================================================================-->
 
+### Prefix notation
+
+The latter GHCi session brings up one issue. Why did we write the code `div a c`
+to divide `a` by `c`? Functions and methods in Haskell are called using
+[prefix][prefix] notation. In languages such as C, JavaScript, or Python if you
+define a function named `div` that takes two arguments `a` and `c`, you would
+use the function like so: `div(a, c)`. This is prefix notation. Haskell uses
+prefix notation, but dispenses with the parentheses. The Haskell code `div a c`
+means: apply the method (or function) `div` to the arguments `a` and `c`. Let's
+use the GHCi command [`:type`][type] to show the signature (or declaration) of
+`div`.
+
+```haskell
+ghci> :type div
+div :: Integral a => a -> a -> a
+```
+
+We have seen the symbol `=>` before in the section
+[Arithmetic operations](#arithmetic-operations). The symbol `=>` separates two
+parts of the signature of `div`. Everything to the left of `=>`, excluding the
+segment `div ::`, is a constraint on the type of data on which `div` can
+operate. The segment `Integral a` means that `div` can work with any data `a`
+that has type [`Integral`][integral]. The type `Int` happens to be based on
+`Integral`, as can be seen in the GHCi session below. Search for the line
+`instance Integral Int`.
+
+```haskell
+ghci> :info Int
+type Int :: *
+data Int = GHC.Types.I# GHC.Prim.Int#
+    -- Defined in ‘GHC.Types’
+instance Bounded Int -- Defined in ‘GHC.Enum’
+instance Read Int -- Defined in ‘GHC.Read’
+instance Enum Int -- Defined in ‘GHC.Enum’
+instance Integral Int -- Defined in ‘GHC.Real’
+instance Num Int -- Defined in ‘GHC.Num’
+instance Real Int -- Defined in ‘GHC.Real’
+instance Show Int -- Defined in ‘GHC.Show’
+instance Eq Int -- Defined in ‘GHC.Classes’
+instance Ord Int -- Defined in ‘GHC.Classes’
+```
+
+The information from the above two GHCi sessions says that you can use `div` for
+integer division when the number is of type `Int`. Phew! So many words to
+express a simple idea.
+
+What about everything to the right of the symbol `=>`? The right-hand side of
+`=>` tells you two pieces of information.
+
+1. First, `div` takes two parameters of the same type. That is what the first
+   two `a`s in `a -> a -> a` means.
+1. Second, `div` returns a result of the same type as its parameters. That is
+   what the last (or rightmost) `a` means in `a -> a -> a`.
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
@@ -162,11 +218,14 @@ ghci> quot a b
 [float]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
 [fracDiv]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-47-
 [fractional]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Fractional
+[info]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:info
 [int]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [integer]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
+[integral]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integral
 [maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
+[prefix]: https://en.wikipedia.org/wiki/Polish_notation
 [quot]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
 [type]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:type
 <!-- prettier-ignore-end -->
