@@ -26,11 +26,9 @@
 
 # Lint and auto-format Haskell files.
 
-declare -r PREFIX=assets/src
+declare -r SRC=assets/src/
 
-for dir in "${PREFIX}"/data "${PREFIX}"/hello; do
-    for i in "${dir}"/*.hs; do
-        hindent "$i"
-        stylish-haskell --inplace "$i"
-    done
+for i in $(find "${SRC}" | grep '\.hs$'); do
+    hindent "$i"
+    stylish-haskell --inplace "$i"
 done
