@@ -56,6 +56,35 @@ compiler (or GHCi) to execute the version of `minBound` implemented for `Int`.
 
 <!--=========================================================================-->
 
+### Integer overflow
+
+Since [`Int`][int] represents fixed-precision integers, there is always the
+possibility of integer overflow. The following GHCi session demonstrates the
+issue.
+
+```haskell
+ghci> k = (minBound :: Int)
+ghci> n = (maxBound :: Int)
+ghci> :type k
+k :: Int
+ghci> :type n
+n :: Int
+ghci> k
+-9223372036854775808
+ghci> k - 1
+9223372036854775807
+ghci> n
+9223372036854775807
+ghci> n + 1
+-9223372036854775808
+```
+
+The GHCi command [`:type`][type] allows you to obtain information about the type
+of an expression. We used the command to confirm that the variables `k` and `n`
+both have the type `Int`.
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
@@ -71,4 +100,5 @@ compiler (or GHCi) to execute the version of `minBound` implemented for `Int`.
 [maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
+[type]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:type
 <!-- prettier-ignore-end -->
