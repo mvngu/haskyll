@@ -410,9 +410,61 @@ mind to prevent unexpected results in your programs or compilation errors.
 
 <!--=========================================================================-->
 
+### Printing numbers
+
+Let's learn some facts about Tabby the cat. Tabby is currently one year old. The
+Haskell program below shows Tabby's age after a given number of years.
+
+:include: file="assets/src/data/age.hs", name="age.hs"
+
+Running the program shows:
+
+```sh
+$ ghc age.hs
+[1 of 2] Compiling Main             ( age.hs, age.o )
+[2 of 2] Linking age
+$ ./age
+Tabby's age: 1
+In 3 years time, Tabby will be: 4
+```
+
+<!-- prettier-ignore-start -->
+The file
+:script: file="assets/src/data/age.hs", name="age.hs"
+shows a few new concepts.  Let's tackle each idea in turn:
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+1. The keyword `do`. This keyword allows you to string a sequence of actions
+   together, one action per line. Indentation is important[^b] and allows the
+   Haskell compiler to figure out whether a line of code is within, or outside
+   of, the `do` block. The keyword `do` is syntactic sugar that allows you to
+   write clean and readable Haskell code.
+1. The keyword `let`. Normally, you would assign a value to a variable like so:
+   `num = 42`. Inside a `do` block, you must prefix each assignment operation
+   with the keyword `let`. Within a `do` block, you would write `let num = 42`
+   instead of `num = 42`.
+1. The operator [`++`][plusplus]. This operator allows you to concatenate two
+   strings.[^c]
+1. The method [`show`][show]. This method converts a value to a string. In the
+   program
+   :script: file="assets/src/data/age.hs", name="age.hs"
+   the variable `age` has type `Integer` and cannot be concatenated with the
+   string `"Tabby's age: "`. We use `show` to convert the value of `age` to a
+   string. The operator `++` can then concatenate the strings on its left- and
+   right-hand sides.
+<!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
+
+[^b]: Like in Python.
+[^c]:
+    Languages such as JavaScript, Python, and Ruby use the operator `+` to
+    concatenate strings. Haskell uses the operator `++` for the same effect.
 
 <!--=========================================================================-->
 
@@ -430,8 +482,10 @@ mind to prevent unexpected results in your programs or compilation errors.
 [maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
 [negate]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
+[plusplus]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 [prefix]: https://en.wikipedia.org/wiki/Polish_notation
 [quot]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
+[show]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:show
 [type]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:type
 <!-- prettier-ignore-end -->
