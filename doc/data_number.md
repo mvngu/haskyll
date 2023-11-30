@@ -268,6 +268,61 @@ ghci> (*) a b
 
 <!--=========================================================================-->
 
+## The type `Integer`
+
+In contrast to [`Int`][int], the type [`Integer`][integer] represents arbitrary
+precision integers. Your integer can be as large or small as you want, subject
+to the available RAM of your computer. The following GHCi session demonstrates
+that `Integer` can represent integers much larger (or smaller) than those
+representable by `Int`. The caret symbol `^` means exponentiation.
+
+```haskell
+ghci> minBound :: Int
+-9223372036854775808
+ghci> maxBound :: Int
+9223372036854775807
+ghci> k = (-9223372036854775808 :: Integer)
+ghci> n = (9223372036854775807 :: Integer)
+ghci> k - n
+-18446744073709551615
+ghci> k * n
+-85070591730234615856620279821087277056
+ghci> n + n
+18446744073709551614
+ghci> n^3
+784637716923335095224261902710254454442933591094742482943
+```
+
+Like [`Int`][int], the division operator `/` does work with data of type
+[`Integer`][integer]. You can use the methods [`div`][div] or [`quot`][quot] for
+integer division on data of type `Integer` because `Integer` is based on the
+type [`Integral`][integral]. Here's the relevant information from GHCi. The line
+`instance Integral Integer` means that `Integer` is based on `Integral`.
+
+```haskell
+ghci> :info Integer
+type Integer :: *
+data Integer
+  = GHC.Num.Integer.IS GHC.Prim.Int#
+  | GHC.Num.Integer.IP GHC.Prim.ByteArray#
+  | GHC.Num.Integer.IN GHC.Prim.ByteArray#
+    -- Defined in ‘GHC.Num.Integer’
+instance Read Integer -- Defined in ‘GHC.Read’
+instance Enum Integer -- Defined in ‘GHC.Enum’
+instance Integral Integer -- Defined in ‘GHC.Real’
+instance Num Integer -- Defined in ‘GHC.Num’
+instance Real Integer -- Defined in ‘GHC.Real’
+instance Show Integer -- Defined in ‘GHC.Show’
+instance Eq Integer -- Defined in ‘GHC.Num.Integer’
+instance Ord Integer -- Defined in ‘GHC.Num.Integer’
+ghci> :type div
+div :: Integral a => a -> a -> a
+ghci> :type quot
+quot :: Integral a => a -> a -> a
+```
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
