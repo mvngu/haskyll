@@ -129,7 +129,7 @@ languages that offer a REPL environment.[^b]
 
 <!--========================================================================-->
 
-## The `main` function
+## The function `main`
 
 Recall the "Hello, world" program from the section
 [Tales from the script](#tales-from-the-script), reproduced below:
