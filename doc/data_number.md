@@ -205,6 +205,69 @@ What about everything to the right of the symbol `=>`? The right-hand side of
 
 <!--=========================================================================-->
 
+### Infix notation
+
+The common arithmetic operators such as `+` (addition), `-` (subtraction), `/`
+(division), and `*` (multiplication) can be used by means of infix notation.
+Take for example the operator `+`. This operator requires two arguments. You
+write its first argument, followed by the operator `+`, and finally write the
+second argument. We have seen infix notation already in the section
+[Arithmetic operations](#arithmetic-operations). Refer to the following GHCi
+session to refresh your memory.
+
+```haskell
+ghci> a = (6 :: Int)
+ghci> b = (2 :: Int)
+ghci> a + b
+8
+ghci> a - b
+4
+ghci> a * b
+12
+ghci> a `div` b
+3
+```
+
+Hang on. Why is the method [`div`][div] being used via infix notation? More
+importantly, how did we call `div` (a prefix method) via infix notation? In
+general, a prefix method or function can be called via infix notation. All you
+have to do is use the backtick character, i.e. \`, to delimit the method or
+function name. The method [`quot`][quot] can also be used via infix notation
+like so:
+
+```haskell
+ghci> a = (6 :: Int)
+ghci> b = (4 :: Int)
+ghci> quot a b
+1
+ghci> a `quot` b
+1
+```
+
+A method or function that is normally called via prefix notation can be called
+via infix notation. What about the other way around? If an operator is normally
+used via infix notation, how can we use it via prefix notation? We surround the
+operator with parentheses, as shown in the next GHCi session.
+
+```haskell
+ghci> a = (7 :: Int)
+ghci> b = (3 :: Int)
+ghci> a + b
+10
+ghci> (+) a b
+10
+ghci> a - b
+4
+ghci> (-) a b
+4
+ghci> a * b
+21
+ghci> (*) a b
+21
+```
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
