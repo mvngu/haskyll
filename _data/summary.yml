@@ -14,6 +14,8 @@ toc:
   subfolder:
     - title: Here's my number
       url: /data_number/
+    - title: Does it sink or float?
+      url: /data_float/
     - title: The string and I
       url: /data_string/
     - title: Hello, operator
