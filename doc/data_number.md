@@ -42,6 +42,20 @@ has type `Int`".
 
 <!--=========================================================================-->
 
+### Polymorphism
+
+The method [`minBound`][minBound] is [polymorphic][polymorphism]. The specific
+version of `minBound` that is executed depends on the type. The method
+`minBound` belongs to the class [`Bounded`][bounded]. A class derived from
+`Bounded` should have its own implementation of `minBound`. The type
+[`Int`][int] happens to be derived from `Bounded` and has its own implementation
+of `minBound`. When you call `minBound` without any type annotation, the
+compiler (or GHCi) might find it difficult to infer the type information from
+context alone. However, annotating `minBound` with the type `Int` helps the
+compiler (or GHCi) to execute the version of `minBound` implemented for `Int`.
+
+<!--=========================================================================-->
+
 [^a]:
     Richard Bird. _Thinking Functionally with Haskell_. Cambridge University
     Press, 2015, p.49.
@@ -49,10 +63,12 @@ has type `Int`".
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[bounded]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Bounded
 [double]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
 [float]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
 [int]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [integer]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
 [maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
+[polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 <!-- prettier-ignore-end -->
