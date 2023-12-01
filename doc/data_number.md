@@ -435,26 +435,25 @@ shows a few new concepts.  Let's tackle each idea in turn:
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-1. The keyword `do`. This keyword allows you to string a sequence of actions
-   together, one action per line. Indentation is important[^b] and allows the
-   Haskell compiler to figure out whether a line of code is within, or outside
-   of, the `do` block. The keyword `do` is syntactic sugar that allows you to
-   write clean and readable Haskell code.
-1. The keyword `let`. Normally, you would assign a value to a variable like so:
-   `num = 42`. Inside a `do` block, you must prefix each assignment operation
-   with the keyword `let`. Within a `do` block, you would write `let num = 42`
-   instead of `num = 42`.
-1. The operator [`++`][plusplus]. This operator allows you to concatenate two
-   strings.[^c]
-1. The method [`show`][show]. This method converts a value to a string. In the
-   program
-   :script: file="assets/src/data/age.hs", name="age.hs"
-   the variable `age` has type `Integer` and cannot be concatenated with the
-   string `"Tabby's age: "`. We use `show` to convert the value of `age` to a
-   string. The operator `++` can then concatenate the strings on its left- and
-   right-hand sides.
+-   The keyword `do`. This keyword allows you to string a sequence of actions
+    together, one action per line. Indentation is important[^b] and allows the
+    Haskell compiler to figure out whether a line of code is within, or outside
+    of, the `do` block. The keyword `do` is syntactic sugar that allows you to
+    write clean and readable Haskell code.
+-   The keyword `let`. Normally, you would assign a value to a variable like so:
+    `num = 42`. Inside a `do` block, you must prefix each assignment operation
+    with the keyword `let`. Within a `do` block, you would write `let num = 42`
+    instead of `num = 42`.
+-   The operator [`++`][plusplus]. This operator allows you to concatenate two
+    strings.[^c]
+-   The method [`show`][show]. This method converts a value to a string. In the
+    program
+    :script: file="assets/src/data/age.hs", name="age.hs"
+    the variable `age` has type `Integer` and cannot be concatenated with the
+    string `"Tabby's age: "`. We use `show` to convert the value of `age` to a
+    string. The operator `++` can then concatenate the strings on its left- and
+    right-hand sides.
 <!-- prettier-ignore-end -->
-
 
 <!--=========================================================================-->
 
