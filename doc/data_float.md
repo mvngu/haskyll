@@ -203,26 +203,164 @@ to an integer, you must take the following issues into account:
 
 <!--=========================================================================-->
 
+## Exercises
+
+:exercise: Haskell uses the operator `^` for non-negative integer
+exponentiation. The operator `**` is reserved for exponentiation of
+floating-point numbers. There is a third exponentiation operator, i.e. `^^`, for
+numbers of type [`Fractional`][fractional] where the exponent can be a negative
+integer. Why three different operators for exponentiation? Read the [discussion
+here][exponentiation].
+
+:exercise: Write a program that prompts for a person's name and age. The program
+then greets the person and prints their age in 10 years time.
+
+:exercise: The gravity of the Moon is 0.166 times that of the gravity of
+Earth. If a person weighs $x$ pounds on Earth, their weight on
+the Moon would be $0.166x$ pounds. Write a program to prompt a person for their
+weight in pounds. Print out the person's weight on the Moon, in pounds as well
+as in kilograms.
+
+:exercise: The planet Mercury takes about 88 Earth days to complete one orbit
+around the Sun. Given an age in Earth years, write a program to convert the age
+to Mercury years, rounded to the nearest year. Assume that each year on Earth
+has 365 days.
+
+:exercise: The [golden ratio][goldenRatio] is the mathematical constant defined
+by
+
+$$
+\varphi
+=
+\frac{
+  1 + \sqrt{5}
+}{
+  2
+}.
+$$
+
+Write a program to print the golden ratio as a floating-point number. Use the
+method [`sqrt`][sqrt] to calculate the square root of a number.
+
+:exercise: The [Planck constant][planckConstant] is a fundamental physical
+constant used in the definition of the kilogram, among other applications. The
+constant is defined as
+
+$$
+6.62607015 \times 10^{-34} \; \text{J} \cdot \text{Hz}^{-1}
+$$
+
+in terms of the unit "joule per hertz". Express the Planck constant, excluding
+the unit of measurement, via the e notation.
+
+:exercise: The method [`div`][div] can be defined in terms of the operator `/`
+for floating-point division and the method [`floor`][floor]. First, perform
+floating-point division, then take the floor of the result. Similarly, the
+method [`quot`][quot] can be defined in terms of `/` and the method
+[`truncate`][truncate].[^b] Perform floating-point division and apply `truncate`
+to the result. Verify the above within a GHCi session.
+
+:exercise: Why are the numbers `42e-5` and `-42e5` different from each other?
+
+:exercise: The method [`mod`][mod] calculates the integer remainder when an
+integer is divided by another integer. The Haskell definition of `mod`
+implements the definition of remainder as popularized by Donald Knuth.[^c] If
+$a$ and $n$ are integers with $n \neq 0$, the remainder $r_f$ of the division
+$a / n$ is defined as
+
+$$
+r_f
+=
+a
+-
+n
+\left\lfloor
+  \frac{a}{n}
+\right\rfloor
+$$
+
+and written as $r_f = a \bmod n$. The method [`rem`][rem] also calculates
+integer remainder. Instead of using the floor function, `rem` uses truncation
+for rounding. The remainder $r_t$ of the division $a / n$ is defined as
+
+$$
+r_t
+=
+a
+-
+n
+\;
+\text{trunc}
+\left(
+  \frac{a}{n}
+\right).
+$$
+
+Verify the result of `mod` against the definition of $r_f$ for the following
+types of integers.
+
+- Positive and positive.
+- Positive and negative.
+- Negative and positive.
+- Negative and negative.
+
+Repeat the exercise for `rem` and $r_t$.
+
+:exercise: A pyramid has a square base of length $\ell$. If the pyramid has
+height $h$, then the pyramid has a volume $V$ of
+
+$$
+V
+=
+\frac{1}{3}
+\ell^2 h.
+$$
+
+The [Great Pyramid of Giza][pyramidGiza] has a square base of length 230.33
+metres and a current height of 138.5 metres. Calculate the approximate volume of
+the Great Pyramid of Giza. Modify your result by taking into account that the
+pyramid originally had a height of 146.6 metres.
+
+<!--=========================================================================-->
+
 [^a]: The sin of overconsumption is gluttony. Pie is an exception because
     $\sin(\pi) = 0$.
+
+[^b]: These definitions of `div` and `quot` are consistent with the
+    specification as given in the document
+    [Haskell 2010: Language Report][haskell2010].
+
+[^c]: Donald E. Knuth. *The Art of Computer Programming*, 3rd edition,
+    volume 1. Addison Wesley Longman, 1997, pp.39--40.
 
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
 [ceiling]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:ceiling
 [ceilingFloor]: https://web.archive.org/web/20231202010140/https://en.wikipedia.org/wiki/Floor_and_ceiling_functions
+[div]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
 [double]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
+[exponentiation]: https://web.archive.org/web/20231202010734/https://wiki.haskell.org/Power_function
 [float]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
 [floor]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:floor
+[fractional]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Fractional
 [fromInteger]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromInteger
 [fromIntegral]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromIntegral
 [getLine]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:getLine
+[goldenRatio]: https://web.archive.org/web/20231202013818/https://en.wikipedia.org/wiki/Golden_ratio
+[haskell2010]: https://web.archive.org/web/20231201223927/https://www.haskell.org/onlinereport/haskell2010/haskellch6.html#x13-1370006.4.2
 [int]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [integer]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
 [leftArrow]: https://web.archive.org/web/20231202004644/https://wiki.haskell.org/Keywords#.3C-
+[mod]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:mod
 [pi]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:pi
+[planckConstant]: https://web.archive.org/web/20231202014019/https://en.wikipedia.org/wiki/Planck_constant
+[pyramidGiza]: https://web.archive.org/web/20231202000036/https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza
+[quot]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
 [read]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:read
+[rem]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:rem
 [round]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:round
+[sqrt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:sqrt
 [truncate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:truncate
 [truncation]: https://web.archive.org/web/20231202010607/https://en.wikipedia.org/wiki/Truncation
 <!-- prettier-ignore-end -->
