@@ -173,14 +173,47 @@ ghci> (fromInteger a) :: Double
 
 <!--=========================================================================-->
 
+## Convert from floating-points
+
+Converting from an integer to floating-point is straightforward.  The other way
+around is  more complicated.  In the conversion from a floating-point number $x$
+to an integer, you must take the following issues into account:
+
+1. Do you want the smallest integer not less than $x$? Use the method
+   [`ceiling`][ceiling], which implements the [ceiling function][ceilingFloor].
+   The ceiling function rounds a number up to the nearest integer. For example,
+   `ceiling 2.1` returns 3 and `ceiling (-2.1)` returns $-2$.
+1. Do you want the greatest integer not larger than $x$? Use the method
+   [`floor`][floor], which implements the [floor function][ceilingFloor]. The floor
+   function rounds a number down to the nearest integer. For example, `floor
+   2.1` returns 2 and `floor (-2.1)` returns $-3$.
+1. Do you want to round $x$ to the nearest integer? Use the method
+   [`round`][round]. This method uses the tie-breaking rule of rounding half to
+   even. If the fractional part of $x$ is $0.5$, then $x$ is rounded to the
+   nearest even integer. For this reason, the technique is also known as
+   rounding to nearest, ties to even. For example, both `round 3.5` and
+   `round 4.5` result in 4.  The expressions `round (-3.5)` and `round (-4.5)`
+   produce $-4$.
+1. Do you want to round $x$ toward zero? Use the method [`truncate`][truncate],
+   which implements the notion of [truncation][truncation]. The number $x$ is
+   rounded toward the nearest integer between $x$ and zero. If $x$ is positive,
+   the rounding is done by means of the floor function. If $x$ is negative,
+   rounding is done via the ceiling function. For example, `truncate 2.6`
+   results in 2 and `truncate (-2.6)` yields $-2$.
+
+<!--=========================================================================-->
+
 [^a]: The sin of overconsumption is gluttony. Pie is an exception because
     $\sin(\pi) = 0$.
 
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[ceiling]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:ceiling
+[ceilingFloor]: https://web.archive.org/web/20231202010140/https://en.wikipedia.org/wiki/Floor_and_ceiling_functions
 [double]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
 [float]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
+[floor]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:floor
 [fromInteger]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromInteger
 [fromIntegral]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromIntegral
 [getLine]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:getLine
@@ -189,4 +222,7 @@ ghci> (fromInteger a) :: Double
 [leftArrow]: https://web.archive.org/web/20231202004644/https://wiki.haskell.org/Keywords#.3C-
 [pi]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:pi
 [read]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:read
+[round]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:round
+[truncate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:truncate
+[truncation]: https://web.archive.org/web/20231202010607/https://en.wikipedia.org/wiki/Truncation
 <!-- prettier-ignore-end -->
