@@ -84,7 +84,7 @@ called `hello.hs` and save the following code in the file:
 :include: file="assets/src/hello/hello.hs", name="hello.hs"
 
 Ignore the code segment `main = `. We will discuss that later on in the section
-[The `main` function](#the-main-function).
+[The function `main`](#the-function-main).
 
 Now use GHC to compile your source file to machine code. The compiler is called
 `ghc`. The following terminal session demonstrates the compilation and execution
@@ -156,7 +156,7 @@ exercise, but using the official Haskell [playground][playground].
 
 <!-- prettier-ignore-start -->
 :exercise: Edit the file
-:script: file="assets/src/hello/hello.hs", name="hello/hello.hs"
+:script: file="assets/src/hello/hello.hs", name="hello.hs"
 to use the function [`putStr`][putStr] to print your name
 to standard output. Repeat the exercise, but using the function
 [`putStrLn`][putStrLn].
