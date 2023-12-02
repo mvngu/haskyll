@@ -270,6 +270,10 @@ ghci> (*) a b
 
 ## The type `Integer`
 
+> _Daniel Jackson:_ Sorry, you're not my type, and I'm more than a little
+> disturbed to think I might be yours.\
+> --- _Stargate SG-1_, season 8, episode 12 "Prometheus Unbound", 2005
+
 In contrast to [`Int`][int], the type [`Integer`][integer] represents arbitrary
 precision integers. Your integer can be as large or small as you want, subject
 to the available RAM of your computer. The following GHCi session demonstrates
