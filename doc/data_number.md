@@ -518,24 +518,24 @@ For in-depth discussion, see [this page][sugarBrief], [this][sugarTips], or
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
-[bounded]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Bounded
-[div]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
-[double]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
-[float]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
-[fracDiv]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-47-
-[fractional]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Fractional
+[bounded]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Bounded
+[div]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
+[double]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
+[float]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
+[fracDiv]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-47-
+[fractional]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Fractional
 [info]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:info
-[int]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
-[integer]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
-[integral]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integral
-[maxBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
-[minBound]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
-[negate]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
-[plusplus]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
+[int]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
+[integer]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
+[integral]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integral
+[maxBound]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
+[minBound]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
+[negate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
+[plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
 [prefix]: https://en.wikipedia.org/wiki/Polish_notation
-[quot]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
-[show]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:show
+[quot]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:quot
+[show]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:show
 [sugarBrief]: https://wiki.haskell.org/Syntactic_sugar
 [sugarCons]: https://wiki.haskell.org/Syntactic_sugar/Cons
 [sugarList]: https://en.wikibooks.org/wiki/Haskell/Syntactic_sugar
