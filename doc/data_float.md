@@ -129,6 +129,50 @@ turn.
 
 <!--=========================================================================-->
 
+## Convert from integers
+
+To convert an integer to a floating-point number, use the function
+[`fromIntegral`][fromIntegral]. This function can convert from data of type
+[`Int`][int] or [`Integer`][integer].  Then use the symbol `::` to get the type
+you want.  For example, the GHCi session below converts various integers to type
+`Double`.
+
+```haskell
+ghci> a = (3 :: Int)
+ghci> b = (3 :: Integer)
+ghci> c = (fromIntegral a) :: Double
+ghci> :type c
+c :: Double
+ghci> c
+3.0
+ghci> d = (fromIntegral b) :: Double
+ghci> :type d
+d :: Double
+ghci> d
+3.0
+```
+
+The function [`fromInteger`][fromInteger] can also be used to convert an integer
+to another type.  However, the function only works if you want to convert from
+data of type `Integer`.  It would not work on data of type `Int`.  Observe GHCi
+throwing a tantrum.
+
+```haskell
+ghci> a = (4 :: Int)
+ghci> b = (4 :: Integer)
+ghci> (fromInteger b) :: Double
+4.0
+ghci> (fromInteger a) :: Double
+
+<interactive>:4:14: error:
+    • Couldn't match expected type ‘Integer’ with actual type ‘Int’
+    • In the first argument of ‘fromInteger’, namely ‘a’
+      In the expression: (fromInteger a) :: Double
+      In an equation for ‘it’: it = (fromInteger a) :: Double
+```
+
+<!--=========================================================================-->
+
 [^a]: The sin of overconsumption is gluttony. Pie is an exception because
     $\sin(\pi) = 0$.
 
@@ -137,6 +181,8 @@ turn.
 <!-- prettier-ignore-start -->
 [double]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
 [float]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
+[fromInteger]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromInteger
+[fromIntegral]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromIntegral
 [getLine]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:getLine
 [int]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [integer]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
