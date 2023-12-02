@@ -13,7 +13,7 @@ number you are dealing with. Is the number an integer? Haskell has the types
 floating-point number? Use the types [`Float`][float] and [`Double`][double] to
 represent floating-point numbers. In this section, we consider how Haskell
 represents and parses integers. The discussion on floating-point numbers is
-deferred to another section.
+deferred to the section [Does it sink or float?](../data_float/).
 
 <!--=========================================================================-->
 
