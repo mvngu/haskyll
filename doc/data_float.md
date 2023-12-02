@@ -71,9 +71,76 @@ ghci> 3.54e-4
 
 <!--=========================================================================-->
 
+## Parsing numbers
+
+Let's build on what we have learnt from the section
+[Printing numbers](../data_number/#printing-numbers). In particular, we will
+write a program to obtain from the command line the radius of a circle. We will
+use the radius to calculate the area of a circle having the given radius, then
+print the area to the command line. Here is our program:
+
+:include: file="assets/src/data/circle.hs", name="circle.hs"
+
+In the terminal session below, we compile the program and execute it. When
+prompted to enter the radius, we enter the number 2. The program uses the
+provided radius to calculate and print the area of a circle having the given
+radius.
+
+```sh
+$ ghc circle.hs
+[1 of 2] Compiling Main             ( circle.hs, circle.o )
+[2 of 2] Linking circle
+$ ./circle
+Please enter the radius.
+2
+Area of circle: 12.566370614359172
+```
+
+<!-- prettier-ignore-start -->
+The program
+:script: file="assets/src/data/circle.hs", name="circle.hs"
+uses the functions [`getLine`][getLine], [`read`][read], and [`pi`][pi]. The
+program also uses the operator [`<-`][leftArrow]. Let's consider each of them in
+turn.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+-   The function [`getLine`][getLine], as its name suggests, reads a line from
+    standard input. The standard input is usually the prompt at the terminal.
+    The read line is converted to a string regardless of whether we enter a
+    string or numeric digits at the command line.
+-   The left-arrow operator (or keyword) [`<-`][leftArrow] is used within a `do`
+    block to bind the result of a function to a local variable. In terms of the
+    program
+    :script: file="assets/src/data/circle.hs", name="circle.hs"
+    the result of the function `getLine` is assigned to the variable `radius`.
+    Why not use `=` for assignment instead of `<-`? That's a quirk of a `do`
+    block. Let's leave it as is instead of being distracted by a technical
+    discussion about the distinction between `=` and `<-` for assignment.
+-   The function [`read`][read] parses a string into a given data type. You must
+    provide the target type. In the code `read radius :: Double`, the function
+    `read` parses the string `radius` and returns the string as a floating-point
+    number of type `Double`. Neither the function `read` nor our program does
+    any error checking. We assume that the variable `radius` holds the string
+    representation of a number.
+-   The function [`pi`][pi] returns the constant $\pi$ as a floating-point
+    number.[^a]
+<!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
+[^a]: The sin of overconsumption is gluttony. Pie is an exception because
+    $\sin(\pi) = 0$.
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [double]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Double
 [float]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Float
+[getLine]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:getLine
 [int]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [integer]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integer
+[leftArrow]: https://web.archive.org/web/20231202004644/https://wiki.haskell.org/Keywords#.3C-
+[pi]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:pi
+[read]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:read
 <!-- prettier-ignore-end -->
