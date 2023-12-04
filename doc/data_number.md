@@ -493,6 +493,11 @@ division with the following types of integers:
 1. Zero and positive (or negative).
 1. Positive (or negative) and zero.
 
+:exercise: The method [`mod`][mod] returns the integer remainder when one
+integer is divided by another integer. How many whole weeks are there in three
+years? How many left over days that do not make up a whole week? Use GHCi to
+perform your calculation.
+
 <!-- prettier-ignore-start -->
 :exercise: Rewrite the program
 :script: file="assets/src/data/age.hs", name="age.hs"
@@ -533,6 +538,7 @@ For in-depth discussion, see [this page][sugarBrief], [this][sugarTips], or
 [integral]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integral
 [maxBound]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maxBound
 [minBound]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:minBound
+[mod]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:mod
 [negate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
 [plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
 [polymorphism]: https://en.wikipedia.org/wiki/Polymorphism_(computer_science)
