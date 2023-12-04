@@ -121,6 +121,31 @@ ghci> head $ tail $ tail "abcdef"
 
 <!--=========================================================================-->
 
+## And
+
+> "And you do Addition?" the White Queen asked. "What's one and one and one and
+> one and one and one and one and one and one and one?"\
+> "I don't know," said Alice. "I lost count."\
+> "She can't do Addition," the Red Queen interrupted.\
+> --- Lewis Carroll. _Through the Looking-Glass_. Macmillan, 1871, Chapter IX.
+
+The boolean operator [`&&`][and] means "and", i.e. logical conjunction. Its
+result is `True` provided that both operands are `True`. Its result is `False`
+for all other cases. The table below helps to clarify the effect of `&&`.
+
+| `&&`    | `False` | `True`  |
+| :------ | :------ | :------ |
+| `False` | `False` | `False` |
+| `True`  | `False` | `True`  |
+
+Unlike the expression `True || False`, the result of `True && False` is `False`.
+The only time when `&&` returns `True` is the expression `True && True`. Again,
+take some time to work through the boolean results of the following program.
+
+:include: file="assets/src/data/and.hs", name="and.hs"
+
+<!--=========================================================================-->
+
 [^a]: Ackchyually, [`||`][or] and [`&&`][and] are boolean functions.
 
 <!--=========================================================================-->
