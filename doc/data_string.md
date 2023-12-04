@@ -287,6 +287,48 @@ ghci> reverse insect
 
 <!--=========================================================================-->
 
+### String format
+
+The operator `++` can be used to concatenate as well as format strings. This can
+be problematic if a string includes numbers. A workaround is to use the method
+[`show`][show]. Here is an example.
+
+```haskell
+ghci> name = "Tabby"
+ghci> age = 2
+ghci> food = "fish"
+ghci> name ++ " is " ++ show age ++ " years old and likes " ++ food ++ "."
+"Tabby is 2 years old and likes fish."
+```
+
+As you can see, using `++` together with `show` to format a string can be
+cumbersome. The resulting code can be difficult to read. What we need is a more
+convenient way of formatting strings. The package [`Text.Printf`][textPrintf]
+provides functions to format strings, using the same formatting conventions as
+the function [`printf`][Cprintf] in the C programming language. The format
+specifier `%s` is a placeholder for a string and `%d` is a placeholder for an
+integer. You can use the Haskell function [`printf`][printf] to achieve the same
+output as per the above GHCi session.
+
+```haskell
+ghci> import Text.Printf
+ghci> name = "Tabby"
+ghci> age = 2
+ghci> food = "fish"
+ghci> printf "%s is %d years old and likes %s.\n" name age food
+Tabby is 2 years old and likes fish.
+```
+
+We can format floating-point numbers as well. Prepare to be dazzled:
+
+```haskell
+ghci> import Text.Printf
+ghci> printf "%s is yummy, but pi is %f\n" "pie" pi
+pie is yummy, but pi is 3.141592653589793
+```
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
@@ -311,6 +353,7 @@ ghci> reverse insect
 [char]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [chicagoDailyTribune]: https://archive.org/details/per_chicago-daily-tribune_the-chicago-daily-tribun_1891-06-06_51_157/page/n3/mode/2up
 [concat]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:concat
+[Cprintf]: https://web.archive.org/web/20231129002029/https://en.wikipedia.org/wiki/Printf
 [dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [dataString]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html
 [drop]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:drop
@@ -322,12 +365,15 @@ ghci> reverse insect
 [length]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:length
 [lines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:lines
 [plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
+[printf]: https://web.archive.org/web/20231128101446/https://hackage.haskell.org/package/base-4.19.0.0/docs/Text-Printf.html#v:printf
 [reverse]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:reverse
+[show]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:show
 [snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
 [splitAt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:splitAt
 [string]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#t:String
 [tail]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:tail
 [take]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:take
+[textPrintf]: https://web.archive.org/web/20231128101446/https://hackage.haskell.org/package/base-4.19.0.0/docs/Text-Printf.html
 [unlines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unlines
 [unwords]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unwords
 [words]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:words
