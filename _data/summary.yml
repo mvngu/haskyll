@@ -18,8 +18,6 @@ toc:
       url: /data_float/
     - title: The string and I
       url: /data_string/
-    - title: Hello, operator
-      url: /data_operator/
     - title: Bool-urns
       url: /data_bool/
     - title: Compare the pair
