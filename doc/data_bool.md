@@ -146,6 +146,100 @@ take some time to work through the boolean results of the following program.
 
 <!--=========================================================================-->
 
+## Exercises
+
+:exercise: Simplify the statement: "Haskell is not not fun."
+
+:exercise: What's the back of your back?
+
+<!-- prettier-ignore-start -->
+:exercise: Rewrite the program
+:script: file="assets/src/data/or.hs", name="or.hs"
+by using [`$`][dollarSign] to replace the outermost pairs of
+parentheses. Rewrite the program
+:script: file="assets/src/data/and.hs", name="and.hs"
+to use as few parentheses as possible.
+<!-- prettier-ignore-end -->
+
+:exercise: Examine the terminal session below. Determine which food Tabby
+dislikes. Write a program that uses boolean operators to achieve the same output
+as in the terminal session.
+
+```sh
+$ ghc food.hs && ./food
+[1 of 2] Compiling Main             ( food.hs, food.o )
+[2 of 2] Linking food
+Tabby likes fish or cheese? True
+Tabby likes fish and cheese? False
+```
+
+:exercise: Both of the types [`Bool`][bool] and [`Int`][int] are based on
+[`Enum`][enum], as can be verified by the output of the GHCi commands
+`:info Bool` and `:info Int`. The method [`fromEnum`][fromEnum] can be used to
+convert a boolean value to its corresponding integer value: `True` becomes 1,
+`False` becomes 0. A quiz has four questions: a, b, c, and d. Your results for
+the quiz are given below. The value `True` means you answered a question
+correctly and `False` means otherwise. Use the boolean values and the method
+`fromEnum` to calculate how many questions you answered correctly.
+
+```haskell
+ghci> a = True
+ghci> b = False
+ghci> c = True
+ghci> d = True
+```
+
+:exercise: The word "or" in everyday English means, "Either this or that, but
+not both." In computer programming, the latter meaning of "or" is called
+exclusive or, often abbreviated as XOR. Given two boolean values `a` and `b`,
+the boolean operator XOR is defined in terms of `||` and `&&` as the expression
+
+```haskell
+(a || b) && not (a && b)
+```
+
+Fortunately, you do not need to use the above expression whenever you want to
+calculate the XOR of two boolean values. The package [`Data.Bits`][dataBits] has
+the method [`xor`][xor]. Write a program that uses `xor` to achieve the same
+output as shown in the terminal session below.
+
+```sh
+$ ghc pet.hs && ./pet
+[1 of 2] Compiling Main             ( pet.hs, pet.o )
+[2 of 2] Linking pet
+Sam likes cats and dogs? False
+Sam likes cats or dogs? True
+Sam likes cats XOR dogs? True
+```
+
+:exercise: Modify the following program so the expression `likeCat && likeTiger`
+returns `False`.
+
+:include: file="assets/src/data/pet.hs", name="pet.hs"
+
+:exercise: Given two boolean values `a` and `b`, [De Morgan's laws][deMorgan]
+are the statements:
+
+```haskell
+not (a || b) == (not a) && (not b)
+not (a && b) == (not a) || (not b)
+```
+
+Verify the above statements yourself for various boolean values of `a` and `b`.
+
+:exercise: Sam is using a search engine to find pet images. The search query is,
+"cat or dog". Provide an equivalent boolean expression for Sam's query.
+
+:exercise: Determine the output of the following.
+
+```haskell
+ghci> import Text.Printf
+ghci> likeCat = True
+ghci> putStrLn $ printf "%s" $ show $ not $ not likeCat
+```
+
+<!--=========================================================================-->
+
 [^a]: Ackchyually, [`||`][or] and [`&&`][and] are boolean functions.
 
 <!--=========================================================================-->
@@ -154,8 +248,14 @@ take some time to work through the boolean results of the following program.
 [and]: https://web.archive.org/web/20231128114058/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bool.html#v:-38--38-
 [bananya]: https://web.archive.org/web/20231010043830/https://en.wikipedia.org/wiki/Bananya
 [bool]: https://web.archive.org/web/20231128114058/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bool.html
+[dataBits]: https://web.archive.org/web/20231116111136/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bits.html
+[deMorgan]: https://web.archive.org/web/20231202011153/https://en.wikipedia.org/wiki/De_Morgan%27s_laws
 [dollarSign]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-36-
+[enum]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Enum
+[fromEnum]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fromEnum
+[int]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Int
 [not]: https://web.archive.org/web/20231128114058/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bool.html#v:not
 [or]: https://web.archive.org/web/20231128114058/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bool.html#v:-124--124-
 [pizzaCats]: https://web.archive.org/web/20230713110453/https://en.wikipedia.org/wiki/Samurai_Pizza_Cats
+[xor]: https://web.archive.org/web/20231116111136/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bits.html#v:xor
 <!-- prettier-ignore-end -->
