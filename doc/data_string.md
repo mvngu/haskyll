@@ -154,6 +154,70 @@ ghci> (:) 'a' ((:) 'b' "c")
 
 <!--=========================================================================-->
 
+### Splitting headache
+
+> _Dick_: Come on, Harry. Let's make like a banana split and leave.\
+> --- _3rd Rock from the Sun_, season ???, episode ???, ???
+
+The functions [`lines`][lines] and [`words`][words] can split a string according
+to whitespaces. What if you want to split a string `s` at a given index? Use the
+function [`splitAt`][splitAt]. The function requires two arguments:
+
+-   An integer $k$ representing the index at which to split `s`.
+-   The string `s` itself.
+
+The function returns a tuple of two elements. A tuple in Haskell is represented
+using parentheses, e.g. `("abc","defg")`. The first element is a substring that
+consists of the first $k$ characters of `s`. The second element is a substring
+made up of the rest of `s`. Let's see `splitAt` in action. We use the function
+[`length`][length] to query the number of characters in a string.
+
+```haskell
+ghci> s = "Split"
+ghci> t = " me like a log."
+ghci> u = s ++ t
+ghci> u
+"Split me like a log."
+ghci> length s
+5
+ghci> splitAt (length s) u
+("Split"," me like a log.")
+```
+
+We now have another problem. The function [`splitAt`][splitAt] returns a tuple
+of two elements. How are we to extract the individual elements? We have two ways
+to extract the individual elements of a tuple: a quick way and a labourious way.
+Let's consider the labourious way first. The tuple functions [`fst`][fst] and
+[`snd`][snd] extract the first and second elements, respectively, of a tuple
+having two elements. Below we use the functions `fst` and `snd` to extract the
+left and right parts of a splitted string.
+
+```haskell
+ghci> str = "Split me like a log."
+ghci> left = fst (splitAt 5 str)
+ghci> right = snd (splitAt 5 str)
+ghci> left
+"Split"
+ghci> right
+" me like a log."
+```
+
+Enough of the labouriously fun way. A quick way to extract elements from a tuple
+is to destructure the tuple.[^d] The function [`splitAt`][splitAt] returns a
+tuple of two elements. It makes sense to assign the result to another tuple that
+has two elements.[^e] Observe destructuring in action.
+
+```haskell
+ghci> str = "Split me like a log."
+ghci> (left, right) = splitAt 5 str
+ghci> left
+"Split"
+ghci> right
+" me like a log."
+```
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
@@ -163,6 +227,11 @@ ghci> (:) 'a' ((:) 'b' "c")
     merely an array of characters.
 
 [^c]: Ackchyually, `++` is a function.
+[^d]:
+    JavaScript has the [destructuring assignment syntax][jsDestructure]. The
+    analogous notion in Python is [unpacking][pyUnpack].
+
+[^e]: Like equality of vectors in mathematics. Everyone loves mathematics, yes?
 [^f]:
     Use the package [`Data.Text`][dataText] to manipulate strings if performance
     is a top priority.
@@ -175,9 +244,13 @@ ghci> (:) 'a' ((:) 'b' "c")
 [concat]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:concat
 [dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [dataString]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html
+[fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [import]: https://web.archive.org/web/20231128054800/https://wiki.haskell.org/Import
+[length]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:length
 [lines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:lines
 [plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
+[snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
+[splitAt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:splitAt
 [string]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#t:String
 [unlines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unlines
 [unwords]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unwords
