@@ -218,6 +218,75 @@ ghci> right
 
 <!--=========================================================================-->
 
+### More index fun
+
+The function [`splitAt`][splitAt] is not alone in splitting a string based on an
+integer index. Similar to `splitAt`, the function [`take`][take] accepts two
+arguments: an integer index $k$ at which to split a string, and the string
+itself. In contrast to `splitAt`, the function `take` returns a substring of the
+first $k$ characters of the given string. No need to use [`fst`][fst] with
+`splitAt`.
+
+```haskell
+ghci> status = "splitting headache"
+ghci> take 5 status
+"split"
+```
+
+Here's a quick quiz. The opposite of `take` is [blank]. If you answer "drop",
+well done! In case your response is "leave", please stay. Don't make like a tree
+and leave. The function [`drop`][drop] takes an integer $k$ and a string `s`,
+and returns all but the first $k$ characters of `s`. Equivalently, `drop`
+removes the first $k$ characters of `s`. The function is more convenient than
+using [`snd`][snd] with [`splitAt`][splitAt]. See it for yourself.
+
+```haskell
+ghci> status = "splitting headache"
+ghci> take 5 status
+"split"
+ghci> drop 5 status
+"ting headache"
+ghci> (take 5 status) ++ (drop 5 status)
+"splitting headache"
+```
+
+In general, the functions `take` and `drop` give us the left and right portions,
+respectively, of a string. The leftmost section of a string is its very first
+character. The rightmost section of a string is its very last character. The
+leftmost and rightmost elements of a string can conveniently be accessed via the
+functions [`head`][head] and [`last`][last], respectively. Time for a biology
+lesson with a caterpillar.
+
+```haskell
+ghci> insect = "8caterpillar-"
+ghci> head insect
+'8'
+ghci> last insect
+'-'
+```
+
+Dropping the `head` character, we would have the rest of the string, as returned
+by the function [`tail`][tail]. Dropping the `last` character, we would have all
+characters except the rightmost one, as returned by the function [`init`][init].
+The caterpillar is fed up with being dissected. It uses the function
+[`reverse`][reverse] to do a 180-degree turn and crawl away.
+
+```haskell
+ghci> insect = "8caterpillar-"
+ghci> tail insect
+"caterpillar-"
+ghci> (head insect) : (tail insect)
+"8caterpillar-"
+ghci> init insect
+"8caterpillar"
+ghci> (init insect) ++ ((last insect) : "")
+"8caterpillar-"
+ghci> reverse insect
+"-rallipretac8"
+```
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
@@ -244,14 +313,21 @@ ghci> right
 [concat]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:concat
 [dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [dataString]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html
+[drop]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:drop
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
+[head]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:head
 [import]: https://web.archive.org/web/20231128054800/https://wiki.haskell.org/Import
+[init]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:init
+[last]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:last
 [length]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:length
 [lines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:lines
 [plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
+[reverse]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:reverse
 [snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
 [splitAt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:splitAt
 [string]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#t:String
+[tail]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:tail
+[take]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:take
 [unlines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unlines
 [unwords]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unwords
 [words]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:words
