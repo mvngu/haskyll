@@ -157,7 +157,7 @@ ghci> (:) 'a' ((:) 'b' "c")
 ### Splitting headache
 
 > _Dick_: Come on, Harry. Let's make like a banana split and leave.\
-> --- _3rd Rock from the Sun_, season ???, episode ???, ???
+> --- _3rd Rock from the Sun_, season 2, episode 19, 1997
 
 The functions [`lines`][lines] and [`words`][words] can split a string according
 to whitespaces. What if you want to split a string `s` at a given index? Use the
