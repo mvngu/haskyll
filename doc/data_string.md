@@ -163,7 +163,8 @@ The functions [`lines`][lines] and [`words`][words] can split a string according
 to whitespaces. What if you want to split a string `s` at a given index? Use the
 function [`splitAt`][splitAt]. The function requires two arguments:
 
--   An integer $k$ representing the index at which to split `s`.
+-   An integer $k$ representing the index at which to split `s`. In Haskell,
+    index starts from zero.
 -   The string `s` itself.
 
 The function returns a tuple of two elements. A tuple in Haskell is represented
