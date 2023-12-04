@@ -467,11 +467,10 @@ shows a few new concepts.  Let's tackle each idea in turn:
 [`maxBound`][maxBound]) at the prompt. What does GHCi show? Why do you think
 GHCi shows such output?
 
-:exercise: Determine the exact range of [`Int`][int] on your computer.
-
-:exercise: An integer represented by the type [`Int`][int] has a minimum and
-maximum values of at least $-2^{29}$ and $2^{29} - 1$, respectively. Use Haskell
-to obtain the actual digits in each of the latter two numbers.
+:exercise: Determine the exact range of [`Int`][int] on your computer. An
+integer represented by the type [`Int`][int] has a minimum and maximum values of
+at least $-2^{29}$ and $2^{29} - 1$, respectively. Use Haskell to obtain the
+actual digits in each of the latter two numbers.
 
 :exercise: The GHCi command [`:type`][type] shows the type information of an
 expression. A similar command is [`:info`][info]. Read up on the latter command.
