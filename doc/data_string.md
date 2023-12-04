@@ -62,14 +62,64 @@ ghci> toUpper c
 
 <!--=========================================================================-->
 
+## Strings
+
+Strings in Haskell are represented in many different ways. A simple and easy to
+understand representation is as a list of characters.[^b] A list in Haskell is
+represented using square brackets, e.g. `["abc","defg"]`. The type
+[`String`][string] is defined as a list of characters. Unlike the package
+[`Data.Char`][dataChar], the package [`Data.String`][dataString] is loaded by
+default to provide us with a few functions for processing strings. The type
+`String` is simple to understand, easy to explain to beginners of the Haskell
+language, and values of type `String` can be manipulated by means of standard
+Haskell functions and operators.[^f]
+
+In the GHCi session below, we create a string `s` and use the function
+[`lines`][lines] to split the string into multiple lines. The split occurs at
+the newline character `\n`. The result is a list of two elements, each being a
+substring of `s`. As its name implies, the function [`unlines`][unlines] joins
+multiple strings into one string. We then use the function [`words`][words] to
+decompose the string `s` into words. This is similar to the function `lines` in
+the sense that `words` uses whitespace to split a string. The function
+[`unwords`][unwords] joins multiple words, each represented as a string, into
+one string.
+
+```haskell
+ghci> s = "The five boxing wizards\njump quickly."
+ghci> lines s
+["The five boxing wizards","jump quickly."]
+ghci> unlines (lines s)
+"The five boxing wizards\njump quickly.\n"
+ghci> words s
+["The","five","boxing","wizards","jump","quickly."]
+ghci> unwords (words s)
+"The five boxing wizards jump quickly."
+```
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
+
+[^b]:
+    This is similar to how strings are represented in C, where a string is
+    merely an array of characters.
+
+[^f]:
+    Use the package [`Data.Text`][dataText] to manipulate strings if performance
+    is a top priority.
 
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
 [char]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
+[dataString]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html
 [import]: https://web.archive.org/web/20231128054800/https://wiki.haskell.org/Import
+[lines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:lines
+[string]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#t:String
+[unlines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unlines
+[unwords]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unwords
+[words]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:words
 <!-- prettier-ignore-end -->
