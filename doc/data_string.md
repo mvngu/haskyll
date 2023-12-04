@@ -98,6 +98,62 @@ ghci> unwords (words s)
 
 <!--=========================================================================-->
 
+### Care to join?
+
+> "Jones, you'd better join our cooperative life insurance company before that
+> cough of yours gets any worse."\
+> "I'd like to do it, Furguson, but I don't believe I would pass the medical examination."\
+> "That's all right. I'm on the examining board. I can get you in."\
+> "Then I won't join it, Furguson. I don't want to have anything to do with a company
+> that would take a risk on me."\
+> --- [_The Chicago Daily Tribune_][chicagoDailyTribune], "In a Minor Key:
+> Unanswerable", 06th June, 1891, p.4, column 5.
+
+In the section [Printing numbers](../data_number/#printing-numbers), we learnt
+that the operator[^c] [`++`][plusplus] can join two strings together. Another
+way to concatenate strings is to use the aptly named function
+[`concat`][concat]. Both `++` and `concat` have the same effect. Here are some
+differences between `++` and `concat`:
+
+1. The function `concat` is used in prefix notation, whereas `++` is used in
+   infix notation.
+1. The function `concat` takes a list of strings as its argument, whereas `++`
+   behaves like a binary operator.
+1. The operator `++` can be used in prefix notation by surrounding it within
+   parentheses, i.e. `(++)`. The function `concat` cannot be used in infix
+   notation.
+
+The GHCi session below should clarify the similarity and differences between
+`++` and `concat`.
+
+```haskell
+ghci> "battle" ++ "beetle" -- infix notation
+"battlebeetle"
+ghci> (++) "battle" "beetle" -- prefix notation
+"battlebeetle"
+ghci> concat ["any", "way"] -- prefix notation
+"anyway"
+```
+
+The cons operator `:` is similar to `++` insofar as `:` allows for
+concatenation. The cons operator is a binary operator. To use `:` for
+concatenating to a string, the left operand of `:` must be a character and the
+right operand must be a string. Like `++`, the cons operator can be used in
+prefix or infix notations.
+
+```haskell
+ghci> 'b' : "c"
+"bc"
+ghci> 'a' : ('b' : "c")
+"abc"
+ghci> (:) 'b' "c"
+"bc"
+ghci> (:) 'a' ((:) 'b' "c")
+"abc"
+```
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
@@ -106,6 +162,7 @@ ghci> unwords (words s)
     This is similar to how strings are represented in C, where a string is
     merely an array of characters.
 
+[^c]: Ackchyually, `++` is a function.
 [^f]:
     Use the package [`Data.Text`][dataText] to manipulate strings if performance
     is a top priority.
@@ -114,10 +171,13 @@ ghci> unwords (words s)
 
 <!-- prettier-ignore-start -->
 [char]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
+[chicagoDailyTribune]: https://archive.org/details/per_chicago-daily-tribune_the-chicago-daily-tribun_1891-06-06_51_157/page/n3/mode/2up
+[concat]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:concat
 [dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [dataString]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html
 [import]: https://web.archive.org/web/20231128054800/https://wiki.haskell.org/Import
 [lines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:lines
+[plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
 [string]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#t:String
 [unlines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unlines
 [unwords]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:unwords
