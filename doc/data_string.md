@@ -329,6 +329,60 @@ pie is yummy, but pi is 3.141592653589793
 
 <!--=========================================================================-->
 
+## Exercises
+
+:exercise: The cons operator `:` can be used for string concatenation. The left
+operand of `:` is a character, whereas the right operand is a string. Can the
+left operand be an empty character, i.e. `''`? Why or why not? Can the right
+operand be an empty string, i.e. `""`? Why or why not?
+
+<!-- prettier-ignore-start -->
+:exercise: Rewrite the programs
+:script: file="assets/src/data/age.hs", name="age.hs"
+and
+:script: file="assets/src/data/circle.hs", name="circle.hs"
+to use the function [`printf`][printf] for string formatting.
+<!-- prettier-ignore-end -->
+
+:exercise: In the section [Splitting headache](#splitting-headache), you learnt
+about destructuring a tuple. Does destructuring work with lists as well? Split
+the following strings at whitespaces and destructure the results:
+`"battle beetle"` and `"Peter panning gold"`.
+
+:exercise: A phrase when abbreviated is commonly written using the uppercase of
+the first letter of each word. For example, _ante meridiem_ (meaning before
+noon) is abbreviated as AM, _post meridiem_ (meaning after noon) is abbreviated
+as PM, and your significant other (i.e. your bae) is abbreviated as SO. Write a
+program to prompt for a two-word phrase and output the abbreviation of the
+phrase.
+
+:exercise: Use one or more functions discussed in this section to extract the
+following words from the string `"chopper"`: chop, hopper, cop, copper, her,
+Cher.
+
+:exercise: Write a program that prompts for a string `s`, and two integers $i$
+and $j$ where $i < j$. Extract the substring in `s` between the indices $i$ and
+$j$, inclusive.
+
+:exercise: The package [`Data.Text`][dataText] should be used instead of the
+type [`String`][string] whenever you require efficient text processing. Import
+the package and use its functions to work through various code examples in this
+section.
+
+:exercise: Use one or more string manipulation functions discussed in this
+section to extract the word "caterpillar" from the string `"8caterpillar-"`.
+Repeat the exercise, but use the package [`Data.Text`][dataText].
+
+:exercise: Write a program that prompts for a string. Exchange the first and
+last characters with each other and output the resulting string. For example,
+the input string `"lived"` should be transformed to `"divel"`. What happens if
+you enter an empty string or a string having one character?
+
+:exercise: Write a program that prompts for a string `s` and an integer $i$.
+Remove the character at index $i$ in `s` and output the resulting string.
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
@@ -356,16 +410,19 @@ pie is yummy, but pi is 3.141592653589793
 [Cprintf]: https://web.archive.org/web/20231129002029/https://en.wikipedia.org/wiki/Printf
 [dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [dataString]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html
+[dataText]: https://web.archive.org/web/20231120192818/https://hackage.haskell.org/package/text-2.1/docs/Data-Text.html
 [drop]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:drop
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [head]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:head
 [import]: https://web.archive.org/web/20231128054800/https://wiki.haskell.org/Import
 [init]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:init
+[jsDestructure]: https://web.archive.org/web/20231201211455/https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [last]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:last
 [length]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:length
 [lines]: https://web.archive.org/web/20231128114047/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-String.html#v:lines
 [plusplus]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:-43--43-
 [printf]: https://web.archive.org/web/20231128101446/https://hackage.haskell.org/package/base-4.19.0.0/docs/Text-Printf.html#v:printf
+[pyUnpack]: https://web.archive.org/web/20231130001457/https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 [reverse]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:reverse
 [show]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:show
 [snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
