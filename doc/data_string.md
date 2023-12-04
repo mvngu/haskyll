@@ -41,6 +41,27 @@ following formats:
 
 <!--=========================================================================-->
 
+### The package `Data.Char`
+
+To do anything interesting with characters, we must load the package
+[`Data.Char`][dataChar]. Loading is done via the keyword [`import`][import]. In
+the GHCi session below, we perform some basic operations on a character.
+
+```haskell
+ghci> import Data.Char
+ghci> c = 'a'
+ghci> isNumber c
+False
+ghci> isAlpha c
+True
+ghci> isLower c
+True
+ghci> toUpper c
+'A'
+```
+
+<!--=========================================================================-->
+
 [^a]:
     The languages C, C++, and Java each uses single quotation marks to delimit a
     character literal.
@@ -49,4 +70,6 @@ following formats:
 
 <!-- prettier-ignore-start -->
 [char]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
+[dataChar]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
+[import]: https://web.archive.org/web/20231128054800/https://wiki.haskell.org/Import
 <!-- prettier-ignore-end -->
