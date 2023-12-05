@@ -109,9 +109,9 @@ ghci> b = (2 :: Int)
 ghci> a / b
 
 <interactive>:3:3: error:
-    • No instance for (Fractional Int) arising from a use of ‘/’
-    • In the expression: a / b
-      In an equation for ‘it’: it = a / b
+    * No instance for (Fractional Int) arising from a use of '/'
+    * In the expression: a / b
+      In an equation for 'it': it = a / b
 ```
 
 What is going on here? The type `Int` does not support integer division? In
@@ -370,7 +370,7 @@ ghci> 3 * -2
 
 <interactive>:1:1: error:
     Precedence parsing error
-        cannot mix ‘*’ [infixl 7] and prefix `-' [infixl 6] in the same infix expression
+        cannot mix '*' [infixl 7] and prefix `-' [infixl 6] in the same infix expression
 ```
 
 However, the expression $-2 \times 3$ produces the correct result.

@@ -165,10 +165,10 @@ ghci> (fromInteger b) :: Double
 ghci> (fromInteger a) :: Double
 
 <interactive>:4:14: error:
-    • Couldn't match expected type ‘Integer’ with actual type ‘Int’
-    • In the first argument of ‘fromInteger’, namely ‘a’
+    * Couldn't match expected type 'Integer' with actual type 'Int'
+    * In the first argument of 'fromInteger', namely 'a'
       In the expression: (fromInteger a) :: Double
-      In an equation for ‘it’: it = (fromInteger a) :: Double
+      In an equation for 'it': it = (fromInteger a) :: Double
 ```
 
 <!--=========================================================================-->
