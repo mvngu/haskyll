@@ -88,7 +88,7 @@ main = print "Hello, world"
 ```
 
 Ignore the code segment `main = `. We will discuss that later on in the section
-[The `main` function](#the-main-function).
+[The function `main`](#the-function-main).
 
 Now use GHC to compile your source file to machine code. The compiler is called
 `ghc`. The following terminal session demonstrates the compilation and execution
@@ -133,7 +133,7 @@ languages that offer a REPL environment.[^b]
 
 <!--========================================================================-->
 
-## The `main` function
+## The function `main`
 
 Recall the "Hello, world" program from the section
 [Tales from the script](#tales-from-the-script), reproduced below:
@@ -163,7 +163,7 @@ exercise, but using the official Haskell [playground][playground].
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 2.</strong> Edit the file
-[`hello/hello.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello.hs)
+[`hello.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello.hs)
 to use the function [`putStr`][putStr] to print your name
 to standard output. Repeat the exercise, but using the function
 [`putStrLn`][putStrLn].
@@ -212,17 +212,17 @@ run the file
 
 <!-- prettier-ignore-start -->
 [ghc]: ../hello_ghc
-[ghci]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html
-[ghciCommands]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-commands
-[ghciHelp]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:help
-[ghciLoad]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:load
-[ghciQuit]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:quit
-[ghciReload]: https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:reload
+[ghci]: https://web.archive.org/web/20231202214753/https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html
+[ghciCommands]: https://web.archive.org/web/20231202214753/https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-commands
+[ghciHelp]: https://web.archive.org/web/20231202214753/https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:help
+[ghciLoad]: https://web.archive.org/web/20231202214753/https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:load
+[ghciQuit]: https://web.archive.org/web/20231202214753/https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:quit
+[ghciReload]: https://web.archive.org/web/20231202214753/https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html#ghci-cmd-:reload
 [ipython]: https://ipython.org
 [playground]: https://play.haskell.org
-[print]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:print
-[putStr]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStr
-[putStrLn]: https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
+[print]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:print
+[putStr]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStr
+[putStrLn]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
 [python]: https://www.python.org
-[runghc]: https://downloads.haskell.org/ghc/latest/docs/users_guide/runghc.html
+[runghc]: https://web.archive.org/web/20231202215621/https://downloads.haskell.org/ghc/latest/docs/users_guide/runghc.html
 <!-- prettier-ignore-end -->
