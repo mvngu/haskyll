@@ -1,0 +1,3 @@
+---
+title: Decision, decision
+---
