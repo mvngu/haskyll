@@ -1,6 +1,6 @@
 {
   "name": "haskyll",
-  "version": "0.0.1",
+  "version": "0.2",
   "description": "Beginner's guide to Haskell",
   "main": "index.js",
   "directories": {
