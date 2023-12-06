@@ -240,6 +240,7 @@ days.
 <!-- prettier-ignore-start -->
 :exercise:
 The [golden ratio][goldenRatio] is the mathematical constant defined by
+<!-- prettier-ignore-end -->
 
 $$
 \varphi
@@ -250,7 +251,6 @@ $$
   2
 }.
 $$
-<!-- prettier-ignore-end -->
 
 Write a program to print the golden ratio as a floating-point number. Use the
 method [`sqrt`][sqrt] to calculate the square root of a number.
