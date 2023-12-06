@@ -23,16 +23,28 @@ to write, compile, and execute your Haskell code in a web browser.
 
 ## Exercises
 
-:exercise: Use the package manager of your operating system to install GHC.
+<!-- prettier-ignore-start -->
+:exercise:
+Use the package manager of your operating system to install GHC.
+<!-- prettier-ignore-end -->
 
-:exercise: Install [GHCup][ghCup] on your computer.
+<!-- prettier-ignore-start -->
+:exercise:
+Install [GHCup][ghCup] on your computer.
+<!-- prettier-ignore-end -->
 
-:exercise: Search online for websites that allow you to write and run Haskell
-code within a web browser.
+<!-- prettier-ignore-start -->
+:exercise:
+Search online for websites that allow you to write and run Haskell code within a
+web browser.
+<!-- prettier-ignore-end -->
 
-:exercise: [Stack][stack] is a tool to help you manage your Haskell project.
-Browse through the [user guide][stackGuide] to get a general sense of what Stack
-can do for you.
+<!-- prettier-ignore-start -->
+:exercise:
+[Stack][stack] is a tool to help you manage your Haskell project. Browse through
+the [user guide][stackGuide] to get a general sense of what Stack can do for
+you.
+<!-- prettier-ignore-end -->
 
 <!--========================================================================-->
 

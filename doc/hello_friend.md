@@ -151,37 +151,50 @@ binary file.
 
 ## Exercises
 
-:exercise: Load GHCi and print your name to standard output. Repeat the
-exercise, but using the official Haskell [playground][playground].
-
 <!-- prettier-ignore-start -->
-:exercise: Edit the file
-:script: file="assets/src/hello/hello.hs", name="hello.hs"
-to use the function [`putStr`][putStr] to print your name
-to standard output. Repeat the exercise, but using the function
-[`putStrLn`][putStrLn].
+:exercise:
+Load GHCi and print your name to standard output. Repeat the exercise, but using
+the official Haskell [playground][playground].
 <!-- prettier-ignore-end -->
 
-:exercise: Instead of using double quotation marks (i.e. `"Hello, world"`), use
-single quotation marks (i.e. `'Hello, world'`) to print the string
-`"Hello, world"` to standard output. What does GHCi or the compiler say? What do
-you think might be the cause and why?
-
-:exercise: GHCi has various commands to help you while you experiment within the
-REPL environment. Here is an exhaustive list of all [GHCi
-commands][ghciCommands]. Browse through the documentation of each command. Do
-not be overwhelmed by the sheer volume of documentation. For now, you might want
-to read up on the commands [`:help`][ghciHelp], [`:load`][ghciLoad],
-[`:quit`][ghciQuit], and [`:reload`][ghciReload].
-
-:exercise: Read more about [GHCi here][ghci]. Do not be overwhelmed by the
-massive volume of text. Browse through the first two or three sections to see
-what GHCi has to offer.
+<!-- prettier-ignore-start -->
+:exercise:
+Edit the file
+:script: file="assets/src/hello/hello.hs", name="hello.hs"
+to use the function [`putStr`][putStr] to print your name to standard
+output. Repeat the exercise, but using the function [`putStrLn`][putStrLn].
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise: You know that GHCi can load and interpret a source file, executing
-the source code without having to compile it first. Furthermore, GHC can compile
-your source code to a binary file that contains the native machine code of your
+:exercise:
+Instead of using double quotation marks (i.e. `"Hello, world"`), use single
+quotation marks (i.e. `'Hello, world'`) to print the string `"Hello, world"` to
+standard output. What does GHCi or the compiler say? What do you think might be
+the cause and why?
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+GHCi has various commands to help you while you experiment within the REPL
+environment. Here is an exhaustive list of all
+[GHCi commands][ghciCommands]. Browse through the documentation of each
+command. Do not be overwhelmed by the sheer volume of documentation. For now,
+you might want to read up on the commands [`:help`][ghciHelp],
+[`:load`][ghciLoad], [`:quit`][ghciQuit], and [`:reload`][ghciReload].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Read more about [GHCi here][ghci]. Do not be overwhelmed by the massive volume
+of text. Browse through the first two or three sections to see what GHCi has to
+offer.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+You know that GHCi can load and interpret a source file, executing the source
+code without having to compile it first. Furthermore, GHC can compile your
+source code to a binary file that contains the native machine code of your
 computer. The command line utility [`runghc`][runghc] (also named `runhaskell`)
 offers a third way to run Haskell code. The command [`runghc`][runghc] can run
 your Haskell source file without compiling it first. Use [`runghc`][runghc] to

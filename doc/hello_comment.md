@@ -77,26 +77,38 @@ name of the (tricky or clever) technique the code is implementing.
 
 ## Exercises
 
-:exercise: Software documentation is more than just commenting your programming
-code. You need to know the type of documentation you are reading or writing. Is
-it a tutorial, an exposition, a how-to guide, or a reference manual? Learn more
-about different [types of documentation][docSystem].
+<!-- prettier-ignore-start -->
+:exercise:
+Software documentation is more than just commenting your programming code. You
+need to know the type of documentation you are reading or writing. Is it a
+tutorial, an exposition, a how-to guide, or a reference manual? Learn more about
+different [types of documentation][docSystem].
+<!-- prettier-ignore-end -->
 
-:exercise: Writing software documentation is difficult. But do not despair. The
+<!-- prettier-ignore-start -->
+:exercise:
+Writing software documentation is difficult. But do not despair. The
 [Write the Docs][writeDocs] project has a [beginner's guide][writeDocsGuide] to
 help you get started. Browse through the guide for tips on how to begin
 documenting your (first) project.
+<!-- prettier-ignore-end -->
 
-:exercise: The GHC project uses a tool called [Haddock][haddock] to extract
-documentation from annotated Haskell source files. Learn more about
-[Haddock][haddock]. In particular, you might want to browse the section on how
-to annotate and markup your Haskell source code.
+<!-- prettier-ignore-start -->
+:exercise:
+The GHC project uses a tool called [Haddock][haddock] to extract documentation
+from annotated Haskell source files. Learn more about [Haddock][haddock]. In
+particular, you might want to browse the section on how to annotate and markup
+your Haskell source code.
+<!-- prettier-ignore-end -->
 
-:exercise: Let's see how the function [`print`][print] is documented. Load the
-page for the API documentation of [`print`][print]. Locate a link called
-`Source`. Click on the link to open the page that contains the corresponding
+<!-- prettier-ignore-start -->
+:exercise:
+Let's see how the function [`print`][print] is documented. Load the page for the
+API documentation of [`print`][print]. Locate a link called `Source`. Click on
+the link to open the page that contains the corresponding
 [source code of `print`][printSrc]. Take a moment to examine how the source code
 of [`print`][print] is annotated and documented.
+<!-- prettier-ignore-end -->
 
 <!--=========================================================================-->
 
