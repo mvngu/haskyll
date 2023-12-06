@@ -148,12 +148,19 @@ take some time to work through the boolean results of the following program.
 
 ## Exercises
 
-:exercise: Simplify the statement: "Haskell is not not fun."
-
-:exercise: What's the back of your back?
+<!-- prettier-ignore-start -->
+:exercise:
+Simplify the statement: "Haskell is not not fun."
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise: Rewrite the program
+:exercise:
+What's the back of your back?
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Rewrite the program
 :script: file="assets/src/data/or.hs", name="or.hs"
 by using [`$`][dollarSign] to replace the outermost pairs of
 parentheses. Rewrite the program
@@ -161,9 +168,12 @@ parentheses. Rewrite the program
 to use as few parentheses as possible.
 <!-- prettier-ignore-end -->
 
-:exercise: Examine the terminal session below. Determine which food Tabby
-dislikes. Write a program that uses boolean operators to achieve the same output
-as in the terminal session.
+<!-- prettier-ignore-start -->
+:exercise:
+Examine the terminal session below. Determine which food Tabby dislikes. Write a
+program that uses boolean operators to achieve the same output as in the terminal
+session.
+<!-- prettier-ignore-end -->
 
 ```sh
 $ ghc food.hs && ./food
@@ -173,14 +183,17 @@ Tabby likes fish or cheese? True
 Tabby likes fish and cheese? False
 ```
 
-:exercise: Both of the types [`Bool`][bool] and [`Int`][int] are based on
-[`Enum`][enum], as can be verified by the output of the GHCi commands
-`:info Bool` and `:info Int`. The method [`fromEnum`][fromEnum] can be used to
-convert a boolean value to its corresponding integer value: `True` becomes 1,
-`False` becomes 0. A quiz has four questions: a, b, c, and d. Your results for
-the quiz are given below. The value `True` means you answered a question
-correctly and `False` means otherwise. Use the boolean values and the method
-`fromEnum` to calculate how many questions you answered correctly.
+<!-- prettier-ignore-start -->
+:exercise:
+Both of the types [`Bool`][bool] and [`Int`][int] are based on [`Enum`][enum],
+as can be verified by the output of the GHCi commands `:info Bool` and
+`:info Int`. The method [`fromEnum`][fromEnum] can be used to convert a boolean
+value to its corresponding integer value: `True` becomes 1, `False` becomes 0. A
+quiz has four questions: a, b, c, and d. Your results for the quiz are given
+below. The value `True` means you answered a question correctly and `False`
+means otherwise. Use the boolean values and the method `fromEnum` to calculate
+how many questions you answered correctly.
+<!-- prettier-ignore-end -->
 
 ```haskell
 ghci> a = True
@@ -189,10 +202,13 @@ ghci> c = True
 ghci> d = True
 ```
 
-:exercise: The word "or" in everyday English means, "Either this or that, but
-not both." In computer programming, the latter meaning of "or" is called
-exclusive or, often abbreviated as XOR. Given two boolean values `a` and `b`,
-the boolean operator XOR is defined in terms of `||` and `&&` as the expression
+<!-- prettier-ignore-start -->
+:exercise:
+The word "or" in everyday English means, "Either this or that, but not both." In
+computer programming, the latter meaning of "or" is called exclusive or, often
+abbreviated as XOR. Given two boolean values `a` and `b`, the boolean operator
+XOR is defined in terms of `||` and `&&` as the expression
+<!-- prettier-ignore-end -->
 
 ```haskell
 (a || b) && not (a && b)
@@ -212,13 +228,19 @@ Sam likes cats or dogs? True
 Sam likes cats XOR dogs? True
 ```
 
-:exercise: Modify the following program so the expression `likeCat && likeTiger`
-returns `False`.
+<!-- prettier-ignore-start -->
+:exercise:
+Modify the following program so the expression `likeCat && likeTiger` returns
+`False`.
+<!-- prettier-ignore-end -->
 
 :include: file="assets/src/data/pet.hs", name="pet.hs"
 
-:exercise: Given two boolean values `a` and `b`, [De Morgan's laws][deMorgan]
-are the statements:
+<!-- prettier-ignore-start -->
+:exercise:
+Given two boolean values `a` and `b`, [De Morgan's laws][deMorgan] are the
+statements:
+<!-- prettier-ignore-end -->
 
 ```haskell
 not (a || b) == (not a) && (not b)
@@ -227,10 +249,16 @@ not (a && b) == (not a) || (not b)
 
 Verify the above statements yourself for various boolean values of `a` and `b`.
 
-:exercise: Sam is using a search engine to find pet images. The search query is,
-"cat or dog". Provide an equivalent boolean expression for Sam's query.
+<!-- prettier-ignore-start -->
+:exercise:
+Sam is using a search engine to find pet images. The search query is, "cat or
+dog". Provide an equivalent boolean expression for Sam's query.
+<!-- prettier-ignore-end -->
 
-:exercise: Determine the output of the following.
+<!-- prettier-ignore-start -->
+:exercise:
+Determine the output of the following.
+<!-- prettier-ignore-start -->
 
 ```haskell
 ghci> import Text.Printf

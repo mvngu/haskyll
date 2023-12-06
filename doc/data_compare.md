@@ -63,39 +63,57 @@ returns one of the following values.
 
 ## Exercises
 
-:exercise: Why are the strings `"Meow"` and `"meow"` different? Within a GHCi
-session, convert either or both strings so the resulting strings compare equal
-according to `==`.
+<!-- prettier-ignore-start -->
+:exercise:
+Why are the strings `"Meow"` and `"meow"` different? Within a GHCi session,
+convert either or both strings so the resulting strings compare equal according
+to `==`.
+<!-- prettier-ignore-end -->
 
-:exercise: Why are `'a'` and `"a"` different? Within a GHCi session, convert
-either or both so the resulting values would compare equal according to `==`.
+<!-- prettier-ignore-start -->
+:exercise:
+Why are `'a'` and `"a"` different? Within a GHCi session, convert either or both
+so the resulting values would compare equal according to `==`.
+<!-- prettier-ignore-end -->
 
-:exercise: Modify the program below so it would compile and the relevant values
-compare equal according to `==`.
+<!-- prettier-ignore-start -->
+:exercise:
+Modify the program below so it would compile and the relevant values compare
+equal according to `==`.
+<!-- prettier-ignore-end -->
 
 :include: file="assets/src/data/same.hs", name="same.hs"
 
-:exercise: The comparison operators also work with characters of the English
-alphabet. Just like the integers have an ordering to tell you that $1 < 2$ holds
-true, characters of the English alphabet have an ordering as well, i.e.
-alphabetic or lexicographic ordering. The letter "a" always comes before "b" and
-Haskell can confirm this dictionary ordering if you run the code `"a" < "b"`.
-Here, the operator `<` means "precede". The expression `"a" < "b"` can be read
-as: Does the letter "a" come before "b"? Note that an uppercase letter always
-precedes any lowercase letter. Consider the program below. Why does the
-expression `"aardvark" < "Aardvark"` return `False`? Modify the program so the
-result of the operator `<` is `True`.
+<!-- prettier-ignore-start -->
+:exercise:
+The comparison operators also work with characters of the English alphabet. Just
+like the integers have an ordering to tell you that $1 < 2$ holds true,
+characters of the English alphabet have an ordering as well, i.e. alphabetic or
+lexicographic ordering. The letter "a" always comes before "b" and Haskell can
+confirm this dictionary ordering if you run the code `"a" < "b"`. Here, the
+operator `<` means "precede". The expression `"a" < "b"` can be read as: Does
+the letter "a" come before "b"? Note that an uppercase letter always precedes
+any lowercase letter. Consider the program below. Why does the expression
+`"aardvark" < "Aardvark"` return `False`? Modify the program so the result of
+the operator `<` is `True`.
+<!-- prettier-ignore-end -->
 
 :include: file="assets/src/data/dictionary.hs", name="dictionary.hs"
 
-:exercise: A quiz has three statements, each of which evaluates to a boolean
-value. The statements are shown in the program below. Modify the program to
-output the number of correct statements, using only boolean arithmetics. Insert
-your code at the location shown in the program.
+<!-- prettier-ignore-start -->
+:exercise:
+A quiz has three statements, each of which evaluates to a boolean value. The
+statements are shown in the program below. Modify the program to output the
+number of correct statements, using only boolean arithmetics. Insert your code
+at the location shown in the program.
+<!-- prettier-ignore-end -->
 
 :include: file="assets/src/data/quiz.hs", name="quiz.hs"
 
-:exercise: Translate the expression $1 < 2 < 3$ to Haskell code.
+<!-- prettier-ignore-start -->
+:exercise:
+Translate the expression $1 < 2 < 3$ to Haskell code.
+<!-- prettier-ignore-end -->
 
 <!--=========================================================================-->
 

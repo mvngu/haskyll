@@ -463,28 +463,45 @@ shows a few new concepts.  Let's tackle each idea in turn:
 
 ## Exercises
 
-:exercise: Load GHCi and type in [`minBound`][minBound] (or
-[`maxBound`][maxBound]) at the prompt. What does GHCi show? Why do you think
-GHCi shows such output?
+<!-- prettier-ignore-start -->
+:exercise:
+Load GHCi and type in [`minBound`][minBound] (or [`maxBound`][maxBound]) at the
+prompt. What does GHCi show? Why do you think GHCi shows such output?
+<!-- prettier-ignore-end -->
 
-:exercise: Determine the exact range of [`Int`][int] on your computer. An
-integer represented by the type [`Int`][int] has a minimum and maximum values of
-at least $-2^{29}$ and $2^{29} - 1$, respectively. Use Haskell to obtain the
-actual digits in each of the latter two numbers.
+<!-- prettier-ignore-start -->
+:exercise:
+Determine the exact range of [`Int`][int] on your computer. An integer
+represented by the type [`Int`][int] has a minimum and maximum values of at
+least $-2^{29}$ and $2^{29} - 1$, respectively. Use Haskell to obtain the actual
+digits in each of the latter two numbers.
+<!-- prettier-ignore-end -->
 
-:exercise: The GHCi command [`:type`][type] shows the type information of an
-expression. A similar command is [`:info`][info]. Read up on the latter command.
+<!-- prettier-ignore-start -->
+:exercise:
+The GHCi command [`:type`][type] shows the type information of an expression. A
+similar command is [`:info`][info]. Read up on the latter command.
+<!-- prettier-ignore-end -->
 
-:exercise: Use [`:type`][type] to show the signature of the method
-[`quot`][quot]. Explain what the signature of `quot` means.
+<!-- prettier-ignore-start -->
+:exercise:
+Use [`:type`][type] to show the signature of the method [`quot`][quot]. Explain
+what the signature of `quot` means.
+<!-- prettier-ignore-end -->
 
-:exercise: Enter the code `minBound :: Integer` at the prompt of GHCi. What does
-GHCi say? Why do you get that result? Repeat the exercise for the code
+<!-- prettier-ignore-start -->
+:exercise:
+Enter the code `minBound :: Integer` at the prompt of GHCi. What does GHCi say?
+Why do you get that result? Repeat the exercise for the code
 `maxBound :: Integer`.
+<!-- prettier-ignore-end -->
 
-:exercise: The methods [`div`][div] and [`quot`][quot] both perform integer
-division, but their results can be different. Use each method to perform integer
-division with the following types of integers:
+<!-- prettier-ignore-start -->
+:exercise:
+The methods [`div`][div] and [`quot`][quot] both perform integer division, but
+their results can be different. Use each method to perform integer division with
+the following types of integers:
+<!-- prettier-ignore-end -->
 
 1. Positive and positive.
 1. Positive and negative.
@@ -493,24 +510,34 @@ division with the following types of integers:
 1. Zero and positive (or negative).
 1. Positive (or negative) and zero.
 
-:exercise: The method [`mod`][mod] returns the integer remainder when one
-integer is divided by another integer. How many whole weeks are there in three
-years? How many left over days that do not make up a whole week? Use GHCi to
-perform your calculation.
+<!-- prettier-ignore-start -->
+:exercise:
+The method [`mod`][mod] returns the integer remainder when one integer is
+divided by another integer. How many whole weeks are there in three years? How
+many left over days that do not make up a whole week? Use GHCi to perform your
+calculation.
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise: Rewrite the program
+:exercise:
+Rewrite the program
 :script: file="assets/src/data/age.hs", name="age.hs"
 without using string concatenation.
 <!-- prettier-ignore-end -->
 
-:exercise: Write a program to print your name, age, and special talent. Each
-piece of information should be on a separate line.
+<!-- prettier-ignore-start -->
+:exercise:
+Write a program to print your name, age, and special talent. Each piece of
+information should be on a separate line.
+<!-- prettier-ignore-end -->
 
-:exercise: We had a cursory discussion of [syntactic sugar](#syntactic-sugar) in
-this section. [This page][sugarList] has a list of syntactic sugar in Haskell.
-For in-depth discussion, see [this page][sugarBrief], [this][sugarTips], or
+<!-- prettier-ignore-start -->
+:exercise:
+We had a cursory discussion of [syntactic sugar](#syntactic-sugar) in this
+section. [This page][sugarList] has a list of syntactic sugar in Haskell. For
+in-depth discussion, see [this page][sugarBrief], [this][sugarTips], or
 [here][sugarCons].
+<!-- prettier-ignore-end -->
 
 <!--=========================================================================-->
 

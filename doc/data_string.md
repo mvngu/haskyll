@@ -332,55 +332,81 @@ pie is yummy, but pi is 3.141592653589793
 
 ## Exercises
 
-:exercise: The cons operator `:` can be used for string concatenation. The left
-operand of `:` is a character, whereas the right operand is a string. Can the
-left operand be an empty character, i.e. `''`? Why or why not? Can the right
-operand be an empty string, i.e. `""`? Why or why not?
+<!-- prettier-ignore-start -->
+:exercise:
+The cons operator `:` can be used for string concatenation. The left operand of
+`:` is a character, whereas the right operand is a string. Can the left operand
+be an empty character, i.e. `''`? Why or why not? Can the right operand be an
+empty string, i.e. `""`? Why or why not?
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise: Rewrite the programs
+:exercise:
+Rewrite the programs
 :script: file="assets/src/data/age.hs", name="age.hs"
 and
 :script: file="assets/src/data/circle.hs", name="circle.hs"
 to use the function [`printf`][printf] for string formatting.
 <!-- prettier-ignore-end -->
 
-:exercise: In the section [Splitting headache](#splitting-headache), you learnt
-about destructuring a tuple. Does destructuring work with lists as well? Split
-the following strings at whitespaces and destructure the results:
-`"battle beetle"` and `"Peter panning gold"`.
+<!-- prettier-ignore-start -->
+:exercise:
+In the section [Splitting headache](#splitting-headache), you learnt about
+destructuring a tuple. Does destructuring work with lists as well? Split the
+following strings at whitespaces and destructure the results: `"battle beetle"`
+and `"Peter panning gold"`.
+<!-- prettier-ignore-end -->
 
-:exercise: A phrase when abbreviated is commonly written using the uppercase of
-the first letter of each word. For example, _ante meridiem_ (meaning before
-noon) is abbreviated as AM, _post meridiem_ (meaning after noon) is abbreviated
-as PM, and your significant other (i.e. your bae) is abbreviated as SO. Write a
-program to prompt for a two-word phrase and output the abbreviation of the
-phrase.
+<!-- prettier-ignore-start -->
+:exercise:
+A phrase when abbreviated is commonly written using the uppercase of the first
+letter of each word. For example, _ante meridiem_ (meaning before noon) is
+abbreviated as AM, _post meridiem_ (meaning after noon) is abbreviated as PM,
+and your significant other (i.e. your bae) is abbreviated as SO. Write a program
+to prompt for a two-word phrase and output the abbreviation of the phrase.
+<!-- prettier-ignore-end -->
 
-:exercise: Use one or more functions discussed in this section to extract the
-following words from the string `"chopper"`: chop, hopper, cop, copper, her,
-Cher.
+<!-- prettier-ignore-start -->
+:exercise:
+Use one or more functions discussed in this section to extract the following
+words from the string `"chopper"`: chop, hopper, cop, copper, her, Cher.
+<!-- prettier-ignore-end -->
 
-:exercise: Write a program that prompts for a string `s`, and two integers $i$
-and $j$ where $i < j$. Extract the substring in `s` between the indices $i$ and
-$j$, inclusive.
+<!-- prettier-ignore-start -->
+:exercise:
+Write a program that prompts for a string `s`, and two integers $i$ and $j$
+where $i < j$. Extract the substring in `s` between the indices $i$ and $j$,
+inclusive.
+<!-- prettier-ignore-end -->
 
-:exercise: The package [`Data.Text`][dataText] should be used instead of the
-type [`String`][string] whenever you require efficient text processing. Import
-the package and use its functions to work through various code examples in this
+<!-- prettier-ignore-start -->
+:exercise:
+The package [`Data.Text`][dataText] should be used instead of the type
+[`String`][string] whenever you require efficient text processing. Import the
+package and use its functions to work through various code examples in this
 section.
+<!-- prettier-ignore-end -->
 
-:exercise: Use one or more string manipulation functions discussed in this
-section to extract the word "caterpillar" from the string `"8caterpillar-"`.
-Repeat the exercise, but use the package [`Data.Text`][dataText].
+<!-- prettier-ignore-start -->
+:exercise:
+Use one or more string manipulation functions discussed in this section to
+extract the word "caterpillar" from the string `"8caterpillar-"`. Repeat the
+exercise, but use the package [`Data.Text`][dataText].
+<!-- prettier-ignore-end -->
 
-:exercise: Write a program that prompts for a string. Exchange the first and
-last characters with each other and output the resulting string. For example,
-the input string `"lived"` should be transformed to `"divel"`. What happens if
-you enter an empty string or a string having one character?
+<!-- prettier-ignore-start -->
+:exercise:
+Write a program that prompts for a string. Exchange the first and last
+characters with each other and output the resulting string. For example, the
+input string `"lived"` should be transformed to `"divel"`. What happens if you
+enter an empty string or a string having one character?
+<!-- prettier-ignore-end -->
 
-:exercise: Write a program that prompts for a string `s` and an integer $i$.
-Remove the character at index $i$ in `s` and output the resulting string.
+<!-- prettier-ignore-start -->
+:exercise:
+Write a program that prompts for a string `s` and an integer $i$. Remove the
+character at index $i$ in `s` and output the resulting string.
+<!-- prettier-ignore-end -->
 
 <!--=========================================================================-->
 
