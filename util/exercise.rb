@@ -22,13 +22,41 @@
 ## SOFTWARE.
 ################################################################################
 
+# Extract an exercise label.
+#
+# @param line A line of text containing the exercise format.
+# @return The label of the exercise.  The empty string if the exercise does not
+#     contain a label.
+def extract_label(line)
+    return "" unless label?(line)
+
+    return line.gsub(/:exercise:/, "").gsub(/label=/, "").strip
+end
+
+# Whether an exercise has a label.  A label is typically used for
+# cross-referencing.
+#
+# @param line A line of text containing the exercise format.
+# @return True if the exercise has a label; false otherwise.
+def label?(line)
+    return line.include?("label=")
+end
+
 # Number the exercises in a section/chapter.  Each exercise follows this
 # format:
 #
-# :exercise: Insert text of the exercise.
+# :exercise:
+# Insert text of the exercise.
 #
-# The text ":exercise:" delimits the beginning of an exercise.  This script
-# expects the following command line argument:
+# The text ":exercise:" delimits the beginning of an exercise and should be on
+# its own line.  You can label an exercise in order to cross-reference it
+# within the same document or from a different document.  Labelling an exercise
+# is optional.  Label an exercise according to this format:
+#
+# :exercise: label="my_label"
+# Insert text of the exercise.
+#
+# This script expects the following command line argument:
 #
 # doc := A section/chapter in the entire document.  Assumed to be located under
 #     the directory "_tabs/".
@@ -39,8 +67,9 @@ def main
     content = ""
     File.foreach(doc) do |line|
         if line.strip.start_with?(ex_delim)
-            exercise = format("<strong>Exercise %d.</strong>", n)
-            content += line.gsub(/:exercise:/, exercise)
+            label = extract_label(line)
+            prefix = label?(line) ? format("<strong id=%s>", label) : "<strong>"
+            content += format("%sExercise %d.</strong> ", prefix, n)
             n += 1
         else
             content += line
