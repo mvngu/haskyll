@@ -324,10 +324,10 @@ $$
 Verify the result of `mod` against the definition of $r_f$ for the following
 types of integers.
 
-- Positive and positive.
-- Positive and negative.
-- Negative and positive.
-- Negative and negative.
+-   Positive and positive.
+-   Positive and negative.
+-   Negative and positive.
+-   Negative and negative.
 
 Repeat the exercise for `rem` and $r_t$.
 
