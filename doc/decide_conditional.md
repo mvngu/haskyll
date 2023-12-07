@@ -159,7 +159,149 @@ her weekend todo lists.
 
 <!--=========================================================================-->
 
+## Exercises
+
+<!-- prettier-ignore-start -->
+:exercise:
+Many countries have Saturday and Sunday as their weekend. Write a program that
+prompts for the name of a day of the week. Output whether the given day is a
+weekend.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a program that prompts for an integer. Output whether the given integer is
+even or odd.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a program that prompts for two integers. Output the maximum of both
+values. Repeat the exercise for the minimum of two integers.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise: label="ex_vegetables"
+On Monday, Sam would feed pork and mixed vegetables to Tabby. Modify the program
+:script: file="assets/src/decide/sardine.hs", name="sardine.hs"
+to account for Tabby's meal on Monday.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise: label="ex_current_day"
+The program
+:script: file="assets/src/decide/day.hs", name="day.hs"
+below prints the current day of the week, using functions defined in the package
+[`Data.Time`][dataTime]. The function [`getCurrentTime`][getCurrentTime] returns
+the current time in UTC format, using your computer's system clock. We then use
+[`utctDay`][utctDay] to extract the current date, excluding the current time.
+The date is converted to the format of the Gregorian calendar and we destructure
+the resulting tuple as the variables `year`, `month`, and `day`. The function
+[`fromGregorian`][fromGregorian] converts the values of `year`, `month`, and
+`day` to the format `year-month-day`, which is then fed to the function
+[`dayOfWeek`][dayOfWeek] to tell us the current day of the week. Repeat the
+[previous exercise](#ex_vegetables), but using the current day of the week
+instead of hard coding a day string.
+<!-- prettier-ignore-end -->
+
+:include: file="assets/src/decide/day.hs", name="day.hs"
+
+<!-- prettier-ignore-start -->
+:exercise:
+The program
+:script: file="assets/src/decide/time.hs", name="time.hs"
+below outputs the current time of the day in 24-hour format. The function
+[`getCurrentTime`][getCurrentTime] returns the current time in UTC format, using
+your computer's system clock. The function
+[`getCurrentTimeZone`][getCurrentTimeZone] returns your computer's configured
+time zone. Using your local time zone and the UTC date/time, the function
+[`utcToLocalTime`][utcToLocalTime] returns your current local date/time,
+including fractional seconds. However, you only want the hour, minute, and
+second as integers so you use the function [`localTimeOfDay`][localTimeOfDay] to
+obtain the required information, then destructure the result. Noon starts from
+12 pm. Write a program to obtain the current hour. If the current time is 12 pm,
+then output the string `"It's high noon"`. Otherwise output the string
+`"Not yet high noon"` for all other hours.
+<!-- prettier-ignore-end -->
+
+:include: file="assets/src/decide/time.hs", name="time.hs"
+
+<!-- prettier-ignore-start -->
+:exercise:
+The absolute value of a number $x$ is defined as:
+<!-- prettier-ignore-end -->
+
+$$
+|x|
+=
+\begin{cases}
+  x,& \text{if } x \geq 0,\\[4pt]
+  -x,& \text{otherwise}.
+\end{cases}
+$$
+
+Write a program that prompts for a number and outputs its absolute value.
+
+<!-- prettier-ignore-start -->
+:exercise:
+According to [this website][catFood], it is safe to feed the following fruits to
+cats: apple, banana, blueberries, cantaloupe, strawberries, watermelon. Eggs and
+cheese are also safe for cats. In addition to Tabby's scheduled meal on Monday
+and Friday, Sam wants to feed mixed fruits to Tabby on Tuesday, scrambled eggs
+on Wednesday, and hard cheese such as cheddar or Gouda on Thursday. Repeat
+[this exercise](#ex_current_day), but incorporate the above meals for Tabby on
+Tuesday, Wednesday, and Thursday.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+A four-digit year is a leap year, provided one of the following conditions holds:
+<!-- prettier-ignore-end -->
+
+1. The number can be divided by 4 and cannot be divided by 100.
+1. The number can be divided by 400.
+
+Write a program to determine whether the current year is a leap year. If it is a
+leap year, divide the year by 2 and output the current year together with its
+halved value. If the current year is not a leap year, output the string
+`"No ribbit for froggy"`. You are not allowed to hard code the digits of the
+current year.
+
+<!-- prettier-ignore-start -->
+:exercise:
+The weekdays are Monday, Tuesday, Wednesday, Thursday, and Friday. The weekend
+consists of Saturday and Sunday. Write a program to prompt for the current day
+of the week. If it is a weekday, output the string `"It's a weekday"`. If the
+day is part of the weekend, output the string `"Weekend fun"`. If it is a
+Wednesday, Thursday, or Friday output the string `"WTF"`. Furthermore, output
+the following strings, depending on the given day.
+<!-- prettier-ignore-end -->
+
+-   Monday. Output `"A case of the Mondays"`.
+-   Tuesday. Output `"Taco night"`.
+-   Wednesday. Output `"It's Wednesday, my dude"`.
+-   Thursday. Output `"Hang in there. One more day."`.
+-   Friday. Output `"Thank Gwynevere it's Friday"`.
+-   Saturday. Output `"Caturday :3"`.
+-   Sunday. Output `"Sunday driver"`.
+
+<!--=========================================================================-->
+
 [^a]:
     A `do` block is not necessary to denote all code in the function `main`.
     Other techniques are available to allow you to perform a sequence of
     actions.
+
+<!--=========================================================================-->
+
+<!-- prettier-ignore-start -->
+[catFood]: https://web.archive.org/web/20230102115754/https://be.chewy.com/nutrition-food-treats-15-human-foods-that-are-safe-for-cats/
+[dataTime]: https://web.archive.org/web/20231118105934/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time.html
+[dayOfWeek]: https://web.archive.org/web/20230823185222/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-Calendar.html#v:dayOfWeek
+[fromGregorian]: https://web.archive.org/web/20230823185222/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-Calendar.html#v:fromGregorian
+[getCurrentTime]: https://web.archive.org/web/20231118105935/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-Clock.html#v:getCurrentTime
+[getCurrentTimeZone]: https://web.archive.org/web/20230608215306/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-LocalTime.html#v:getCurrentTimeZone
+[localTimeOfDay]: https://web.archive.org/web/20230608215306/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-LocalTime.html#t:LocalTime
+[utctDay]: https://web.archive.org/web/20231118105935/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-Clock.html#t:UTCTime
+[utcToLocalTime]: https://web.archive.org/web/20230608215306/https://hackage.haskell.org/package/time-1.12.2/docs/Data-Time-LocalTime.html#v:utcToLocalTime
+<!-- prettier-ignore-end -->
