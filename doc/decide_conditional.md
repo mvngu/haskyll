@@ -105,3 +105,21 @@ as follows.
 <!-- prettier-ignore-end -->
 
 :include: file="assets/src/decide/sardine-time.hs", name="sardine-time.hs"
+
+<!--=========================================================================-->
+
+## Nested `if...then...else`
+
+> _Baby doll:_ Help! I'm trapped in a matryoshka doll set.
+
+In Haskell, conditional expressions can be nested within one another, like in
+languages such as C, JavaScript, and Python. For example, two integers $a$ and
+$b$ satisfy one of the following relations:
+
+-   $a > b$
+-   $a < b$
+-   $a = b$
+
+The above can be translated into Haskell code as:
+
+:include: file="assets/src/decide/nested.hs", name="nested.hs"
