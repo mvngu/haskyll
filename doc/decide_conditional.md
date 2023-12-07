@@ -123,3 +123,43 @@ $b$ satisfy one of the following relations:
 The above can be translated into Haskell code as:
 
 :include: file="assets/src/decide/nested.hs", name="nested.hs"
+
+<!--=========================================================================-->
+
+## A `do` block within `if...then...else`
+
+Recall from the section [Printing numbers](../data_number/#printing-numbers)
+that a `do` block allows you to perform a sequence of actions. You typically use
+a `do` block in the function `main` to denote all code in that function.[^a] A
+`do` block can be used in a `then` or `else` clause to allow you to perform
+multiple actions specific to the clause.
+
+By way of example, suppose you want a program that prompts for an integer. If
+the integer you enter is negative, the program prints the string
+`"I'm positive the number is negative"`. In case the integer you enter is zero
+or positive, the program doubles the number and prints the string
+`"It's Dublin"` together with the doubled number. You anticipate the `then`
+clause would have only one expression, namely the string to output for that
+clause. No `do` block for the `then` clause. However, you require a `do` block
+for the `else` clause because it would perform two actions, one after the other.
+You translate the above description to Haskell as follows.
+
+:include: file="assets/src/decide/double.hs", name="double.hs"
+
+Let's see how a `do` block can help Sam organize some of her weekend chores.
+Saturday is the day for weekly grocery shopping. Sam needs to stock up on food
+for herself as well as cat food for Tabby. The local supermarket has a sale this
+weekend on pet supplies. Sam needs to stock up on Tabby's favourite treats:
+sardine and tuna. Sunday is the weekly grooming day for Tabby. Tabby needs to be
+brushed and combed to help keep her coat clean. Sunday is also laundry day. The
+above chores are translated into the program below to help Sam remind herself of
+her weekend todo lists.
+
+:include: file="assets/src/decide/weekend.hs", name="weekend.hs"
+
+<!--=========================================================================-->
+
+[^a]:
+    A `do` block is not necessary to denote all code in the function `main`.
+    Other techniques are available to allow you to perform a sequence of
+    actions.
