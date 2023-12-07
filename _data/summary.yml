@@ -27,3 +27,5 @@ toc:
   subfolder:
     - title: I can't decide
       url: /decide_conditional/
+    - title: Simple functions
+      url: /decide_function/
