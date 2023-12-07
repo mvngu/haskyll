@@ -84,3 +84,24 @@ assigned to `meal`. Why the lack of an explicit return statement? As noted
 above, Haskell's conditional expression is analogous to the ternary operator in
 some other programming languages.
 <!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
+## Boolean chain
+
+> _Audience:_ Boooo...\
+> _Mr. Burns:_ Smithers. Are they booing me?\
+> _Smithers:_ Aahh... no. They're saying, "Boo-urns, boo-urns."\
+> --- _The Simpsons_, season 6, episode 18, 1995
+
+<!-- prettier-ignore-start -->
+The condition in an `if...then...else` expression must evaluate to a boolean
+value. It makes sense that the condition can be a chain of boolean expressions,
+connected via one or more boolean operators `||` and/or `&&`. For instance,
+although Friday is sardine day for Tabby, Sam only feeds sardine to Tabby during
+the afternoon. With the latter finer detail, Sam modifies the program
+:script: file="assets/src/decide/sardine.hs", name="sardine.hs"
+as follows.
+<!-- prettier-ignore-end -->
+
+:include: file="assets/src/decide/sardine-time.hs", name="sardine-time.hs"
