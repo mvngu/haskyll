@@ -40,8 +40,8 @@ The type `Double` supports the usual arithmetic operators: `+` (addition), `-`
 is performed via the operator `**`. Observe the following GHCi session.
 
 ```haskell
-ghci> a = (7.0 :: Double)
-ghci> b = (2.0 :: Double)
+ghci> a = 7.0 :: Double
+ghci> b = 2.0 :: Double
 ghci> a + b
 9.0
 ghci> a - b
@@ -138,8 +138,8 @@ you want.  For example, the GHCi session below converts various integers to type
 `Double`.
 
 ```haskell
-ghci> a = (3 :: Int)
-ghci> b = (3 :: Integer)
+ghci> a = 3 :: Int
+ghci> b = 3 :: Integer
 ghci> c = (fromIntegral a) :: Double
 ghci> :type c
 c :: Double
@@ -158,8 +158,8 @@ data of type `Integer`.  It would not work on data of type `Int`.  Observe GHCi
 throwing a tantrum.
 
 ```haskell
-ghci> a = (4 :: Int)
-ghci> b = (4 :: Integer)
+ghci> a = 4 :: Int
+ghci> b = 4 :: Integer
 ghci> (fromInteger b) :: Double
 4.0
 ghci> (fromInteger a) :: Double

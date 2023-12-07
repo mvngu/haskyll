@@ -63,8 +63,8 @@ possibility of integer overflow. The following GHCi session demonstrates the
 issue.
 
 ```haskell
-ghci> k = (minBound :: Int)
-ghci> n = (maxBound :: Int)
+ghci> k = minBound :: Int
+ghci> n = maxBound :: Int
 ghci> :type k
 k :: Int
 ghci> :type n
@@ -91,8 +91,8 @@ The above GHCi session also shows that [`Int`][int] supports integer addition
 and subtraction. What about integer multiplication?
 
 ```haskell
-ghci> a = (4 :: Int)
-ghci> b = (2 :: Int)
+ghci> a = 4 :: Int
+ghci> b = 2 :: Int
 ghci> c = a * b
 ghci> :type c
 c :: Int
@@ -104,8 +104,8 @@ So far so good. What about integer division? We know that $4 / 2 = 2$. Let's use
 Haskell to confirm our result.
 
 ```haskell
-ghci> a = (4 :: Int)
-ghci> b = (2 :: Int)
+ghci> a = 4 :: Int
+ghci> b = 2 :: Int
 ghci> a / b
 
 <interactive>:3:3: error:
@@ -136,9 +136,9 @@ intention is to obtain the quotient when dividing one integer by another
 integer. Observe the following GHCi session.
 
 ```haskell
-ghci> a = (5 :: Int)
-ghci> b = (4 :: Int)
-ghci> c = (2 :: Int)
+ghci> a = 5 :: Int
+ghci> b = 4 :: Int
+ghci> c = 2 :: Int
 ghci> div a c
 2
 ghci> div b c
@@ -216,8 +216,8 @@ second argument. We have seen infix notation already in the section
 session to refresh your memory.
 
 ```haskell
-ghci> a = (6 :: Int)
-ghci> b = (2 :: Int)
+ghci> a = 6 :: Int
+ghci> b = 2 :: Int
 ghci> a + b
 8
 ghci> a - b
@@ -236,8 +236,8 @@ function name. The method [`quot`][quot] can also be used via infix notation
 like so:
 
 ```haskell
-ghci> a = (6 :: Int)
-ghci> b = (4 :: Int)
+ghci> a = 6 :: Int
+ghci> b = 4 :: Int
 ghci> quot a b
 1
 ghci> a `quot` b
@@ -250,8 +250,8 @@ used via infix notation, how can we use it via prefix notation? We surround the
 operator with parentheses, as shown in the next GHCi session.
 
 ```haskell
-ghci> a = (7 :: Int)
-ghci> b = (3 :: Int)
+ghci> a = 7 :: Int
+ghci> b = 3 :: Int
 ghci> a + b
 10
 ghci> (+) a b
@@ -285,8 +285,8 @@ ghci> minBound :: Int
 -9223372036854775808
 ghci> maxBound :: Int
 9223372036854775807
-ghci> k = (-9223372036854775808 :: Integer)
-ghci> n = (9223372036854775807 :: Integer)
+ghci> k = -9223372036854775808 :: Integer
+ghci> n = 9223372036854775807 :: Integer
 ghci> k - n
 -18446744073709551615
 ghci> k * n
@@ -386,8 +386,8 @@ where we discussed backticks as a way to use a method or function in infix
 notation. Recall that integer division can be written as:
 
 ```haskell
-ghci> a = (8 :: Integer)
-ghci> b = (3 :: Integer)
+ghci> a = 8 :: Integer
+ghci> b = 3 :: Integer
 ghci> div a b -- prefix notation
 2
 ghci> a `div` b -- infix notation
