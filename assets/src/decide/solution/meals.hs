@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Tabby's meals on Monday and Friday.
 main = do

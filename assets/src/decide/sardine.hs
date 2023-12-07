@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Sardine day.
 main = do

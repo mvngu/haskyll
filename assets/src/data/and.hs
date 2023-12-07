@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Boolean and.
 main = do

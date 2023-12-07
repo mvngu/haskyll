@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Calculate the area of a circle.
 -- Use the function printf for string formatting.

@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Same or different?
 main = do

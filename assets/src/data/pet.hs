@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 main = do
     let likeCat = True

@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Extract a substring between indices i and j, inclusive.
 main = do

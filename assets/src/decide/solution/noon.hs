@@ -1,5 +1,5 @@
-import           Data.Time
-import           Text.Printf
+import Data.Time
+import Text.Printf
 
 -- Is it noon yet?
 main = do

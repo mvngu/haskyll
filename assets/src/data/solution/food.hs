@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Tabby's food preferences.
 main = do

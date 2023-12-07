@@ -1,5 +1,5 @@
-import           Data.Time
-import           Text.Printf
+import Data.Time
+import Text.Printf
 
 -- The current day of the week.
 main = do

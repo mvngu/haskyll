@@ -1,5 +1,5 @@
-import           Data.Bits
-import           Text.Printf
+import Data.Bits
+import Text.Printf
 
 -- Sam's pet preferences.
 main = do

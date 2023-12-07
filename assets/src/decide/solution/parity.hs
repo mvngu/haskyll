@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Whether an integer is even or odd.
 main = do

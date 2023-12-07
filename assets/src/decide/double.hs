@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Double an integer.
 main = do

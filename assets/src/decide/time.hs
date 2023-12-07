@@ -1,5 +1,5 @@
-import           Data.Time
-import           Text.Printf
+import Data.Time
+import Text.Printf
 
 -- Current time of the day in 24-hour format.
 main = do

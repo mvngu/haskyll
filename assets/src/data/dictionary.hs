@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- A small dictionary.
 main = do

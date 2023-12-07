@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- A saying for each day of the week.
 main = do

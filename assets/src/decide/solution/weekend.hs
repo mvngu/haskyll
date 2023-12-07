@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Is it weekend yet?
 main = do

@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- The minimum of two integers.
 main = do

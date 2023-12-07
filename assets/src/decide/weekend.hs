@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Todo lists for the weekend.
 main = do

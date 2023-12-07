@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Swap the first and last characters of a string with each other.
 main = do

@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- The maximum of two integers.
 main = do

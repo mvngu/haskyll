@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- The absolute value of a number.
 main = do

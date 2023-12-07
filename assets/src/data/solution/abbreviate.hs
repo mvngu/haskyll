@@ -1,5 +1,5 @@
-import           Data.Char
-import           Text.Printf
+import Data.Char
+import Text.Printf
 
 -- Abbreviate a two-word phrase.
 main = do

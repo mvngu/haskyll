@@ -1,4 +1,4 @@
-import           Text.Printf
+import Text.Printf
 
 -- Relationship between two integers.
 main = do

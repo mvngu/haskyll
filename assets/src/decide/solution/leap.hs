@@ -1,5 +1,5 @@
-import           Data.Time
-import           Text.Printf
+import Data.Time
+import Text.Printf
 
 -- Whether the current year is a leap year.
 main = do
