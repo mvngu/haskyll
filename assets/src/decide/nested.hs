@@ -6,8 +6,8 @@ main = do
     a <- getLine
     putStrLn "Enter second integer."
     b <- getLine
-    let k = (read a :: Integer)
-    let n = (read b :: Integer)
+    let k = read a :: Integer
+    let n = read b :: Integer
     let relation =
             if k < n
                 then "less than"
