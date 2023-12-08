@@ -169,7 +169,7 @@ weekend.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="ex_even_odd"
 Write a program that prompts for an integer. Output whether the given integer is
 even or odd.
 <!-- prettier-ignore-end -->
