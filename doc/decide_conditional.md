@@ -227,7 +227,7 @@ then output the string `"It's high noon"`. Otherwise output the string
 :include: file="assets/src/decide/time.hs", name="time.hs"
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="ex_absolute_value"
 The absolute value of a number $x$ is defined as:
 <!-- prettier-ignore-end -->
 
