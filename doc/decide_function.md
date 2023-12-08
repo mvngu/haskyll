@@ -101,10 +101,46 @@ been defining the function `main`, i.e. use the keyword `do`.
 
 <!--=========================================================================-->
 
+## Multiple parameters
+
+We have already used many functions that take more than a single parameter. The
+various arithmetic operators are binary in that each requires two parameters.
+The mathematical methods [`compare`][compare], [`div`][div], and [`mod`][mod]
+each takes two parameters, so does the string function [`splitAt`][splitAt].
+Let's implement our own function to calculate the maximum of two integers.
+Consider the code below.
+
+:include: file="assets/src/decide/max.hs", name="max.hs"
+
+You might have noticed several issues regarding the above definition of the
+function `maxInt`. First, why are there two right arrow symbols `->` in the
+signature of the function? The type of `maxInt` is
+`Integer -> Integer -> Integer`. This means that, going from left to right in
+the signature, `maxInt` takes a value of type `Integer` and another value of
+type `Integer`, then outputs a value of type `Integer`. You can think of the
+first two type names, i.e. `Integer -> Integer`, as declaring the types of the
+parameters of `maxInt`. Second, why the lack of a `do` block despite the
+definition of `maxInt` spanning multiple lines? Recall from the section
+[I can't decide](../decide_conditional/) that the construct `if...then...else`
+is a conditional expression. The Haskell compiler will treat such construct as
+an expression even if you indent the `then` and `else` clauses on separate
+lines. Third, why define our own function to calculate the maximum of two
+integers when the standard Haskell library already has the functions
+[`max`][max] and [`maximum`][maximum]? We define our own version of the standard
+library functions as a learning exercise.
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
+[compare]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:compare
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
+[div]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
 [isNumber]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:isNumber
+[max]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:max
+[maximum]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maximum
+[mod]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:mod
 [negate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
 [putStrLn]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
+[splitAt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:splitAt
 [toUpper]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:toUpper
 <!-- prettier-ignore-end -->
