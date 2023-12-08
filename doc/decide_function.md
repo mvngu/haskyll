@@ -239,16 +239,111 @@ evaluated value of the function.
 
 <!--=========================================================================-->
 
+## Exercises
+
+<!-- prettier-ignore-start -->
+:exercise:
+In the section [The string and I](../data_string/), we used the functions
+[`fst`][fst], [`snd`][snd], and [`splitAt`][splitAt]. Determine the signature of
+each function.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+[This exercise](../decide_conditional/#ex_even_odd) from the section
+[I can't decide ](../decide_conditional/) requests a program to determine
+whether an integer (entered via the command line) is even or odd. Modify your
+program so that the code to determine whether an integer is even or odd is
+encapsulated within a function other than `main`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Modify the function `maxInt` in the program
+:script: file="assets/src/decide/max.hs", name="max.hs"
+to output the minimum of two integers.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function that reverses the case of a string. If the string is
+capitalized, then uncapitalize the string. If the string is not capitalized,
+then capitalize the string.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function that, given a positive integer $n$, calculates the sum of all
+positive integers from 1 up to and including $n$.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+A temperature value in Fahrenheit can be converted to Celsius via the formula
+<!-- prettier-ignore-end -->
+
+$$
+\text{Celsius}
+=
+\frac{
+  \text{Fahrenheit} - 32
+}{
+  1.8
+}.
+$$
+
+Write a function that converts a temperature value from Fahrenheit to Celsius.
+Write another function that converts a temperature value from Celsius to
+Fahrenheit.
+
+<!-- prettier-ignore-start -->
+:exercise:
+The quadratic equation is the expression
+<!-- prettier-ignore-end -->
+
+$$
+ax^2 + bx + c = 0
+$$
+
+where $a,b,c$ are real numbers such that $a \neq 0$. Write a function that
+determines a value of $x$ satisfying the quadratic equation.
+
+<!-- prettier-ignore-start -->
+:exercise:
+You are given the radius of a circle. Write a separate function to calculate
+each of the following properties of a circle: diameter, circumference, area.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Repeat the exercise on
+[absolute value](../decide_conditional/#ex_absolute_value), but use a function
+(other than `main`) to encapsulate the code that calculates the absolute value
+of a number.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function that removes the middle character of a string. If the string
+has an even number of characters, there would be two middle characters; remove
+both middle characters. You might find the method [`length`][length] useful.
+<!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [compare]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:compare
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [div]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
+[fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [isNumber]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:isNumber
+[length]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:length
 [max]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:max
 [maximum]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:maximum
 [mod]: https://web.archive.org/web/20231201225313/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:mod
 [negate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
 [putStrLn]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
+[snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
 [splitAt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:splitAt
 [toUpper]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:toUpper
 <!-- prettier-ignore-end -->
