@@ -357,7 +357,7 @@ pyramid originally had a height of 146.6 metres.
 
 [^b]:
     These definitions of `div` and `quot` are consistent with the specification
-    as given in the document [Haskell 2010: Language Report][haskell2010].
+    as given in the document [Haskell 2010 Language Report][haskell2010].
 
 [^c]:
     Donald E. Knuth. _The Art of Computer Programming_, 3rd edition, volume 1.
