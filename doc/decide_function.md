@@ -69,8 +69,30 @@ The function `putStrLn` takes a string as its input and outputs a value of type
 
 <!--=========================================================================-->
 
+## DIY
+
+Enough of pre-defined functions. Let's define a function of our own. The
+function takes an integer as input and outputs the same integer, but with the
+sign flipped. The integer 2 would become $-2$ and $-42$ would become 42. See
+below for the signature of our function together with its definition.
+
+:include: file="assets/src/decide/negate.hs", name="negate.hs"
+
+I can hear you protest, "But the Haskell library already has its own function to
+reverse the sign of a number. It's the function [`negate`][negate]." OK. Let's
+define a function that takes a string and converts the first character of the
+string to uppercase. This is different from the library function
+[`toUpper`][toUpper] in that our function has a string as input and outputs a
+string. It's true, honest. Have a look.
+
+:include: file="assets/src/decide/upper.hs", name="upper.hs"
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [isNumber]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:isNumber
+[negate]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:negate
 [putStrLn]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
+[toUpper]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:toUpper
 <!-- prettier-ignore-end -->
