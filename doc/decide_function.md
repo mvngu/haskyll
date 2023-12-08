@@ -131,6 +131,114 @@ library functions as a learning exercise.
 
 <!--=========================================================================-->
 
+## No refund, no return
+
+Defining our own functions is great, but why is there no return statement in any
+of the functions defined above? Programmers who come from languages such as C,
+C++, Go, Java, JavaScript, Python, etc. would use a return statement to signal
+the output of a function. Ruby and R programmers are comfortable without an
+explicit return statement. Why?
+
+Haskell evaluates expressions. The definition of a function is itself an
+expression, even if the definition uses a `do` block. The keyword `do` is merely
+syntactic sugar to help you write Haskell code as if you are writing code in a
+language such as C, JavaScript, or Python. The output of a Haskell function, or
+the value that the function "returns", is the final computed value in the
+function's definition. Let's elaborate on the latter statement.
+
+<!-- prettier-ignore-start -->
+Take for instance the program
+:script: file="assets/src/decide/negate.hs", name="negate.hs"
+and the definition of the function `negateInt`. Given an integer $x$, the output
+of the function is the expression `-1 * x` because that is the final (and only)
+evaluated value. If you were to translate the definition of `negateInt` into a
+mathematical equation, you would write something like the following:
+<!-- prettier-ignore-end -->
+
+$$
+f(x)
+=
+-x.
+$$
+
+Notice the lack of a "return" statement. The expression on the right-hand side
+of the equal sign `=` defines the value of the function application $f(x)$.
+
+<!-- prettier-ignore-start -->
+Next, consider the program
+:script: file="assets/src/decide/chop.hs", name="chop.hs"
+and the definition of the function `chopSuey`. The final value as evaluated by
+the function is the output of the function application
+`capitalize $ reverse torso`. Whatever line(s) of code preceding the latter
+function application is merely a setup to get the right kind of data to feed to
+the function `capitalize`.
+<!-- prettier-ignore-end -->
+
+We can draw an analogy with how complicated expressions are defined in
+mathematics. Consider a quadratic equation written in the general form
+
+$$
+ax^2 + bx + c
+=
+0
+$$
+
+where $a,b,c$ are real numbers and $a \neq 0$. The solution to the quadratic
+equation is the formula
+
+$$
+x
+=
+\frac{
+  -b \pm \sqrt{b^2 - 4ac}
+}{
+  2a
+}.
+$$
+
+The expression $b^2 - 4ac$ is commonly known as the discriminant and denoted
+$\Delta$. The quadratic formula can therefore be written as
+
+$$
+x
+=
+\frac{
+  -b \pm \sqrt{\Delta}
+}{
+  2a
+}
+$$
+
+where $\Delta = b^2 - 4ac$. The expression $\Delta = b^2 - 4ac$ is a setup or
+auxiliary expression to help us parse the quadratic formula.
+
+<!-- prettier-ignore-start -->
+Finally, let's examine the program
+:script: file="assets/src/decide/max.hs", name="max.hs"
+and the definition of the function `maxInt`. The function is defined in terms of
+a conditional expression, a branching of paths if you like. The final value of
+the function depends on the boolean value of the expression `x > y`. If the
+expression evaluates to `True`, the final value of the function is the
+expression in the `then` clause. If `x > y` happens to evaluate to `False`, the
+final value of the function is the expression in the `else` clause. Again, you
+might ask, "Why no explicit return statement?" Translate the definition of
+`maxInt` to a mathematical expression:
+<!-- prettier-ignore-end -->
+
+$$
+\text{max}(x,\, y)
+=
+\begin{cases}
+x,& \text{if } x > y,\\[8pt]
+y,& \text{otherwise}.
+\end{cases}
+$$
+
+Haskell evaluates expressions. The output of a Haskell function is the final,
+evaluated value of the function.
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [compare]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:compare
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
