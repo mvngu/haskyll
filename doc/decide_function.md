@@ -89,6 +89,18 @@ string. It's true, honest. Have a look.
 
 <!--=========================================================================-->
 
+## I `do`
+
+We have been defining one-liner functions. How about a function whose definition
+spans multiple lines? We want a function that takes a string and removes the
+first and last characters of the string. The result is then reversed and we
+capitalize the resulting string. How would we do that? Do it like how we have
+been defining the function `main`, i.e. use the keyword `do`.
+
+:include: file="assets/src/decide/chop.hs", name="chop.hs"
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [isNumber]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:isNumber
