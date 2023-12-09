@@ -4,7 +4,7 @@ main = do
     name <- getLine
     putStrLn "Enter your age."
     age <- getLine
-    let a = (read age :: Integer)
+    let a = read age :: Integer
     let x = 10
     putStrLn ("Hello, " ++ name ++ ".")
     putStrLn ("In " ++ show x ++ " years, you'll be " ++ show (a + x) ++ ".")

@@ -8,7 +8,7 @@ main = do
     start <- getLine
     putStrLn "Enter end index."
     end <- getLine
-    let i = (read start :: Int)
+    let i = read start :: Int
     let j = (read end :: Int) + 1
     let sub = drop i (take j str)
     putStrLn (printf "Substring of %s is %s" str sub)

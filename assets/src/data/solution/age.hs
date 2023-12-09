@@ -4,8 +4,8 @@
 --
 -- without using string concatenation.
 main = do
-    let age = (1 :: Integer)
-    let x = (3 :: Integer)
+    let age = 1 :: Integer
+    let x = 3 :: Integer
     putStr "Tabby's age: "
     putStr (show age)
     putStr "\n"
