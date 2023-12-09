@@ -10,20 +10,18 @@ quadratic a b c = do
                  then "No real roots"
                  else show $ ((-b) + (sqrt delta)) / (2 * a)
 
-main
-    -- Two real roots.
- = do
-    let a = 1 / 2 :: Double
+main = do
+    let a = 1 / 2 :: Double -- Two real roots.
     let b = -(5 / 2) :: Double
     let c = 2 :: Double
-    --
     -- Two complex roots.
-    -- let a = 5 :: Double
-    -- let b = 20 :: Double
-    -- let c = 32 :: Double
-    --
+    let aa = 5 :: Double
+    let bb = 20 :: Double
+    let cc = 32 :: Double
     -- a is zero
-    -- let a = 0 :: Double
-    -- let b = 1 :: Double
-    -- let c = 2 :: Double
+    let aaa = 0 :: Double
+    let bbb = 1 :: Double
+    let ccc = 2 :: Double
     printf "Solution: %s\n" $ quadratic a b c
+    printf "Solution: %s\n" $ quadratic aa bb cc
+    printf "Solution: %s\n" $ quadratic aaa bbb ccc
