@@ -1,6 +1,6 @@
 import Text.Printf
 
--- The cup size corresponding to a coffee beverage.
+-- | The cup size corresponding to a coffee beverage.
 cupSize :: String -> String
 cupSize drink
     | drink == "espresso" = "56--85 ml"

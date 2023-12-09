@@ -1,7 +1,7 @@
 import Data.Char
 import Text.Printf
 
--- Reverse the case of a string.
+-- | Reverse the case of a string.
 flipCase :: String -> String
 flipCase str =
     if isLower $ head str

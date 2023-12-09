@@ -1,10 +1,10 @@
 import Text.Printf
 
--- Convert a temperature value from Fahrenheit to Celsius.
+-- | Convert a temperature value from Fahrenheit to Celsius.
 toCelsius :: Double -> Double
 toCelsius x = (x - 32.0) / 1.8
 
--- Convert a temperature value from Celsius to Fahrenheit.
+-- | Convert a temperature value from Celsius to Fahrenheit.
 toFahrenheit :: Double -> Double
 toFahrenheit x = (x * 1.8) + 32.0
 

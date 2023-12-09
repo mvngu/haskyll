@@ -1,6 +1,6 @@
 import Text.Printf
 
--- The triangular number.
+-- | The triangular number.
 trinum :: Integer -> Integer
 trinum x = div (x * (x + 1)) 2
 

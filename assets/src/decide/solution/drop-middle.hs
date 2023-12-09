@@ -1,4 +1,4 @@
--- Remove the middle character(s) of a string.
+-- | Remove the middle character(s) of a string.
 dropMid :: String -> String
 dropMid str = do
     let k = length str

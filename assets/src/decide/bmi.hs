@@ -1,11 +1,11 @@
 import Text.Printf
 
--- The body mass index (BMI).  Weight is in kilograms and height is
+-- | The body mass index (BMI).  Weight is in kilograms and height is
 -- in metres.
 bmi :: Double -> Double -> Double
 bmi weight height = weight / (height ** 2)
 
--- The weight status of an adult 20 years or older, based on their BMI.
+-- | The weight status of an adult 20 years or older, based on their BMI.
 weightStatus :: Double -> String
 weightStatus bm
     | bm < 18.5 = "underweight"

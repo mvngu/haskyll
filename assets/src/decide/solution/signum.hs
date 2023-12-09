@@ -1,6 +1,6 @@
 import Text.Printf
 
--- The signum function.
+-- | The signum function.
 sgn :: Double -> Integer
 sgn x
     | x < 0 = -1 :: Integer

@@ -1,6 +1,6 @@
 import Text.Printf
 
--- Relationship between two integers.
+-- | Relationship between two integers.
 relation :: Integer -> Integer -> String
 relation a b
     | a < b = "less than"

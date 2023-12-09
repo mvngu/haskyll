@@ -1,14 +1,14 @@
 import Text.Printf
 
--- The area of a circle.
+-- | The area of a circle.
 area :: Double -> Double
 area x = pi * (x ** 2)
 
--- The circumference of a circle.
+-- | The circumference of a circle.
 circumference :: Double -> Double
 circumference x = pi * (diameter x)
 
--- The diameter of a circle.
+-- | The diameter of a circle.
 diameter :: Double -> Double
 diameter x = 2 * x
 

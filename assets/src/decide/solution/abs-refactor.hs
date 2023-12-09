@@ -1,6 +1,6 @@
 import Text.Printf
 
--- The absolute value of a number.
+-- | The absolute value of a number.
 absolute :: Double -> Double
 absolute x =
     if x >= 0
