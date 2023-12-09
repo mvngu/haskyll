@@ -58,6 +58,26 @@ def get_file_name(dir)
     return [file, name]
 end
 
+# Embed source code into a document.  The inclusion follows this format:
+#
+# :include: file="/path/to/source/file.extension", name="short name"
+#
+# The source code will be placed between two sets of triple backticks.  The
+# extension of the included file will be used to infer syntax highlighting.
+#
+# @param line A line that specifies the inclusion format.
+# @returns A string containing the source code to include in our document.
+def include_src(line)
+    content = ""
+    new_line = line.gsub(/:include:/, "").strip
+    file, = get_file_name(new_line)
+    content += create_link(new_line)
+    content += format("```%s\n", infer_language(file))
+    content += get_content(file)
+    content += "```\n"
+    return content
+end
+
 # Infer the programming language from the extension of the source file.
 #
 # @param file Path to a source file.
@@ -75,11 +95,7 @@ end
 # (1) Include within a section or chapter a source file that has programming
 #     code.  The inclusion follows this format:
 #
-#     :include: file="/path/to/source/file.extension", name="a short name"
-#
-#     The source code will be placed between two sets of triple backticks.
-#     The extension of the included file will be used to infer syntax
-#     highlighting.
+#     :include: file="/path/to/source/file.extension", name="short name", start=k, end=n
 # (2) Link to a source file.  The linking follows this format:
 #
 #     :script: file="/path/to/source/file.extension", name="a short name"
@@ -95,12 +111,7 @@ def main
     content = ""
     File.foreach(doc) do |line|
         if line.strip.start_with?(in_delim)
-            new_line = line.gsub(/:include:/, "").strip
-            file, = get_file_name(new_line)
-            content += create_link(new_line)
-            content += format("```%s\n", infer_language(file))
-            content += get_content(file)
-            content += "```\n"
+            content += include_src(line)
         elsif line.strip.start_with?(sc_delim)
             new_line = line.gsub(/:script:/, "").strip
             content += create_link(new_line)
