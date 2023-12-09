@@ -268,7 +268,7 @@ halved value. If the current year is not a leap year, output the string
 current year.
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="ex_daily_saying"
 The weekdays are Monday, Tuesday, Wednesday, Thursday, and Friday. The weekend
 consists of Saturday and Sunday. Write a program to prompt for the current day
 of the week. If it is a weekday, output the string `"It's a weekday"`. If the
