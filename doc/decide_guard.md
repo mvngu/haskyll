@@ -76,6 +76,40 @@ your guarded equation.
 
 <!--=========================================================================-->
 
+## Body mass index
+
+The [body mass index][bmi] (BMI) is a quick and easy way to assess a person's
+health in terms of their weight and height. The formula is given as
+
+$$
+\text{BMI}
+=
+\frac{
+  \text{weight}
+}{
+  \text{height} \times \text{height}
+}
+$$
+
+where the weight (or mass) is measured in kilograms and the height is measured
+in metres. According to the [US Centers for Disease Control and
+Prevention][usCDC] (CDC), an adult of 20 years or older can be categorized as
+follows according to their BMI.
+
+| BMI           | Status         |
+| :------------ | :------------- |
+| below 18.5    | underweight    |
+| 18.5--24.9    | healthy weight |
+| 25.0--29.9    | overweight     |
+| 30.0 or above | obese          |
+
+The information in the above table is translated to a guarded equation as
+follows.
+
+:include: file="assets/src/decide/bmi.hs", name="bmi.hs", line=8:15
+
+<!--=========================================================================-->
+
 [^a]:
     A recurring salesman from _Horrible History_. See him in [action
     here][shoutyMan].
@@ -83,6 +117,7 @@ your guarded equation.
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[bmi]: https://web.archive.org/web/20231202071810/https://en.wikipedia.org/wiki/Body_mass_index
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
 [shoutyMan]: https://youtu.be/x7WiPl5s91A
 <!-- prettier-ignore-end -->
