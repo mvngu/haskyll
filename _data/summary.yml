@@ -31,3 +31,5 @@ toc:
       url: /decide_function/
     - title: En garde!
       url: /decide_guard/
+    - title: Pattern matching
+      url: /decide_pattern/
