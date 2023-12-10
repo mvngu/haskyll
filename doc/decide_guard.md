@@ -110,6 +110,27 @@ follows.
 
 <!--=========================================================================-->
 
+## Java example
+
+Different coffee beverages are best served with cups of various sizes. According
+to [this website][coffeeCup], the cup sizes corresponding to some drinks are as
+given below.
+
+| Drink       | Cup size    |
+| :---------- | :---------- |
+| espresso    | 56--85 ml   |
+| cappuccino  | 142--170 ml |
+| latte       | 227--426 ml |
+| frappuccino | 312--426 ml |
+
+Your mission, should you choose to accept it, is to write a function that takes
+the name of a caffeinated drink and outputs the corresponding cup size. Did you
+decline? No problem. Below is a translation of the above table to Haskell code.
+
+:include: file="assets/src/decide/coffee.hs", name="coffee.hs", line=3:10
+
+<!--=========================================================================-->
+
 [^a]:
     A recurring salesman from _Horrible History_. See him in [action
     here][shoutyMan].
@@ -118,6 +139,7 @@ follows.
 
 <!-- prettier-ignore-start -->
 [bmi]: https://web.archive.org/web/20231202071810/https://en.wikipedia.org/wiki/Body_mass_index
+[coffeeCup]: https://web.archive.org/web/20230410035003/https://fluentincoffee.com/coffee-cup-sizes-chart/
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
 [shoutyMan]: https://youtu.be/x7WiPl5s91A
 <!-- prettier-ignore-end -->
