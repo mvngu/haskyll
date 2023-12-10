@@ -22,6 +22,8 @@ toc:
       url: /data_bool/
     - title: Compare the pair
       url: /data_compare/
+    - title: You're not on the list
+      url: /data_list/
 - title: Decision, decision
   url: /decide_README/
   subfolder:
