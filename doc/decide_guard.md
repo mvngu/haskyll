@@ -131,6 +131,126 @@ decline? No problem. Below is a translation of the above table to Haskell code.
 
 <!--=========================================================================-->
 
+## Exercises
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a guarded equation to determine the minimum of two integers.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Rewrite the program
+:script: file="assets/src/decide/nested.hs", name="nested.hs"
+by using guarded equation.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The [sign or signum function][signFunction] is defined as follows:
+<!-- prettier-ignore-end -->
+
+$$
+\text{sgn}(x)
+=
+\begin{cases}
+-1,& \text{if } x < 0,\\[8pt]
+0,& \text{if } x = 0,\\[8pt]
+1,& \text{if } x > 0.
+\end{cases}
+$$
+
+Implement the sign function as a Haskell guarded equation.
+
+<!-- prettier-ignore-start -->
+:exercise:
+Repeat the [daily saying exercise](../decide_conditional/#ex_daily_saying), but
+use guarded equation.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The [triangular function][triangularFunction] is defined as:
+<!-- prettier-ignore-end -->
+
+$$
+\text{tri}(x)
+=
+\begin{cases}
+1 - |x|,& \text{if } |x| < 1,\\[8pt]
+0,& \text{otherwise}.
+\end{cases}
+$$
+
+Implement the triangular function as a guarded equation.
+
+<!-- prettier-ignore-start -->
+:exercise:
+The size of a college in the USA [can be categorized][collegeSize] according to
+the number of students the college has.  Refer to the table below.
+<!-- prettier-ignore-end -->
+
+| Students            | Size   |
+| :------------------ | :----- |
+| less than 5,000     | small  |
+| 5,000 to 15,000     | medium |
+| greater than 15,000 | large  |
+
+Implement the above table as a guarded equation.
+
+<!-- prettier-ignore-start -->
+:exercise:
+In the USA, the size of woman's clothing can be designated by a number between 0
+and 22. We can [assign the size to a category][womanSize] as given below.
+<!-- prettier-ignore-end -->
+
+| Numeric size | Category |
+| :----------- | :------- |
+| 0--2         | XS       |
+| 4--6         | S        |
+| 8--10        | M        |
+| 12--14       | L        |
+| 16--18       | XL       |
+| 20           | XXL      |
+| 22           | XXXL     |
+
+Implement the above table as a guarded equation.
+
+<!-- prettier-ignore-start -->
+:exercise:
+A quadratic equation can be written in the general form
+<!-- prettier-ignore-end -->
+
+$$
+ax^2 + bx + c = 0
+$$
+
+where $a,b,c$ are real numbers with $a \neq 0$. The solution(s) to a quadratic
+equation depends on the value of the discriminant $\Delta = b^2 - 4ac$. In
+particular, we have the following cases:
+
+1. If $\Delta > 0$, then we have two distinct real solutions.
+1. If $\Delta = 0$, then we have a repeated real solution.
+1. If $\Delta < 0$, then we have two distinct complex solutions.
+
+Write a guarded equation to determine the type of solutions of a given quadratic
+equation.
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a Haskell function that outputs the body mass index given an adult's
+weight (kilogram) and height (metre). Use your implementation to test the
+function `weightStatus` from the section [Body mass index](#body-mass-index).
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Repeat the exercise on [absolute value](../decide_conditional/#ex_absolute_value),
+but implement a guarded equation.
+<!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
 [^a]:
     A recurring salesman from _Horrible History_. See him in [action
     here][shoutyMan].
@@ -140,6 +260,11 @@ decline? No problem. Below is a translation of the above table to Haskell code.
 <!-- prettier-ignore-start -->
 [bmi]: https://web.archive.org/web/20231202071810/https://en.wikipedia.org/wiki/Body_mass_index
 [coffeeCup]: https://web.archive.org/web/20230410035003/https://fluentincoffee.com/coffee-cup-sizes-chart/
+[collegeSize]: https://web.archive.org/web/20231209104604/https://www.collegedata.com/resources/the-facts-on-fit/college-size-small-medium-or-large
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
 [shoutyMan]: https://youtu.be/x7WiPl5s91A
+[signFunction]: https://web.archive.org/web/20231202004602/https://en.wikipedia.org/wiki/Sign_function
+[triangularFunction]: https://web.archive.org/web/20231123204312/https://en.wikipedia.org/wiki/Triangular_function
+[usCDC]: https://web.archive.org/web/20231207003413/https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html
+[womanSize]: https://web.archive.org/web/20231209104319/https://threadcurve.com/womans-clothing-size-conversion-chart/
 <!-- prettier-ignore-end -->
