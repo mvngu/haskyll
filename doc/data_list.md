@@ -439,7 +439,110 @@ rigmarole of `splitAt` and `fst` (or `snd`) and indexing.
 
 <!--=========================================================================-->
 
+## Exercises
+
 <!-- prettier-ignore-start -->
+:exercise:
+Is each list construction below valid? Why or why not?
+<!-- prettier-ignore-end -->
+
+-   `'a' : "b"`
+-   `'a' : 'b'`
+-   `[1] : [2]`
+-   `[1]: [[2]]`
+
+<!-- prettier-ignore-start -->
+:exercise:
+The function [`reverse`][reverse] takes a list and reverses its elements. Use
+`reverse` to simulate the functionalities of `head`, `last`, `init`, and `tail`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The function [`and`][and] takes a list of boolean values and outputs whether all
+of those values are `True`. Similarly, the function [`or`][or] takes a list of
+boolean values and outputs whether one of the values is `True`. Use `and` and
+`or` to simulate the operators `&&` and `||`, respectively.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Use `reverse` to simulate the functionalities of `take` and `drop`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Use `splitAt` to simulate the functionalities of `head` and `last`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Use `splitAt` to remove the middle element of the list `[1, 2, 3, 4, 5]`. Repeat
+the exercise, but without using `splitAt`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Access the element in the middle of the list:
+<!-- prettier-ignore-end -->
+
+```haskell
+["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+```
+
+<!-- prettier-ignore-start -->
+:exercise:
+The range notation `..` allows you to create a list of integers. Two useful ways
+to create lists of numbers are:
+<!-- prettier-ignore-end -->
+
+1. The format `[first..last]` creates a list of integers with the first number
+   being `first` and the last being `last`. The numbers in between are integers
+   greater than `first`, but less than `last`. Successive integers are increased
+   by a step size of one.
+1. The format `[first, second..last]` is more general than the previous format.
+   It allows you to create a list integers where the step size is the difference
+   between `first` and `second`.
+
+Use the first format to create a list of integers between one and ten,
+inclusive. Repeat the exercise but use the second format. Use the second format
+to create a list of odd integers between zero and 20, inclusive. Repeat the
+exercise, but create even integers.
+
+<!-- prettier-ignore-start -->
+:exercise:
+The function [`zip`][zip] takes two lists $A$ and $B$ and outputs a list of
+pairs in corresponding positions. The first element of $A$ is paired with the
+first element of $B$, the second element of $A$ is paired with the second
+element of $B$, and so on. Given the list of VIPs:
+<!-- prettier-ignore-end -->
+
+```haskell
+["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona", "Gwen", "Harry"]
+```
+
+assign an ID to each person. Then use `zip` to construct a list of name/ID
+pairs.
+
+<!-- prettier-ignore-start -->
+:exercise:
+The function [`unzip`][unzip] takes a list of ordered pairs and deconstruct them
+into a tuple of two lists: a left list and a right list. The left list consists
+of the first elements of each pair. The right list has all the second elements
+of each pair. Use `unzip` to deconstruct the list
+<!-- prettier-ignore-end -->
+
+```haskell
+[(1,"a"), (2,"b"), (3,"c"), (4,"d")]
+```
+
+into a tuple of left and right lists. Apply `concat` to the right list, then
+`zip` the left list with the result. What do you notice?
+
+<!--=========================================================================-->
+
+<!-- prettier-ignore-start -->
+[and]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:and
 [concat]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:concat
 [drop]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:drop
 [elem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:elem
@@ -451,9 +554,13 @@ rigmarole of `splitAt` and `fst` (or `snd`) and indexing.
 [length]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:length
 [notElem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:notElem
 [null]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:null
+[or]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:or
 [plusPlus]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-43--43-
+[reverse]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:reverse
 [snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
 [splitAt]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:splitAt
 [tail]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:tail
 [take]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:take
+[unzip]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:unzip
+[zip]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:zip
 <!-- prettier-ignore-end -->
