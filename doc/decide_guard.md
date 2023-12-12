@@ -182,7 +182,9 @@ $$
 \end{cases}
 $$
 
-Implement the triangular function as a guarded equation.
+Repeat the exercise on
+[absolute value](../decide_conditional/#ex_absolute_value), but implement a
+guarded equation. Then implement the triangular function as a guarded equation.
 
 <!-- prettier-ignore-start -->
 :exercise:
@@ -245,8 +247,6 @@ function `weightStatus` from the section [Body mass index](#body-mass-index).
 
 <!-- prettier-ignore-start -->
 :exercise:
-Repeat the exercise on [absolute value](../decide_conditional/#ex_absolute_value),
-but implement a guarded equation.
 <!-- prettier-ignore-end -->
 
 <!--=========================================================================-->
