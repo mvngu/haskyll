@@ -247,7 +247,12 @@ function `weightStatus` from the section [Body mass index](#body-mass-index).
 
 <!-- prettier-ignore-start -->
 :exercise:
+Using guarded equation, write a function for each of the following.
 <!-- prettier-ignore-end -->
+
+-   The maximum of three integers.
+-   The minimum of three integers.
+-   The middle of three integers.
 
 <!--=========================================================================-->
 
