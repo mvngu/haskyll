@@ -117,7 +117,76 @@ in infix notation.
 
 <!--=========================================================================-->
 
+## What, or basic properties
+
+It's a slow night for Burly the Bouncer. The queue is long, but not everyone can
+enter the Coco Hasko. Burly uses the time to memorize his list of VIPs. Early in
+the evening when the club was making preparation to open for the night, Burly's
+list of VIPs was empty because his boss was still trying to confirm the VIPs who
+would attend the club. The function [`null`][null] would output `True` when
+given his early, empty list. He now knows that the list is non-empty so the
+function `null` would output `False` when given his current list. Since the VIP
+list is non-empty, the next logical step is to find out how many people are on
+the list. Burly uses the function [`length`][length] for this purpose. Here is
+how Burly checks some basic properties of his list of VIPs.
+
+```haskell
+ghci> null []
+True
+ghci> vip = ["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> null vip
+False
+ghci> length vip
+6
+```
+
+Burly knows that the VIP list is ordered from most important to least important.
+Haskell uses non-negative integers to index lists. The first element of a list
+has index 0, the second has index 1, and so on. The operator
+[`!!`][exclaimExclaim] is usually applied in the infix notation. Given a list
+and an index, the operator `!!` outputs the element in the list at the specified
+index. Burly wants to confirm the most important and least important VIPs. Here
+goes:
+
+```haskell
+ghci> vip = ["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> vip !! 0
+"Anna"
+ghci> (!!) vip 0
+"Anna"
+ghci> vip !! (length vip)
+"*** Exception: Prelude.!!: index too large
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/List.hs:1368:14 in base:GHC.List
+  tooLarge, called at libraries/base/GHC/List.hs:1378:50 in base:GHC.List
+  !!, called at <interactive>:4:5 in interactive:Ghci4
+```
+
+The most important VIP is Anna, who occupies the position at index 0. Like other
+operators, e.g. `+` and `-`, that are usually applied in infix notation, the
+operator `!!` can be used in prefix notation by enclosing it within parentheses.
+
+Burly knows that the code `length vip` outputs the number of elements in his
+list. But why would Haskell throw a tantrum at the code `vip !! (length vip)`
+when Burly attempts to find out the least important VIP? The reason is that
+Haskell indexes a list starting from index 0. If $n$ is the number of elements
+in the list, the last element has index $n - 1$. Burly must subtract one from
+the length of his list.
+
+```haskell
+ghci> vip = ["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> vip !! ((length vip) - 1)
+"Fiona"
+```
+
+Haskell is happy now.
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [elem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:elem
+[exclaimExclaim]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-33--33-
+[length]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:length
 [notElem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:notElem
+[null]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:null
 <!-- prettier-ignore-end -->
