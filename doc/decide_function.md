@@ -13,6 +13,12 @@ and expressions.
 
 ## Affix your signature here
 
+> _Harry:_ Oohhh... finally. My picture of the _Today_ show gang. Oohhh... My
+> favourite: Martha Stewart.\
+> _Sally:_ Is it autographed?\
+> _Harry:_ No, but she signed it.\
+> --- _3rd Rock from the Sun_, season 1, episode 2, 1996
+
 A fan upon meeting their favourite celebrity might enquire, "Can I have your
 autograph?" You, too, should ask the same question of any Haskell function you
 care to use (or abuse). Maybe not autograph, but rather the signature of a
