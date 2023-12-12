@@ -183,10 +183,55 @@ Haskell is happy now.
 
 <!--=========================================================================-->
 
+## Which, or components
+
+> Which witch is the witchiest of all?
+
+Some of the VIP guests have arrived. Burly needs to check his list and update
+them accordingly. Anna is the first to arrive. Burly already knows that Anna is
+at the top (i.e. the first element) of the list. Burly knows that the element at
+index 0 can be accessed as `vip !! 0`. The function [`head`][head] provides an
+alternative way to access the first element of the VIP list. If Anna is crossed
+off the list of VIPs, Burly can use the function [`tail`][tail] to access all
+but the first element of his list, effectively removing Anna from the list.
+
+```haskell
+ghci> vip = ["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> vip !! 0
+"Anna"
+ghci> head vip
+"Anna"
+ghci> tail vip
+["Bianca","Cary","Daniel","Ethan","Fiona"]
+```
+
+Fiona is the next VIP to arrive at club Coco Hasko. As she is at the bottom
+(i.e. the last element) of the list, her index in the updated list is the length
+of the list minus one. Another way for Burly to access the last element of his
+list is to use the function [`last`][last]. Burly crosses Fiona off his VIP list
+and then uses the function [`init`][init] to obtain all elements of the list
+except for the last element, thus removing Fiona from the list.
+
+```haskell
+ghci> vip = ["Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> vip !! ((length vip) - 1)
+"Fiona"
+ghci> last vip
+"Fiona"
+ghci> init vip
+["Bianca","Cary","Daniel","Ethan"]
+```
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [elem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:elem
 [exclaimExclaim]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-33--33-
+[head]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:head
+[init]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:init
+[last]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:last
 [length]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:length
 [notElem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:notElem
 [null]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:null
+[tail]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:tail
 <!-- prettier-ignore-end -->
