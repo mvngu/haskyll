@@ -224,7 +224,35 @@ ghci> init vip
 
 <!--=========================================================================-->
 
+## Together, or join
+
+> _Rufus:_ You want to be a public nuisance?\
+> _Chicolini:_ Sure! How much does the job pay?\
+> _Rufus:_ I got a good mind to join a club and beat you over the head with it.\
+> --- _Duck Soup_, 1933
+
+Burly the Bouncer has deleted two guests from his VIP list. He is breathing a
+sigh of relief when his boss approaches him. The boss said he is expecting
+another three VIP guests tonight: Gwen, Harry, Ira. Burly uses the operator
+[`++`][plusPlus] to append the new list to his own list. Another way to update
+his list would be for Burly to have a list of two elements: the first element is
+his own list, the second element being the list of further guests to welcome.
+Burly can then use the function [`concat`][concat] to concatenate all elements
+together into a single list. Here is Burly's code:
+
+```haskell
+ghci> vip = ["Bianca","Cary","Daniel","Ethan"]
+ghci> more = ["Gwen", "Harry", "Ira"]
+ghci> vip ++ more
+["Bianca","Cary","Daniel","Ethan","Gwen","Harry","Ira"]
+ghci> concat [vip, more]
+["Bianca","Cary","Daniel","Ethan","Gwen","Harry","Ira"]
+```
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
+[concat]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:concat
 [elem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:elem
 [exclaimExclaim]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-33--33-
 [head]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:head
@@ -233,5 +261,6 @@ ghci> init vip
 [length]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:length
 [notElem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:notElem
 [null]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:null
+[plusPlus]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-43--43-
 [tail]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:tail
 <!-- prettier-ignore-end -->
