@@ -76,3 +76,48 @@ type of its element. Other lists shown above are non-empty. Here is the crucial
 point: all elements of each list have the same type. The list `[1, 2]` is valid
 because all elements have the same type. Haskell will throw a tantrum at a list
 such as `[1, '2']` because you are mixing different types.
+
+<!--=========================================================================-->
+
+## Who, or membership
+
+> _Boy:_ Hey Billy! Hey Joey! Come on in. There's plenty of room. Sorry, not
+> you, Homer.\
+> _Homer:_ Why not!?\
+> _Boy:_ [Points to the sign, "No Homers Club".]\
+> _Homer:_ But you let in Homer Glumplich!\
+> _Homer Glumplich:_ Hyuck hyuck!\
+> _Boy:_ It says no Homers. We're allowed to have one.\
+> --- _The Simpsons_, season 6, episode 12, 1995
+
+Everyone is lining up to enter the hip replacement joint, club Coco Hasko. Burly
+the Bouncer has a list of VIPs and checks it once. When a patron attempts to
+enter the club, Burly uses the function [`elem`][elem] to query whether the
+patron's name is on his list. He might suspect that a patron is not on the list
+and would use the function [`notElem`][notElem] to confirm his suspicion. A
+typical nights goes something like this:
+
+```haskell
+ghci> vip = ["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> elem "Anne" vip
+False
+ghci> elem "Fiona" vip
+True
+ghci> "Fiona" `elem` vip
+True
+ghci> notElem "Danielle" vip
+True
+ghci> "Daniel" `notElem` vip
+False
+```
+
+The functions `elem` and `notElem` are usually applied in prefix notation.
+However, you can delimit the functions within backticks to apply the functions
+in infix notation.
+
+<!--=========================================================================-->
+
+<!-- prettier-ignore-start -->
+[elem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:elem
+[notElem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:notElem
+<!-- prettier-ignore-end -->
