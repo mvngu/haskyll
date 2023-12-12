@@ -251,10 +251,200 @@ ghci> concat [vip, more]
 
 <!--=========================================================================-->
 
+## Apart, or split
+
+> _Juliet:_ Good night, good night. Parting is such sweet sorrow\
+> That I shall say "Good night" till it be morrow.\
+> --- William Shakespeare, _Romeo and Juliet_, act 2, scene 2
+
+Joining lists together all the time is no fun. Let's play anti-Cupid and break
+up lists.
+
+<!--=========================================================================-->
+
+### I'll take these
+
+Instead of the function [`init`][init], Burly could also have used the function
+[`take`][take] to keep all elements of a list except for the last element. The
+function `take` accepts two parameters:
+
+1. The number of elements to keep, going from left to right in a list.
+1. The list to process.
+
+To remove the last element of a list, Burly would retain all but the last
+element. The integer parameter of `take` would be the length of the list minus
+one. Here is a comparison between `init` and `take`:
+
+```haskell
+ghci> vip = ["Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> init vip
+["Bianca","Cary","Daniel","Ethan"]
+ghci> take ((length vip) - 1) vip
+["Bianca","Cary","Daniel","Ethan"]
+```
+
+Unlike the function `init` which removes the last element of a list, the
+function `take` can remove multiple elements from the right side of a list.
+Consider the following scenario. The state of Burly's VIP list is:
+
+```haskell
+["Bianca","Cary","Daniel","Ethan","Gwen","Harry","Ira"]
+```
+
+Harry and Ira have arrived. They are waiting to get their names checked off
+Burly's list and be allowed inside club Coco Hasko. Burly uses the function
+`elem` to ensure that each of the two patrons are indeed on his list of VIP
+guests. Yep, these two check out OK. Burly now wants to use the function `take`
+to remove the above two VIPs from his list. The list currently has seven names.
+Removing two names is equivalent to retaining the first five names. Here is
+Burly's implementation and double check.
+
+```haskell
+ghci> vip = ["Bianca","Cary","Daniel","Ethan","Gwen","Harry","Ira"]
+ghci> take ((length vip) - 2) vip
+["Bianca","Cary","Daniel","Ethan","Gwen"]
+ghci> take 5 vip
+["Bianca","Cary","Daniel","Ethan","Gwen"]
+```
+
+<!--=========================================================================-->
+
+### Drop it
+
+Whereas `take` removes elements from the right side of a list, the function
+[`drop`][drop] removes elements from the left side of a list. The function
+`drop` takes two parameters:
+
+1. The number of elements to remove from the left side of a list.
+1. The list to process.
+
+The function `tail` is a special case of `drop` because `tail` removes the
+leftmost element. Here is a repeat of the `tail` operation from the section
+[Which, or components](#which-or-components), but compared with `drop`.
+
+```haskell
+ghci> vip = ["Anna", "Bianca", "Cary", "Daniel", "Ethan", "Fiona"]
+ghci> tail vip
+["Bianca","Cary","Daniel","Ethan","Fiona"]
+ghci> drop 1 vip
+["Bianca","Cary","Daniel","Ethan","Fiona"]
+```
+
+As noted above, `drop` is more powerful than `tail` because the former can
+remove any number of elements from the left side of a list. Consider the next
+scenario. The state of Burly's list is now:
+
+```haskell
+["Bianca","Cary","Daniel","Ethan","Gwen"]
+```
+
+Bianca and Cary have arrived and waiting for Burly to allow them admittance into
+club Coco Hasko. Burly checks off the two patrons' names on his VIP list. To
+update his list, Burly needs to drop the first two names from the list. Observe:
+
+```haskell
+ghci> vip = ["Bianca","Cary","Daniel","Ethan","Gwen"]
+ghci> drop 2 vip
+["Daniel","Ethan","Gwen"]
+```
+
+<!--=========================================================================-->
+
+### JCVD epic split
+
+The function [`splitAt`][splitAt] is a general-purpose facility for separating a
+list into two segments. Whereas [`take`][take] and [`drop`][drop] are
+generalizations of [`init`][init] and [`tail`][tail], respectively, `splitAt`
+generalizes all of the above four functions. In fact, `splitAt` can also be used
+to simulate the functionalities of [`head`][head] and [`last`][last]. The
+parameters of `splitAt` are:
+
+1. The number $n$ of elements that form the first segment, going from left to
+   right. This is the split boundary.
+1. The list $\ell$ to process.
+
+The function `splitAt` outputs a tuple containing two elements:
+
+-   The first element is a sublist of the first $n$ elements of $\ell$. This
+    sublist can be obtained by `take n ell`. Let's call the sublist the left
+    segment of $\ell$.
+-   The second element of the tuple is a sublist of the remaining elements of
+    $\ell$, excluding the first $n$ elements. This sublist can obtained by
+    `drop n ell`. Refer to the sublist as the right segment of $\ell$.
+
+Let's see `splitAt` in action.
+
+```haskell
+ghci> ell = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ghci> take 4 ell
+[1,2,3,4]
+ghci> drop 4 ell
+[5,6,7,8,9]
+ghci> (take 4 ell, drop 4 ell)
+([1,2,3,4],[5,6,7,8,9])
+ghci> splitAt 4 ell
+([1,2,3,4],[5,6,7,8,9])
+```
+
+The above GHCi session demonstrates that `splitAt` can simulate the
+functionalities of `take` and `drop`. How do you extract the respective
+sublists? As noted in the section
+[Splitting headache](../data_string/#splitting-headache), you can use the
+functions [`fst`][fst] and [`snd`][snd] to extract the first (or left) and
+second (or right) elements, respectively, of the tuple output by `splitAt`. On
+the other hand, you can destructure the tuple. Refer to the following GHCi
+session.
+
+```haskell
+ghci> ell = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ghci> (left, right) = splitAt 4 ell
+ghci> take 4 ell
+[1,2,3,4]
+ghci> fst $ splitAt 4 ell
+[1,2,3,4]
+ghci> left
+[1,2,3,4]
+ghci> drop 4 ell
+[5,6,7,8,9]
+ghci> snd $ splitAt 4 ell
+[5,6,7,8,9]
+ghci> right
+[5,6,7,8,9]
+```
+
+It should make sense now how `splitAt` can be used to simulate the
+functionalities of `head` and `last`. The function `head` extracts the first
+element of a list. This is equivalent to splitting the list at the first
+element, then retain the left element of the resulting tuple. The function
+`last` extracts the last element of a list. You can do the same thing by
+splitting the list at the penultimate element, then retain the right element of
+the tuple. The above description bears some resemblance to how you use `splitAt`
+to achieve the same functionalities as `take` and `drop`. Observe:
+
+```haskell
+ghci> ell = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ghci> head ell
+1
+ghci> (fst $ splitAt 1 ell) !! 0
+1
+ghci> last ell
+9
+ghci> (snd $ splitAt ((length ell) - 1) ell) !! 0
+9
+```
+
+Not exactly elegant, but `splitAt` gets the job done nonetheless. On second
+thought, it is more elegant and faster to use `head` and `last` than endure the
+rigmarole of `splitAt` and `fst` (or `snd`) and indexing.
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [concat]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:concat
+[drop]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:drop
 [elem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:elem
 [exclaimExclaim]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-33--33-
+[fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [head]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:head
 [init]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:init
 [last]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:last
@@ -262,5 +452,8 @@ ghci> concat [vip, more]
 [notElem]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:notElem
 [null]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:null
 [plusPlus]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:-43--43-
+[snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
+[splitAt]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:splitAt
 [tail]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:tail
+[take]: https://web.archive.org/web/20231130152929/https://hackage.haskell.org/package/base-4.19.0.0/docs/GHC-List.html#v:take
 <!-- prettier-ignore-end -->
