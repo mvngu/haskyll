@@ -37,3 +37,6 @@ toc:
       url: /decide_pattern/
 - title: Recursion, or how I loop
   url: /recurse_README/
+  subfolder:
+    - title: Some examples
+      url: /recurse_example/
