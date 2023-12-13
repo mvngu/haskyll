@@ -118,8 +118,61 @@ element of any tuple of three elements:
 
 <!--=========================================================================-->
 
+### Vector addition
+
+Did you say you want more examples? No problem. Consider the addition of vectors
+of two elements. Adding two vectors is the same as adding their corresponding
+elements. Here's an implementation:
+
+:include: file="assets/src/decide/vadd.hs", name="vadd.hs", line=3:5
+
+What is the code `(Num a) =>` doing in the signature of `vadd`? What does the
+code mean? Let's examine the code bit by bit. The Haskell type [`Num`][num] is a
+type class, meaning that `Num` encompasses the usual number types such as `Int`,
+`Integer`, and `Double`. Put another way, numeric types such as `Integer` and
+`Double` are based on `Num`. You can confirm the latter statement by examining
+the following GHCi session:
+
+```haskell
+ghci> :info Num
+type Num :: * -> Constraint
+class Num a where
+  (+) :: a -> a -> a
+  (-) :: a -> a -> a
+  (*) :: a -> a -> a
+  negate :: a -> a
+  abs :: a -> a
+  signum :: a -> a
+  fromInteger :: Integer -> a
+  {-# MINIMAL (+), (*), abs, signum, fromInteger, (negate | (-)) #-}
+    -- Defined in ‘GHC.Num’
+instance Num Double -- Defined in ‘GHC.Float’
+instance Num Float -- Defined in ‘GHC.Float’
+instance Num Int -- Defined in ‘GHC.Num’
+instance Num Integer -- Defined in ‘GHC.Num’
+instance Num Word -- Defined in ‘GHC.Num’
+```
+
+The code `(Num a)` means that we are restricting the type `a` to be a numeric
+type that is based on `Num`. The code `(Num a)` is also referred to as the
+context. The fat arrow symbol `=>` serves as a delimiter between the context on
+its left-hand side and the type information on its right-hand side.[^a] The
+signature of `vadd` can be read as: The function `vadd` takes two parameters,
+both being tuples whose elements are all of the same numeric type. The output of
+`vadd` is a tuple whose elements have the same numeric type as the elements of
+the input tuples. Furthermore, the numeric type must be based on `Num`. What a
+mouthful! You will encounter signatures like that of the function `vadd` as you
+read and write more complex Haskell code.
+
+<!--=========================================================================-->
+
+[^a]: See the [Haskell 2010 Language Report][haskell2010].
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [not]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:not
+[num]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Num
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
 <!-- prettier-ignore-end -->
