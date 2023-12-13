@@ -78,7 +78,48 @@ The third (and last) case has the wildcard pattern. See below for the code:
 
 <!--=========================================================================-->
 
+## Tuple-ware
+
+A collection type such as tuples are a fertile ground for pattern matching.
+Let's start with our friend, the function [`fst`][fst]. Given a tuple of two
+elements, the function `fst` outputs the first element. It's as simple as that.
+Don't believe me? See for yourself:
+
+```haskell
+ghci> fst ('a', 'b')
+'a'
+ghci> fst (1, 2)
+1
+ghci> fst ("x", 42)
+"x"
+```
+
+Note that `fst` ignores the second element. That seems like a job for the
+wildcard symbol `_`. Let's implement our own version of `fst` and name it
+`firstA`.
+
+:include: file="assets/src/decide/first.hs", name="first.hs", line=3:5
+
+There's something funny going on in the signature of `firstA`. Where's the type
+name like `Integer` or `String`? Instead, the input is a tuple like `(a, b)`.
+Let Haskell hit you with some knowledge. The elements of a tuple can be of
+different types. The parameter `(a, b)` for `firstA` means that we do not care
+about the type of each tuple element. The left element can be of type `a`
+(whatever it is) and the right element can be of type `b`, which might be the
+same as, or different from, `a`. Carefully examine the above GHCi session again
+to delude, err... I mean convince yourself.
+
+The wildcard symbol `_` is rather handy, especially when working with tuples of
+greater than two elements. Consider a tuple of three elements such as
+`(1, 2, 3)`. The middle element is `2`. Here's a function to extract the middle
+element of any tuple of three elements:
+
+:include: file="assets/src/decide/mid.hs", name="mid.hs", line=3:5
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
+[fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [not]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:not
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
 <!-- prettier-ignore-end -->
