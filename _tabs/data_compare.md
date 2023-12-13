@@ -64,19 +64,25 @@ returns one of the following values.
 
 ## Exercises
 
-<strong>Exercise 1.</strong> Why are the strings `"Meow"` and `"meow"` different? Within a GHCi
-session, convert either or both strings so the resulting strings compare equal
-according to `==`.
+<!-- prettier-ignore-start -->
+<strong>Exercise 1.</strong> Why are the strings `"Meow"` and `"meow"` different? Within a GHCi session,
+convert either or both strings so the resulting strings compare equal according
+to `==`.
+<!-- prettier-ignore-end -->
 
-<strong>Exercise 2.</strong> Why are `'a'` and `"a"` different? Within a GHCi session, convert
-either or both so the resulting values would compare equal according to `==`.
+<!-- prettier-ignore-start -->
+<strong>Exercise 2.</strong> Why are `'a'` and `"a"` different? Within a GHCi session, convert either or both
+so the resulting values would compare equal according to `==`.
+<!-- prettier-ignore-end -->
 
-<strong>Exercise 3.</strong> Modify the program below so it would compile and the relevant values
-compare equal according to `==`.
+<!-- prettier-ignore-start -->
+<strong>Exercise 3.</strong> Modify the program below so it would compile and the relevant values compare
+equal according to `==`.
+<!-- prettier-ignore-end -->
 
 [`same.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/same.hs)
 ```haskell
-import           Text.Printf
+import Text.Printf
 
 -- Same or different?
 main = do
@@ -85,20 +91,22 @@ main = do
     printf "a == b? %s\n" $ show $ a == b
 ```
 
-<strong>Exercise 4.</strong> The comparison operators also work with characters of the English
-alphabet. Just like the integers have an ordering to tell you that $1 < 2$ holds
-true, characters of the English alphabet have an ordering as well, i.e.
-alphabetic or lexicographic ordering. The letter "a" always comes before "b" and
-Haskell can confirm this dictionary ordering if you run the code `"a" < "b"`.
-Here, the operator `<` means "precede". The expression `"a" < "b"` can be read
-as: Does the letter "a" come before "b"? Note that an uppercase letter always
-precedes any lowercase letter. Consider the program below. Why does the
-expression `"aardvark" < "Aardvark"` return `False`? Modify the program so the
-result of the operator `<` is `True`.
+<!-- prettier-ignore-start -->
+<strong>Exercise 4.</strong> The comparison operators also work with characters of the English alphabet. Just
+like the integers have an ordering to tell you that $1 < 2$ holds true,
+characters of the English alphabet have an ordering as well, i.e. alphabetic or
+lexicographic ordering. The letter "a" always comes before "b" and Haskell can
+confirm this dictionary ordering if you run the code `"a" < "b"`. Here, the
+operator `<` means "precede". The expression `"a" < "b"` can be read as: Does
+the letter "a" come before "b"? Note that an uppercase letter always precedes
+any lowercase letter. Consider the program below. Why does the expression
+`"aardvark" < "Aardvark"` return `False`? Modify the program so the result of
+the operator `<` is `True`.
+<!-- prettier-ignore-end -->
 
 [`dictionary.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/dictionary.hs)
 ```haskell
-import           Text.Printf
+import Text.Printf
 
 -- A small dictionary.
 main = do
@@ -112,14 +120,16 @@ main = do
     printf "a < d? %s\n" $ show $ a < d
 ```
 
-<strong>Exercise 5.</strong> A quiz has three statements, each of which evaluates to a boolean
-value. The statements are shown in the program below. Modify the program to
-output the number of correct statements, using only boolean arithmetics. Insert
-your code at the location shown in the program.
+<!-- prettier-ignore-start -->
+<strong>Exercise 5.</strong> A quiz has three statements, each of which evaluates to a boolean value. The
+statements are shown in the program below. Modify the program to output the
+number of correct statements, using only boolean arithmetics. Insert your code
+at the location shown in the program.
+<!-- prettier-ignore-end -->
 
 [`quiz.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/quiz.hs)
 ```haskell
-import           Text.Printf
+import Text.Printf
 
 -- How many correct solutions?
 main = do
@@ -129,7 +139,9 @@ main = do
     -- Insert code here.
 ```
 
+<!-- prettier-ignore-start -->
 <strong>Exercise 6.</strong> Translate the expression $1 < 2 < 3$ to Haskell code.
+<!-- prettier-ignore-end -->
 
 <!--=========================================================================-->
 
