@@ -25,7 +25,7 @@ section [Multiple parameters](../decide_function/#multiple-parameters):
 
 Here is the same function, but written as a guarded equation:
 
-:include: file="assets/src/decide/max-guard.hs", name="max-guard.hs", line=3:7
+:include: file="assets/src/decide/max.hs", name="max.hs", line=10:14
 
 And here is the guarded equation translated to a mathematical expression:
 
