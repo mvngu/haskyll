@@ -203,6 +203,12 @@ run the file
 .
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
+:exercise:
+You can try out Haskell in your browser by running an
+[interactive tutorial][tryHaskell].
+<!-- prettier-ignore-end -->
+
 <!--========================================================================-->
 
 [^a]: Tradition is peer pressure from dead (and living) people.
@@ -231,4 +237,5 @@ run the file
 [putStrLn]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:putStrLn
 [python]: https://www.python.org
 [runghc]: https://web.archive.org/web/20231202215621/https://downloads.haskell.org/ghc/latest/docs/users_guide/runghc.html
+[tryHaskell]: https://www.tryhaskell.org
 <!-- prettier-ignore-end -->
