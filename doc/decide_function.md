@@ -82,7 +82,7 @@ function takes an integer as input and outputs the same integer, but with the
 sign flipped. The integer 2 would become $-2$ and $-42$ would become 42. See
 below for the signature of our function together with its definition.
 
-:include: file="assets/src/decide/negate.hs", name="negate.hs"
+:include: file="assets/src/decide/negate.hs", name="negate.hs", line=3:5
 
 I can hear you protest, "But the Haskell library already has its own function to
 reverse the sign of a number. It's the function [`negate`][negate]." OK. Let's
@@ -91,7 +91,7 @@ string to uppercase. This is different from the library function
 [`toUpper`][toUpper] in that our function has a string as input and outputs a
 string. It's true, honest. Have a look.
 
-:include: file="assets/src/decide/upper.hs", name="upper.hs"
+:include: file="assets/src/decide/upper.hs", name="upper.hs", line=-:6
 
 <!--=========================================================================-->
 
@@ -103,7 +103,7 @@ first and last characters of the string. The result is then reversed and we
 capitalize the resulting string. How would we do that? Do it like how we have
 been defining the function `main`, i.e. use the keyword `do`.
 
-:include: file="assets/src/decide/chop.hs", name="chop.hs"
+:include: file="assets/src/decide/chop.hs", name="chop.hs", line=-:13
 
 <!--=========================================================================-->
 
@@ -116,7 +116,7 @@ each takes two parameters, so does the string function [`splitAt`][splitAt].
 Let's implement our own function to calculate the maximum of two integers.
 Consider the code below.
 
-:include: file="assets/src/decide/max.hs", name="max.hs"
+:include: file="assets/src/decide/max.hs", name="max.hs", line=3:8
 
 You might have noticed several issues regarding the above definition of the
 function `maxInt`. First, why are there two right arrow symbols `->` in the
