@@ -166,12 +166,120 @@ read and write more complex Haskell code.
 
 <!--=========================================================================-->
 
+## Kraken's list
+
+Now that you have learnt how to pattern match using tuples, you should have
+little difficulty understanding how to do simple pattern matching with lists.
+
+<!--=========================================================================-->
+
+### Heads first
+
+Let's consider the familiar example of the function [`fst`][fst]. This function
+is defined for tuples of two elements. Haskell already has the standard function
+[`head`][head] to output the first element of a list. However, it does not
+require much effort to define our own version that works for lists of two
+elements. With a little change to the function `firstA` we can define the
+counterpart of `fst` for lists. See the following:
+
+:include: file="assets/src/decide/first.hs", name="first.hs", line=7:9
+
+Here are some differences between the functions `firstA` and `firstB`.
+
+1. All elements of a list must be of the same type. Haskell prohibits us from
+   mixing different types in a list. The elements of a tuple can have different
+   types.
+1. The elements of a list are delimited by a pair of square brackets. The
+   elements of a tuple are delimited by a pair of parentheses.
+1. In the signature of a function that uses lists, we do not have to specify how
+   many elements will be in our list. All we have to do is enclose a data type
+   inside a pair of square brackets. The parameter `[a]` in the definition of
+   `firstB` above means that `firstB` takes a list whose elements are of type
+   `a`, whatever that type might be. On the other hand, the signature of a
+   function that uses tuples must specify the exact number of elements of the
+   tuple.
+
+You already know that the length of a tuple is fixed. Once you have decided on
+the elements of a tuple, you cannot add to or remove elements from the tuple. On
+the other hand, a list can be extended or contracted. Another feature of lists
+is that you can use a powerful technique to perform pattern matching. This is
+best demonstrated via an example. We can reimplement the function `firstB` as
+follows:
+
+:include: file="assets/src/decide/first.hs", name="first.hs", line=11:13
+
+Why do we have the tuple `(x:xs)` in the above code listing? The code `(x:xs)`
+is not specifying a tuple. Rather, it tells us that given a list, we assign the
+first element of the list to the variable `x`. The rest of the elements (as a
+sublist) are assigned to the variable `xs`. Let's call the pattern `(x:xs)` the
+this-and-rest pattern. Sounds good. But there's a bug in the above definition of
+`firstC`.
+
+Suppose you load the above definition into GHCi and attempt to apply the
+function to an empty list. Haskell would throw a conniption fit. Watch Haskell
+being dramatic:
+
+```haskell
+ghci> firstC [1, 2, 3]
+1
+ghci> firstC [1, 2]
+1
+ghci> firstC [1]
+1
+ghci> firstC []
+*** Exception: first.hs:13:1-17: Non-exhaustive patterns in function firstC
+```
+
+We must handle the case of the empty list. No problem. Here's version 2.0:
+
+:include: file="assets/src/decide/first.hs", name="first.hs", line=15:18
+
+In the above code listing, we used the function [`error`][error] to halt the
+program and output a sensible message if the function `firstD` is given an empty
+list. Here is Haskell throwing another tantrum, but on our own terms.
+
+```haskell
+ghci> firstD [1, 2, 3]
+1
+ghci> firstD [1, 2]
+1
+ghci> firstD [1]
+1
+ghci> firstD []
+*** Exception: Empty list
+CallStack (from HasCallStack):
+  error, called at first.hs:17:17 in main:Main
+```
+
+<!--=========================================================================-->
+
+### Take my ex, please
+
+Let's see more of the this-and-rest pattern `(x:xs)` in action. We have a
+function to extract the first element of a list. Logic dictates that we should
+have a function to extract the second element. Here goes:
+
+:include: file="assets/src/decide/second.hs", name="second.hs", line=3:7
+
+The pattern `(x:y:xs)` in the above code listing has the following
+interpretation. The first element of a list is assigned to the variable `x`, the
+second element to `y`, and the rest of the elements (as a sublist) are assigned
+to `xs`. However, we are only interested in the second element. We donut, umm...
+I mean, do not care about the `x` and the `xs`. Sounds like another job for the
+wildcard symbol `_`. Here is a different version of `secondA`.
+
+:include: file="assets/src/decide/second.hs", name="second.hs", line=9:13
+
+<!--=========================================================================-->
+
 [^a]: See the [Haskell 2010 Language Report][haskell2010].
 
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[error]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:error
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
+[head]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:head
 [not]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:not
 [num]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Num
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
