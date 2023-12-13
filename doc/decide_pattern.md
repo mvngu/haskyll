@@ -272,15 +272,91 @@ wildcard symbol `_`. Here is a different version of `secondA`.
 
 <!--=========================================================================-->
 
+## Exercises
+
+<!-- prettier-ignore-start -->
+:exercise:
+Provide another implementation of [`not`][not] other than the implementation
+shown in the section [Andrew or And-rew?](#andrew-or-and-rew).
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Use pattern matching to provide an implementation of the boolean operator `&&`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The package [`Data.Bits`][dataBits] has the method [`xor`][xor] to calculate the
+exclusive or (i.e. XOR) of two boolean values. Provide a reimplementation of
+`xor`, but use pattern matching.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Use pattern matching to reimplement the function [`snd`][snd].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function to implement the addition of vectors of three elements. The
+elements of the vectors are integers. You might find the type class
+[`Integral`][integral] useful.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The dot product of two vectors $(a,\, b)$ and $(x,\, y)$ is defined as
+<!-- prettier-ignore-end -->
+
+$$
+(a,\, b) \cdot (x,\, y)
+=
+ax + by.
+$$
+
+Implement the dot product.
+
+<!-- prettier-ignore-start -->
+:exercise:
+Implement your own version of the function [`last`][last].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Implementation your own version of the function [`tail`][tail].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Implement your own version of the function [`init`][init].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function that takes a list of integers. If the first integer is odd,
+then remove the first element. Otherwise keep the integer.
+<!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
 [^a]: See the [Haskell 2010 Language Report][haskell2010].
 
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[dataBits]: https://web.archive.org/web/20231116111136/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bits.html
 [error]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:error
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
+[haskell2010]: https://web.archive.org/web/20231118160240/https://www.haskell.org/onlinereport/haskell2010/haskellch10.html#x17-18000010.5
 [head]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:head
+[init]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:init
+[integral]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Integral
+[last]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:last
 [not]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:not
 [num]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Num
 [otherwise]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:otherwise
+[snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
+[tail]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:tail
+[xor]: https://web.archive.org/web/20231116111136/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bits.html#v:xor
 <!-- prettier-ignore-end -->
