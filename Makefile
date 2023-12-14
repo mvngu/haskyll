@@ -30,6 +30,14 @@ build: clean pretty
 # Remove various junk files.
 clean:
 	rm -rf *~
+	rm -rf assets/src/data/*~
+	rm -rf assets/src/data/solution/*~
+	rm -rf assets/src/decide/*~
+	rm -rf assets/src/decide/solution/*~
+	rm -rf assets/src/hello/*~
+	rm -rf assets/src/recurse/*~
+	rm -rf assets/src/recurse/solution/*~
+	rm -rf doc/*~
 	rm -rf _posts/
 	rm -rf _site/
 	rm -rf _tabs/
