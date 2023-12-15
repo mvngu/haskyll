@@ -135,7 +135,7 @@ end
 # (1) Include within a section or chapter a source file that has programming
 #     code.  The inclusion follows this format:
 #
-#     :include: file="/path/to/source/file.extension", name="short name", start=k, end=n
+#     :include: file="/path/to/source/file.extension", name="short name", line=a:b
 # (2) Link to a source file.  The linking follows this format:
 #
 #     :script: file="/path/to/source/file.extension", name="a short name"
