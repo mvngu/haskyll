@@ -224,6 +224,14 @@ translated to Haskell code as follows:
 
 ## Binomial coefficients
 
+> _Mary:_ What are you doing at my desk?\
+> _Dick:_ Anthopology. It's fascinating! Such a wealth of cultures. You know, up
+> until now I always thought what you did was pointless and of no interest to anyone
+> but yourself.\
+> _Mary:_ Well, it's certainly not as fascinating as physics. I mean, everybody
+> loves math.\
+> --- _3rd Rock from the Sun_, season 1, episode 16, 1996
+
 The [binomial coefficients][binomialCoefficients] are defined as
 
 $$
