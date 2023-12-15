@@ -222,7 +222,56 @@ translated to Haskell code as follows:
 
 <!--=========================================================================-->
 
+## Binomial coefficients
+
+The [binomial coefficients][binomialCoefficients] are defined as
+
+$$
+\begin{equation}
+\label{eqn_binomial_coefficients}
+\binom{n}{k}
+=
+\frac{
+  n!
+}{
+  k! \; (n - k)!
+}
+\end{equation}
+$$
+
+where $n$ and $k$ are non-negative integers. The number $\binom{n}{k}$ has an
+interpretation as the number of ways to choose $k$ objects from $n$ distinct
+objects. If $0 \leq k \leq n$, then $\binom{n}{k}$ is a positive integer. We
+have the base case $\binom{n}{0} = 1$. Furthermore, $\binom{n}{k} = 0$ if
+$k > n$ or $k < 0$, and $\binom{n}{k} = 1$ if $n = k$.
+
+Expression (\ref{eqn_binomial_coefficients}) defines the binomial coefficients
+in terms of the factorial function, which also has a recursive definition (see
+[this exercise](#ex_factorial)). A recursive expression for
+(\ref{eqn_binomial_coefficients}) is
+
+$$
+\begin{equation}
+\label{eqn_binomial_recursive}
+\binom{n}{k}
+=
+\frac{n}{k}
+\binom{n-1}{k-1}.
+\end{equation}
+$$
+
+In the recursive expression (\ref{eqn_binomial_recursive}), we should avoid the
+division $n / k$ because it is not necessarily an integer. Instead, we should
+calculate the product $n \times \binom{n-1}{k-1}$, then divide the result by $k$
+to guarantee that the result of the division is an integer. The above are all we
+need to write our Haskell implementation of the binomial coefficients:
+
+:include: file="assets/src/recurse/binomial.hs", name="binomial.hs", line=17:25
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
+[binomialCoefficients]: https://web.archive.org/web/20231210141209/https://en.wikipedia.org/wiki/Binomial_coefficient
 [fibonacci]: https://web.archive.org/web/20231206222214/https://en.wikipedia.org/wiki/Fibonacci_sequence
 [wharfinger]: https://web.archive.org/web/20231214020114/https://everything2.com/index.pl?node_id=477013
 <!-- prettier-ignore-end -->
