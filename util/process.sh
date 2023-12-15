@@ -85,9 +85,9 @@ rm -rf "$SUMMARY_URL"
 # (2) Inclusion of source files.
 # (3) Links to YouTube videos.
 for i in "${TAB}"/*.md; do
-    ruby "${UTIL}/exercise.rb" "$i"
-    ruby "${UTIL}/src.rb" "$i"
-    ruby "${UTIL}/youtube.rb" "$i"
+    ruby "${UTIL}/ext/exercise.rb" "$i"
+    ruby "${UTIL}/ext/src.rb" "$i"
+    ruby "${UTIL}/ext/youtube.rb" "$i"
 done
 
 # Final cleanup?
