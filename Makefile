@@ -49,7 +49,7 @@ lintrb:
 
 # Lint and auto-format Haskell files.
 linths:
-	util/linths.sh
+	util/haskellint.sh
 
 # Lint shell scripts.
 lintsh:
