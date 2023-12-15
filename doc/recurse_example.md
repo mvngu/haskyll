@@ -270,8 +270,172 @@ need to write our Haskell implementation of the binomial coefficients:
 
 <!--=========================================================================-->
 
+## Exercises
+
 <!-- prettier-ignore-start -->
+:exercise:
+In the section [Triangular numbers](#triangular-numbers), we worked through the
+process of calculating the 10-th [triangular number][triangularNumber]. The
+zeroth triangular number is defined to be 0. Modify the program
+:script: file="assets/src/recurse/add.hs", name="add.hs"
+to account for the zeroth triangular number.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+You are about to test flight your toy rocket. However, you are missing a
+function that counts down to zero. Implement the function.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The [Collatz function][collatzConjecture] is defined for any positive integer
+$n$ as follows:
+<!-- prettier-ignore-end -->
+
+$$
+f(n)
+=
+\begin{cases}
+n/2,& \text{if } n \text{ is even},\\[8pt]
+3n + 1,& \text{otherwise}.
+\end{cases}
+$$
+
+The Collatz sequence is defined as
+
+$$
+c_i
+=
+\begin{cases}
+n,& \text{if } i = 0,\\[8pt]
+f(c_{i-1}),& \text{if } i > 0.
+\end{cases}
+$$
+
+The Collatz conjecture states that regardless of which positive integer is given
+to the Collatz function, a recursive application of the function, i.e. the
+recursion
+
+$$
+f(f(f(f(...f(n)...))))
+$$
+
+would eventually output 1 and stop. That is, the Collatz sequence would
+eventually end at 1. Write a Haskell function to output the Collatz sequence
+given any positive integer.
+
+<!-- prettier-ignore-start -->
+:exercise: label="ex_factorial"
+The [factorial][factorial] of a non-negative integer $n$ is defined as
+<!-- prettier-ignore-end -->
+
+$$
+n!
+=
+n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1
+$$
+
+where $0! = 1$. Write a Haskell function to implement the factorial of a
+positive integer.
+
+<!-- prettier-ignore-start -->
+:exercise:
+The binomial coefficients have another recursive expression as
+[Pascal's triangle][pascalsTriangle]:
+<!-- prettier-ignore-end -->
+
+$$
+\binom{n}{k}
+=
+\binom{n-1}{k}
++
+\binom{n-1}{k-1}.
+$$
+
+Implement the above recursive formula and check your result against expression
+(\ref{eqn_binomial_recursive}).
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function that sums a list of integers. Check your implementation against
+the library function [`sum`][sum].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+Write a function that multiply all numbers in a list of integers. Check your
+implementation against the library function [`product`][product].
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+The $n$-th Fibonacci number can be obtained via
+[Binet's formula][binetsFormula]:
+<!-- prettier-ignore-end -->
+
+$$
+F_n
+=
+\frac{
+  \varphi^n - \psi^n
+}{
+  \sqrt{5}
+}
+$$
+
+where
+
+$$
+\varphi
+=
+\frac{
+  1 + \sqrt{5}
+}{
+  2
+},
+\qquad
+\qquad
+\psi
+=
+\frac{
+  1 - \sqrt{5}
+}{
+  2
+}.
+$$
+
+Implement Binet's formula and use it to check the implementation of the
+Fibonacci numbers as given in the section [Rabbit season](#rabbit-season).
+
+<!-- prettier-ignore-start -->
+:exercise:
+The function [`concat`][concat] takes a list of lists and places all elements of
+the sublists into another list. Write your own implementation of `concat`.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
+A word is a palindrome if it can be read the same backward as forward. Examples
+include radar, level, and refer. Write a function to check whether a word is a
+palindrome. Do not use the function [`reverse`][reverse] in your
+implementation. However, you are allowed to use `reverse` to check your
+implementation.
+<!-- prettier-ignore-end -->
+
+<!--=========================================================================-->
+
+<!-- prettier-ignore-start -->
+[binetsFormula]: https://web.archive.org/web/20231206222214/https://en.wikipedia.org/wiki/Fibonacci_sequence#Binet's_formula
 [binomialCoefficients]: https://web.archive.org/web/20231210141209/https://en.wikipedia.org/wiki/Binomial_coefficient
+[collatzConjecture]: https://web.archive.org/web/20231214025059/https://en.wikipedia.org/wiki/Collatz_conjecture
+[concat]: https://web.archive.org/web/20231213193432/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-List.html#v:concat
+[factorial]: https://web.archive.org/web/20231209095205/https://en.wikipedia.org/wiki/Factorial
 [fibonacci]: https://web.archive.org/web/20231206222214/https://en.wikipedia.org/wiki/Fibonacci_sequence
+[pascalsTriangle]: https://web.archive.org/web/20231202024453/https://en.wikipedia.org/wiki/Pascal%27s_triangle
+[product]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:product
+[reverse]: https://web.archive.org/web/20231213193432/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-List.html#v:reverse
+[sum]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:sum
+[triangularNumber]: https://web.archive.org/web/20231208180850/https://en.wikipedia.org/wiki/Triangular_number
 [wharfinger]: https://web.archive.org/web/20231214020114/https://everything2.com/index.pl?node_id=477013
 <!-- prettier-ignore-end -->
