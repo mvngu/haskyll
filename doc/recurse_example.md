@@ -164,6 +164,64 @@ following Haskell function:
 
 <!--=========================================================================-->
 
+## Length of list
+
+How many elements are in the list below?
+
+```haskell
+[2, 3, 5, 7, 11, 13]
+```
+
+The list has six elements, of course. Let's see how we can use recursion to
+count the number of elements. Suppose we have a function named `size` whose
+parameter is a list. Given a list, the function `size` outputs the number of
+elements in the list. If the list is empty, `size` would output zero. Our base
+case is `size [] = 0`. Now suppose we pass the above list to `size`. The length
+of the list in the above code listing is equivalent to one plus the length of
+the `tail` of the list. We are breaking the above list into the following
+components:
+
+```haskell
+2 : [3, 5, 7, 11, 13]
+```
+
+The element `2` is obviously one element. All we need to do now is calculate the
+`size` of the sublist `[3, 5, 7, 11, 13]`. Again, we can decompose the latter
+sublist as follows:
+
+```haskell
+2 : 3 : [5, 7, 11, 13]
+```
+
+We already know that `2` is one element. We now have another element, i.e. `3`,
+bringing the total to two elements so far. The problem we need to solve now is
+to determine the length of the sublist `[5, 7, 11, 13]`. Use the same
+decomposition technique as per above to obtain:
+
+```haskell
+2 : 3 : 5 : [7, 11, 13]
+```
+
+The element `5` is another element of the original list, bringing the total to
+three elements so far. Repeated application of the above decomposition technique
+results in the following chain of cons operations, each cons giving us another
+element of the original list.
+
+```haskell
+2 : 3 : 5 : 7 : [11, 13]
+2 : 3 : 5 : 7 : 11 : [13]
+2 : 3 : 5 : 7 : 11 : 13 : []
+```
+
+By the time we are at the cons operation `: []`, we have already counted six
+elements. Our base case tells us that the empty list `[]` has zero elements.
+Therefore the original list has six elements. The above description is
+translated to Haskell code as follows:
+
+:include: file="assets/src/recurse/length.hs", name="length.hs", line=3:6
+
+<!--=========================================================================-->
+
 <!-- prettier-ignore-start -->
 [fibonacci]: https://web.archive.org/web/20231206222214/https://en.wikipedia.org/wiki/Fibonacci_sequence
 [wharfinger]: https://web.archive.org/web/20231214020114/https://everything2.com/index.pl?node_id=477013
