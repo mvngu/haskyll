@@ -6,6 +6,6 @@ main = do
     let tea = False
     let water = True
     let beer = False
-    putStrLn (printf "Coffee and tea? %s" (show (coffee && tea)))
-    putStrLn (printf "Coffee and water? %s" (show (coffee && water)))
-    putStrLn (printf "Tea and beer? %s" (show (tea && beer)))
+    printf "Coffee and tea? %s\n" (show (coffee && tea))
+    printf "Coffee and water? %s\n" (show (coffee && water))
+    printf "Tea and beer? %s\n" (show (tea && beer))

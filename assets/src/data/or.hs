@@ -6,6 +6,6 @@ main = do
     let tea = False
     let water = True
     let beer = False
-    putStrLn (printf "Coffee or tea? %s" $ show (coffee || tea))
-    putStrLn (printf "Tea or water? %s" $ show (tea || water))
-    putStrLn (printf "Tea or beer? %s" $ show (tea || beer))
+    printf "Coffee or tea? %s\n" $ show (coffee || tea)
+    printf "Tea or water? %s\n" $ show (tea || water)
+    printf "Tea or beer? %s\n" $ show (tea || beer)
