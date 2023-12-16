@@ -46,3 +46,5 @@ toc:
   subfolder:
     - title: Some examples
       url: /recurse_example/
+    - title: No loop for you
+      url: /recurse_loopless/
