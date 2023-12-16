@@ -1,7 +1,7 @@
 import Text.Printf
 
 -- | Addition for vectors of two elements.
-vadd :: (Num a) => (a, a) -> (a, a) -> (a, a)
+vadd :: Num a => (a, a) -> (a, a) -> (a, a)
 vadd (s, t) (x, y) = (s + x, t + y)
 
 main = do
