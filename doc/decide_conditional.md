@@ -235,7 +235,7 @@ $$
 |x|
 =
 \begin{cases}
-  x,& \text{if } x \geq 0,\\[4pt]
+  x,& \text{if } x \geq 0,\\[8pt]
   -x,& \text{otherwise}.
 \end{cases}
 $$
