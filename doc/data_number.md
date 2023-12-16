@@ -5,7 +5,7 @@ math: true
 
 > Numbers in Haskell are complicated because in the Haskell world there are many
 > different kinds of number...\
-> --- Richard Bird, _Thinking Functionally with Haskell_[^a]
+> --- Richard Bird, 2015[^a]
 
 Haskell represents a number in one of several ways, depending on the kind of
 number you are dealing with. Is the number an integer? Haskell has the types
