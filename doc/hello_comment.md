@@ -4,7 +4,7 @@ title: Any comments?
 
 > Any fool can write code that a computer can understand. Good programmers write
 > code that humans can understand.\
-> -- Martin Fowler. _Refactoring: Improving the Design of Existing Code_[^a]
+> --- Martin Fowler, 2019[^a]
 
 Great code must balance various tensions. It should be comprehensible to a human
 reader as well as being self-documenting. You and I are not coding geniuses
