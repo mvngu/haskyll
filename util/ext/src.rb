@@ -125,7 +125,8 @@ end
 def infer_language(file)
     lang = {
         "c" => "c",
-        "hs" => "haskell"
+        "hs" => "haskell",
+        "js" => "js"
     }
     ext = file.split("/")[-1]
     ext = ext.split(".")[-1]
