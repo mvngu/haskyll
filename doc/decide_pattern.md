@@ -126,9 +126,9 @@ elements. Here's an implementation:
 
 :include: file="assets/src/decide/vadd.hs", name="vadd.hs", line=27:29
 
-What is the code `(Num a) =>` doing in the signature of `vadd`? What does the
-code mean? Let's examine the code bit by bit. The Haskell type [`Num`][num] is a
-type class, meaning that `Num` encompasses the usual number types such as `Int`,
+What is the code `Num a =>` doing in the signature of `vadd`? What does the code
+mean? Let's examine the code bit by bit. The Haskell type [`Num`][num] is a type
+class, meaning that `Num` encompasses the usual number types such as `Int`,
 `Integer`, and `Double`. Put another way, numeric types such as `Integer` and
 `Double` are based on `Num`. You can confirm the latter statement by examining
 the following GHCi session:
