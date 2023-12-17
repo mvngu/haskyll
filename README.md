@@ -10,7 +10,7 @@ that way. Let's tackle some basic ideas of the language, bit by bit.
 ## Acknowledgement
 
 <!-- prettier-ignore -->
-- We use the Jekyll theme [Coo][coo], which is based on [Chirpy][chirpy].
+- We use the Jekyll theme [Coo][coo].
 
 <!-- ====================================================================== -->
 
@@ -26,6 +26,5 @@ license.
 
 <!-- prettier-ignore -->
 [cc]: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy
 [coo]: https://github.com/quacksouls/jekyll-theme-coo
 [mit]: https://opensource.org/license/MIT/
