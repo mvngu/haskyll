@@ -2,6 +2,9 @@
 #
 # https://docs.rubocop.org/rubocop/1.57/cops.html
 
+AllCops:
+  NewCops: enable
+
 Layout/IndentationWidth:
   Width: 4
 
