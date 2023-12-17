@@ -53,6 +53,14 @@ lintc:
 linths:
 	util/lint/haskell.sh
 
+# Lint and auto-format JavaScript files.
+lintjs:
+	npm run jslint
+
+# Lint and auto-format Python files.
+lintpy:
+	util/lint/python.sh
+
 # Lint and auto-format Ruby files.
 lintrb:
 	util/lint/ruby.sh
@@ -70,4 +78,4 @@ view: clean pretty
 	util/process.sh
 	bundle exec jekyll serve
 
-.PHONY: build clean lintc linths lintrb lintsh pretty view
+.PHONY: build clean lintc linths lintjs lintpy lintrb lintsh pretty view
