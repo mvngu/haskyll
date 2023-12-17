@@ -123,11 +123,15 @@ end
 # @param file Path to a source file.
 # @returns The programming language of the source code.
 def infer_language(file)
+    lang = {
+        "c" => "c",
+        "hs" => "haskell"
+    }
     ext = file.split("/")[-1]
     ext = ext.split(".")[-1]
-    return unless ext == "hs"
+    return unless lang.key?(ext)
 
-    return "haskell"
+    return lang[ext]
 end
 
 # Process various script-related directives.  The supported directives are:
