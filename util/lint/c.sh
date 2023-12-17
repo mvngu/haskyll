@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ################################################################################
 ## MIT License
 ##
@@ -22,52 +24,12 @@
 ## SOFTWARE.
 ################################################################################
 
-# Build the document.
-build: clean pretty
-	util/process.sh
-	bundle exec jekyll build
-
-# Remove various junk files.
-clean:
-	rm -rf *~
-	rm -rf assets/src/data/*~
-	rm -rf assets/src/data/solution/*~
-	rm -rf assets/src/decide/*~
-	rm -rf assets/src/decide/solution/*~
-	rm -rf assets/src/hello/*~
-	rm -rf assets/src/recurse/*~
-	rm -rf assets/src/recurse/solution/*~
-	rm -rf doc/*~
-	rm -rf _posts/
-	rm -rf _site/
-	rm -rf _tabs/
-	rm -rf util/*~
-	rm -rf util/ext/*~
-	rm -rf util/lint/*~
-
 # Lint and auto-format C files.
-lintc:
-	util/lint/c.sh
 
-# Lint and auto-format Haskell files.
-linths:
-	util/lint/haskell.sh
+declare -r SRC=assets/src/
 
-# Lint and auto-format Ruby files.
-lintrb:
-	util/lint/ruby.sh
-
-# Lint shell scripts.
-lintsh:
-	util/lint/shell.sh
-
-# Run Prettier over Markdown files.
-pretty:
-	npm run clean
-
-# View the document locally.
-view: clean pretty
-	util/process.sh
-	bundle exec jekyll serve
-
-.PHONY: build clean lintc linths lintrb lintsh pretty view
+for i in $(find "${SRC}" | grep '\.c$'); do
+    indent --k-and-r-style --braces-on-func-def-line --no-tabs "$i"
+    cpplint "$i"
+    splint -standard "$i"
+done
