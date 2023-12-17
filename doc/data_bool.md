@@ -50,7 +50,7 @@ From the above table, the result of `False || True` is `True`, so is
 operands are `False`. Take a moment to use the above table and work through the
 output of the following program.
 
-:include: file="assets/src/data/or.hs", name="or.hs"
+:include: file="assets/src/data/or.hs", name="or.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -142,7 +142,7 @@ Unlike the expression `True || False`, the result of `True && False` is `False`.
 The only time when `&&` returns `True` is the expression `True && True`. Again,
 take some time to work through the boolean results of the following program.
 
-:include: file="assets/src/data/and.hs", name="and.hs"
+:include: file="assets/src/data/and.hs", name="and.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -234,7 +234,7 @@ Modify the following program so the expression `likeCat && likeTiger` returns
 `False`.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/data/pet.hs", name="pet.hs"
+:include: file="assets/src/data/pet.hs", name="pet.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise:

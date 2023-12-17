@@ -419,7 +419,7 @@ mind to prevent unexpected results in your programs or compilation errors.
 Let's learn some facts about Tabby the cat. Tabby is currently one year old. The
 Haskell program below shows Tabby's age after a given number of years.
 
-:include: file="assets/src/data/age.hs", name="age.hs"
+:include: file="assets/src/data/age.hs", name="age.hs", line=25:-
 
 Running the program shows:
 

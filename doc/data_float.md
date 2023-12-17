@@ -79,7 +79,7 @@ write a program to obtain from the command line the radius of a circle. We will
 use the radius to calculate the area of a circle having the given radius, then
 print the area to the command line. Here is our program:
 
-:include: file="assets/src/data/circle.hs", name="circle.hs"
+:include: file="assets/src/data/circle.hs", name="circle.hs", line=25:-
 
 In the terminal session below, we compile the program and execute it. When
 prompted to enter the radius, we enter the number 2. The program uses the
