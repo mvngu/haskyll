@@ -19,7 +19,8 @@ A single-line Haskell comment starts with the double dash symbol `--`. The
 "Hello, world" program from the section [Tales from the script][taleScript] can
 be documented like so:
 
-:include: file="assets/src/hello/hello-single.hs", name="hello-single.hs"
+<!-- prettier-ignore -->
+:include: file="assets/src/hello/hello-single.hs", name="hello-single.hs", line=25:-
 
 The double dash `--` can be used for multiline comments. All you need to do is
 prefix each comment line with `--`. Haskell offers another way to insert
@@ -34,7 +35,8 @@ no exception. The beginning of a multiline Haskell comment is marked by the
 symbol `{-`. The end of the multiline comment is designated by `-}`. Here is the
 "Hello, world" program accompanied by a multiline comment.
 
-:include: file="assets/src/hello/hello-multi.hs", name="hello-multi.hs"
+<!-- prettier-ignore -->
+:include: file="assets/src/hello/hello-multi.hs", name="hello-multi.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -48,7 +50,7 @@ pipe symbol. Each subsequent line of documentation is prefixed by `--`. Here is
 the "Hello, world" program annotated according to the Haskell way of
 documentation.
 
-:include: file="assets/src/hello/hello-doc.hs", name="hello-doc.hs"
+:include: file="assets/src/hello/hello-doc.hs", name="hello-doc.hs", line=25:-
 
 <!--=========================================================================-->
 
