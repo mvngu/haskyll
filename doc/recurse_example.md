@@ -83,7 +83,7 @@ $$
 
 We now have all the ingredients we need to define `add`. Here's the code:
 
-:include: file="assets/src/recurse/add.hs", name="add.hs", line=3:8
+:include: file="assets/src/recurse/add.hs", name="add.hs", line=27:32
 
 <!--=========================================================================-->
 
@@ -160,7 +160,7 @@ The recursive definition of the Fibonacci number $F_n$ can be translated to the
 following Haskell function:
 
 <!-- prettier-ignore -->
-:include: file="assets/src/recurse/fibonacci.hs", name="fibonacci.hs", line=11:17
+:include: file="assets/src/recurse/fibonacci.hs", name="fibonacci.hs", line=35:41
 
 <!--=========================================================================-->
 
@@ -218,7 +218,7 @@ elements. Our base case tells us that the empty list `[]` has zero elements.
 Therefore the original list has six elements. The above description is
 translated to Haskell code as follows:
 
-:include: file="assets/src/recurse/length.hs", name="length.hs", line=3:6
+:include: file="assets/src/recurse/length.hs", name="length.hs", line=27:30
 
 <!--=========================================================================-->
 
@@ -274,7 +274,7 @@ calculate the product $n \times \binom{n-1}{k-1}$, then divide the result by $k$
 to guarantee that the result of the division is an integer. The above are all we
 need to write our Haskell implementation of the binomial coefficients:
 
-:include: file="assets/src/recurse/binomial.hs", name="binomial.hs", line=17:25
+:include: file="assets/src/recurse/binomial.hs", name="binomial.hs", line=41:49
 
 <!--=========================================================================-->
 
