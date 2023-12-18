@@ -30,7 +30,9 @@ def header_space(src)
     blank = ""
     content = blank
     prev = blank
+    # rubocop:disable Layout/LineLength
     delim = "--------------------------------------------------------------------------------"
+    # rubocop:enable Layout/LineLength
     ndelim = 0
     File.foreach(src) do |line|
         ndelim += 1 if line.strip.start_with?(delim) && ndelim < 2
