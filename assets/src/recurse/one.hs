@@ -30,5 +30,5 @@ addOne []     = []
 addOne (x:xs) = [x + 1] ++ addOne xs
 
 main = do
-    let a = [1..10] :: [Integer]
+    let a = [1 .. 10] :: [Integer]
     printf "%s -> %s\n" (show a) $ show $ addOne a
