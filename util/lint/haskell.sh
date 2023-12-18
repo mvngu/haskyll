@@ -29,9 +29,9 @@
 declare -r SRC=assets/src/
 
 for i in $(find "${SRC}" | grep '\.hs$'); do
-    # Comment out hindent for now because it keeps removing the vertical
+    # Might want to comment out hindent because it keeps removing the vertical
     # whitespace after the license header.  We want a blank line after the
     # license header.
-    # hindent "$i"
+    hindent "$i"
     stylish-haskell --inplace "$i"
 done
