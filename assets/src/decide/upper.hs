@@ -27,7 +27,7 @@ import Text.Printf
 
 -- | Convert the first character of a string to uppercase.
 capitalize :: String -> String
-capitalize str = (toUpper $ head str) : (tail str)
+capitalize str = (toUpper $ head str) : tail str
 
 main = do
     let a = "ayyy!"
