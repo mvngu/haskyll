@@ -33,14 +33,8 @@ def header_space(src)
     delim = "--------------------------------------------------------------------------------"
     ndelim = 0
     File.foreach(src) do |line|
-        if line.strip.start_with?(delim) && ndelim < 2
-            ndelim += 1
-        end
-        if prev == delim && ndelim == 2
-            if line.strip != blank
-                content += "\n"
-            end
-        end
+        ndelim += 1 if line.strip.start_with?(delim) && ndelim < 2
+        content += "\n" if prev == delim && ndelim == 2 && (line.strip != blank)
         content += line
         prev = line.strip
     end
