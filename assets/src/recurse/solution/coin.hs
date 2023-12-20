@@ -32,7 +32,6 @@ flipCoin n = replicateM n (uniformRM (0, 1) globalStdGen)
 
 -- | The fraction of heads obtained in a given number of coin tosses.
 main = do
-    -- A small number of coin tosses.
     let n = 100 :: Int
     coin <- flipCoin n
     let nheads = (fromIntegral $ sum coin) :: Double
