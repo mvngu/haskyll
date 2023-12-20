@@ -319,17 +319,8 @@ Implement the dot product.
 
 <!-- prettier-ignore-start -->
 :exercise:
-Implement your own version of the function [`last`][last].
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-:exercise:
-Implementation your own version of the function [`tail`][tail].
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-:exercise:
-Implement your own version of the function [`init`][init].
+Implement your own versions of the functions [`last`][last], [`tail`][tail], and
+[`init`][init] without using the above functions.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
