@@ -334,6 +334,16 @@ Implement your own version of the function [`init`][init].
 
 <!-- prettier-ignore-start -->
 :exercise:
+The functions [`head`][head], [`tail`][tail], [`init`][init], and [`last`][last]
+are unsafe in the sense that each would throw an error when given an empty
+list. Implement your own versions of the above functions so they would properly
+handle empty lists. The torso of a list is defined as the list without its head
+and last elements. Use your "safe" implementations above to obtain the torso of
+various lists.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
 Write a function that takes a list of integers. If the first integer is odd,
 then remove the first element. Otherwise keep the integer.
 <!-- prettier-ignore-end -->
