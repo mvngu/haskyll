@@ -409,14 +409,11 @@ call generating a random number.
 
 <!-- prettier-ignore-start -->
 :exercise:
-Write a lambda expression that squares a number.
+Write a lambda expression that:
 <!-- prettier-ignore-end -->
 
-<!-- prettier-ignore-start -->
-:exercise:
-Write a lambda expression that halves an integer if it is even, otherwise add 1
-to the integer.
-<!-- prettier-ignore-end -->
+1. Squares a number.
+1. Halves an integer if it is even, otherwise add 1 to the integer.
 
 <!-- prettier-ignore-start -->
 :exercise:
