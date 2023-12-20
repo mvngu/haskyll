@@ -339,6 +339,18 @@ Write a function that takes a list of integers. If the first integer is odd,
 then remove the first element. Otherwise keep the integer.
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
+:exercise:
+The [Cartesian product][cartesianProduct] of two lists `[a, b, c]` and
+`[x, y, z]` is the list:
+<!-- prettier-ignore-end -->
+
+```haskell
+[(a, x), (a, y), (a, z), (b, x), (b, y), (b, z), (c, x), (c, y), (c, z)]
+```
+
+Write a function to implement the Cartesian product of lists of three elements.
+
 <!--=========================================================================-->
 
 [^a]: See the [Haskell 2010 Language Report][haskell2010].
@@ -346,6 +358,7 @@ then remove the first element. Otherwise keep the integer.
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[cartesianProduct]: https://web.archive.org/web/20231213134027/https://en.wikipedia.org/wiki/Cartesian_product
 [dataBits]: https://web.archive.org/web/20231116111136/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bits.html
 [error]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:error
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
