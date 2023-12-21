@@ -25,11 +25,11 @@
 import Text.Printf
 
 -- | The factorial of a non-negative integer.
-fact :: Integer -> Integer
-fact 0 = 1
-fact 1 = 1
-fact n
-    | n > 1 = n * (fact $ n - 1)
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial 1 = 1
+factorial n
+    | n > 1 = n * (factorial $ n - 1)
     | otherwise = error "Must be non-negative integer"
 
 main = do
@@ -37,11 +37,11 @@ main = do
     let b = 5
     let c = 10
     let d = 20
-    let test1 = (product [1 .. a]) == (fact a)
-    let test2 = (product [1 .. b]) == (fact b)
-    let test3 = (product [1 .. c]) == (fact c)
-    let test4 = (product [1 .. d]) == (fact d)
-    printf "%d -> %d, check: %s\n" a (fact a) $ show test1
-    printf "%d -> %d, check: %s\n" b (fact b) $ show test2
-    printf "%d -> %d, check: %s\n" c (fact c) $ show test3
-    printf "%d -> %d, check: %s\n" d (fact d) $ show test4
+    let test1 = (product [1 .. a]) == (factorial a)
+    let test2 = (product [1 .. b]) == (factorial b)
+    let test3 = (product [1 .. c]) == (factorial c)
+    let test4 = (product [1 .. d]) == (factorial d)
+    printf "%d -> %d, check: %s\n" a (factorial a) $ show test1
+    printf "%d -> %d, check: %s\n" b (factorial b) $ show test2
+    printf "%d -> %d, check: %s\n" c (factorial c) $ show test3
+    printf "%d -> %d, check: %s\n" d (factorial d) $ show test4
