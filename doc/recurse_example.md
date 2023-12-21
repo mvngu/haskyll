@@ -430,6 +430,20 @@ implementation. However, you are allowed to use `reverse` to check your
 implementation.
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
+:exercise:
+Given two positive integers $k$ and $n$, their product $kn$ can be defined in
+terms of addition as:
+<!-- prettier-ignore-end -->
+
+$$
+kn
+=
+k + (k \times (n - 1))
+$$
+
+where $k \times 1 = k$. Implement the above definition as a recursive function.
+
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
