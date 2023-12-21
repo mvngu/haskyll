@@ -562,6 +562,21 @@ calculate the GCD of each pair. Test your implementation against the function
 
 <!-- prettier-ignore-start -->
 :exercise:
+You will write a program that determines all positive factors of a positive
+integer $n$.
+<!-- prettier-ignore-end -->
+
+1. Write a program that scans through all integers from 1 to $n$, testing each
+   integer to see whether it is a factor of $n$. Return a list of all factors of
+   $n$.
+1. Improve the above technique as follows. Let $1 < k \leq \sqrt{n}$ be a factor
+   of $n$. Then $n / k$ is also a factor of $n$. Thus you only need to search
+   through all integers from 1 up to and including
+   $\left\lceil \sqrt{n} \right\rceil$. Use the latter technique to determine
+   all factors of $n$.
+
+<!-- prettier-ignore-start -->
+:exercise:
 In this exercise, you will implement a simple guess-the-number game. The game
 takes two positive integers $a$ and $b$, where $a < b$, and chooses a random
 integer $n$ from the range $[a,\, b]$. Now you must guess the chosen number.
