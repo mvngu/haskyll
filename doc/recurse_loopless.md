@@ -3,6 +3,8 @@ title: No loop for you
 math: true
 ---
 
+> To iterate is human, to curse a bug divine.
+
 In this section, you will meet some functions that allow you to perform various
 kinds of loop. The function you use for looping depends on what you want to
 accomplish. Do you want to loop over a list and print each element to standard
