@@ -344,8 +344,13 @@ n!
 n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1
 $$
 
-where $0! = 1$. Write a Haskell function to implement the factorial of a
-positive integer.
+where $0! = 1$.
+
+1. Write a Haskell function `fac` to implement the factorial of a positive
+   integer.
+1. Write a function `prod` that multiply all numbers in a list of integers.
+   Check your implementation against the library function [`product`][product].
+1. Use your product function `prod` to verify your factorial function `fac`.
 
 <!-- prettier-ignore-start -->
 :exercise:
@@ -368,12 +373,6 @@ Implement the above recursive formula and check your result against expression
 :exercise:
 Write a function that sums a list of integers. Check your implementation against
 the library function [`sum`][sum].
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-:exercise:
-Write a function that multiply all numbers in a list of integers. Check your
-implementation against the library function [`product`][product].
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
