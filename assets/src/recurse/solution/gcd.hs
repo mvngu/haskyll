@@ -28,6 +28,15 @@ import System.Random.Stateful
 import Text.Printf
 
 -- | The greatest common divisor (GCD) of two positive integers, using repeated
+-- integer division.
+gcdMod :: Integral a => a -> a -> a
+gcdMod a 0 = a
+gcdMod a b
+    | a == b = a
+    | a > b = gcdMod b $ a `mod` b
+    | otherwise = gcdMod a $ b `mod` a
+
+-- | The greatest common divisor (GCD) of two positive integers, using repeated
 -- subtraction.
 gcdSub :: Integral a => a -> a -> a
 gcdSub a b
@@ -46,6 +55,8 @@ main = do
     let n = 100 :: Int
     a <- randint n
     b <- randint n
-    let g = map (\(n, k) -> gcdSub n k) $ zip a b
-    for_ (zip3 a b g) $ \(x, y, z) -> do
-        printf "gcd(%d, %d) = %d: %s\n" x y z $ show $ z == gcd x y
+    let s = map (\(n, k) -> gcdSub n k) $ zip a b
+    let t = map (\(n, k) -> gcdMod n k) $ zip a b
+    let u = map (\(n, k) -> gcd n k) $ zip a b
+    for_ (zip3 s t u) $ \(x, y, z) -> do
+        printf "check: %s\n" $ show $ x == y && x == z
