@@ -24,24 +24,45 @@
 
 import Text.Printf
 
--- | The factorial of a non-negative integer.
-factorial :: Integer -> Integer
-factorial 0 = 1
-factorial 1 = 1
-factorial n
-    | n > 1 = n * (factorial $ n - 1)
+-- | The factorial of a non-negative integer.  Early version.
+factorialA :: Integer -> Integer
+factorialA 0 = 1
+factorialA 1 = 1
+factorialA n
+    | n > 1 = n * (factorialA $ n - 1)
     | otherwise = error "Must be non-negative integer"
+
+-- | The factorial of a non-negative integer.  Improved version.
+factorialB :: Integer -> Integer
+factorialB 0 = 1
+factorialB n
+    | n > 0 = n * (factorialB $ n - 1)
+    | otherwise = error "Must be non-negative integer"
+
+-- | The factorial of a non-negative integer.  Better version.
+factorialC :: Integer -> Integer
+factorialC n
+    | n < 0 = error "Must be non-negative integer"
+    | otherwise = product [1 .. n]
 
 main = do
     let a = 1
     let b = 5
     let c = 10
     let d = 20
-    let test1 = (product [1 .. a]) == (factorial a)
-    let test2 = (product [1 .. b]) == (factorial b)
-    let test3 = (product [1 .. c]) == (factorial c)
-    let test4 = (product [1 .. d]) == (factorial d)
-    printf "%d -> %d, check: %s\n" a (factorial a) $ show test1
-    printf "%d -> %d, check: %s\n" b (factorial b) $ show test2
-    printf "%d -> %d, check: %s\n" c (factorial c) $ show test3
-    printf "%d -> %d, check: %s\n" d (factorial d) $ show test4
+    let e = 0
+    let pa = product [1 .. a]
+    let pb = product [1 .. b]
+    let pc = product [1 .. c]
+    let pd = product [1 .. d]
+    let pe = product [1 .. e]
+    let testa = pa == factorialA a && pa == factorialB a && pa == factorialC a
+    let testb = pb == factorialA b && pb == factorialB b && pb == factorialC b
+    let testc = pc == factorialA c && pc == factorialB c && pc == factorialC c
+    let testd = pd == factorialA d && pd == factorialB d && pd == factorialC d
+    let teste = pe == factorialA e && pe == factorialB e && pe == factorialC e
+    printf "%d -> %d, check: %s\n" a (factorialA a) $ show testa
+    printf "%d -> %d, check: %s\n" b (factorialA b) $ show testb
+    printf "%d -> %d, check: %s\n" c (factorialA c) $ show testc
+    printf "%d -> %d, check: %s\n" d (factorialA d) $ show testd
+    printf "%d -> %d, check: %s\n" e (factorialA e) $ show teste
