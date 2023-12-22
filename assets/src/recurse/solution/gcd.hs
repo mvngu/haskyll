@@ -27,14 +27,15 @@ import Data.Foldable
 import System.Random.Stateful
 import Text.Printf
 
--- | The greatest common divisor (GCD) of two positive integers.
-myGCD :: Integral a => a -> a -> a
-myGCD a b
+-- | The greatest common divisor (GCD) of two positive integers, using repeated
+-- subtraction.
+gcdSub :: Integral a => a -> a -> a
+gcdSub a b
     | a == b = a
     | otherwise = do
         let ai = max b $ abs $ a - b
         let bi = min b $ abs $ a - b
-        myGCD ai bi
+        gcdSub ai bi
 
 -- | Generate random integers.
 randint :: Int -> IO [Int]
@@ -45,6 +46,6 @@ main = do
     let n = 100 :: Int
     a <- randint n
     b <- randint n
-    let g = map (\(n, k) -> myGCD n k) $ zip a b
+    let g = map (\(n, k) -> gcdSub n k) $ zip a b
     for_ (zip3 a b g) $ \(x, y, z) -> do
         printf "gcd(%d, %d) = %d: %s\n" x y z $ show $ z == gcd x y
