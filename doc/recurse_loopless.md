@@ -535,7 +535,7 @@ the result of the test for 100 people. For your simulated results, calculate the
 fraction of people who pass the test.
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="ex_gcd_subtraction"
 The [greatest common divisor][greatestCD] (GCD) of two integers is the largest
 factor of both integers. In this exercise, we consider only non-negative
 integers. Euclid showed that if $a$ and $b$ are positive integers such that
