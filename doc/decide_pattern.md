@@ -319,19 +319,18 @@ Implement the dot product.
 
 <!-- prettier-ignore-start -->
 :exercise:
-Implement your own versions of the functions [`last`][last], [`tail`][tail], and
-[`init`][init] without using the above functions.
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-:exercise:
 The functions [`head`][head], [`tail`][tail], [`init`][init], and [`last`][last]
 are unsafe in the sense that each would throw an error when given an empty
-list. Implement your own versions of the above functions so they would properly
-handle empty lists. The torso of a list is defined as the list without its head
-and last elements. Use your "safe" implementations above to obtain the torso of
-various lists.
+list.
 <!-- prettier-ignore-end -->
+
+1. Implement your own versions of the functions [`last`][last], [`tail`][tail],
+   and [`init`][init] without using the above functions.
+1. Implement your own versions of the above functions so they would properly
+   handle empty lists.
+1. The torso of a list is defined as the list without its head and last
+   elements. Use your "safe" implementations above to obtain the torso of
+   various lists.
 
 <!-- prettier-ignore-start -->
 :exercise:
