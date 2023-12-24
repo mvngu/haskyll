@@ -645,6 +645,13 @@ integer $n$.
 
 <!-- prettier-ignore-start -->
 :exercise:
+Using the function [`filter`][filter], write a function that outputs all
+[prime numbers][primeNumbers] between 1 and $n$, inclusive. You might find the
+function [`all`][all] useful.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
 In this exercise, you will implement a simple guess-the-number game. The game
 takes two positive integers $a$ and $b$, where $a < b$, and chooses a random
 integer $n$ from the range $[a,\, b]$. Now you must guess the chosen number.
@@ -661,6 +668,7 @@ $g$ is higher or lower than $n$, and enter another guess.
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[all]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:all
 [anonymousFunction]: https://web.archive.org/web/20231203074524/https://en.wikipedia.org/wiki/Anonymous_function
 [CDC]: https://web.archive.org/web/20231216104909/https://www.cdc.gov/nchs/fastats/body-measurements.htm
 [even]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:even
@@ -673,6 +681,7 @@ $g$ is higher or lower than $n$, and enter another guess.
 [map]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:map
 [oceaniaAverageWeight]: https://web.archive.org/web/20231207093639/https://www.worlddata.info/average-bodyheight.php
 [planetGravity]: https://web.archive.org/web/20231218075802/https://www.calctool.org/astrophysics/weight-other-planets
+[primeNumbers]: https://web.archive.org/web/20231223022623/https://en.wikipedia.org/wiki/Prime_number
 [random]: https://web.archive.org/web/20231130072459/https://hackage.haskell.org/package/random
 [replicate]: https://web.archive.org/web/20231216113250/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:replicate
 [replicateM]: https://web.archive.org/web/20231219074438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Control-Monad.html#v:replicateM
