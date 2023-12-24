@@ -46,11 +46,17 @@ the [user guide][stackGuide] to get a general sense of what Stack can do for
 you.
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
+:exercise:
+Read more about the [Glasgow Haskell Compiler][ghcWikipedia].
+<!-- prettier-ignore-end -->
+
 <!--========================================================================-->
 
 <!-- prettier-ignore-start -->
 [ghc]: https://www.haskell.org/ghc/
 [ghCup]: https://www.haskell.org/ghcup/
+[ghcWikipedia]: https://web.archive.org/web/20231224045355/https://en.wikipedia.org/wiki/Glasgow_Haskell_Compiler
 [install]: https://www.haskell.org/downloads/
 [playground]: https://play.haskell.org
 [stack]: https://docs.haskellstack.org/en/stable/
