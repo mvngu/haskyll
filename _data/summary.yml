@@ -48,5 +48,7 @@ toc:
       url: /recurse_example/
     - title: No loop for you
       url: /recurse_loopless/
+    - title: Fold under pressure
+      url: /recurse_fold/
     - title: Recursion by numbers
       url: /recurse_advice/
