@@ -209,6 +209,72 @@ ghci> map (\(s, t) -> s ++ t) [("pre", "view"), ("re", "do"), ("anti", "c")]
 
 <!--=========================================================================-->
 
+## Coffee filter
+
+You have a list some of whose elements you want to keep, while the remaining
+elements should be discarded. A simple solution would be to iterate over each
+element and test whether to keep the element. Fortunately, you do not have to
+write your own function to discard the elements you do not want. Haskell has the
+higher-order function [`filter`][filter] to do exactly as described above. The
+function `filter` has two parameters:
+
+-   A predicate $p$, otherwise known as a function that takes an input and
+    outputs a boolean value. This is the test function. The purpose of the
+    predicate is to check whether or not you want to retain a given value. The
+    result of the predicate should be `True` if you want to keep a value and
+    `False` otherwise.
+-   A list $\ell$, each of whose elements is to be tested against the predicate.
+    Some elements of the list should be discarded. It is the job of the
+    predicate to help us remove those unwanted elements.
+
+The function `filter` outputs a sublist of $\ell$ containing those elements of
+$\ell$ that pass the predicate $p$. The above seems more complicated than it
+should be. The following examples should clarify how to use `filter`.
+
+<!--=========================================================================-->
+
+### Even or odd?
+
+You have a list of integers between 1 and 10, inclusive. You want to keep the
+even integers. To use `filter` to retain the even integers, you must define a
+predicate. The predicate takes an integer and outputs `True` if the integer is
+even, `False` otherwise. The value `True` is a signal that `filter` should
+retain whichever value resulted in the predicate outputting `True`. On the other
+hand, `filter` would use the value `False` to ignore whichever value resulted in
+the predicate outputting `False`. Testing whether or not an integer is even is a
+rather straightforward task. A lambda expression would suffice as a predicate.
+We do not need to write a function with type signature. On the other hand, the
+library function [`even`][even] already does the job of the predicate we
+require. The GHCi session below summarizes our discussion:
+
+```haskell
+ghci> ell = [1 .. 10]
+ghci> filter (\x -> mod x 2 == 0) ell
+[2,4,6,8,10]
+ghci> filter even ell
+[2,4,6,8,10]
+```
+
+<!--=========================================================================-->
+
+### No sweat, my pet?
+
+You might ask: Why the obsession with numbers? How about an example relating to
+pets. You are developing a database of pet names. As a prototype, you have the
+following list of names:
+
+:include: file="assets/src/recurse/pet.hs", name="pet.hs", line=29:50
+
+Being in the mood for vitamin C, you want a list of pet names that begin with
+"C". The problem boils down to testing whether a string starts with another
+string. The function [`isPrefixOf`][isPrefixOf] is perfect for the job. In
+general, you want a function that, given a prefix `prefix`, outputs all pet
+names that begin with `prefix`. Refer to the following Haskell code:
+
+:include: file="assets/src/recurse/pet.hs", name="pet.hs", line=52:54
+
+<!--=========================================================================-->
+
 ## A loop for output
 
 Refer back to the question at the end of the section
@@ -597,10 +663,13 @@ $g$ is higher or lower than $n$, and enter another guess.
 <!-- prettier-ignore-start -->
 [anonymousFunction]: https://web.archive.org/web/20231203074524/https://en.wikipedia.org/wiki/Anonymous_function
 [CDC]: https://web.archive.org/web/20231216104909/https://www.cdc.gov/nchs/fastats/body-measurements.htm
+[even]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:even
+[filter]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:filter
 [for_]: https://web.archive.org/web/20231128114100/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Foldable.html#v:for_
 [gcd]: https://web.archive.org/web/20231216113250/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:gcd
 [globalStdGen]: https://web.archive.org/web/20231219044923/https://hackage.haskell.org/package/random-1.2.1.1/docs/System-Random-Stateful.html#v:globalStdGen
 [greatestCD]: https://web.archive.org/web/20231213173440/https://en.wikipedia.org/wiki/Greatest_common_divisor
+[isPrefixOf]: https://web.archive.org/web/20231223101221/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-List.html#v:isPrefixOf
 [map]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:map
 [oceaniaAverageWeight]: https://web.archive.org/web/20231207093639/https://www.worlddata.info/average-bodyheight.php
 [planetGravity]: https://web.archive.org/web/20231218075802/https://www.calctool.org/astrophysics/weight-other-planets
