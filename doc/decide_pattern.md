@@ -319,6 +319,13 @@ Implement the dot product.
 
 <!-- prettier-ignore-start -->
 :exercise:
+Consider the function `capitalize` from the sections
+[DIY](../decide_function/#diy) and [I `do`](../decide_function/#i-do). Simplify
+the function.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+:exercise:
 The functions [`head`][head], [`tail`][tail], [`init`][init], and [`last`][last]
 are unsafe in the sense that each would throw an error when given an empty
 list.

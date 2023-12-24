@@ -29,10 +29,17 @@ import Text.Printf
 capitalize :: String -> String
 capitalize str = (toUpper $ head str) : tail str
 
+-- | Convert the first character of a string to uppercase.  Simplified version.
+capitalizeB :: String -> String
+capitalizeB (x:xs) = toUpper x : xs
+
 main = do
     let a = "ayyy!"
     let b = "to bee or not two bees"
     let c = "42 is a number"
-    printf "%s -> %s\n" a $ capitalize a
-    printf "%s -> %s\n" b $ capitalize b
-    printf "%s -> %s\n" c $ capitalize c
+    let resulta = capitalize a
+    let resultb = capitalize b
+    let resultc = capitalize c
+    printf "%s -> %s: %s\n" a resulta $ show $ resulta == capitalizeB a
+    printf "%s -> %s: %s\n" b resultb $ show $ resultb == capitalizeB b
+    printf "%s -> %s: %s\n" c resultc $ show $ resultc == capitalizeB c
