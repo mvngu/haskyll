@@ -83,7 +83,7 @@ called `hello.hs` and save the following code in the file:
 
 :include: file="assets/src/hello/hello.hs", name="hello.hs", line=25:-
 
-Ignore the code segment `main = `. We will discuss that later on in the section
+Ignore the code segment `main = `. We will discuss that in the section
 [The function `main`](#the-function-main).
 
 Now use GHC to compile your source file to machine code. The compiler is called
