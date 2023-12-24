@@ -33,8 +33,8 @@ capitalize str = (toUpper $ head str) : (tail str)
 -- string, then capitalize the result.
 chopSuey :: String -> String
 chopSuey str = do
-    let torso = init $ tail str
-    capitalize $ reverse torso
+    let torso = init . tail
+    capitalize . reverse $ torso str
 
 main = do
     let a = "!yyyay"
