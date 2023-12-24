@@ -36,10 +36,21 @@ chopSuey str = do
     let torso = init . tail
     capitalize . reverse $ torso str
 
+-- | Same as chopSuey, but simplified.
+chopSueyB :: String -> String
+chopSueyB str = capitalize . reverse . init . tail $ str
+
+-- | Same as chopSueyB, but using only function application notation.
+chopSueyC :: String -> String
+chopSueyC str = capitalize $ reverse $ init $ tail $ str
+
 main = do
     let a = "!yyyay"
     let b = "clive evils"
     let c = "8caterpillar-"
-    printf "%s -> %s\n" a $ chopSuey a
-    printf "%s -> %s\n" b $ chopSuey b
-    printf "%s -> %s\n" c $ chopSuey c
+    let resulta = chopSuey a == chopSueyB a && chopSuey a == chopSueyC a
+    let resultb = chopSuey b == chopSueyB b && chopSuey b == chopSueyC b
+    let resultc = chopSuey c == chopSueyB c && chopSuey c == chopSueyC c
+    printf "%s -> %s: %s\n" a (chopSuey a) $ show resulta
+    printf "%s -> %s: %s\n" b (chopSuey b) $ show resultb
+    printf "%s -> %s: %s\n" c (chopSuey c) $ show resultc
