@@ -45,6 +45,12 @@ factorialC n
     | n < 0 = error "Must be non-negative integer"
     | otherwise = product [1 .. n]
 
+-- | The factorial of a non-negative integer.  Use a fold operation.
+factorialD :: Integer -> Integer
+factorialD n
+    | n < 0 = error "Must be non-negative integer"
+    | otherwise = foldl (*) 1 [1 .. n]
+
 -- | Various implementations of factorial.
 main = do
     let a = 1
@@ -57,11 +63,11 @@ main = do
     let pc = product [1 .. c]
     let pd = product [1 .. d]
     let pe = product [1 .. e]
-    let testa = pa == factorialA a && pa == factorialB a && pa == factorialC a
-    let testb = pb == factorialA b && pb == factorialB b && pb == factorialC b
-    let testc = pc == factorialA c && pc == factorialB c && pc == factorialC c
-    let testd = pd == factorialA d && pd == factorialB d && pd == factorialC d
-    let teste = pe == factorialA e && pe == factorialB e && pe == factorialC e
+    let testa = and [pa == factorialA a, pa == factorialB a, pa == factorialC a, pa == factorialD a]
+    let testb = and [pb == factorialA b, pb == factorialB b, pb == factorialC b, pb == factorialD b]
+    let testc = and [pc == factorialA c, pc == factorialB c, pc == factorialC c, pc == factorialD c]
+    let testd = and [pd == factorialA d, pd == factorialB d, pd == factorialC d, pd == factorialD d]
+    let teste = and [pe == factorialA e, pe == factorialB e, pe == factorialC e, pe == factorialD e]
     printf "%d -> %d, check: %s\n" a (factorialA a) $ show testa
     printf "%d -> %d, check: %s\n" b (factorialA b) $ show testb
     printf "%d -> %d, check: %s\n" c (factorialA c) $ show testc
