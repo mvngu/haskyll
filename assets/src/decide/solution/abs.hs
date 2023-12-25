@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- The absolute value of a number.
+-- | The absolute value of a number.
 main = do
     putStrLn "Enter a number."
     num <- getLine

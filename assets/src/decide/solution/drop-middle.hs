@@ -31,6 +31,7 @@ dropMid str = do
         then (init left) ++ (tail right)
         else left ++ (tail right)
 
+-- | Remove the middle character(s) of a string.
 main = do
     putStrLn "Enter a string."
     str <- getLine

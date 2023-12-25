@@ -31,6 +31,7 @@ dropOdd (x:xs)
     | (mod x 2) == 0 = [x] ++ xs
     | otherwise = xs
 
+-- | Remove first integer if it is odd.
 main = do
     let a = [1]
     let b = [2, 3]

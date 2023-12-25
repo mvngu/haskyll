@@ -32,6 +32,7 @@ myInit (x:xs) = do
     let (left, _) = splitAt ((length xs) - 1) xs
     [x] ++ left
 
+-- | An implementation of "init".
 main = do
     let a = [2]
     let b = [1, 2]

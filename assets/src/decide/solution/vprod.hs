@@ -28,6 +28,7 @@ import Text.Printf
 vprod :: (Num a) => (a, a) -> (a, a) -> a
 vprod (s, t) (x, y) = (s * x) + (t * y)
 
+-- | The dot product of vectors.
 main = do
     let a = 2 :: Double
     let b = 3 :: Double

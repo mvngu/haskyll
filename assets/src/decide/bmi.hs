@@ -38,6 +38,7 @@ weightStatus bm
     | bm >= 30.0 = "obese"
     | otherwise = "unknown BMI or weight status"
 
+-- | Body mass index.
 main = do
     putStrLn "Enter your weight in kilograms."
     weight <- getLine

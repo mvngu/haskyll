@@ -36,6 +36,7 @@ secondB []      = error "Empty list"
 secondB [x]     = error "Singleton"
 secondB (_:x:_) = x
 
+-- | Various implementations for extracting the second element of a list.
 main = do
     let a = 2 :: Integer
     let b = 3 :: Integer

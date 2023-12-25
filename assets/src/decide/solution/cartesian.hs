@@ -41,6 +41,7 @@ cartprod (a:b:c) (x:y:z) =
     , (head c, head z)
     ]
 
+-- | An implementation of Cartesian product.
 main = do
     let a = []
     let b = [1, 2, 3]

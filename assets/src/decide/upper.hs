@@ -33,6 +33,7 @@ capitalize str = (toUpper $ head str) : tail str
 capitalizeB :: String -> String
 capitalizeB (x:xs) = toUpper x : xs
 
+-- | Capitalize a string.
 main = do
     let a = "ayyy!"
     let b = "to bee or not two bees"

@@ -25,7 +25,7 @@
 import Data.Time
 import Text.Printf
 
--- Current time of the day in 24-hour format.
+-- | Current time of the day in 24-hour format.
 main = do
     dateTime <- getCurrentTime
     timeZone <- getCurrentTimeZone

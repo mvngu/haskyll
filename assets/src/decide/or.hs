@@ -30,6 +30,7 @@ myOr False False = False
 myOr False True  = True
 myOr True _      = True
 
+-- | An implementation of boolean "or".
 main = do
     let test1 = (True || True) == (myOr True True)
     let test2 = (True || False) == (myOr True False)

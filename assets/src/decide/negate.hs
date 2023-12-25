@@ -28,6 +28,7 @@ import Text.Printf
 negateInt :: Integer -> Integer
 negateInt x = -1 * x
 
+-- | Additive inverse of a number.
 main = do
     let k = -23
     let m = 0

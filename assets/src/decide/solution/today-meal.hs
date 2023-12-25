@@ -25,7 +25,7 @@
 import Data.Time
 import Text.Printf
 
--- Tabby's meal for today.
+-- | Tabby's meal for today.
 main = do
     time <- getCurrentTime
     let (year, month, day) = toGregorian $ utctDay time

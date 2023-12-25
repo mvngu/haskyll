@@ -28,6 +28,7 @@ import Text.Printf
 vadd :: Num a => (a, a) -> (a, a) -> (a, a)
 vadd (s, t) (x, y) = (s + x, t + y)
 
+-- | Vector addition.
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

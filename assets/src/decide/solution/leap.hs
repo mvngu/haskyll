@@ -25,7 +25,7 @@
 import Data.Time
 import Text.Printf
 
--- Whether the current year is a leap year.
+-- | Whether the current year is a leap year.
 main = do
     time <- getCurrentTime
     let (year, _, _) = toGregorian $ utctDay time

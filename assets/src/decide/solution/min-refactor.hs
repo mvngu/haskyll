@@ -31,6 +31,7 @@ minInt x y =
         then x
         else y
 
+-- | Determine the least of two integers.
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

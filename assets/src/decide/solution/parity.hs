@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Whether an integer is even or odd.
+-- | Whether an integer is even or odd.
 main = do
     putStrLn "Enter an integer."
     num <- getLine

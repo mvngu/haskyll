@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- The maximum of two integers.
+-- | The maximum of two integers.
 main = do
     putStrLn "Enter first integer."
     a <- getLine

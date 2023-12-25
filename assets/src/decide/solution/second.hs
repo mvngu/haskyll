@@ -28,6 +28,7 @@ import Text.Printf
 second :: (a, b) -> b
 second (_, y) = y
 
+-- | An implementation of "snd".
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

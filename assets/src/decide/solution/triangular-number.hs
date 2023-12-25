@@ -28,6 +28,7 @@ import Text.Printf
 trinum :: Integer -> Integer
 trinum x = div (x * (x + 1)) 2
 
+-- | The triangular numbers.
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

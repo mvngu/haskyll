@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Sardine day.
+-- | Sardine day.
 main = do
     let today = "Friday"
     let sardineDay = "Friday"

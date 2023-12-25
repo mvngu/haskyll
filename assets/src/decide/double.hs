@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Double an integer.
+-- | Double an integer.
 main = do
     putStrLn "Enter an integer."
     num <- getLine

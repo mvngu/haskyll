@@ -30,6 +30,7 @@ rear []     = error "Empty list"
 rear [x]    = []
 rear (x:xs) = xs
 
+-- | An implementation of "tail".
 main = do
     let a = 2 :: Integer
     let b = 3 :: Integer

@@ -32,6 +32,7 @@ size x
     | (5000 <= x) && (x <= 15000) = "medium"
     | x > 15000 = "large"
 
+-- | Number of students in colleges in the USA.
 main = do
     let a = -1 :: Integer
     let b = 2001 :: Integer

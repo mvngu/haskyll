@@ -31,6 +31,7 @@ quadratic a b c
     | (b ** 2) - (4 * a * c) == 0 = "repeated real solution"
     | (b ** 2) - (4 * a * c) < 0 = "two distinct complex solutions"
 
+-- | Classes of solutions for quadratic equations.
 main = do
     let a = 1 / 2 :: Double -- Two real roots.
     let b = -(5 / 2) :: Double

@@ -31,6 +31,7 @@ relation a b
     | a > b = "greater than"
     | otherwise = "equal to"
 
+-- | An appropriate relation for two integers.
 main = do
     putStrLn "Enter first integer."
     a <- getLine

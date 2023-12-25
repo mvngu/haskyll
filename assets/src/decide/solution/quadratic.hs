@@ -34,6 +34,7 @@ quadratic a b c = do
                  then "No real roots"
                  else show $ ((-b) + (sqrt delta)) / (2 * a)
 
+-- | An implementation of the quadratic formula.
 main = do
     let a = 1 / 2 :: Double -- Two real roots.
     let b = -(5 / 2) :: Double

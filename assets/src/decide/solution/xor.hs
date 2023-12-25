@@ -31,6 +31,7 @@ myXor True True   = False
 myXor False False = False
 myXor _ _         = True
 
+-- | An implementation of exclusive or.
 main = do
     let test1 = (xor True True) == (myXor True True)
     let test2 = (xor True False) == (myXor True False)

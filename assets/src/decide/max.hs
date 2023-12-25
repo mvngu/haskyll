@@ -37,6 +37,7 @@ maxIntg x y
     | x > y = x
     | otherwise = y
 
+-- | Various implementations for determining the greatest of two numbers.
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

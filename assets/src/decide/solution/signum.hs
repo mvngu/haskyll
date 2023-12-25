@@ -31,6 +31,7 @@ sgn x
     | x == 0 = 0 :: Integer
     | x > 0 = 1 :: Integer
 
+-- | An implementation of the signum function.
 main = do
     let a = -5
     let b = 0

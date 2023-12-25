@@ -36,6 +36,7 @@ tri x
     | absolute x < 1 = 1 - (absolute x)
     | otherwise = 0
 
+-- | Implementations of the absolute value and triangular functions.
 main = do
     let a = -1.5
     let b = -1

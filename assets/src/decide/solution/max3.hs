@@ -31,6 +31,7 @@ max3 a b c
     | (b >= a) && (b >= c) = b
     | otherwise = c
 
+-- | Determine the greatest of three integers.
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

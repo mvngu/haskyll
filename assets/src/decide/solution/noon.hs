@@ -25,7 +25,7 @@
 import Data.Time
 import Text.Printf
 
--- Is it noon yet?
+-- | Is it noon yet?
 main = do
     dateTime <- getCurrentTime
     timeZone <- getCurrentTimeZone

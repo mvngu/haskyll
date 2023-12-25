@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Meaning of each traffic light.
+-- | Meaning of each traffic light.
 trafficg :: String -> String
 trafficg light
     | light == "red" = "stop"
@@ -32,13 +32,14 @@ trafficg light
     | light == "green" = "go"
     | otherwise = "Invalid traffic light"
 
--- Meaning of each traffic light.
+-- | Meaning of each traffic light.
 trafficp :: String -> String
 trafficp "red"    = "stop"
 trafficp "orange" = "wait"
 trafficp "green"  = "go"
 trafficp _        = "Invalid traffic light"
 
+-- | Guarded equation versus pattern matching.
 main = do
     let a = "red"
     let b = "orange"

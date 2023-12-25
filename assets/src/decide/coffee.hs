@@ -33,6 +33,7 @@ cupSize drink
     | drink == "frappuccino" = "312--426 ml"
     | otherwise = "unknown drink"
 
+-- | Cup size for each beverage.
 main = do
     putStrLn "Enter a coffee drink."
     drink <- getLine

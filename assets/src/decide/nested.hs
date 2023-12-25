@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Relationship between two integers.
+-- | Relationship between two integers.
 main = do
     putStrLn "Enter first integer."
     a <- getLine

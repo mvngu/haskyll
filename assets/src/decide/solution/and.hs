@@ -29,6 +29,7 @@ myAnd :: Bool -> Bool -> Bool
 myAnd True True = True
 myAnd _ _       = False
 
+-- | An implementation of boolean "and".
 main = do
     let test1 = (True && True) == (myAnd True True)
     let test2 = (True && False) == (myAnd True False)

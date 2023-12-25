@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Tabby's meals on Monday and Friday.
+-- | Tabby's meals on Monday and Friday.
 main = do
     let today = "Monday"
     let porkDay = "Monday"

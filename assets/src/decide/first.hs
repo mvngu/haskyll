@@ -41,6 +41,7 @@ firstD :: [a] -> a
 firstD []     = error "Empty list"
 firstD (x:xs) = x
 
+-- | Various implementations of "fst".
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

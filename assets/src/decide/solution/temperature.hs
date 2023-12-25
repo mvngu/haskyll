@@ -32,6 +32,7 @@ toCelsius x = (x - 32.0) / 1.8
 toFahrenheit :: Double -> Double
 toFahrenheit x = (x * 1.8) + 32.0
 
+-- | Conversion between Fahrenheit and Celsius.
 main = do
     let c = 37 :: Double
     let f = 212 :: Double

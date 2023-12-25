@@ -31,6 +31,7 @@ parity x =
         then "even"
         else "odd"
 
+-- | The parity of an integer.
 main = do
     putStrLn "Enter an integer."
     num <- getLine

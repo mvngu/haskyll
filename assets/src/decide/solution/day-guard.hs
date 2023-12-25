@@ -36,6 +36,7 @@ saying day
     | day == "Sunday" = "Weekend fun\nSunday driver"
     | otherwise = "Not a day of the week"
 
+-- | A daily saying.
 main = do
     putStrLn "Enter a day of the week."
     day <- getLine

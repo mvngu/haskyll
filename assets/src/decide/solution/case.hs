@@ -32,6 +32,7 @@ flipCase str =
         then (toUpper $ head str) : tail str
         else (toLower $ head str) : tail str
 
+-- | Flip the case of a string.
 main = do
     let a = "miss Honey"
     let b = "waltzing Matilda"

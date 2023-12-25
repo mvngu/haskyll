@@ -36,6 +36,7 @@ circumference x = pi * (diameter x)
 diameter :: Double -> Double
 diameter x = 2 * x
 
+-- | Various geometric facts about a circle.
 main = do
     putStrLn "Enter the radius of a circle."
     radius <- getLine

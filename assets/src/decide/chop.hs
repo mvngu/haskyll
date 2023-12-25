@@ -44,6 +44,7 @@ chopSueyB str = capitalize . reverse . init . tail $ str
 chopSueyC :: String -> String
 chopSueyC str = capitalize $ reverse $ init $ tail $ str
 
+-- | Various manipulations of a string.
 main = do
     let a = "!yyyay"
     let b = "clive evils"

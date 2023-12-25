@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Is it weekend yet?
+-- | Is it weekend yet?
 main = do
     putStrLn "Enter a day of the week."
     day <- getLine

@@ -32,6 +32,7 @@ mid a b c
     | (a <= c) && (c <= b) = c
     | otherwise = a
 
+-- | Determine the middle of three integers.
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

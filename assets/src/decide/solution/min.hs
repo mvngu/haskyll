@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- The minimum of two integers.
+-- | The minimum of two integers.
 main = do
     putStrLn "Enter first integer."
     a <- getLine

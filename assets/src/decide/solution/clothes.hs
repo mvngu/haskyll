@@ -37,6 +37,7 @@ label x
     | x == 22 = "XXXL"
     | otherwise = "Invalid size"
 
+-- | Sizes in women's clothing.
 main = do
     let a = -1 :: Integer
     let b = 1 :: Integer

@@ -28,6 +28,7 @@ import Text.Printf
 mid :: (a, b, c) -> b
 mid (_, x, _) = x
 
+-- | The middle of three numbers.
 main = do
     let a = 1 :: Integer
     let b = '2'

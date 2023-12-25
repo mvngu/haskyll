@@ -34,6 +34,7 @@ first :: [a] -> a
 first []     = error "Empty list"
 first (x:xs) = x
 
+-- | Implementations of "last" and "fst".
 main = do
     let a = 1 :: Integer
     let b = 2 :: Integer

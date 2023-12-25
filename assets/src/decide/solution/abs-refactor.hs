@@ -31,6 +31,7 @@ absolute x =
         then x
         else -x
 
+-- | An implementation of the absolute value function.
 main = do
     putStrLn "Enter a number."
     num <- getLine

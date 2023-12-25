@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- A saying for each day of the week.
+-- | A saying for each day of the week.
 main = do
     putStrLn "Enter a day of the week."
     day <- getLine

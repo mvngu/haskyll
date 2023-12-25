@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Todo lists for the weekend.
+-- | Todo lists for the weekend.
 main = do
     putStrLn "Enter a day."
     day <- getLine

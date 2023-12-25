@@ -29,6 +29,7 @@ myNot :: Bool -> Bool
 myNot True  = False
 myNot False = True
 
+-- | An implementation of boolean negation.
 main = do
     let test1 = (not True) == (myNot True)
     let test2 = (not False) == (myNot False)
