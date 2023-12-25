@@ -58,6 +58,7 @@ binomC n k
     | n == k = 1
     | otherwise = (binomC (n - 1) k) + (binomC (n - 1) (k - 1))
 
+-- | Various implementations of the binomial coefficients.
 main = do
     let an = 0 :: Integer
     let ak = 5 :: Integer

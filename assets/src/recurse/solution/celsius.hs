@@ -28,6 +28,7 @@ import Text.Printf
 toCelsius :: Double -> Double
 toCelsius x = (x - 32.0) / 1.8
 
+-- | Conversion from Fahrenheit to Celsius.
 main = do
     let fahrenheit = [79, 84, 76, 70, 66, 62, 61]
     printf "%s\n" $ show $ map toCelsius fahrenheit

@@ -29,6 +29,7 @@ add :: (Integral a) => [a] -> a
 add []     = 0
 add (x:xs) = x + add xs
 
+-- | Add together all numbers in a list.
 main = do
     let a = [] :: [Integer]
     let b = [1, 2, 3] :: [Integer]

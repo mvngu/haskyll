@@ -31,5 +31,6 @@ count n
         count (n - 1)
     | otherwise = error "Must be non-negative integer"
 
+-- | Count down to 0.
 main = do
     count 10

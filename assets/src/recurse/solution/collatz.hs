@@ -36,5 +36,6 @@ cols n = do
     putStrLn $ show $ colf n
     cols (n - 1)
 
+-- | The Collatz function.
 main = do
     cols 50

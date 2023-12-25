@@ -40,6 +40,7 @@ fib n
     | n > 1 = (fib $ n - 1) + (fib $ n - 2)
     | otherwise = error "Must be non-negative integer"
 
+-- | Various implementations of the Fibonacci numbers.
 main = do
     let a = 0 :: Integer
     let b = 1 :: Integer

@@ -29,6 +29,7 @@ flatten :: [[a]] -> [a]
 flatten []     = []
 flatten (x:xs) = x ++ flatten xs
 
+-- | List concatenation.
 main = do
     let a = [] :: [[Integer]]
     let b = [[1, 2, 3]]

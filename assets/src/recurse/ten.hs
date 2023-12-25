@@ -24,6 +24,7 @@
 
 import Data.Foldable
 
+-- | Count from 1 to 10.
 main = do
     for_ [1 .. 10] $ \x -> do
         putStrLn $ show x

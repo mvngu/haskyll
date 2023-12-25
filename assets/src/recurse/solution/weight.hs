@@ -38,6 +38,7 @@ maleWeight gravity = map (\x -> 199.8 * x) gravity
 toKilogram :: Double -> Double
 toKilogram x = 0.4535924 * x
 
+-- | A person's weight on various heavenly bodies in the Solar System.
 main = do
     let gravity = [0.38, 0.91, 1, 0.166, 0.38, 2.34, 1.06, 0.92, 1.19, 0.06]
     let male = maleWeight gravity

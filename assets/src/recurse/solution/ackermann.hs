@@ -32,6 +32,7 @@ ackermann 0 y = y + 1
 ackermann x 0 = ackermann (x - 1) 1
 ackermann x y = ackermann (x - 1) $ ackermann x $ y - 1
 
+-- | The Ackermann function.
 main = do
     for_ [0 .. 3] $ \x -> do
         for_ [0 .. 5] $ \y -> do

@@ -45,6 +45,7 @@ factorialC n
     | n < 0 = error "Must be non-negative integer"
     | otherwise = product [1 .. n]
 
+-- | Various implementations of factorial.
 main = do
     let a = 1
     let b = 5

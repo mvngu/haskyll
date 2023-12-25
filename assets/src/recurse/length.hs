@@ -29,6 +29,7 @@ size :: [a] -> Int
 size []     = 0
 size (x:xs) = 1 + size xs
 
+-- | An implementation of "length".
 main = do
     let a = []
     let b = [1, 3, 5]

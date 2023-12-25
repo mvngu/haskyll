@@ -40,6 +40,7 @@ primes n
     | n < 1 = []
     | otherwise = filter isPrime [1 .. n]
 
+-- | List of prime numbers.
 main = do
     for_ (primes 100) $ \n -> do
         printf "%d\n" n

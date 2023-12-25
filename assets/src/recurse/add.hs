@@ -39,6 +39,7 @@ trinum n
     | n > 1 = n + trinum (n - 1)
     | otherwise = error "Must be positive integer"
 
+-- | Various implementations of the triangular numbers.
 main = do
     let a = 3 :: Integer
     let b = 6 :: Integer

@@ -32,6 +32,7 @@ evenList n = map (\x -> 2 * x) [1 .. n]
 oddList :: Integral a => a -> [a]
 oddList n = map (\x -> 2 * x + 1) [0 .. n - 1]
 
+-- | Lists of even and odd numbers.
 main = do
     printf "%s\n" $ show $ evenList 10
     printf "%s\n" $ show $ oddList 10

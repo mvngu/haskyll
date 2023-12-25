@@ -29,6 +29,7 @@ addOne :: Num a => [a] -> [a]
 addOne []     = []
 addOne (x:xs) = [x + 1] ++ addOne xs
 
+-- | Increment each number.
 main = do
     let a = [1 .. 10] :: [Integer]
     printf "%s -> %s\n" (show a) $ show $ addOne a

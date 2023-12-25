@@ -33,6 +33,7 @@ palindrome (x:xs)
     | x /= last xs = False
     | otherwise = palindrome $ init xs
 
+-- | Testing for palindrome.
 main = do
     let a = []
     let b = "a"

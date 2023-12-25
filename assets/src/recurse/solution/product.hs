@@ -29,6 +29,7 @@ prod :: (Integral a) => [a] -> a
 prod []     = 1
 prod (x:xs) = x * prod xs
 
+-- | Multiply all numbers in a list.
 main = do
     let a = [] :: [Integer]
     let b = [1, 2, 3] :: [Integer]

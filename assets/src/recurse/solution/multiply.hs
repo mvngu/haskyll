@@ -33,6 +33,7 @@ mult k n
     | k < 0 || n < 0 = error "Must be positive integer"
     | otherwise = k + mult k (n - 1)
 
+-- | Integer multiplication as recursion.
 main = do
     let a = 2 :: Integer
     let b = 3 :: Integer
