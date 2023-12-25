@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- Convert age from Earth years to Mercury years.
+-- | Convert age from Earth years to Mercury years.
 main = do
     putStrLn "Enter your age in years."
     year <- getLine

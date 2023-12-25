@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- Calculate the area of a circle.
+-- | Calculate the area of a circle.
 main = do
     putStrLn "Please enter the radius."
     radius <- getLine

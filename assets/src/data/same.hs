@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Same or different?
+-- | Same or different?
 main = do
     let a = 42
     let b = "42"

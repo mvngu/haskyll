@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- How old Tabby will be in x years.
+-- | How old Tabby will be in x years.
 main = do
     let age = 1 :: Integer
     let x = 3 :: Integer

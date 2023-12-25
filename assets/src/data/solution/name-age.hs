@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- Prompt for name and age.  Print the age in x years time.
+-- | Prompt for name and age.  Print the age in x years time.
 main = do
     putStrLn "Enter your name."
     name <- getLine

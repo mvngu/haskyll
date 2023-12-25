@@ -25,7 +25,7 @@
 import Data.Bits
 import Text.Printf
 
--- Sam's pet preferences.
+-- | Sam's pet preferences.
 main = do
     let cat = True
     let dog = False

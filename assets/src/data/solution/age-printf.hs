@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- How old Tabby will be in x years.
+-- | How old Tabby will be in x years.
 -- Use the function printf for string formatting.
 main = do
     let age = 1 :: Integer

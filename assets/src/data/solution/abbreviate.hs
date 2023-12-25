@@ -25,7 +25,7 @@
 import Data.Char
 import Text.Printf
 
--- Abbreviate a two-word phrase.
+-- | Abbreviate a two-word phrase.
 main = do
     putStrLn "Enter a two-word phrase."
     phrase <- getLine

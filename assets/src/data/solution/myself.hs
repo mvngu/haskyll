@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- My personal information.
+-- | My personal information.
 main = do
     let name = "Sam"
     let age = 23 :: Integer

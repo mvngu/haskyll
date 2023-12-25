@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Swap the first and last characters of a string with each other.
+-- | Swap the first and last characters of a string with each other.
 main = do
     putStrLn "Enter a string."
     str <- getLine

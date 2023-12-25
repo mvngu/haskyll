@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- Calculate a person's weight on the Moon.
+-- | Calculate a person's weight on the Moon.
 main = do
     putStrLn "Enter your weight in pounds."
     pound <- getLine

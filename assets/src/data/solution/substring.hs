@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Extract a substring between indices i and j, inclusive.
+-- | Extract a substring between indices i and j, inclusive.
 main = do
     putStrLn "Enter a string."
     str <- getLine

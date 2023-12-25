@@ -24,6 +24,7 @@
 
 import Text.Printf
 
+-- | Pet preference.
 main = do
     let likeCat = True
     let likeDog = True

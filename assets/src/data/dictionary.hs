@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- A small dictionary.
+-- | A small dictionary.
 main = do
     let a = "aardvark"
     let b = "armadillo"

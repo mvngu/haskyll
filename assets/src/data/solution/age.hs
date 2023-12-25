@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- How old Tabby will be in x years.  A rewrite of
+-- | How old Tabby will be in x years.  A rewrite of
 --
 -- assets/src/data/age.hs
 --

@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- Boolean or.
+-- | Boolean or.
 main = do
     let coffee = True
     let tea = False

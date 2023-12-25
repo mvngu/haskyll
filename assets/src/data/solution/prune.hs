@@ -22,7 +22,7 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
--- Remove the character at index i in a string.
+-- | Remove the character at index i in a string.
 main = do
     putStrLn "Enter a string."
     str <- getLine

@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- How many correct solutions?
+-- | How many correct solutions?
 main = do
     let resultA = 2 < 3
     let resultB = 37 /= (read "37" :: Integer)
