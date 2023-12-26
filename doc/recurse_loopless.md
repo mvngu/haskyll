@@ -630,8 +630,8 @@ calculate the GCD of each pair. Test your implementation against the function
 
 <!-- prettier-ignore-start -->
 :exercise:
-You will write a program that determines all positive factors of a positive
-integer $n$.
+You will write a program that determines all positive factors of an integer
+$n > 0$.
 <!-- prettier-ignore-end -->
 
 1. Write a program that scans through all integers from 1 to $n$, testing each
