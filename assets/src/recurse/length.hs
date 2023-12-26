@@ -29,13 +29,20 @@ size :: [a] -> Int
 size []     = 0
 size (x:xs) = 1 + size xs
 
+-- | The length of a list, using a fold operation.
+sizef = foldr (\_ acc -> 1 + acc) 0
+
 -- | An implementation of "length".
 main = do
     let a = []
     let b = [1, 3, 5]
     let c = ["a", "b", "c", "d", "e"]
     let d = "dandelion"
-    printf "[] -> %d: %s\n" (size a) $ show $ size a == length a
-    printf "%s -> %d: %s\n" (show b) (size b) $ show $ size b == length b
-    printf "%s -> %d: %s\n" (show c) (size c) $ show $ size c == length c
-    printf "%s -> %d: %s\n" (show d) (size d) $ show $ size d == length d
+    let testa = length a == size a && length a == sizef a
+    let testb = length b == size b && length b == sizef b
+    let testc = length c == size c && length c == sizef c
+    let testd = length d == size d && length d == sizef d
+    printf "[] -> %d: %s\n" (size a) $ show testa
+    printf "%s -> %d: %s\n" (show b) (size b) $ show testb
+    printf "%s -> %d: %s\n" (show c) (size c) $ show testc
+    printf "%s -> %d: %s\n" (show d) (size d) $ show testd
