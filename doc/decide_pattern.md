@@ -305,7 +305,7 @@ elements of the vectors are integers. You might find the type class
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exDotProduct"
 The dot product of two vectors $(a,\, b)$ and $(x,\, y)$ is defined as
 <!-- prettier-ignore-end -->
 
