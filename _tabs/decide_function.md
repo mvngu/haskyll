@@ -85,19 +85,9 @@ below for the signature of our function together with its definition.
 
 [`negate.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/negate.hs)
 ```haskell
-import Text.Printf
-
 -- | Reverse the sign of an integer.
 negateInt :: Integer -> Integer
 negateInt x = -1 * x
-
-main = do
-    let k = -23
-    let m = 0
-    let n = 42
-    printf "%d -> %d\n" k $ negateInt k
-    printf "%d -> %d\n" m $ negateInt m
-    printf "%d -> %d\n" n $ negateInt n
 ```
 
 I can hear you protest, "But the Haskell library already has its own function to
@@ -114,15 +104,7 @@ import Text.Printf
 
 -- | Convert the first character of a string to uppercase.
 capitalize :: String -> String
-capitalize str = (toUpper $ head str) : (tail str)
-
-main = do
-    let a = "ayyy!"
-    let b = "to bee or not two bees"
-    let c = "42 is a number"
-    printf "%s -> %s\n" a $ capitalize a
-    printf "%s -> %s\n" b $ capitalize b
-    printf "%s -> %s\n" c $ capitalize c
+capitalize str = (toUpper $ head str) : tail str
 ```
 
 <!--=========================================================================-->
@@ -148,17 +130,69 @@ capitalize str = (toUpper $ head str) : (tail str)
 -- string, then capitalize the result.
 chopSuey :: String -> String
 chopSuey str = do
-    let torso = init $ tail str
-    capitalize $ reverse torso
-
-main = do
-    let a = "!yyyay"
-    let b = "clive evils"
-    let c = "8caterpillar-"
-    printf "%s -> %s\n" a $ chopSuey a
-    printf "%s -> %s\n" b $ chopSuey b
-    printf "%s -> %s\n" c $ chopSuey c
+    let torso = init . tail
+    capitalize . reverse $ torso str
 ```
+
+<!--=========================================================================-->
+
+### Function composition
+
+Hang on. Carefully examine the function `chopSuey` again. What does the dot
+symbol `.` mean? In Haskell, the dot symbol `.` allows us to compose two
+functions. In mathematics, the [composition][composition] of two functions $f$
+and $g$ is written as $f \circ g$, meaning that we apply the function $g$ first
+and feed the output of $g$ to the function $f$. Given a variable $x$, the
+function composition $(f \circ g)(x)$ is equivalent to the nested function
+application $f\big( g(x) \big)$.
+
+In Haskell, the dot notation allows us to compose two Haskell functions. The
+expression `init . tail` means that we first apply the function `tail`, then
+input the result to the function `init`. The expression
+`capitalize . reverse $ torso str` shows the interaction between the function
+application `$` and the function composition `.` notations. Both of these
+notations work from right to left. The function application notation `$` tells
+us to first calculate the result of the expression `torso str`. By definition,
+`torso` is the function composition `init . tail`. The output of `torso str` is
+the output of the function composition `init . tail` given the parameter `str`.
+The result of `torso str` is then fed to the function composition
+`capitalize . reverse`. Using a chain of function compositions, the function
+`chopSuey` can be simplified as follows:
+
+[`chop.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/chop.hs)
+```haskell
+-- | Same as chopSuey, but simplified.
+chopSueyB :: String -> String
+chopSueyB str = capitalize . reverse . init . tail $ str
+```
+
+You might have noticed that the function application and composition notations
+work from right to left and are identical in every respect, except for their
+respective symbols. Why not consistently use `$` instead of peppering `$` with
+`.`? For example, we can simplify `chopSuey` as follows:
+
+[`chop.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/chop.hs)
+```haskell
+-- | Same as chopSueyB, but using only function application notation.
+chopSueyC :: String -> String
+chopSueyC str = capitalize $ reverse $ init $ tail $ str
+```
+
+Why prefer `chopSueyB` over `chopSueyC`? It boils down to various factors:
+
+1. Style. If you do not want to chop and change `$` with `.`, by all means stick
+   with `$` only. If you think in terms of function composition, in the
+   mathematical sense, the notation `.` clarifies your intent.
+1. Noise. The symbol `$` adds more visual noise than `.` does. Compare the
+   definitions of `chopSueyB` and `chopSueyC`. The issue bears similarity to
+   using `$` to reduce the amount of parentheses in an expression.
+1. Lazy. The function application notation `$` expects an immediate result. The
+   expression `tail $ str` would immediately evaluate to the tail of the given
+   string. On the other hand, the function composition notation `.` is lazy in
+   the sense that it would delay evaluation until necessary. The expression
+   `let torso = init . tail` is valid and compiles, whereas the expression
+   `let torso = init $ tail` would result in an error because we have not given
+   an argument to `tail`.
 
 <!--=========================================================================-->
 
@@ -173,22 +207,12 @@ Consider the code below.
 
 [`max.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/max.hs)
 ```haskell
-import Text.Printf
-
 -- | The maximum of two integers.
 maxInt :: Integer -> Integer -> Integer
 maxInt x y =
     if x > y
         then x
         else y
-
-main = do
-    let a = 1 :: Integer
-    let b = 2 :: Integer
-    let c = 3 :: Integer
-    printf "Max of %d and %d: %d\n" a b $ maxInt a b
-    printf "Max of %d and %d: %d\n" (-b) c $ maxInt (-b) c
-    printf "Max of %d and %d: %d\n" c c $ maxInt c c
 ```
 
 You might have noticed several issues regarding the above definition of the
@@ -402,6 +426,7 @@ both middle characters. You might find the method [`length`][length] useful.
 
 <!-- prettier-ignore-start -->
 [compare]: https://web.archive.org/web/20231128114053/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:compare
+[composition]: https://web.archive.org/web/20231219010454/https://en.wikipedia.org/wiki/Function_composition
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [div]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst

@@ -32,7 +32,7 @@ follows.
 ```haskell
 import Text.Printf
 
--- Sardine day.
+-- | Sardine day.
 main = do
     let today = "Friday"
     let sardineDay = "Friday"
@@ -118,11 +118,12 @@ the afternoon. With the latter finer detail, Sam modifies the program
 as follows.
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore -->
 [`sardine-time.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/sardine-time.hs)
 ```haskell
 import Text.Printf
 
--- The day and time for sardine.
+-- | The day and time for sardine.
 main = do
     let today = "Friday"
     let sardineDay = "Friday"
@@ -155,7 +156,7 @@ The above can be translated into Haskell code as:
 ```haskell
 import Text.Printf
 
--- Relationship between two integers.
+-- | Relationship between two integers.
 main = do
     putStrLn "Enter first integer."
     a <- getLine
@@ -196,7 +197,7 @@ You translate the above description to Haskell as follows.
 ```haskell
 import Text.Printf
 
--- Double an integer.
+-- | Double an integer.
 main = do
     putStrLn "Enter an integer."
     num <- getLine
@@ -221,7 +222,7 @@ her weekend todo lists.
 ```haskell
 import Text.Printf
 
--- Todo lists for the weekend.
+-- | Todo lists for the weekend.
 main = do
     putStrLn "Enter a day."
     day <- getLine
@@ -284,7 +285,7 @@ instead of hard coding a day string.
 import Data.Time
 import Text.Printf
 
--- The current day of the week.
+-- | The current day of the week.
 main = do
     time <- getCurrentTime
     let (year, month, day) = toGregorian $ utctDay time
@@ -314,7 +315,7 @@ then output the string `"It's high noon"`. Otherwise output the string
 import Data.Time
 import Text.Printf
 
--- Current time of the day in 24-hour format.
+-- | Current time of the day in 24-hour format.
 main = do
     dateTime <- getCurrentTime
     timeZone <- getCurrentTimeZone
@@ -334,7 +335,7 @@ $$
 |x|
 =
 \begin{cases}
-  x,& \text{if } x \geq 0,\\[4pt]
+  x,& \text{if } x \geq 0,\\[8pt]
   -x,& \text{otherwise}.
 \end{cases}
 $$

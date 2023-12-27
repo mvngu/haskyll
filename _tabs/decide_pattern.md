@@ -6,7 +6,7 @@ order: 16
 
 The basic idea of pattern matching is simple. Organize the definition of your
 function according to the specific patterns you want to match. That does not
-sound simple at all. We need an example.
+sound simple at all. We need examples to clarify how to use pattern matching.
 
 <!--=========================================================================-->
 
@@ -18,7 +18,7 @@ equation like so:
 
 [`traffic.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/traffic.hs)
 ```haskell
--- Meaning of each traffic light.
+-- | Meaning of each traffic light.
 trafficg :: String -> String
 trafficg light
     | light == "red" = "stop"
@@ -31,7 +31,7 @@ Alternatively, we can use pattern matching. How? Observe:
 
 [`traffic.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/traffic.hs)
 ```haskell
--- Meaning of each traffic light.
+-- | Meaning of each traffic light.
 trafficp :: String -> String
 trafficp "red"    = "stop"
 trafficp "orange" = "wait"
@@ -168,13 +168,13 @@ elements. Here's an implementation:
 [`vadd.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/vadd.hs)
 ```haskell
 -- | Addition for vectors of two elements.
-vadd :: (Num a) => (a, a) -> (a, a) -> (a, a)
+vadd :: Num a => (a, a) -> (a, a) -> (a, a)
 vadd (s, t) (x, y) = (s + x, t + y)
 ```
 
-What is the code `(Num a) =>` doing in the signature of `vadd`? What does the
-code mean? Let's examine the code bit by bit. The Haskell type [`Num`][num] is a
-type class, meaning that `Num` encompasses the usual number types such as `Int`,
+What is the code `Num a =>` doing in the signature of `vadd`? What does the code
+mean? Let's examine the code bit by bit. The Haskell type [`Num`][num] is a type
+class, meaning that `Num` encompasses the usual number types such as `Int`,
 `Integer`, and `Double`. Put another way, numeric types such as `Integer` and
 `Double` are based on `Num`. You can confirm the latter statement by examining
 the following GHCi session:
@@ -376,7 +376,7 @@ elements of the vectors are integers. You might find the type class
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-<strong>Exercise 6.</strong> The dot product of two vectors $(a,\, b)$ and $(x,\, y)$ is defined as
+<strong id="exDotProduct">Exercise 6.</strong> The dot product of two vectors $(a,\, b)$ and $(x,\, y)$ is defined as
 <!-- prettier-ignore-end -->
 
 $$
@@ -388,21 +388,40 @@ $$
 Implement the dot product.
 
 <!-- prettier-ignore-start -->
-<strong>Exercise 7.</strong> Implement your own version of the function [`last`][last].
+<strong>Exercise 7.</strong> Consider the function `capitalize` from the sections
+[DIY](../decide_function/#diy) and [I `do`](../decide_function/#i-do). Simplify
+the function.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-<strong>Exercise 8.</strong> Implementation your own version of the function [`tail`][tail].
+<strong>Exercise 8.</strong> The functions [`head`][head], [`tail`][tail], [`init`][init], and [`last`][last]
+are unsafe in the sense that each would throw an error when given an empty
+list.
 <!-- prettier-ignore-end -->
 
-<!-- prettier-ignore-start -->
-<strong>Exercise 9.</strong> Implement your own version of the function [`init`][init].
-<!-- prettier-ignore-end -->
+1. Implement your own versions of the functions [`last`][last], [`tail`][tail],
+   and [`init`][init] without using the above functions.
+1. Implement your own versions of the above functions so they would properly
+   handle empty lists.
+1. The torso of a list is defined as the list without its head and last
+   elements. Use your "safe" implementations above to obtain the torso of
+   various lists.
 
 <!-- prettier-ignore-start -->
-<strong>Exercise 10.</strong> Write a function that takes a list of integers. If the first integer is odd,
+<strong>Exercise 9.</strong> Write a function that takes a list of integers. If the first integer is odd,
 then remove the first element. Otherwise keep the integer.
 <!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+<strong>Exercise 10.</strong> The [Cartesian product][cartesianProduct] of two lists `[a, b, c]` and
+`[x, y, z]` is the list:
+<!-- prettier-ignore-end -->
+
+```haskell
+[(a, x), (a, y), (a, z), (b, x), (b, y), (b, z), (c, x), (c, y), (c, z)]
+```
+
+Write a function to implement the Cartesian product of lists of three elements.
 
 <!--=========================================================================-->
 
@@ -411,6 +430,7 @@ then remove the first element. Otherwise keep the integer.
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
+[cartesianProduct]: https://web.archive.org/web/20231213134027/https://en.wikipedia.org/wiki/Cartesian_product
 [dataBits]: https://web.archive.org/web/20231116111136/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Bits.html
 [error]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:error
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst

@@ -10,6 +10,16 @@ writing (or reading) nested conditional expressions like the following?
 
 [`nested.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/nested.hs)
 ```haskell
+import Text.Printf
+
+-- | Relationship between two integers.
+main = do
+    putStrLn "Enter first integer."
+    a <- getLine
+    putStrLn "Enter second integer."
+    b <- getLine
+    let k = read a :: Integer
+    let n = read b :: Integer
     let relation =
             if k < n
                 then "less than"
@@ -42,11 +52,11 @@ maxInt x y =
 
 Here is the same function, but written as a guarded equation:
 
-[`max-guard.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/max-guard.hs)
+[`max.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/max.hs)
 ```haskell
 -- | The maximum of two integers.
-maxInt :: Integer -> Integer -> Integer
-maxInt x y
+maxIntg :: Integer -> Integer -> Integer
+maxIntg x y
     | x > y = x
     | otherwise = y
 ```

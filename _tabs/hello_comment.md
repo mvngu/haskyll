@@ -5,7 +5,7 @@ order: 4
 
 > Any fool can write code that a computer can understand. Good programmers write
 > code that humans can understand.\
-> -- Martin Fowler. _Refactoring: Improving the Design of Existing Code_[^a]
+> --- Martin Fowler, 2019[^a]
 
 Great code must balance various tensions. It should be comprehensible to a human
 reader as well as being self-documenting. You and I are not coding geniuses
@@ -20,6 +20,7 @@ A single-line Haskell comment starts with the double dash symbol `--`. The
 "Hello, world" program from the section [Tales from the script][taleScript] can
 be documented like so:
 
+<!-- prettier-ignore -->
 [`hello-single.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello-single.hs)
 ```haskell
 -- The traditional greeting.
@@ -39,6 +40,7 @@ no exception. The beginning of a multiline Haskell comment is marked by the
 symbol `{-`. The end of the multiline comment is designated by `-}`. Here is the
 "Hello, world" program accompanied by a multiline comment.
 
+<!-- prettier-ignore -->
 [`hello-multi.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello-multi.hs)
 ```haskell
 {-

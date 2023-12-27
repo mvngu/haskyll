@@ -55,15 +55,15 @@ output of the following program.
 ```haskell
 import Text.Printf
 
--- Boolean or.
+-- | Boolean or.
 main = do
     let coffee = True
     let tea = False
     let water = True
     let beer = False
-    putStrLn (printf "Coffee or tea? %s" $ show (coffee || tea))
-    putStrLn (printf "Tea or water? %s" $ show (tea || water))
-    putStrLn (printf "Tea or beer? %s" $ show (tea || beer))
+    printf "Coffee or tea? %s\n" $ show (coffee || tea)
+    printf "Tea or water? %s\n" $ show (tea || water)
+    printf "Tea or beer? %s\n" $ show (tea || beer)
 ```
 
 <!--=========================================================================-->
@@ -160,15 +160,15 @@ take some time to work through the boolean results of the following program.
 ```haskell
 import Text.Printf
 
--- Boolean and.
+-- | Boolean and.
 main = do
     let coffee = True
     let tea = False
     let water = True
     let beer = False
-    putStrLn (printf "Coffee and tea? %s" (show (coffee && tea)))
-    putStrLn (printf "Coffee and water? %s" (show (coffee && water)))
-    putStrLn (printf "Tea and beer? %s" (show (tea && beer)))
+    printf "Coffee and tea? %s\n" (show (coffee && tea))
+    printf "Coffee and water? %s\n" (show (coffee && water))
+    printf "Tea and beer? %s\n" (show (tea && beer))
 ```
 
 <!--=========================================================================-->
@@ -258,6 +258,7 @@ Sam likes cats XOR dogs? True
 ```haskell
 import Text.Printf
 
+-- | Pet preference.
 main = do
     let likeCat = True
     let likeDog = True

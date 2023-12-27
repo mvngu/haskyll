@@ -6,7 +6,7 @@ order: 6
 
 > Numbers in Haskell are complicated because in the Haskell world there are many
 > different kinds of number...\
-> --- Richard Bird, _Thinking Functionally with Haskell_[^a]
+> --- Richard Bird, 2015[^a]
 
 Haskell represents a number in one of several ways, depending on the kind of
 number you are dealing with. Is the number an integer? Haskell has the types
@@ -422,10 +422,10 @@ Haskell program below shows Tabby's age after a given number of years.
 
 [`age.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/age.hs)
 ```haskell
--- How old Tabby will be in x years.
+-- | How old Tabby will be in x years.
 main = do
-    let age = (1 :: Integer)
-    let x = (3 :: Integer)
+    let age = 1 :: Integer
+    let x = 3 :: Integer
     putStrLn ("Tabby's age: " ++ show age)
     putStrLn ("In 3 years time, Tabby will be: " ++ show (age + x))
 ```

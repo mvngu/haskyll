@@ -82,7 +82,7 @@ print the area to the command line. Here is our program:
 
 [`circle.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/circle.hs)
 ```haskell
--- Calculate the area of a circle.
+-- | Calculate the area of a circle.
 main = do
     putStrLn "Please enter the radius."
     radius <- getLine
@@ -150,12 +150,12 @@ you want.  For example, the GHCi session below converts various integers to type
 ```haskell
 ghci> a = 3 :: Int
 ghci> b = 3 :: Integer
-ghci> c = (fromIntegral a) :: Double
+ghci> c = fromIntegral a :: Double
 ghci> :type c
 c :: Double
 ghci> c
 3.0
-ghci> d = (fromIntegral b) :: Double
+ghci> d = fromIntegral b :: Double
 ghci> :type d
 d :: Double
 ghci> d
@@ -170,15 +170,15 @@ throwing a tantrum.
 ```haskell
 ghci> a = 4 :: Int
 ghci> b = 4 :: Integer
-ghci> (fromInteger b) :: Double
+ghci> fromInteger b :: Double
 4.0
-ghci> (fromInteger a) :: Double
+ghci> fromInteger a :: Double
 
-<interactive>:4:14: error:
+<interactive>:4:13: error:
     * Couldn't match expected type 'Integer' with actual type 'Int'
     * In the first argument of 'fromInteger', namely 'a'
-      In the expression: (fromInteger a) :: Double
-      In an equation for 'it': it = (fromInteger a) :: Double
+      In the expression: fromInteger a :: Double
+      In an equation for 'it': it = fromInteger a :: Double
 ```
 
 <!--=========================================================================-->

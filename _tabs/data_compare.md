@@ -84,7 +84,7 @@ equal according to `==`.
 ```haskell
 import Text.Printf
 
--- Same or different?
+-- | Same or different?
 main = do
     let a = 42
     let b = "42"
@@ -108,7 +108,7 @@ the operator `<` is `True`.
 ```haskell
 import Text.Printf
 
--- A small dictionary.
+-- | A small dictionary.
 main = do
     let a = "aardvark"
     let b = "armadillo"
@@ -131,7 +131,7 @@ at the location shown in the program.
 ```haskell
 import Text.Printf
 
--- How many correct solutions?
+-- | How many correct solutions?
 main = do
     let resultA = 2 < 3
     let resultB = 37 /= (read "37" :: Integer)
