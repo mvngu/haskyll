@@ -669,8 +669,16 @@ Let's play some word games.
 
     Another example is Cathy Park Hong's poem ["Ballad in A"][balladInA], which
     uses only the vowel "A" (save for one word). See whether you can spot the
-    exception in the poem. Write a function to determine whether a sentence is
+    exception in the poem. Write a function to determine whether a string is
     univocalic.
+
+1. A [supervocalic][supervocalic] is a word, phrase, or proper noun that
+   contains each of the vowels "A", "E", "I", "O", "U" exactly once.[^b]
+   Examples include "cauliflower", "oriental rug", and "au revoir". Supervocalic
+   proper nouns include [Constance Cummings][constanceCummings], [Irmgard
+   Flügge-Lotz][irmgardFluggeLotz], [Austin Powers][austinPowers], and [Hugo
+   Weaving][hugoWeaving]. Write a function to determine whether a string is
+   supervocalic.
 
 <!-- prettier-ignore-start -->
 :exercise:
@@ -687,19 +695,29 @@ $g$ is higher or lower than $n$, and enter another guess.
     The symbol `\` also looks similar to the Chinese character 入. Why is `\`
     not pronounced as "rù" like in Mandarin?
 
+[^b]:
+    The word "supervocalic" was coined by Eric W. Chaikin in the paper: Eric W.
+    Chaikin. AEIOU: Supervocalics in Webster's Third. _Word Ways_, volume 33,
+    issue 4, 2000. The concept was already known long before Chaikin created the
+    word to describe the concept. See the article by [Susan Thorpe][Thorpe1999].
+
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
 [all]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:all
 [anonymousFunction]: https://web.archive.org/web/20231203074524/https://en.wikipedia.org/wiki/Anonymous_function
+[austinPowers]: https://web.archive.org/web/20231206120010/https://en.wikipedia.org/wiki/Austin_Powers_(character)
 [balladInA]: https://web.archive.org/web/20231127170513/https://www.poetryfoundation.org/poetrymagazine/poems/53500/ballad-in-a
 [CDC]: https://web.archive.org/web/20231216104909/https://www.cdc.gov/nchs/fastats/body-measurements.htm
+[constanceCummings]: https://web.archive.org/web/20231204021053/https://en.wikipedia.org/wiki/Constance_Cummings
 [even]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:even
 [filter]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:filter
 [for_]: https://web.archive.org/web/20231128114100/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Foldable.html#v:for_
 [gcd]: https://web.archive.org/web/20231216113250/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:gcd
 [globalStdGen]: https://web.archive.org/web/20231219044923/https://hackage.haskell.org/package/random-1.2.1.1/docs/System-Random-Stateful.html#v:globalStdGen
 [greatestCD]: https://web.archive.org/web/20231213173440/https://en.wikipedia.org/wiki/Greatest_common_divisor
+[hugoWeaving]: https://web.archive.org/web/20231217100604/https://en.wikipedia.org/wiki/Hugo_Weaving
+[irmgardFluggeLotz]: https://web.archive.org/web/20231227030330/https://en.wikipedia.org/wiki/Irmgard_Fl%C3%BCgge-Lotz
 [isPrefixOf]: https://web.archive.org/web/20231223101221/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-List.html#v:isPrefixOf
 [map]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:map
 [oceaniaAverageWeight]: https://web.archive.org/web/20231207093639/https://www.worlddata.info/average-bodyheight.php
@@ -711,6 +729,8 @@ $g$ is higher or lower than $n$, and enter another guess.
 [replicateM]: https://web.archive.org/web/20231219074438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Control-Monad.html#v:replicateM
 [replicateM_]: https://web.archive.org/web/20231219074438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Control-Monad.html#v:replicateM_
 [sum]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:sum
+[supervocalic]: https://web.archive.org/web/20231227023909/https://everything2.com/title/supervocalic
+[Thorpe1999]: https://web.archive.org/web/20231227024553/https://wordways.com/thorpe99.html
 [uniformDouble01M]: https://web.archive.org/web/20231219044923/https://hackage.haskell.org/package/random-1.2.1.1/docs/System-Random-Stateful.html#v:uniformDouble01M
 [uniformRM]: https://web.archive.org/web/20231219044923/https://hackage.haskell.org/package/random-1.2.1.1/docs/System-Random-Stateful.html#v:uniformRM
 [univocalic]: https://web.archive.org/web/20231223084026/https://en.wikipedia.org/wiki/Univocalic
