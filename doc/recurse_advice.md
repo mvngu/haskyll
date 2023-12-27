@@ -437,7 +437,7 @@ Given a list of integers, write a function that:
 <!-- prettier-ignore-start -->
 :exercise:
 Addition of integers can be defined in terms of successive adding of 1. Let $k$
-and $n$ be non-negative integers. Define the addition $n + k$ as follows:
+and $n$ be non-negative integers. Define the sum $n + k$ as follows:
 <!-- prettier-ignore-end -->
 
 $$
