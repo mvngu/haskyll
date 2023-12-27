@@ -652,6 +652,16 @@ function [`all`][all] useful.
 
 <!-- prettier-ignore-start -->
 :exercise:
+Let's play some word games.
+<!-- prettier-ignore-end -->
+
+1. A [pangram][pangram] is a sentence that uses every letter of the English
+   alphabet. The case of a letter does not matter. A famous pangram is the
+   sentence, "The quick brown fox jumps over the lazy dog." Write a function to
+   determine whether a given sentence is a pangram.
+
+<!-- prettier-ignore-start -->
+:exercise:
 In this exercise, you will implement a simple guess-the-number game. The game
 takes two positive integers $a$ and $b$, where $a < b$, and chooses a random
 integer $n$ from the range $[a,\, b]$. Now you must guess the chosen number.
@@ -680,6 +690,7 @@ $g$ is higher or lower than $n$, and enter another guess.
 [isPrefixOf]: https://web.archive.org/web/20231223101221/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-List.html#v:isPrefixOf
 [map]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:map
 [oceaniaAverageWeight]: https://web.archive.org/web/20231207093639/https://www.worlddata.info/average-bodyheight.php
+[pangram]: https://web.archive.org/web/20231213121652/https://en.wikipedia.org/wiki/Pangram
 [planetGravity]: https://web.archive.org/web/20231218075802/https://www.calctool.org/astrophysics/weight-other-planets
 [primeNumbers]: https://web.archive.org/web/20231223022623/https://en.wikipedia.org/wiki/Prime_number
 [random]: https://web.archive.org/web/20231130072459/https://hackage.haskell.org/package/random
