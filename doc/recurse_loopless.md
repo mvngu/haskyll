@@ -477,14 +477,6 @@ call generating a random number.
 
 <!-- prettier-ignore-start -->
 :exercise:
-Write a lambda expression that:
-<!-- prettier-ignore-end -->
-
-1. Squares a number.
-1. Halves an integer if it is even, otherwise add 1 to the integer.
-
-<!-- prettier-ignore-start -->
-:exercise:
 The list below shows the temperatures in Fahrenheit of a particular city, during
 a week.
 <!-- prettier-ignore-end -->
@@ -497,11 +489,14 @@ Use `map` to help you convert each temperature value to Celsius.
 
 <!-- prettier-ignore-start -->
 :exercise:
-Use `map` and lambda expression to define the following:
+Use `map` and/or lambda expression to define the following:
 <!-- prettier-ignore-end -->
 
--   A function that outputs a list of the first $n$ positive even numbers.
--   A function that outputs a list of the first $n$ positive odd numbers.
+1.  A function that outputs a list of the first $n$ positive even numbers.
+1.  A function that outputs a list of the first $n$ positive odd numbers.
+1.  A function that squares a number.
+1.  A function that halves an integer if it is even, otherwise add 1 to the
+    integer.
 
 <!-- prettier-ignore-start -->
 :exercise:
