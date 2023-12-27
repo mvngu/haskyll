@@ -36,6 +36,18 @@ greatest (x:xs) =
         then greatest xs
         else greatest (x : tail xs)
 
+-- | The greatest element in a list, using a fold operation.
+greatf :: [Int] -> Int
+greatf []     = error "Must be non-empty list"
+greatf [x]    = x
+greatf (x:xs) = foldr (\y acc -> myMax y acc) x xs
+
+-- | The greatest of two integers.
+myMax :: Int -> Int -> Int
+myMax x y
+    | x < y = y
+    | otherwise = x
+
 -- | Generate random integers.
 randint :: Int -> IO [Int]
 randint n = replicateM n (uniformRM (1, 1000) globalStdGen :: IO Int)
@@ -47,7 +59,7 @@ main = do
     for_ [1 .. k] $ \_ -> do
         ell <- randint 10
         let high = greatest ell
-        let result = high == maximum ell
+        let result = high == maximum ell && high == greatf ell
         if result
             then printf "%s -> %d: %s\n" (show ell) high $ show result
             else error "False"
