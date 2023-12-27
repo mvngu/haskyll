@@ -432,8 +432,8 @@ Given a list of integers, write a function that:
 -   Outputs the greatest integer from the list, with and without a fold
     operation. Use the function [`maximum`][maximum] to verify your
     implementation.
--   Outputs the least integer from the list. Use the function
-    [`minimum`][minimum] to verify your implementation.
+-   Outputs the least integer from the list, with and without a fold operation.
+    Use the function [`minimum`][minimum] to verify your implementation.
 
 <!-- prettier-ignore-start -->
 :exercise:

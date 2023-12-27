@@ -36,6 +36,18 @@ least (x:xs) =
         then least xs
         else least (x : tail xs)
 
+-- | The least element in a list, using a fold operation.
+leastf :: [Int] -> Int
+leastf []     = error "Must be non-empty list"
+leastf [x]    = x
+leastf (x:xs) = foldr (\y acc -> myMin y acc) x xs
+
+-- | The minimum of two integers.
+myMin :: Int -> Int -> Int
+myMin x y
+    | x < y = x
+    | otherwise = y
+
 -- | Generate random integers.
 randint :: Int -> IO [Int]
 randint n = replicateM n (uniformRM (1, 1000) globalStdGen :: IO Int)
@@ -47,7 +59,7 @@ main = do
     for_ [1 .. k] $ \_ -> do
         ell <- randint 10
         let low = least ell
-        let result = low == minimum ell
+        let result = low == minimum ell && low == leastf ell
         if result
             then printf "%s -> %d: %s\n" (show ell) low $ show result
             else error "False"
