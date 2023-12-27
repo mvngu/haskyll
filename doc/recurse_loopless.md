@@ -659,6 +659,18 @@ Let's play some word games.
    alphabet. The case of a letter does not matter. A famous pangram is the
    sentence, "The quick brown fox jumps over the lazy dog." Write a function to
    determine whether a given sentence is a pangram.
+1. A [univocalic][univocalic] is a word, sentence, or piece of writing that uses
+   only one vowel of the English alphabet. An example is a poem by C. C.
+   Bombaugh written in 1890 and using only the vowel "O". Here are two lines
+   from the poem:
+
+    > No cool monsoons blow soft on Oxford dons,\
+    > Orthodox, jog-trot, book-worm Solomons
+
+    Another example is Cathy Park Hong's poem ["Ballad in A"][balladInA], which
+    uses only the vowel "A" (save for one word). See whether you can spot the
+    exception in the poem. Write a function to determine whether a sentence is
+    univocalic.
 
 <!-- prettier-ignore-start -->
 :exercise:
@@ -680,6 +692,7 @@ $g$ is higher or lower than $n$, and enter another guess.
 <!-- prettier-ignore-start -->
 [all]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:all
 [anonymousFunction]: https://web.archive.org/web/20231203074524/https://en.wikipedia.org/wiki/Anonymous_function
+[balladInA]: https://web.archive.org/web/20231127170513/https://www.poetryfoundation.org/poetrymagazine/poems/53500/ballad-in-a
 [CDC]: https://web.archive.org/web/20231216104909/https://www.cdc.gov/nchs/fastats/body-measurements.htm
 [even]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:even
 [filter]: https://web.archive.org/web/20231223101438/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:filter
@@ -700,4 +713,5 @@ $g$ is higher or lower than $n$, and enter another guess.
 [sum]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:sum
 [uniformDouble01M]: https://web.archive.org/web/20231219044923/https://hackage.haskell.org/package/random-1.2.1.1/docs/System-Random-Stateful.html#v:uniformDouble01M
 [uniformRM]: https://web.archive.org/web/20231219044923/https://hackage.haskell.org/package/random-1.2.1.1/docs/System-Random-Stateful.html#v:uniformRM
+[univocalic]: https://web.archive.org/web/20231223084026/https://en.wikipedia.org/wiki/Univocalic
 <!-- prettier-ignore-end -->
