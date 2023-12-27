@@ -310,8 +310,8 @@ h_n
 $$
 
 Implement expression (\ref{eqn_Towers_Hanoi}) in Haskell. The recurrence
-(\ref{eqn_Towers_Hanoi}) can be written as $h_n = 2^n - 1$. Use the latter
-formula to verify your implementation.
+relation (\ref{eqn_Towers_Hanoi}) can be written as $h_n = 2^n - 1$. Use the
+latter formula to verify your implementation.
 
 <!-- prettier-ignore-start -->
 :exercise:
