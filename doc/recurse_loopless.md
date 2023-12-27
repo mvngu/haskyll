@@ -630,25 +630,20 @@ calculate the GCD of each pair. Test your implementation against the function
 
 <!-- prettier-ignore-start -->
 :exercise:
-You will write a program that determines all positive factors of an integer
-$n > 0$.
+This exercise considers positive factors of an integer $n > 0$.
 <!-- prettier-ignore-end -->
 
-1. Write a program that scans through all integers from 1 to $n$, testing each
-   integer to see whether it is a factor of $n$. Return a list of all factors of
-   $n$.
+1. Write a program that scans through all integers from 1 up to and including
+   $n$, testing each integer to see whether it is a factor of $n$. Return a list
+   of all positive factors of $n$.
 1. Improve the above technique as follows. Let $1 < k \leq \sqrt{n}$ be a factor
    of $n$. Then $n / k$ is also a factor of $n$. Thus you only need to search
    through all integers from 1 up to and including
    $\left\lceil \sqrt{n} \right\rceil$. Use the latter technique to determine
-   all factors of $n$.
-
-<!-- prettier-ignore-start -->
-:exercise:
-Using the function [`filter`][filter], write a function that outputs all
-[prime numbers][primeNumbers] between 1 and $n$, inclusive. You might find the
-function [`all`][all] useful.
-<!-- prettier-ignore-end -->
+   all positive factors of $n$.
+1. Using the function [`filter`][filter], write a function that outputs all
+   [prime numbers][primeNumbers] between 1 and $n$, inclusive. You might find
+   the function [`all`][all] useful.
 
 <!-- prettier-ignore-start -->
 :exercise:
