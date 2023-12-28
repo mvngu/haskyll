@@ -35,7 +35,11 @@ url: "https://quacksouls.github.io/haskyll"
 
 # The project page on GitHub.
 github:
+  # The project name.
   username: quacksouls/haskyll
+  # URL of source tree.  This will be used to properly link to source files
+  # that are embedded in your document.
+  src: https://github.com/quacksouls/haskyll/blob/main
 
 # twitter:
 #   username: twitter_username # change to your twitter username
