@@ -35,6 +35,8 @@ clean:
 	rm -rf assets/src/decide/*~
 	rm -rf assets/src/decide/solution/*~
 	rm -rf assets/src/hello/*~
+	rm -rf assets/src/list/*~
+	rm -rf assets/src/list/solution/*~
 	rm -rf assets/src/recurse/*~
 	rm -rf assets/src/recurse/solution/*~
 	rm -rf doc/*~
