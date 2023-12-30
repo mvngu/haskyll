@@ -81,7 +81,7 @@ The Haskell REPL, i.e. GHCi, is suitable for quick experimentation. Sooner or
 later you would want to store Haskell code in a text file. Create a text file
 called `hello.hs` and save the following code in the file:
 
-:include: file="assets/src/hello/hello.hs", name="hello.hs", line=25:-
+:include: file="assets/src/hello/hello.hs", line=25:-
 
 Ignore the code segment `main = `. We will discuss that in the section
 [The function `main`](#the-function-main).
@@ -134,7 +134,7 @@ languages that offer a REPL environment.[^b]
 Recall the "Hello, world" program from the section
 [Tales from the script](#tales-from-the-script), reproduced below:
 
-:include: file="assets/src/hello/hello.hs", name="hello.hs", line=25:-
+:include: file="assets/src/hello/hello.hs", line=25:-
 
 The program creates a function called `main`. The body of the function is the
 line:
@@ -160,7 +160,7 @@ the official Haskell [playground][playground].
 <!-- prettier-ignore-start -->
 :exercise:
 Edit the file
-:script: file="assets/src/hello/hello.hs", name="hello.hs"
+:script: file="assets/src/hello/hello.hs"
 to use the function [`putStr`][putStr] to print your name to standard
 output. Repeat the exercise, but using the function [`putStrLn`][putStrLn].
 <!-- prettier-ignore-end -->
@@ -199,7 +199,7 @@ computer. The command line utility [`runghc`][runghc] (also named `runhaskell`)
 offers a third way to run Haskell code. The command [`runghc`][runghc] can run
 your Haskell source file without compiling it first. Use [`runghc`][runghc] to
 run the file
-:script: file="assets/src/hello/hello.hs", name="hello.hs"
+:script: file="assets/src/hello/hello.hs"
 .
 <!-- prettier-ignore-end -->
 
