@@ -72,7 +72,7 @@ ghci> 1 : 2 : 3 : []
 
 Another detail to note about all the above lists is the type of the elements.
 The empty list `[]` has no elements; it does not make sense to talk about the
-type of its element. Other lists shown above are non-empty. Here is the crucial
+type of its elements. Other lists shown above are non-empty. Here is the crucial
 point: all elements of each list have the same type. The list `[1, 2]` is valid
 because all elements have the same type. Haskell will throw a tantrum at a list
 such as `[1, '2']` because you are mixing different types.
