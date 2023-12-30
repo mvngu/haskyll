@@ -20,22 +20,22 @@ Many programming languages have a looping mechanism to allow you to repeat a
 block of code a certain number of times. The following C code uses the `for`
 loop to output all integers from 1 to 10, inclusive:
 
-:include: file="assets/src/recurse/ten.c", name="ten.c", line=25:-
+:include: file="assets/src/recurse/ten.c", line=25:-
 
 The same thing can be accomplished in JavaScript as follows:
 
-:include: file="assets/src/recurse/ten.js", name="ten.js", line=25:-
+:include: file="assets/src/recurse/ten.js", line=25:-
 
 Here's a Python version:
 
-:include: file="assets/src/recurse/ten.py", name="ten.py", line=25:-
+:include: file="assets/src/recurse/ten.py", line=25:-
 
 Haskell does not have a `for` loop _per se_. Recursion is the only looping
 mechanism. However, the function [`for_`][for_] allows us to write a looping
 construct similar to the `for` loop in C, JavaScript, Python and many other
 languages. Observe:
 
-:include: file="assets/src/recurse/ten.hs", name="ten.hs", line=25:-
+:include: file="assets/src/recurse/ten.hs", line=25:-
 
 What does the code segment `\x -> do` mean? Why did we write `\x`? All will be
 revealed in the next section.
@@ -50,7 +50,7 @@ revealed in the next section.
 
 <!-- prettier-ignore-start -->
 In the program
-:script: file="assets/src/recurse/ten.hs", name="ten.hs", line=25:-
+:script: file="assets/src/recurse/ten.hs"
 shown at the end of the previous section, we used the function [`for_`][for_]
 to write a loop that prints all integers between 1 and 10, inclusive. The loop
 uses the symbol `\x`, something we have not seen before. It is the symbol `\`
@@ -76,7 +76,7 @@ and use lambda expressions.
 
 Recall the following program from the section [DIY](../decide_function/#diy):
 
-:include: file="assets/src/decide/negate.hs", name="negate.hs", line=27:29
+:include: file="assets/src/decide/negate.hs", line=27:29
 
 Here is the same function as a lambda expression:
 
@@ -95,7 +95,7 @@ ghci> (\x -> -1 * x) 12
 
 The following program:
 
-:include: file="assets/src/decide/upper.hs", name="upper.hs", line=25:30
+:include: file="assets/src/decide/upper.hs", line=25:30
 
 from the section [DIY](../decide_function/#diy) is translated to a lambda
 expression as:
@@ -112,7 +112,7 @@ ghci> (\x -> (toUpper $ head x) : tail x) "42 is a number"
 
 <!-- prettier-ignore-start -->
 It should be clear by now that the program
-:script: file="assets/src/recurse/ten.hs", name="ten.hs"
+:script: file="assets/src/recurse/ten.hs"
 from the section [One, two, skip a few](#one-two-skip-a-few) uses a lambda
 expression. Don't let the keyword `do` fool you. The keyword `do` allows us to
 write a block of sequential code as if we are programming in a language such as
@@ -168,7 +168,7 @@ application:
 As an example, suppose you want a function that adds 1 to each number in a list.
 The function below accomplishes the task:
 
-:include: file="assets/src/recurse/one.hs", name="one.hs", line=27:30
+:include: file="assets/src/recurse/one.hs", line=27:30
 
 Note that in its definition, the function `addOne` has to take care of iterating
 over its input list. Furthermore, the function has to construct its list of
@@ -263,7 +263,7 @@ You might ask: Why the obsession with numbers? How about an example relating to
 pets. You are developing a database of pet names. As a prototype, you have the
 following list of names:
 
-:include: file="assets/src/recurse/pet.hs", name="pet.hs", line=29:50
+:include: file="assets/src/recurse/pet.hs", line=29:50
 
 Being in the mood for vitamin C, you want a list of pet names that begin with
 "C". The problem boils down to testing whether a string starts with another
@@ -271,7 +271,7 @@ string. The function [`isPrefixOf`][isPrefixOf] is perfect for the job. In
 general, you want a function that, given a prefix `prefix`, outputs all pet
 names that begin with `prefix`. Refer to the following Haskell code:
 
-:include: file="assets/src/recurse/pet.hs", name="pet.hs", line=52:54
+:include: file="assets/src/recurse/pet.hs", line=52:54
 
 <!--=========================================================================-->
 
@@ -303,7 +303,7 @@ We want to convert each weight to pounds and print each result to standard
 output. The conversion to pounds can be done using `map`. We then use the
 function `for_` to print each pound value to standard output. Here's our code:
 
-:include: file="assets/src/recurse/weight.hs", name="weight.hs", line=25:-
+:include: file="assets/src/recurse/weight.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -373,7 +373,7 @@ Alice and Bob now decide to play dice. Each person rolls a die six times and
 adds up the results of the six rolls. The player who has the highest sum wins.
 Alice has written the program below to automate the gameplay.
 
-:include: file="assets/src/recurse/dice.hs", name="dice.hs", line=25:-
+:include: file="assets/src/recurse/dice.hs", line=25:-
 
 The functions that interest us are [`sum`][sum] and [`replicateM`][replicateM].
 The function `sum` takes a list of numbers and add all the numbers together.
@@ -464,7 +464,7 @@ ignores the result, which is why it suppresses the list `[(),(),()]`, unlike
 Let's return to our function for rolling a die a given number of times. In
 particular, consider the line:
 
-:include: file="assets/src/recurse/dice.hs", name="dice.hs", line=31:31
+:include: file="assets/src/recurse/dice.hs", line=31:31
 
 The code `uniformRM (1, 6) globalStdGen :: IO Int` outputs a PRNG , which can be
 called to generate a random integer between 1 and 6, inclusive. Thus,

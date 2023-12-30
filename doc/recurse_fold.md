@@ -18,7 +18,7 @@ The library function [`sum`][sum] takes a list of numbers and adds all those
 numbers together to result in a sum. As an exercise to help us understand how
 the function `sum` works, we implement our own version as follows:
 
-:include: file="assets/src/recurse/sum.hs", name="sum.hs", line=27:30
+:include: file="assets/src/recurse/sum.hs", line=27:30
 
 Let's generalize the above code into a pattern. Suppose we have a list $\ell$ of
 numbers. Let's get the base case out of the way. If $\ell$ is empty, the sum of
@@ -68,7 +68,7 @@ three parameters:[^a]
 
 We can use `foldl` to rewrite `add` as follows:
 
-:include: file="assets/src/recurse/sum.hs", name="sum.hs", line=32:34
+:include: file="assets/src/recurse/sum.hs", line=32:34
 
 The character `l` (lowercase L) in the function name `foldl` means "left". This
 means that the fold operation goes from the left of the list to the right. For
@@ -418,7 +418,7 @@ calculate the length of a list. Recall from the section
 [Length of list](../recurse_example/#length-of-list) that we have the following
 recursive definition:
 
-:include: file="assets/src/recurse/length.hs", name="length.hs", line=27:30
+:include: file="assets/src/recurse/length.hs", line=27:30
 
 To convert the above recursive definition to a fold operation, we require two
 ingredients:
@@ -435,7 +435,7 @@ ingredients:
 
 Combine the above two ingredients to obtain the following expression:
 
-:include: file="assets/src/recurse/length.hs", name="length.hs", line=32:33
+:include: file="assets/src/recurse/length.hs", line=32:33
 
 <!--=========================================================================-->
 

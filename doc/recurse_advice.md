@@ -82,8 +82,7 @@ more suitable as it allows for arbitrary precision integers. Our function
 `A` at the end of the function's name means that it is an early version of the
 factorial function, an alpha version if you will.
 
-<!-- prettier-ignore -->
-:include: file="assets/src/recurse/solution/factorial.hs", name="factorial.hs", line=28:28
+:include: file="assets/src/recurse/solution/factorial.hs", line=28:28
 
 In general, writing down the type of a function forces us to concentrate on the
 range of acceptable inputs and what the output should be. Sometimes the function
@@ -187,8 +186,7 @@ matching in Haskell. Perhaps you might want to use pattern matching. You might
 also want to use guarded equation as necessary. Why not both? Here is an early
 version of our implementation:
 
-<!-- prettier-ignore -->
-:include: file="assets/src/recurse/solution/factorial.hs", name="factorial.hs", line=27:33
+:include: file="assets/src/recurse/solution/factorial.hs", line=27:33
 
 <!--=========================================================================-->
 
@@ -213,8 +211,7 @@ Expression (\ref{eqn_factorial}) already handles the case $n = 1$ in the
 recursive definition. Here's our new and improved implementation, version beta
 if you will:
 
-<!-- prettier-ignore -->
-:include: file="assets/src/recurse/solution/factorial.hs", name="factorial.hs", line=35:40
+:include: file="assets/src/recurse/solution/factorial.hs", line=35:40
 
 The next question is: Must we re-invent the wheel? Let's rephrase the question
 as: Is there a library function or some package that we can use in our
@@ -232,8 +229,7 @@ The function `product` together with the list range notation `[1 .. n]` handle
 the base case `n = 0` for us. Here is version 3.0 of our implementation of the
 factorial function:
 
-<!-- prettier-ignore -->
-:include: file="assets/src/recurse/solution/factorial.hs", name="factorial.hs", line=42:46
+:include: file="assets/src/recurse/solution/factorial.hs", line=42:46
 
 <!--=========================================================================-->
 
