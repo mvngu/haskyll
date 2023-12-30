@@ -27,7 +27,7 @@ can of sardine on Friday. Tabby would receive her usual, scheduled meal if it is
 not time for sardine. Sam translates the above logic into Haskell code as
 follows.
 
-:include: file="assets/src/decide/sardine.hs", name="sardine.hs", line=25:-
+:include: file="assets/src/decide/sardine.hs", line=25:-
 
 The above code uses an expression we have not seen before, i.e. the conditional
 expression `if...then...else`. A Haskell conditional expression can be written
@@ -69,7 +69,7 @@ value of type `Integer`, the `else` clause must also result in a value of type
 <!-- prettier-ignore-start -->
 Let's use the above explanation of the conditional expression to understand how
 the program
-:script: file="assets/src/decide/sardine.hs", name="sardine.hs"
+:script: file="assets/src/decide/sardine.hs"
 works. The condition is the expression `today == sardineDay`. Since the
 condition evaluates to `True`, control jumps to the `then` clause where we have
 the expression `"sardine"`. This expression is merely a string. The result of
@@ -100,12 +100,12 @@ value. It makes sense that the condition can be a chain of boolean expressions,
 connected via one or more boolean operators `||` and/or `&&`. For instance,
 although Friday is sardine day for Tabby, Sam only feeds sardine to Tabby during
 the afternoon. With the latter finer detail, Sam modifies the program
-:script: file="assets/src/decide/sardine.hs", name="sardine.hs"
+:script: file="assets/src/decide/sardine.hs"
 as follows.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore -->
-:include: file="assets/src/decide/sardine-time.hs", name="sardine-time.hs", line=25:-
+:include: file="assets/src/decide/sardine-time.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -123,7 +123,7 @@ $b$ satisfy one of the following relations:
 
 The above can be translated into Haskell code as:
 
-:include: file="assets/src/decide/nested.hs", name="nested.hs", line=25:-
+:include: file="assets/src/decide/nested.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -145,7 +145,7 @@ clause. No `do` block for the `then` clause. However, you require a `do` block
 for the `else` clause because it would perform two actions, one after the other.
 You translate the above description to Haskell as follows.
 
-:include: file="assets/src/decide/double.hs", name="double.hs", line=25:-
+:include: file="assets/src/decide/double.hs", line=25:-
 
 Let's see how a `do` block can help Sam organize some of her weekend chores.
 Saturday is the day for weekly grocery shopping. Sam needs to stock up on food
@@ -156,7 +156,7 @@ brushed and combed to help keep her coat clean. Sunday is also laundry day. The
 above chores are translated into the program below to help Sam remind herself of
 her weekend todo lists.
 
-:include: file="assets/src/decide/weekend.hs", name="weekend.hs", line=25:-
+:include: file="assets/src/decide/weekend.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -184,14 +184,14 @@ values. Repeat the exercise for the minimum of two integers.
 <!-- prettier-ignore-start -->
 :exercise: label="ex_vegetables"
 On Monday, Sam would feed pork and mixed vegetables to Tabby. Modify the program
-:script: file="assets/src/decide/sardine.hs", name="sardine.hs"
+:script: file="assets/src/decide/sardine.hs"
 to account for Tabby's meal on Monday.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 :exercise: label="ex_current_day"
 The program
-:script: file="assets/src/decide/day.hs", name="day.hs"
+:script: file="assets/src/decide/day.hs"
 below prints the current day of the week, using functions defined in the package
 [`Data.Time`][dataTime]. The function [`getCurrentTime`][getCurrentTime] returns
 the current time in UTC format, using your computer's system clock. We then use
@@ -205,12 +205,12 @@ the resulting tuple as the variables `year`, `month`, and `day`. The function
 instead of hard coding a day string.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/decide/day.hs", name="day.hs", line=25:-
+:include: file="assets/src/decide/day.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise:
 The program
-:script: file="assets/src/decide/time.hs", name="time.hs"
+:script: file="assets/src/decide/time.hs"
 below outputs the current time of the day in 24-hour format. The function
 [`getCurrentTime`][getCurrentTime] returns the current time in UTC format, using
 your computer's system clock. The function
@@ -225,7 +225,7 @@ then output the string `"It's high noon"`. Otherwise output the string
 `"Not yet high noon"` for all other hours.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/decide/time.hs", name="time.hs", line=25:-
+:include: file="assets/src/decide/time.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise: label="ex_absolute_value"

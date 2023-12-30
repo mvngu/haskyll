@@ -82,7 +82,7 @@ function takes an integer as input and outputs the same integer, but with the
 sign flipped. The integer 2 would become $-2$ and $-42$ would become 42. See
 below for the signature of our function together with its definition.
 
-:include: file="assets/src/decide/negate.hs", name="negate.hs", line=27:29
+:include: file="assets/src/decide/negate.hs", line=27:29
 
 I can hear you protest, "But the Haskell library already has its own function to
 reverse the sign of a number. It's the function [`negate`][negate]." OK. Let's
@@ -91,7 +91,7 @@ string to uppercase. This is different from the library function
 [`toUpper`][toUpper] in that our function has a string as input and outputs a
 string. It's true, honest. Have a look.
 
-:include: file="assets/src/decide/upper.hs", name="upper.hs", line=25:30
+:include: file="assets/src/decide/upper.hs", line=25:30
 
 <!--=========================================================================-->
 
@@ -103,7 +103,7 @@ first and last characters of the string. The result is then reversed and we
 capitalize the resulting string. How would we do that? Do it like how we have
 been defining the function `main`, i.e. use the keyword `do`.
 
-:include: file="assets/src/decide/chop.hs", name="chop.hs", line=25:37
+:include: file="assets/src/decide/chop.hs", line=25:37
 
 <!--=========================================================================-->
 
@@ -130,14 +130,14 @@ The result of `torso str` is then fed to the function composition
 `capitalize . reverse`. Using a chain of function compositions, the function
 `chopSuey` can be simplified as follows:
 
-:include: file="assets/src/decide/chop.hs", name="chop.hs", line=39:41
+:include: file="assets/src/decide/chop.hs", line=39:41
 
 You might have noticed that the function application and composition notations
 work from right to left and are identical in every respect, except for their
 respective symbols. Why not consistently use `$` instead of peppering `$` with
 `.`? For example, we can simplify `chopSuey` as follows:
 
-:include: file="assets/src/decide/chop.hs", name="chop.hs", line=43:45
+:include: file="assets/src/decide/chop.hs", line=43:45
 
 Why prefer `chopSueyB` over `chopSueyC`? It boils down to various factors:
 
@@ -166,7 +166,7 @@ each takes two parameters, so does the string function [`splitAt`][splitAt].
 Let's implement our own function to calculate the maximum of two integers.
 Consider the code below.
 
-:include: file="assets/src/decide/max.hs", name="max.hs", line=27:32
+:include: file="assets/src/decide/max.hs", line=27:32
 
 You might have noticed several issues regarding the above definition of the
 function `maxInt`. First, why are there two right arrow symbols `->` in the
@@ -204,7 +204,7 @@ function's definition. Let's elaborate on the latter statement.
 
 <!-- prettier-ignore-start -->
 Take for instance the program
-:script: file="assets/src/decide/negate.hs", name="negate.hs"
+:script: file="assets/src/decide/negate.hs"
 and the definition of the function `negateInt`. Given an integer $x$, the output
 of the function is the expression `-1 * x` because that is the final (and only)
 evaluated value. If you were to translate the definition of `negateInt` into a
@@ -222,7 +222,7 @@ of the equal sign `=` defines the value of the function application $f(x)$.
 
 <!-- prettier-ignore-start -->
 Next, consider the program
-:script: file="assets/src/decide/chop.hs", name="chop.hs"
+:script: file="assets/src/decide/chop.hs"
 and the definition of the function `chopSuey`. The final value as evaluated by
 the function is the output of the function application
 `capitalize $ reverse torso`. Whatever line(s) of code preceding the latter
@@ -270,7 +270,7 @@ auxiliary expression to help us parse the quadratic formula.
 
 <!-- prettier-ignore-start -->
 Finally, let's examine the program
-:script: file="assets/src/decide/max.hs", name="max.hs"
+:script: file="assets/src/decide/max.hs"
 and the definition of the function `maxInt`. The function is defined in terms of
 a conditional expression, a branching of paths if you like. The final value of
 the function depends on the boolean value of the expression `x > y`. If the
@@ -316,7 +316,7 @@ encapsulated within a function other than `main`.
 <!-- prettier-ignore-start -->
 :exercise:
 Modify the function `maxInt` in the program
-:script: file="assets/src/decide/max.hs", name="max.hs"
+:script: file="assets/src/decide/max.hs"
 to output the minimum of two integers.
 <!-- prettier-ignore-end -->
 

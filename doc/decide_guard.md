@@ -7,7 +7,7 @@ Hi! I'm a shouty man.[^a] Do you miss the `switch` statement from languages such
 as C, Java, and JavaScript? Or the `match` statement from Python? Tired of
 writing (or reading) nested conditional expressions like the following?
 
-:include: file="assets/src/decide/nested.hs", name="nested.hs", line=25:40
+:include: file="assets/src/decide/nested.hs", line=25:40
 
 Say no more. What if I tell you that you can get rid of nested conditional
 expressions? How would you like to organize your nested conditional expressions
@@ -21,11 +21,11 @@ A conditional expression can be replaced with a guarded equation. To understand
 what a guarded equation can do for you, recall the function `maxInt` from the
 section [Multiple parameters](../decide_function/#multiple-parameters):
 
-:include: file="assets/src/decide/max.hs", name="max.hs", line=27:32
+:include: file="assets/src/decide/max.hs", line=27:32
 
 Here is the same function, but written as a guarded equation:
 
-:include: file="assets/src/decide/max.hs", name="max.hs", line=34:38
+:include: file="assets/src/decide/max.hs", line=34:38
 
 And here is the guarded equation translated to a mathematical expression:
 
@@ -106,7 +106,7 @@ follows according to their BMI.
 The information in the above table is translated to a guarded equation as
 follows.
 
-:include: file="assets/src/decide/bmi.hs", name="bmi.hs", line=32:39
+:include: file="assets/src/decide/bmi.hs", line=32:39
 
 <!--=========================================================================-->
 
@@ -127,7 +127,7 @@ Your mission, should you choose to accept it, is to write a function that takes
 the name of a caffeinated drink and outputs the corresponding cup size. Did you
 decline? No problem. Below is a translation of the above table to Haskell code.
 
-:include: file="assets/src/decide/coffee.hs", name="coffee.hs", line=27:34
+:include: file="assets/src/decide/coffee.hs", line=27:34
 
 <!--=========================================================================-->
 
@@ -141,7 +141,7 @@ Write a guarded equation to determine the minimum of two integers.
 <!-- prettier-ignore-start -->
 :exercise:
 Rewrite the program
-:script: file="assets/src/decide/nested.hs", name="nested.hs"
+:script: file="assets/src/decide/nested.hs"
 by using guarded equation.
 <!-- prettier-ignore-end -->
 

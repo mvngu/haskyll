@@ -15,11 +15,11 @@ Put on your traffic engineer hat. The traffic light red means stop, orange means
 wait, and green means go. We can translate the latter description to a guarded
 equation like so:
 
-:include: file="assets/src/decide/traffic.hs", name="traffic.hs", line=27:33
+:include: file="assets/src/decide/traffic.hs", line=27:33
 
 Alternatively, we can use pattern matching. How? Observe:
 
-:include: file="assets/src/decide/traffic.hs", name="traffic.hs", line=35:40
+:include: file="assets/src/decide/traffic.hs", line=35:40
 
 Each equation above has a specific pattern (i.e. a literal value) we want to
 match. For instance, in the equation
@@ -50,7 +50,7 @@ boolean value. The negation of `True` is `False`, the negation of `False` is
 `True`. We have all the specific cases we need to implement our own negation
 function. Here's the code:
 
-:include: file="assets/src/decide/not.hs", name="not.hs", line=27:30
+:include: file="assets/src/decide/not.hs", line=27:30
 
 How about the boolean operator `||`? The section [Or](../data_bool/#or) has a
 table that defines all the results of `||` for any pair of boolean input. For
@@ -74,7 +74,7 @@ then the result is `True` regardless of whether the second operand is `True` or
 `False`. We write a pattern for each case where the first operand is `False`.
 The third (and last) case has the wildcard pattern. See below for the code:
 
-:include: file="assets/src/decide/or.hs", name="or.hs", line=27:31
+:include: file="assets/src/decide/or.hs", line=27:31
 
 <!--=========================================================================-->
 
@@ -98,7 +98,7 @@ Note that `fst` ignores the second element. That seems like a job for the
 wildcard symbol `_`. Let's implement our own version of `fst` and name it
 `firstA`.
 
-:include: file="assets/src/decide/first.hs", name="first.hs", line=27:29
+:include: file="assets/src/decide/first.hs", line=27:29
 
 There's something funny going on in the signature of `firstA`. Where's the type
 name like `Integer` or `String`? Instead, the input is a tuple like `(a, b)`.
@@ -114,7 +114,7 @@ greater than two elements. Consider a tuple of three elements such as
 `(1, 2, 3)`. The middle element is `2`. Here's a function to extract the middle
 element of any tuple of three elements:
 
-:include: file="assets/src/decide/mid.hs", name="mid.hs", line=27:29
+:include: file="assets/src/decide/mid.hs", line=27:29
 
 <!--=========================================================================-->
 
@@ -124,7 +124,7 @@ Did you say you want more examples? No problem. Consider the addition of vectors
 of two elements. Adding two vectors is the same as adding their corresponding
 elements. Here's an implementation:
 
-:include: file="assets/src/decide/vadd.hs", name="vadd.hs", line=27:29
+:include: file="assets/src/decide/vadd.hs", line=27:29
 
 What is the code `Num a =>` doing in the signature of `vadd`? What does the code
 mean? Let's examine the code bit by bit. The Haskell type [`Num`][num] is a type
@@ -182,7 +182,7 @@ require much effort to define our own version that works for lists of two
 elements. With a little change to the function `firstA` we can define the
 counterpart of `fst` for lists. See the following:
 
-:include: file="assets/src/decide/first.hs", name="first.hs", line=31:33
+:include: file="assets/src/decide/first.hs", line=31:33
 
 Here are some differences between the functions `firstA` and `firstB`.
 
@@ -206,7 +206,7 @@ is that you can use a powerful technique to perform pattern matching. This is
 best demonstrated via an example. We can reimplement the function `firstB` as
 follows:
 
-:include: file="assets/src/decide/first.hs", name="first.hs", line=35:37
+:include: file="assets/src/decide/first.hs", line=35:37
 
 Why do we have the tuple `(x:xs)` in the above code listing? The code `(x:xs)`
 is not specifying a tuple. Rather, it tells us that given a list, we assign the
@@ -232,7 +232,7 @@ ghci> firstC []
 
 We must handle the case of the empty list. No problem. Here's version 2.0:
 
-:include: file="assets/src/decide/first.hs", name="first.hs", line=39:42
+:include: file="assets/src/decide/first.hs", line=39:42
 
 In the above code listing, we used the function [`error`][error] to halt the
 program and output a sensible message if the function `firstD` is given an empty
@@ -259,7 +259,7 @@ Let's see more of the this-and-rest pattern `(x:xs)` in action. We have a
 function to extract the first element of a list. Logic dictates that we should
 have a function to extract the second element. Here goes:
 
-:include: file="assets/src/decide/second.hs", name="second.hs", line=27:31
+:include: file="assets/src/decide/second.hs", line=27:31
 
 The pattern `(x:y:xs)` in the above code listing has the following
 interpretation. The first element of a list is assigned to the variable `x`, the
@@ -268,7 +268,7 @@ to `xs`. However, we are only interested in the second element. We donut, umm...
 I mean, do not care about the `x` and the `xs`. Sounds like another job for the
 wildcard symbol `_`. Here is a different version of `secondA`.
 
-:include: file="assets/src/decide/second.hs", name="second.hs", line=33:37
+:include: file="assets/src/decide/second.hs", line=33:37
 
 <!--=========================================================================-->
 
