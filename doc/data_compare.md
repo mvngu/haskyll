@@ -82,7 +82,7 @@ Modify the program below so it would compile and the relevant values compare
 equal according to `==`.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/data/same.hs", name="same.hs", line=25:-
+:include: file="assets/src/data/same.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise:
@@ -98,7 +98,7 @@ any lowercase letter. Consider the program below. Why does the expression
 the operator `<` is `True`.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/data/dictionary.hs", name="dictionary.hs", line=25:-
+:include: file="assets/src/data/dictionary.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise:
@@ -108,7 +108,7 @@ number of correct statements, using only boolean arithmetics. Insert your code
 at the location shown in the program.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/data/quiz.hs", name="quiz.hs", line=25:-
+:include: file="assets/src/data/quiz.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise:

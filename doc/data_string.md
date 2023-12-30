@@ -343,9 +343,9 @@ empty string, i.e. `""`? Why or why not?
 <!-- prettier-ignore-start -->
 :exercise:
 Rewrite the programs
-:script: file="assets/src/data/age.hs", name="age.hs"
+:script: file="assets/src/data/age.hs"
 and
-:script: file="assets/src/data/circle.hs", name="circle.hs"
+:script: file="assets/src/data/circle.hs"
 to use the function [`printf`][printf] for string formatting.
 <!-- prettier-ignore-end -->
 

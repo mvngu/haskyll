@@ -50,7 +50,7 @@ From the above table, the result of `False || True` is `True`, so is
 operands are `False`. Take a moment to use the above table and work through the
 output of the following program.
 
-:include: file="assets/src/data/or.hs", name="or.hs", line=25:-
+:include: file="assets/src/data/or.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -58,7 +58,7 @@ output of the following program.
 
 <!-- prettier-ignore-start -->
 Hang on. What is the dollar sign [`$`][dollarSign] doing in the program
-:script: file="assets/src/data/or.hs", name="or.hs"
+:script: file="assets/src/data/or.hs"
 ? In Haskell, the symbol `$` is the function application operator. Given a
 function `f` and an argument `x`, the result of applying `f` on `x` is written
 in Haskell as `f x`. Using the operator `$` in prefix notation, we can write
@@ -142,7 +142,7 @@ Unlike the expression `True || False`, the result of `True && False` is `False`.
 The only time when `&&` returns `True` is the expression `True && True`. Again,
 take some time to work through the boolean results of the following program.
 
-:include: file="assets/src/data/and.hs", name="and.hs", line=25:-
+:include: file="assets/src/data/and.hs", line=25:-
 
 <!--=========================================================================-->
 
@@ -161,10 +161,10 @@ What's the back of your back?
 <!-- prettier-ignore-start -->
 :exercise:
 Rewrite the program
-:script: file="assets/src/data/or.hs", name="or.hs"
+:script: file="assets/src/data/or.hs"
 by using [`$`][dollarSign] to replace the outermost pairs of
 parentheses. Rewrite the program
-:script: file="assets/src/data/and.hs", name="and.hs"
+:script: file="assets/src/data/and.hs"
 to use as few parentheses as possible.
 <!-- prettier-ignore-end -->
 
@@ -234,7 +234,7 @@ Modify the following program so the expression `likeCat && likeTiger` returns
 `False`.
 <!-- prettier-ignore-end -->
 
-:include: file="assets/src/data/pet.hs", name="pet.hs", line=25:-
+:include: file="assets/src/data/pet.hs", line=25:-
 
 <!-- prettier-ignore-start -->
 :exercise:

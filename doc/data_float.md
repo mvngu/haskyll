@@ -79,7 +79,7 @@ write a program to obtain from the command line the radius of a circle. We will
 use the radius to calculate the area of a circle having the given radius, then
 print the area to the command line. Here is our program:
 
-:include: file="assets/src/data/circle.hs", name="circle.hs", line=25:-
+:include: file="assets/src/data/circle.hs", line=25:-
 
 In the terminal session below, we compile the program and execute it. When
 prompted to enter the radius, we enter the number 2. The program uses the
@@ -98,7 +98,7 @@ Area of circle: 12.566370614359172
 
 <!-- prettier-ignore-start -->
 The program
-:script: file="assets/src/data/circle.hs", name="circle.hs"
+:script: file="assets/src/data/circle.hs"
 uses the functions [`getLine`][getLine], [`read`][read], and [`pi`][pi]. The
 program also uses the operator [`<-`][leftArrow]. Let's consider each of them in
 turn.
@@ -112,7 +112,7 @@ turn.
 -   The left-arrow operator (or keyword) [`<-`][leftArrow] is used within a `do`
     block to bind the result of a function to a local variable. In terms of the
     program
-    :script: file="assets/src/data/circle.hs", name="circle.hs"
+    :script: file="assets/src/data/circle.hs"
     the result of the function `getLine` is assigned to the variable `radius`.
     Why not use `=` for assignment instead of `<-`? That's a quirk of a `do`
     block. Let's leave it as is instead of being distracted by a technical
