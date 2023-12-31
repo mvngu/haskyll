@@ -183,7 +183,17 @@ ghci> map (\x -> x + 1) [1 .. 10]
 [2,3,4,5,6,7,8,9,10,11]
 ```
 
-Let's capitalize each name:
+Bella manages a boutique. In preparation for an upcoming sale, Bella asks Sam to
+help her update the following prices:
+
+:include: file="assets/src/recurse/discount.hs", line=30:31
+
+To help boost sales, Bella offers a 15% discount on each item that is currently
+at $100 or less. Sam uses the program below to calculate the discounted prices:
+
+:include: file="assets/src/recurse/discount.hs", line=30:43
+
+Your writer friend wants to capitalize some names:
 
 ```haskell
 ghci> import Data.Char
