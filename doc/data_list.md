@@ -491,7 +491,7 @@ Access the element in the middle of the list:
 ```
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exRangeNotation"
 The range notation `..` allows you to create a list of integers. Two useful ways
 to create lists of numbers are:
 <!-- prettier-ignore-end -->
