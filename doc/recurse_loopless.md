@@ -241,8 +241,9 @@ The function `filter` outputs a sublist of $\ell$ containing those elements of
 $\ell$ that pass the predicate $p$. The above seems more complicated than it
 should be. The following examples should clarify how to use `filter`.
 
-Bella's boutique has items that cost more than $100. Here is the full price
-list:
+Here is a continuation of the boutique example from the section
+[Hoogle map](#hoogle-map). Bella's boutique has items that cost more than $100.
+Here is the full price list:
 
 :include: file="assets/src/recurse/discount.hs", line=27:28
 
