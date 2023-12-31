@@ -22,12 +22,21 @@
 -- SOFTWARE.
 --------------------------------------------------------------------------------
 
+import Control.Monad
 import Data.Foldable
+import System.Random.Stateful
 import Text.Printf
 
 -- | Whether an integer is a multiple of another integer.
 isMultiple :: Integer -> Integer -> Bool
 isMultiple n k = mod n k == 0
+
+-- | Remove duplicates from a list.
+unique :: [Integer] -> [Integer]
+unique [] = []
+unique (x:xs)
+    | x `elem` xs = unique xs
+    | otherwise = x : unique xs
 
 -- | The positive integer multiples of a bunch of numbers.
 multiples :: [Integer] -> [Integer] -> [Integer]
@@ -38,9 +47,21 @@ multiples (x:xs) ys = do
     let zs = filter (\z -> isMultiple z x) ys
     multiples xs zs
 
--- | The least positive integer that is divisible by a bunch of numbers.
+-- | A bunch of random integers.
+randInts :: Int -> IO [Integer]
+randInts n = replicateM n (uniformRM (2, 10) globalStdGen :: IO Integer)
+
+-- | Problems relating to multiples of a bunch of integers.
 main = do
     let divisor = [[2], [2, 3], [2 .. 4], [2 .. 5], [2 .. 6], [2 .. 7], [2 .. 8], [2 .. 9]]
+    -- The least positive integer that is divisible by a bunch of numbers.
     for_ divisor $ \d -> do
         let ell = multiples d [1 ..]
         printf "Least multiple of %s: %d\n" (show d) $ head ell
+    -- How precious is a bunch of integers?
+    k <- uniformRM (1, 10) globalStdGen :: IO Int
+    ell <- randInts k
+    let ellu = unique ell
+    let n = product ellu
+    let mult = multiples ellu [1 .. n]
+    printf "Value of %s = %d\n" (show ellu) $ sum mult
