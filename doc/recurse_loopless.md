@@ -241,6 +241,20 @@ The function `filter` outputs a sublist of $\ell$ containing those elements of
 $\ell$ that pass the predicate $p$. The above seems more complicated than it
 should be. The following examples should clarify how to use `filter`.
 
+Bella's boutique has items that cost more than $100. Here is the full price
+list:
+
+:include: file="assets/src/recurse/discount.hs", line=27:28
+
+<!-- prettier-ignore-start -->
+To help boost sale, Bella offers a 10% discount on the expensive items,
+i.e. those costing more than $100. Sam updates her script
+:script: file="assets/src/recurse/discount.hs"
+as follows:
+<!-- prettier-ignore-end -->
+
+:include: file="assets/src/recurse/discount.hs", line=25:-
+
 <!--=========================================================================-->
 
 ### Even or odd?
