@@ -189,7 +189,7 @@ help her update the following prices:
 :include: file="assets/src/recurse/discount.hs", line=30:31
 
 To help boost sales, Bella offers a 15% discount on each item that is currently
-at $100 or less. Sam uses the program below to calculate the discounted prices:
+less than $100. Sam uses the program below to calculate the discounted prices:
 
 :include: file="assets/src/recurse/discount.hs", line=30:43
 
@@ -247,8 +247,8 @@ list:
 :include: file="assets/src/recurse/discount.hs", line=27:28
 
 <!-- prettier-ignore-start -->
-To help boost sale, Bella offers a 10% discount on the expensive items,
-i.e. those costing more than $100. Sam updates her script
+To help boost sales, Bella offers a 10% discount on the expensive items,
+i.e. those costing at least $100. Sam updates her script
 :script: file="assets/src/recurse/discount.hs"
 as follows:
 <!-- prettier-ignore-end -->

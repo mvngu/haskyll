@@ -27,7 +27,7 @@ import Text.Printf
 -- | Current prices of items at or below $200.
 priceB = [5.00, 7.25, 10.95, 49.99, 99.95, 150.50, 175.95, 195.0] :: [Double]
 
--- | Current prices of items at or below $100.
+-- | Current prices of items below $100.
 price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
 
 -- | Round a price to 2 decimal places.
