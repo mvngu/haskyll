@@ -57,3 +57,5 @@ toc:
   subfolder:
   - title: Free range numbers
     url: /list_range/
+  - title: ¿Comprende?
+    url: /list_comprehension/
