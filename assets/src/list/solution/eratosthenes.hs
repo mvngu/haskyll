@@ -30,6 +30,18 @@ allOne []     = False
 allOne [x]    = x == 1
 allOne (x:xs) = x == 1 && allOne xs
 
+-- | Let p_n be the n-th prime number. Test whether the inequality
+--
+-- \sqrt{p_{n+1}} - \sqrt{p_n} < 1
+--
+-- holds for a list of successive primes, in order to verify Andrica's
+-- conjecture.
+andrica :: [Integer] -> [Bool]
+andrica []       = []
+andrica [x]      = [False]
+andrica [x, y]   = [isLTone x y]
+andrica (x:y:xs) = [isLTone x y] ++ andrica (y : xs)
+
 -- | The difference operator, where we use only the absolute value of the
 -- difference.
 diff :: [Integer] -> [Integer]
@@ -46,6 +58,14 @@ gilbreath [x] = [x]
 gilbreath xs = do
     let d = diff xs
     (head d) : gilbreath d
+
+-- | Let p_n be the n-th prime number. Test whether the inequality
+--
+-- \sqrt{p_{n+1}} - \sqrt{p_n} < 1
+--
+-- holds for the purpose of Andrica's conjecture.
+isLTone :: Integer -> Integer -> Bool
+isLTone x y = (sqrt . fromIntegral $ y) - (sqrt . fromIntegral $ x) < 1
 
 -- | A list of prime numbers between 2 and a given limit.
 prime :: Integer -> [Integer]
@@ -65,6 +85,10 @@ main = do
     printf "%s\n" $ show p
     -- Verify Gilbreath's conjecture for a list of all primes between 2 and
     -- 100,000.
-    let ell = prime 100000
+    let n = 100000
+    let ell = prime n
     let result = allOne . gilbreath $ ell
     printf "Gilbreath's conjecture for primes <= 100,000: %s\n" $ show result
+    -- Verify Andrica's conjecture for a list of all primes at most 100,000
+    let ella = andrica ell
+    printf "Andrica's conjecture for primes <= 100,000: %s\n" $ show . and $ ella
