@@ -55,5 +55,5 @@ toc:
 - title: Listless in Seattle
   url: /list_README/
   subfolder:
-  - title: List comprehension
-    url: /list_comprehension/
+  - title: Free range numbers
+    url: /list_range/
