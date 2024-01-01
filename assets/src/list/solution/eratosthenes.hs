@@ -24,6 +24,29 @@
 
 import Text.Printf
 
+-- | Whether a list has all ones.
+allOne :: [Integer] -> Bool
+allOne []     = False
+allOne [x]    = x == 1
+allOne (x:xs) = x == 1 && allOne xs
+
+-- | The difference operator, where we use only the absolute value of the
+-- difference.
+diff :: [Integer] -> [Integer]
+diff []       = []
+diff [x]      = []
+diff [x, y]   = [abs $ x - y]
+diff (x:y:xs) = [abs $ x - y] ++ diff (y : xs)
+
+-- | A Gilbreath sequence, which consists of the first element obtained after
+-- running the difference operator on a list.
+gilbreath :: [Integer] -> [Integer]
+gilbreath [] = []
+gilbreath [x] = [x]
+gilbreath xs = do
+    let d = diff xs
+    (head d) : gilbreath d
+
 -- | A list of prime numbers between 2 and a given limit.
 prime :: Integer -> [Integer]
 prime n
@@ -40,3 +63,8 @@ sieve (x:xs) = do
 main = do
     let p = prime 100
     printf "%s\n" $ show p
+    -- Verify Gilbreath's conjecture for a list of all primes between 2 and
+    -- 100,000.
+    let ell = prime 100000
+    let result = allOne . gilbreath $ ell
+    printf "Gilbreath's conjecture for primes <= 100,000: %s\n" $ show result
