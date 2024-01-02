@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (C) 2023 Duck McSouls <quacksouls [AT] gmail [DOT] com>
+-- Copyright (C) 2023--2024 Duck McSouls <quacksouls [AT] gmail [DOT] com>
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,20 @@ notN n xs = filter (\x -> mod x n /= 0) xs
 
 -- | Remove multiples of the following numbers: 4, 9, 13, 17, 39, 666.
 main = do
-    let ell = notN 666 $ notN 39 $ notN 17 $ notN 13 $ notN 9 $ notN 4 [1 .. 1000]
+    let num = [1 .. 1000]
+    let ell = notN 666 $ notN 39 $ notN 17 $ notN 13 $ notN 9 $ notN 4 num
     let n = length ell
     printf "How many numbers between 1 and 1,000 that do not induce fear: %d\n" n
+    -- Same as above, but use list comprehension.
+    let ellc =
+            [ x
+            | x <- num
+            , mod x 4 /= 0
+            , mod x 9 /= 0
+            , mod x 13 /= 0
+            , mod x 17 /= 0
+            , mod x 39 /= 0
+            , mod x 666 /= 0
+            ]
+    putStrLn "\nUsing list comprehension"
+    printf "How many non-fear inducing numbers: %d\n" $ length ellc
