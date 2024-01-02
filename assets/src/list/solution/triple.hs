@@ -31,6 +31,14 @@ brute n = do
     let triple = sequence [ell, ell, ell]
     filter (\[x, y, z] -> isppt x y z) triple
 
+-- | Brute force method to generate Pythagorean triples.  This
+-- implementation uses list comprehension.
+bruteC :: Integer -> [[Integer]]
+bruteC n = do
+    let ell = [1 .. n] :: [Integer]
+    let triple = sequence [ell, ell, ell]
+    [[x, y, z] | [x, y, z] <- triple, x ^ 2 + y ^ 2 == z ^ 2]
+
 -- | Euclid's method for generating primitive Pythagorean triples.
 euclid :: Integer -> [[Integer]]
 euclid n = do
@@ -55,6 +63,8 @@ isPythagoreanTriple x y z = x ^ 2 + y ^ 2 == z ^ 2
 -- | Generate primitive Pythagorean triples at most 100.
 main = do
     let ellBrute = brute 100
+    let ellBruteC = bruteC 100
     let ellEuclid = euclid 100
     printf "%s\n" $ show ellBrute
     printf "%s\n" $ show ellEuclid
+    printf "%s\n" $ show ellBruteC
