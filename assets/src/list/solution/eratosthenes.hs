@@ -73,16 +73,29 @@ prime n
     | n < 2 = error "Must be integer at least 2"
     | otherwise = sieve [2 .. n]
 
+-- | A list of prime numbers between 2 and a given limit.  This implementation
+-- uses list comprehension.
+primeC :: Integer -> [Integer]
+primeC n
+    | n < 2 = error "Must be integer at least 2"
+    | otherwise = sieveC [2 .. n]
+
 -- | The sieve of Eratosthenes.
 sieve :: [Integer] -> [Integer]
-sieve [] = []
-sieve (x:xs) = do
-    x : (sieve $ filter (\y -> mod y x /= 0) xs)
+sieve []     = []
+sieve (x:xs) = x : (sieve $ filter (\y -> mod y x /= 0) xs)
 
--- | Generate a list of prime numbers using the sieve of Eratosthenes.
+-- | The sieve of Eratosthenes, but using list comprehension.
+sieveC :: [Integer] -> [Integer]
+sieveC []     = []
+sieveC (x:xs) = x : sieveC [y | y <- xs, mod y x /= 0]
+
+-- | Generate a list of prime numbers using the sieve of Eratosthenes.  Use the
+-- prime numbers to verify various conjectures.
 main = do
-    let p = prime 100
-    printf "%s\n" $ show p
+    let k = 100
+    let p = prime k
+    printf "%s -> %s\n" (show p) $ show $ p == primeC k
     -- Verify Gilbreath's conjecture for a list of all primes between 2 and
     -- 100,000.
     let n = 100000
