@@ -59,3 +59,5 @@ toc:
     url: /list_range/
   - title: ¿Comprende?
     url: /list_comprehension/
+  - title: Bool-like
+    url: /list_boolike/
