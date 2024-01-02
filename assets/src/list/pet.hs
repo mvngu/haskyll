@@ -90,3 +90,9 @@ main = do
         let pt = extract anim
         putStr anim
         printf " -> %s\n" $ show . hasHealthCheck $ pt
+    -- Whether any of the birds have had a health check.
+    let bird = extract "bird"
+    let testAll = all (\(_, _, check) -> check) bird
+    let testAny = any (\(_, _, check) -> check) bird
+    printf "All birds have health check? %s\n" $ show testAll
+    printf "Some birds have health check? %s\n" $ show testAny
