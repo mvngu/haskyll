@@ -287,7 +287,7 @@ the value of a random list of integers between 2 and 10.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exWheat"
 In the year 1256, the Arabic scholar Ibn Khallikan wrote about the story of
 Grand Vizier Sissa ben Dahir and his request for grains on a chessboard.[^a] The
 Indian King Shirham wanted to reward Sissa for inventing the game of
@@ -299,7 +299,7 @@ requested.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exPythagoreanTriple"
 A [Pythagorean triple][pythagoreanTriple] is a trio $(a,\, b,\, c)$ of positive
 integers such that $a^2 + b^2 = c^2$. If the integers $a,\, b,\, c$ have a
 greatest common divisor (GCD) of 1, then the trio is called a primitive
