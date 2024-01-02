@@ -90,6 +90,15 @@ sieveC :: [Integer] -> [Integer]
 sieveC []     = []
 sieveC (x:xs) = x : sieveC [y | y <- xs, mod y x /= 0]
 
+-- | Twin primes.
+twin :: Integer -> [(Integer, Integer)]
+twin n
+    | n < 2 = error "Must be positive integer"
+    | otherwise = do
+        let p = primeC n
+        let pair = zip p (tail p)
+        [(x, y) | (x, y) <- pair, y - x == 2]
+
 -- | Generate a list of prime numbers using the sieve of Eratosthenes.  Use the
 -- prime numbers to verify various conjectures.
 main = do
@@ -105,3 +114,5 @@ main = do
     -- Verify Andrica's conjecture for a list of all primes at most 100,000
     let ella = andrica ell
     printf "Andrica's conjecture for primes <= 100,000: %s\n" $ show . and $ ella
+    -- Twin primes.
+    printf "%s\n" $ show $ take 100 $ twin n
