@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (C) 2023 Duck McSouls <quacksouls [AT] gmail [DOT] com>
+-- Copyright (C) 2023--2024 Duck McSouls <quacksouls [AT] gmail [DOT] com>
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -47,6 +47,16 @@ multiples (x:xs) ys = do
     let zs = filter (\z -> isMultiple z x) ys
     multiples xs zs
 
+-- | The positive integer multiples of a bunch of numbers.  This implementation
+-- uses list comprehension.
+multiplesC :: [Integer] -> [Integer] -> [Integer]
+multiplesC [] _ = error "Must be non-empty list"
+multiplesC _ [] = error "Must be non-empty list"
+multiplesC [x] ys = [z | z <- ys, isMultiple z x]
+multiplesC (x:xs) ys = do
+    let zs = [z | z <- ys, isMultiple z x]
+    multiplesC xs zs
+
 -- | A bunch of random integers.
 randInts :: Int -> IO [Integer]
 randInts n = replicateM n (uniformRM (2, 10) globalStdGen :: IO Integer)
@@ -57,7 +67,9 @@ main = do
     -- The least positive integer that is divisible by a bunch of numbers.
     for_ divisor $ \d -> do
         let ell = multiples d [1 ..]
-        printf "Least multiple of %s: %d\n" (show d) $ head ell
+        let ellC = multiplesC d [1 ..]
+        let test = head ell == head ellC
+        printf "Least multiple of %s: %d, %s\n" (show d) (head ell) $ show test
     -- How precious is a bunch of integers?
     k <- uniformRM (1, 10) globalStdGen :: IO Int
     ell <- randInts k
