@@ -238,7 +238,7 @@ Use range notation to output all the ASCII characters.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exPhobias"
 Some cultures have specific phobias related to numbers. Examples include:
 <!-- prettier-ignore-end -->
 
