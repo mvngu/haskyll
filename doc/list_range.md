@@ -322,7 +322,7 @@ Pythagorean triple (PPT).
     force method.
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exEratosthenes"
 The [sieve of Eratosthenes][sieveEratosthenes] is an algorithm for generating
 prime numbers up to a given limit. Let $n > 1$ be an integer and suppose we want
 a list of all prime numbers at most $n$. Start with a list of all integers
