@@ -58,3 +58,8 @@ main = do
     putStrLn "Test individual word for vowels"
     for_ word $ \w -> do
         printf "%s -> %s\n" w $ show . hasVowel $ w
+    -- Is there any word in the list that does not use "Y"?
+    let testY = any (\w -> 'y' `notElem` w) word
+    let noY = filter (\w -> 'y' `notElem` w) word
+    printf "Any words not using Y? %s\n" $ show testY
+    printf "Words not using Y: %s\n" $ show noY
