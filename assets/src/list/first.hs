@@ -25,12 +25,12 @@
 import Text.Printf
 
 -- | The first elements in a list of 2-tuples.
-firstA :: [(a, b)] -> [a]
-firstA xs = [x | (x, _) <- xs]
+first :: [(a, b)] -> [a]
+first xs = [x | (x, _) <- xs]
 
 -- | The second elements in a list of 2-tuples.
-secondA :: [(a, b)] -> [b]
-secondA xs = [y | (_, y) <- xs]
+second :: [(a, b)] -> [b]
+second xs = [y | (_, y) <- xs]
 
 -- | The elements of a list of 2-tuples.
 main = do
@@ -38,10 +38,10 @@ main = do
     let b = [(x, y) | x <- [1 .. 5], y <- [6 .. 10]]
     let c = [(a, b) | a <- "abcdef", b <- "ghij"]
     putStrLn "First elements"
-    printf "%s -> %s\n" (show a) $ show . firstA $ a
-    printf "%s -> %s\n" (show b) $ show . firstA $ b
-    printf "%s -> %s\n" (show c) $ show . firstA $ c
+    printf "%s -> %s\n" (show a) $ show . first $ a
+    printf "%s -> %s\n" (show b) $ show . first $ b
+    printf "%s -> %s\n" (show c) $ show . first $ c
     putStrLn "\nSecond elements"
-    printf "%s -> %s\n" (show a) $ show . secondA $ a
-    printf "%s -> %s\n" (show b) $ show . secondA $ b
-    printf "%s -> %s\n" (show c) $ show . secondA $ c
+    printf "%s -> %s\n" (show a) $ show . second $ a
+    printf "%s -> %s\n" (show b) $ show . second $ b
+    printf "%s -> %s\n" (show c) $ show . second $ c
