@@ -258,7 +258,7 @@ are multiples of the above phobia-related numbers. How many integers between 1
 and 1,000 do not contain multiples of the above fear-inducing numbers?
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exBunchMultiples"
 Consider the following problems:
 <!-- prettier-ignore-end -->
 
