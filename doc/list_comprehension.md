@@ -337,12 +337,6 @@ in the section [Length of list][listLength].
 
 <!-- prettier-ignore-start -->
 :exercise:
-Use list comprehension to generate all prime numbers not exceeding a given
-limit.
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-:exercise:
 Use list comprehension to implement the function `add` from the script
 :script: file="assets/src/recurse/add.hs"
 in the section [Triangular numbers](../recurse_example/#triangular-numbers).
@@ -379,10 +373,14 @@ Use list comprehension to implement the functions [`zip`][zip] and
 
 <!-- prettier-ignore-start -->
 :exercise:
-Two prime numbers $a$ and $b$, with $a < b$, are said to be
-[twin prime][twinPrime] if $b - a = 2$. Generate a list of the first 100 twin
-primes.
+In this exercise, you will explore a property of prime numbers.
 <!-- prettier-ignore-end -->
+
+1. Use list comprehension to generate all prime numbers not exceeding a given
+   limit.
+1. Two prime numbers $a$ and $b$, with $a < b$, are said to be [twin
+   prime][twinPrime] if $b - a = 2$. Generate a list of the first 100 twin
+   primes.
 
 <!--=========================================================================-->
 
