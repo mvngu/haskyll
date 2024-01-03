@@ -358,7 +358,7 @@ Write a program that outputs the partial Champernowne constant up to an integer
 $n > 0$.
 
 <!-- prettier-ignore-start -->
-:exercise:
+:exercise: label="exGilbreath"
 Start with a list of all primes at most $n > 1$. Take the absolute value of the
 difference between two successive elements. Place the results in a list. Repeat
 the process with the new list, and so on and so forth until you eventually
