@@ -382,6 +382,22 @@ In this exercise, you will explore a property of prime numbers.
    prime][twinPrime] if $b - a = 2$. Generate a list of the first 100 twin
    primes.
 
+<!-- prettier-ignore-start -->
+:exercise:
+The table below lists some English words that are of [Norse origin][NorseOrigin].
+<!-- prettier-ignore-end -->
+
+| A     | B       | C       | D      | F       |
+| ----- | ------- | ------- | ------ | ------- |
+| ado   | bait    | crawl   | dangle | fellow  |
+| aloft | bark    | crochet | die    | fjord   |
+| anger | berserk | crotch  | dregs  | flaunt  |
+| auk   | bylaw   | crouch  | droop  | freckle |
+
+Write a program to determine the number of unique vowels each word uses. Provide
+an implementation that uses list comprehension, and another implementation that
+does not use list comprehension.
+
 <!--=========================================================================-->
 
 <!-- prettier-ignore-start -->
@@ -396,6 +412,7 @@ In this exercise, you will explore a property of prime numbers.
 [map]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:map
 [monkeySaddle]: https://web.archive.org/web/20240101130822/https://en.wikipedia.org/wiki/Monkey_saddle
 [multipleExercise]: ../list_range/#exBunchMultiples
+[NorseOrigin]: https://web.archive.org/web/20231213102223/https://en.wikipedia.org/wiki/List_of_English_words_of_Old_Norse_origin
 [phobiaExercise]: ../list_range/#exPhobias
 [pythagoreanTriple]: https://web.archive.org/web/20231216161203/https://en.wikipedia.org/wiki/Pythagorean_triple
 [range]: ../list_range/
