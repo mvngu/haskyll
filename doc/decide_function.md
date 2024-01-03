@@ -187,6 +187,71 @@ library functions as a learning exercise.
 
 <!--=========================================================================-->
 
+### Dude, where's my car?
+
+You drive to one of the biggest shopping centres in town. You park your car in
+one of the centre's spacious parking lots, secure your car, and enter the
+shopping centre to search for a birthday present. Several hours later, you find
+a (near) perfect gift. You pay for the merchandise and proceed to walk to the
+parking lot. However, you have forgotten where you parked your car. You remember
+parking the car near a distinctive landmark. That's right. The car is parked
+near a restaurant called "Joe's Munchies".
+
+Let $p_1 = (x_1,\, y_1)$ be the coordinates of the entrance of the shopping
+centre, where you are standing. Let $p_2 = (x_2,\, y_2)$ be the coordinates of
+"Joe's Munchies". The shortest distance between the points $p_1$ and $p_2$ is
+given by the [Euclidean distance][EuclideanDistance]
+
+$$
+\begin{equation}
+\label{eqnEuclideanDistance}
+d(p_1,\, p_2)
+=
+\sqrt{s + t}
+\end{equation}
+$$
+
+where $s = (x_2 - x_1)^2$ and $t = (y_2 - y_1)^2$. The Haskell keyword
+[`where`][where] allows us to mimic how expression (\ref{eqnEuclideanDistance})
+is defined. Examine the following code.
+
+:include: file="assets/src/decide/distance.hs", line=27:32
+
+Three issues stand out in the above function definition.
+
+1. Type class. The type class [`Floating`][Floating] encompasses `Float` and
+   `Double`. Think of `Floating` as a type that allows you to work with data of
+   type `Float` or type `Double`. By writing `Floating a =>` in the above
+   function definition, we are saying that each occurrence of `a` in the
+   function signature refers to a floating-point number. See the section
+   [Vector addition](../decide_pattern/#vector-addition) for further details.
+1. `where`. This keyword allows us to bind variables that will be local to the
+   function in which the variable is defined. In the first line of the
+   definition of `distanceA`, we define the distance between the two points
+   (i.e. tuples) as the square root of the sum `p + q`. We use `where` to begin
+   a block within which we introduce the definitions of the variables `p` and
+   `q`. This is the `where` block.
+1. Indentation. The definitions of the variables `p` and `q` are indented to
+   align with each other in the `where` block. It's like a `do` block, where
+   indentation is also important. Refer to the section
+   [Printing numbers](../data_number/#printing-numbers) for more details.
+
+We could also define the distance function by means of a `do` block. The
+resulting definition looks similar to how code is written in a procedural
+language such as C, JavaScript, and Python. Observe the alternative definition:
+
+:include: file="assets/src/decide/distance.hs", line=34:39
+
+The definition of `distanceA` certainly bears close resemblance to the Euclidean
+distance as defined in expression (\ref{eqnEuclideanDistance}), whereas the
+definition of `distanceB` looks like code written in a procedural language.
+
+Alas, the route from the entrance of the shopping centre to "Joe's Munchies" is
+not a straight line. You must follow a footpath that twists and turn. Don't tell
+anyone you forgot where you parked your car. Now, where are your car keys?
+
+<!--=========================================================================-->
+
 ## No refund, no return
 
 Defining our own functions is great, but why is there no return statement in any
@@ -392,6 +457,8 @@ both middle characters. You might find the method [`length`][length] useful.
 [composition]: https://web.archive.org/web/20231219010454/https://en.wikipedia.org/wiki/Function_composition
 [dataChar]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html
 [div]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:div
+[EuclideanDistance]: https://web.archive.org/web/20240102045103/https://en.wikipedia.org/wiki/Euclidean_distance
+[Floating]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#t:Floating
 [fst]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:fst
 [isNumber]: https://web.archive.org/web/20231202081418/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:isNumber
 [length]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:length
@@ -403,4 +470,5 @@ both middle characters. You might find the method [`length`][length] useful.
 [snd]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:snd
 [splitAt]: https://web.archive.org/web/20231202002935/https://hackage.haskell.org/package/base-4.19.0.0/docs/Prelude.html#v:splitAt
 [toUpper]: https://web.archive.org/web/20231128120029/https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Char.html#v:toUpper
+[where]: https://web.archive.org/web/20231203183123/https://wiki.haskell.org/Keywords#where
 <!-- prettier-ignore-end -->
