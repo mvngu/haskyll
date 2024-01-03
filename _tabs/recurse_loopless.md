@@ -242,7 +242,37 @@ ghci> map (\x -> x + 1) [1 .. 10]
 [2,3,4,5,6,7,8,9,10,11]
 ```
 
-Let's capitalize each name:
+Bella manages a boutique. In preparation for an upcoming sale, Bella asks Sam to
+help her update the following prices:
+
+[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+```haskell
+-- | Current prices of items below $100.
+price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
+```
+
+To help boost sales, Bella offers a 15% discount on each item that is currently
+less than $100. Sam uses the program below to calculate the discounted prices:
+
+[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+```haskell
+-- | Current prices of items below $100.
+price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
+
+-- | Round a price to 2 decimal places.
+roundPrice :: Double -> Double
+roundPrice p = do
+    let factor = 10.0 ^ 2
+    let numerator = fromIntegral . round $ p * factor
+    numerator / factor
+
+-- | Apply a discount on various items.
+main = do
+    let newPrice = map (\x -> roundPrice $ 0.85 * x) price
+    printf "%s -> %s\n" (show price) $ show newPrice
+```
+
+Your writer friend wants to capitalize some names:
 
 ```haskell
 ghci> import Data.Char
@@ -289,6 +319,49 @@ function `filter` has two parameters:
 The function `filter` outputs a sublist of $\ell$ containing those elements of
 $\ell$ that pass the predicate $p$. The above seems more complicated than it
 should be. The following examples should clarify how to use `filter`.
+
+Here is a continuation of the boutique example from the section
+[Hoogle map](#hoogle-map). Bella's boutique has items that cost more than $100.
+Here is the full price list:
+
+[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+```haskell
+-- | Current prices of items at or below $200.
+priceB = [5.00, 7.25, 10.95, 49.99, 99.95, 150.50, 175.95, 195.0] :: [Double]
+```
+
+<!-- prettier-ignore-start -->
+To help boost sales, Bella offers a 10% discount on the expensive items,
+i.e. those costing at least $100. Sam updates her script
+[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+as follows:
+<!-- prettier-ignore-end -->
+
+[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+```haskell
+import Text.Printf
+
+-- | Current prices of items at or below $200.
+priceB = [5.00, 7.25, 10.95, 49.99, 99.95, 150.50, 175.95, 195.0] :: [Double]
+
+-- | Current prices of items below $100.
+price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
+
+-- | Round a price to 2 decimal places.
+roundPrice :: Double -> Double
+roundPrice p = do
+    let factor = 10.0 ^ 2
+    let numerator = fromIntegral . round $ p * factor
+    numerator / factor
+
+-- | Apply a discount on various items.
+main = do
+    let newPrice = map (\x -> roundPrice $ 0.85 * x) price
+    printf "%s -> %s\n" (show price) $ show newPrice
+    let expensive = filter (\x -> x >= 100.0) priceB
+    let newPriceB = map (\x -> roundPrice $ 0.9 * x) expensive
+    printf "%s -> %s\n" (show expensive) $ show newPriceB
+```
 
 <!--=========================================================================-->
 

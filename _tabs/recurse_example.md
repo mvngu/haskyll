@@ -168,7 +168,6 @@ $$
 The recursive definition of the Fibonacci number $F_n$ can be translated to the
 following Haskell function:
 
-<!-- prettier-ignore -->
 [`fibonacci.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/fibonacci.hs)
 ```haskell
 -- | The Fibonacci numbers.
@@ -249,7 +248,7 @@ size (x:xs) = 1 + size xs
 ## Binomial coefficients
 
 > _Mary:_ What are you doing at my desk?\
-> _Dick:_ Anthopology. It's fascinating! Such a wealth of cultures. You know, up
+> _Dick:_ Anthropology. It's fascinating! Such a wealth of cultures. You know, up
 > until now I always thought what you did was pointless and of no interest to anyone
 > but yourself.\
 > _Mary:_ Well, it's certainly not as fascinating as physics. I mean, everybody
