@@ -32,9 +32,9 @@ greatest :: [Int] -> Int
 greatest [] = error "Must be non-empty list"
 greatest [x] = x
 greatest (x:xs) =
-    if x < (head xs)
+    if x < head xs
         then greatest xs
-        else greatest (x : tail xs)
+        else greatest $ x : tail xs
 
 -- | The greatest element in a list, using a fold operation.
 greatf :: [Int] -> Int

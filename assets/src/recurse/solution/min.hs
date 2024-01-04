@@ -32,9 +32,9 @@ least :: [Int] -> Int
 least [] = error "Must be non-empty list"
 least [x] = x
 least (x:xs) =
-    if x > (head xs)
+    if x > head xs
         then least xs
-        else least (x : tail xs)
+        else least $ x : tail xs
 
 -- | The least element in a list, using a fold operation.
 leastf :: [Int] -> Int

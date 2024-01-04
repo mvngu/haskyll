@@ -31,7 +31,7 @@ binom n 0 = 1
 binom 0 k = 0
 binom n k
     | n < 0 = error "Must be non-negative integer"
-    | (k > n) || (k < 0) = 0
+    | k > n || k < 0 = 0
     | n == k = 1
     | otherwise = (n * binom (n - 1) (k - 1)) `div` k
 

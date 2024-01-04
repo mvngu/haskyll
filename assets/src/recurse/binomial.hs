@@ -30,7 +30,7 @@ binomA n 0 = 1
 binomA 0 k = 0
 binomA n k
     | n < 0 = error "Must be non-negative integer"
-    | (k > n) || (k < 0) = 0
+    | k > n || k < 0 = 0
     | n == k = 1
     | otherwise = do
         let a = product [1 .. n]
@@ -44,7 +44,7 @@ binomB n 0 = 1
 binomB 0 k = 0
 binomB n k
     | n < 0 = error "Must be non-negative integer"
-    | (k > n) || (k < 0) = 0
+    | k > n || k < 0 = 0
     | n == k = 1
     | otherwise = (n * binomB (n - 1) (k - 1)) `div` k
 
@@ -54,7 +54,7 @@ binomC n 0 = 1
 binomC 0 k = 0
 binomC n k
     | n < 0 = error "Must be non-negative integer"
-    | (k > n) || (k < 0) = 0
+    | k > n || k < 0 = 0
     | n == k = 1
     | otherwise = (binomC (n - 1) k) + (binomC (n - 1) (k - 1))
 
@@ -68,10 +68,10 @@ main = do
     let ck = 7 :: Integer
     let dn = 17 :: Integer
     let dk = 9 :: Integer
-    let test1 = (binomA an ak) == (binomB an ak) && (binomB an ak) == (binomC an ak)
-    let test2 = (binomA bn bk) == (binomB bn bk) && (binomB bn bk) == (binomC bn bk)
-    let test3 = (binomA cn ck) == (binomB cn ck) && (binomB cn ck) == (binomC cn ck)
-    let test4 = (binomA dn dk) == (binomB dn dk) && (binomB dn dk) == (binomC dn dk)
+    let test1 = binomA an ak == binomB an ak && binomB an ak == binomC an ak
+    let test2 = binomA bn bk == binomB bn bk && binomB bn bk == binomC bn bk
+    let test3 = binomA cn ck == binomB cn ck && binomB cn ck == binomC cn ck
+    let test4 = binomA dn dk == binomB dn dk && binomB dn dk == binomC dn dk
     printf "%d, %d -> %d: %s\n" an ak (binomB an ak) $ show test1
     printf "%d, %d -> %d: %s\n" bn bk (binomB bn bk) $ show test2
     printf "%d, %d -> %d: %s\n" cn ck (binomB cn ck) $ show test3

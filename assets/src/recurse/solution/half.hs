@@ -31,7 +31,7 @@ main = do
     let half =
             map
                 (\x ->
-                     if (mod x 2) == 0
+                     if mod x 2 == 0
                          then div x 2
                          else x + 1)
                 n

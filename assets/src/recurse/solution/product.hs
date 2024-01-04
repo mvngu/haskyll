@@ -25,7 +25,7 @@
 import Text.Printf
 
 -- | The product of a list of integers.
-prod :: (Integral a) => [a] -> a
+prod :: Integral a => [a] -> a
 prod []     = 1
 prod (x:xs) = x * prod xs
 

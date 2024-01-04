@@ -31,7 +31,7 @@ add 0 k = k
 add n 0 = n
 add n k
     | n < 0 || k < 0 = error "Must be non-negative integer"
-    | otherwise = add (n + 1) (k - 1)
+    | otherwise = add (n + 1) $ k - 1
 
 -- | Addition as successive adding of 1.
 main = do
