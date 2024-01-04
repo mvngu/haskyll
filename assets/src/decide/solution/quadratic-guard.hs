@@ -27,9 +27,11 @@ import Text.Printf
 -- | Solve the quadratic equation.
 quadratic :: Double -> Double -> Double -> String
 quadratic a b c
-    | (b ** 2) - (4 * a * c) > 0 = "two distinct real solutions"
-    | (b ** 2) - (4 * a * c) == 0 = "repeated real solution"
-    | (b ** 2) - (4 * a * c) < 0 = "two distinct complex solutions"
+    | delta > 0 = "two distinct real solutions"
+    | delta == 0 = "repeated real solution"
+    | delta < 0 = "two distinct complex solutions"
+  where
+    delta = (b ** 2) - (4 * a * c)
 
 -- | Classes of solutions for quadratic equations.
 main = do

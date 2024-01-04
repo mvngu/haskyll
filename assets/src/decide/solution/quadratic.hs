@@ -26,13 +26,14 @@ import Text.Printf
 
 -- | Solve the quadratic equation.
 quadratic :: Double -> Double -> Double -> String
-quadratic a b c = do
-    let delta = (b ** 2) - (4 * a * c)
+quadratic a b c =
     if a == 0
         then "a is zero"
         else if delta < 0
                  then "No real roots"
                  else show $ ((-b) + (sqrt delta)) / (2 * a)
+  where
+    delta = (b ** 2) - (4 * a * c)
 
 -- | An implementation of the quadratic formula.
 main = do
