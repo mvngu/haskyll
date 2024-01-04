@@ -432,10 +432,14 @@ Tabby's age: 1
 In 3 years time, Tabby will be: 4
 ```
 
+<!--=========================================================================-->
+
+#### Do let us show you
+
 <!-- prettier-ignore-start -->
-The file
+The program
 :script: file="assets/src/data/age.hs"
-shows a few new concepts.  Let's tackle each idea in turn:
+presents a few new concepts.  Let's tackle each idea in turn:
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
@@ -443,14 +447,17 @@ shows a few new concepts.  Let's tackle each idea in turn:
     together, one action per line. Indentation is important[^b] and allows the
     Haskell compiler to figure out whether a line of code is within, or outside
     of, the `do` block. The keyword `do` is syntactic sugar that allows you to
-    write clean and readable Haskell code.
--   The keyword `let`. Normally, you would assign a value to a variable like so:
-    `num = 42`. Inside a `do` block, you must prefix each assignment operation
-    with the keyword `let`. Within a `do` block, you would write `let num = 42`
-    instead of `num = 42`.
+    write clean and readable Haskell code, in a manner similar to how you would
+    define a function in a procedural language such as C, JavaScript, or Python.
+-   The keyword `let`. Normally, within a GHCi session you would assign a value
+    to a variable like so: `num = 42`. Inside a `do` block of a script, you must
+    prefix each assignment operation with the keyword `let`. Within a `do`
+    block, you would write `let num = 42` instead of `num = 42`.
 -   The operator [`++`][plusplus]. This operator allows you to concatenate two
-    strings.[^c]
--   The method [`show`][show]. This method converts a value to a string. In the
+    strings.[^c] Do not confuse it with the increment operator from C and
+    JavaScript.
+-   The method [`show`][show]. This method converts a value to a string,
+    provided that the value supports such a conversion. In the
     program
     :script: file="assets/src/data/age.hs"
     the variable `age` has type `Integer` and cannot be concatenated with the
@@ -458,6 +465,41 @@ shows a few new concepts.  Let's tackle each idea in turn:
     string. The operator `++` can then concatenate the strings on its left- and
     right-hand sides.
 <!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+The combination of `do` and `let` allows you to mimic a procedural style of
+programming. Compare the script
+:script: file="assets/src/data/age.hs"
+with its counterpart in C:
+<!-- prettier-ignore-end -->
+
+:include: file="assets/src/data/age.c", line=25:-
+
+<!-- prettier-ignore-start -->
+Here's a version of
+:script: file="assets/src/data/age.hs"
+in JavaScript:
+<!-- prettier-ignore-end -->
+
+:include: file="assets/src/data/age.js", line=25:-
+
+Below is a Python version:
+
+:include: file="assets/src/data/age.py", line=26:33
+
+<!--=========================================================================-->
+
+#### Data immutability
+
+In functional programming, data should be immutable. Once you have assigned a
+value to a variable, you should not assign a different value to the same
+variable. Not only can you use `let` to declare a variable and assign it a
+value, you can also use `let` to reassign a different value to the same
+variable. However, doing so would be a violation of immutability. Try to follow
+the principle of immutability as much as possible. The following program, while
+being valid Haskell code, should not be how you write functional code.
+
+:include: file="assets/src/data/assign.hs", line=25:-
 
 <!--=========================================================================-->
 
