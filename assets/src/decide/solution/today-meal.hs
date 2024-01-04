@@ -29,7 +29,7 @@ import Text.Printf
 main = do
     time <- getCurrentTime
     let (year, month, day) = toGregorian $ utctDay time
-    let today = show $ dayOfWeek $ fromGregorian year month day
+    let today = show . dayOfWeek $ fromGregorian year month day
     let porkDay = "Monday"
     let sardineDay = "Friday"
     let meal =
