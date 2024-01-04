@@ -31,7 +31,7 @@ myNot _     = False
 
 -- | An implementation of boolean "not".
 main = do
-    let test1 = (not True) == (myNot True)
-    let test2 = (not False) == (myNot False)
+    let test1 = not True == myNot True
+    let test2 = not False == myNot False
     printf "%s -> %s, check: %s\n" (show True) (show $ myNot True) $ show test1
     printf "%s -> %s, check: %s\n" (show False) (show $ myNot False) $ show test2

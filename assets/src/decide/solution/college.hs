@@ -29,7 +29,7 @@ size :: Integer -> String
 size x
     | x <= 0 = "Invalid number of students"
     | x < 5000 = "small"
-    | (5000 <= x) && (x <= 15000) = "medium"
+    | 5000 <= x && x <= 15000 = "medium"
     | x > 15000 = "large"
 
 -- | Number of students in colleges in the USA.

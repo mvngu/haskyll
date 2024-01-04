@@ -27,7 +27,7 @@ dropMid :: String -> String
 dropMid str = do
     let k = length str
     let (left, right) = splitAt (div k 2) str
-    if (mod k 2) == 0
+    if mod k 2 == 0
         then (init left) ++ (tail right)
         else left ++ (tail right)
 

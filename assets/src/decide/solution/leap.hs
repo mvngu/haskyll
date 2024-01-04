@@ -29,12 +29,12 @@ import Text.Printf
 main = do
     time <- getCurrentTime
     let (year, _, _) = toGregorian $ utctDay time
-    if (mod year 4) == 0 && (mod year 100) /= 0
+    if mod year 4 == 0 && mod year 100 /= 0
         then do
             let half = div year 2
             printf "%d is a leap year\n" year
             printf "Half of %d is %d\n" year half
-        else if (mod year 400) == 0
+        else if mod year 400 == 0
                  then do
                      let half = div year 2
                      printf "%d is a leap year\n" year

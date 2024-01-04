@@ -30,7 +30,7 @@ main = do
     num <- getLine
     let n = read num :: Integer
     let parity =
-            if (mod n 2) == 0
+            if mod n 2 == 0
                 then "even"
                 else "odd"
     printf "%d is %s\n" n parity

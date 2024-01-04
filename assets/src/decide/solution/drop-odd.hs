@@ -28,7 +28,7 @@ import Text.Printf
 dropOdd :: (Integral a) => [a] -> [a]
 dropOdd [] = error "Empty list"
 dropOdd (x:xs)
-    | (mod x 2) == 0 = [x] ++ xs
+    | mod x 2 == 0 = [x] ++ xs
     | otherwise = xs
 
 -- | Remove first integer if it is odd.

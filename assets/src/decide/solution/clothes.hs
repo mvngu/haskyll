@@ -28,11 +28,11 @@ import Text.Printf
 label :: Integer -> String
 label x
     | x < 0 = "Invalid size"
-    | (0 <= x) && (x <= 2) = "XS"
-    | (4 <= x) && (x <= 6) = "S"
-    | (8 <= x) && (x <= 10) = "M"
-    | (12 <= x) && (x <= 14) = "L"
-    | (16 <= x) && (x <= 18) = "XL"
+    | 0 <= x && x <= 2 = "XS"
+    | 4 <= x && x <= 6 = "S"
+    | 8 <= x && x <= 10 = "M"
+    | 12 <= x && x <= 14 = "L"
+    | 16 <= x && x <= 18 = "XL"
     | x == 20 = "XXL"
     | x == 22 = "XXXL"
     | otherwise = "Invalid size"

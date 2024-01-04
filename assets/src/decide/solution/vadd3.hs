@@ -25,7 +25,7 @@
 import Text.Printf
 
 -- | Addition for integer vectors of three elements.
-vadd :: (Integral a) => (a, a, a) -> (a, a, a) -> (a, a, a)
+vadd :: Integral a => (a, a, a) -> (a, a, a) -> (a, a, a)
 vadd (s, t, u) (x, y, z) = (s + x, t + y, u + z)
 
 -- | Vector addition.
