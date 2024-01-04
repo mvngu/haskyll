@@ -24,7 +24,7 @@
 
 import Text.Printf
 
--- | The label corresponding to the size of woman's clothing.
+-- | The label corresponding to the size of women's clothing.
 label :: Integer -> String
 label x
     | x < 0 = "Invalid size"
