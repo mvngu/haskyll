@@ -33,7 +33,7 @@ colf n
 cols :: Integer -> IO ()
 cols 1 = putStrLn "1"
 cols n = do
-    putStrLn $ show $ colf n
+    putStrLn . show . colf $ n
     cols (n - 1)
 
 -- | The Collatz function.

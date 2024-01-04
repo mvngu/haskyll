@@ -30,7 +30,7 @@ import Text.Printf
 factors :: Integer -> Integer -> [Integer]
 factors n k
     | n < 1 || k < 1 = error "Must be positive integer"
-    | k <= (ceiling $ sqrt $ fromInteger n) =
+    | k <= (ceiling . sqrt . fromInteger $ n) =
         if isFactor n k
             then [k, n `div` k] ++ factors n (k + 1)
             else [] ++ factors n (k + 1)
