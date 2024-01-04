@@ -183,6 +183,10 @@ ghci> map (\x -> x + 1) [1 .. 10]
 [2,3,4,5,6,7,8,9,10,11]
 ```
 
+<!--=========================================================================-->
+
+### Some examples
+
 Bella manages a boutique. In preparation for an upcoming sale, Bella asks Sam to
 help her update the following prices:
 
