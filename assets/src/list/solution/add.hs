@@ -25,7 +25,7 @@
 import Text.Printf
 
 -- | Sum of all positive integers from 1 to n, inclusive.
-add :: (Integral a) => a -> a
+add :: Integral a => a -> a
 add n
     | n > 0 = sum [x | x <- [1 .. n]]
     | otherwise = error "Must be positive integer"
