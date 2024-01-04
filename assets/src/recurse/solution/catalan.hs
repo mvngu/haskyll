@@ -38,10 +38,10 @@ binom n k
 -- | The Catalan numbers, recursive version.
 catalanA :: Integer -> Integer
 catalanA 0 = 1
-catalanA n = do
-    let a = 2 * (2 * n - 1)
-    let numerator = a * (catalanA $ n - 1)
-    numerator `div` (n + 1)
+catalanA n = numerator `div` (n + 1)
+  where
+    factor = 2 * (2 * n - 1)
+    numerator = factor * (catalanA $ n - 1)
 
 -- | The Catalan numbers, expressed in terms of the central binomial
 -- coefficients.

@@ -32,10 +32,10 @@ price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
 
 -- | Round a price to 2 decimal places.
 roundPrice :: Double -> Double
-roundPrice p = do
-    let factor = 10.0 ^ 2
-    let numerator = fromIntegral . round $ p * factor
-    numerator / factor
+roundPrice p = numerator / factor
+  where
+    factor = 10.0 ^ 2
+    numerator = fromIntegral . round $ p * factor
 
 -- | Apply a discount on various items.
 main = do

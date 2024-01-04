@@ -31,10 +31,10 @@ vowel = "aeiou"
 -- | Whether a string is supervocalic.
 isSupervocalic :: String -> Bool
 isSupervocalic "" = False
-isSupervocalic str = do
-    let strLowercase = lowercase str
-    let result = sum $ map (\x -> occur x strLowercase) vowel
-    result == length vowel
+isSupervocalic str = nvowel == length vowel
+  where
+    strLowercase = lowercase str
+    nvowel = sum $ map (\x -> occur x strLowercase) vowel
 
 -- | Convert a string to all lowercase.
 lowercase :: String -> String

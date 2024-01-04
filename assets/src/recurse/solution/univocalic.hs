@@ -31,10 +31,10 @@ vowel = "aeiou"
 -- | Whether a string is univocalic.
 isUnivocalic :: String -> Bool
 isUnivocalic "" = False
-isUnivocalic str = do
-    let strLowercase = lowercase str
-    let result = sum $ map (\x -> toInt x strLowercase) vowel
-    result == 1
+isUnivocalic str = nvowel == 1
+  where
+    strLowercase = lowercase str
+    nvowel = sum $ map (\x -> toInt x strLowercase) vowel
 
 -- | Convert a string to all lowercase.
 lowercase :: String -> String

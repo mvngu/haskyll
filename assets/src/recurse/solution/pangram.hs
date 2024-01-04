@@ -31,9 +31,9 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 -- | Whether a sentence is a pangram.
 isPangram :: String -> Bool
 isPangram "" = False
-isPangram str = do
-    let strLowercase = lowercase str
-    and $ map (\x -> x `elem` strLowercase) alphabet
+isPangram str = and $ map (\x -> x `elem` strLowercase) alphabet
+  where
+    strLowercase = lowercase str
 
 -- | Convert a string to all lowercase.
 lowercase :: String -> String

@@ -30,9 +30,9 @@ isPrime :: Integer -> Bool
 isPrime 1 = False
 isPrime n
     | n < 1 = error "Must be positive integer"
-    | otherwise = do
-        let high = floor . sqrt $ fromIntegral n
-        all (\k -> mod n k /= 0) [2 .. high]
+    | otherwise = all (\k -> mod n k /= 0) [2 .. high]
+  where
+    high = floor . sqrt . fromIntegral $ n
 
 -- | All prime numbers between 1 and n, inclusive.
 primes :: Integer -> [Integer]

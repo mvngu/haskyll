@@ -41,10 +41,10 @@ gcdMod a b
 gcdSub :: Integral a => a -> a -> a
 gcdSub a b
     | a == b = a
-    | otherwise = do
-        let ai = max b $ abs $ a - b
-        let bi = min b $ abs $ a - b
-        gcdSub ai bi
+    | otherwise = gcdSub ai bi
+  where
+    ai = max b $ abs $ a - b
+    bi = min b $ abs $ a - b
 
 -- | Generate random integers.
 randint :: Int -> IO [Int]

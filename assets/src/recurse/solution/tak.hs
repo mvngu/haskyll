@@ -31,7 +31,11 @@ import Text.Printf
 tak :: Integer -> Integer -> Integer -> Integer
 tak x y z
     | x <= y = y
-    | otherwise = tak (tak (x - 1) y z) (tak (y - 1) z x) (tak (z - 1) x y)
+    | otherwise = tak (tak x1 y z) (tak y1 z x) (tak z1 x y)
+  where
+    x1 = x - 1
+    y1 = y - 1
+    z1 = z - 1
 
 -- | Test the Tak function for integer values between 1 and 100, inclusive.
 main = do

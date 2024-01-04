@@ -29,18 +29,18 @@ import Text.Printf
 -- | The arithmetic mean, using a fold operation.
 average :: Integral a => [a] -> Double
 average [] = 0
-average xs = do
-    let numerator = fromIntegral $ foldr (\x acc -> x + acc) 0 xs
-    let denominator = fromIntegral $ foldr (\_ acc -> 1 + acc) 0 xs
-    numerator / denominator
+average xs = numerator / denominator
+  where
+    numerator = fromIntegral $ foldr (\x acc -> x + acc) 0 xs
+    denominator = fromIntegral $ foldr (\_ acc -> 1 + acc) 0 xs
 
 -- | The arithmetic mean.
 mean :: Integral a => [a] -> Double
 mean [] = 0
-mean xs = do
-    let numerator = fromIntegral $ sum xs
-    let denominator = fromIntegral $ length xs
-    numerator / denominator
+mean xs = numerator / denominator
+  where
+    numerator = fromIntegral $ sum xs
+    denominator = fromIntegral $ length xs
 
 -- | A bunch of random integers.
 randint :: Int -> IO [Int]

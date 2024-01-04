@@ -26,11 +26,11 @@ import Text.Printf
 
 -- | Binet's formula for the n-th Fibonacci number.
 binet :: Integer -> Integer
-binet n = do
-    let k = fromIntegral n :: Double
-    let phi = (1.0 + sqrt 5) / 2.0 :: Double
-    let psi = (1.0 - sqrt 5) / 2.0 :: Double
-    floor $ ((phi ** k) - (psi ** k)) / (sqrt 5)
+binet n = floor $ ((phi ** k) - (psi ** k)) / (sqrt 5)
+  where
+    k = fromIntegral n :: Double
+    phi = (1.0 + sqrt 5) / 2.0 :: Double
+    psi = (1.0 - sqrt 5) / 2.0 :: Double
 
 -- | The Fibonacci numbers.
 fib :: Integer -> Integer
