@@ -43,9 +43,9 @@ multiples :: [Integer] -> [Integer] -> [Integer]
 multiples [] _ = error "Must be non-empty list"
 multiples _ [] = error "Must be non-empty list"
 multiples [x] ys = filter (\z -> isMultiple z x) ys
-multiples (x:xs) ys = do
-    let zs = filter (\z -> isMultiple z x) ys
-    multiples xs zs
+multiples (x:xs) ys = multiples xs zs
+  where
+    zs = filter (\z -> isMultiple z x) ys
 
 -- | The positive integer multiples of a bunch of numbers.  This implementation
 -- uses list comprehension.
@@ -53,9 +53,9 @@ multiplesC :: [Integer] -> [Integer] -> [Integer]
 multiplesC [] _ = error "Must be non-empty list"
 multiplesC _ [] = error "Must be non-empty list"
 multiplesC [x] ys = [z | z <- ys, isMultiple z x]
-multiplesC (x:xs) ys = do
-    let zs = [z | z <- ys, isMultiple z x]
-    multiplesC xs zs
+multiplesC (x:xs) ys = multiplesC xs zs
+  where
+    zs = [z | z <- ys, isMultiple z x]
 
 -- | A bunch of random integers.
 randInts :: Int -> IO [Integer]

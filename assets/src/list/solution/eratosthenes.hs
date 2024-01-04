@@ -55,9 +55,9 @@ diff (x:y:xs) = [abs $ x - y] ++ diff (y : xs)
 gilbreath :: [Integer] -> [Integer]
 gilbreath [] = []
 gilbreath [x] = [x]
-gilbreath xs = do
-    let d = diff xs
-    (head d) : gilbreath d
+gilbreath xs = (head d) : gilbreath d
+  where
+    d = diff xs
 
 -- | Let p_n be the n-th prime number. Test whether the inequality
 --
@@ -65,7 +65,9 @@ gilbreath xs = do
 --
 -- holds for the purpose of Andrica's conjecture.
 isLTone :: Integer -> Integer -> Bool
-isLTone x y = (sqrt . fromIntegral $ y) - (sqrt . fromIntegral $ x) < 1
+isLTone x y = sqrti y - sqrti x < 1
+  where
+    sqrti = sqrt . fromIntegral
 
 -- | A list of prime numbers between 2 and a given limit.
 prime :: Integer -> [Integer]
@@ -94,10 +96,10 @@ sieveC (x:xs) = x : sieveC [y | y <- xs, mod y x /= 0]
 twin :: Integer -> [(Integer, Integer)]
 twin n
     | n < 2 = error "Must be positive integer"
-    | otherwise = do
-        let p = primeC n
-        let pair = zip p (tail p)
-        [(x, y) | (x, y) <- pair, y - x == 2]
+    | otherwise = [(x, y) | (x, y) <- pair, y - x == 2]
+  where
+    p = primeC n
+    pair = zip p (tail p)
 
 -- | Generate a list of prime numbers using the sieve of Eratosthenes.  Use the
 -- prime numbers to verify various conjectures.

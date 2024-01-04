@@ -26,9 +26,9 @@ import Text.Printf
 
 -- | Whether an integer is a perfect square.
 isPerfectSq :: Integer -> Bool
-isPerfectSq x = do
-    let k = floor . sqrt . fromIntegral $ x
-    k ^ 2 == x
+isPerfectSq x = k ^ 2 == x
+  where
+    k = floor . sqrt . fromIntegral $ x
 
 -- | Given a list of integers, retain those that are perfect squares.
 perfectSq :: [Integer] -> [Integer]

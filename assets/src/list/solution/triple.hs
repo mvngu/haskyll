@@ -26,27 +26,27 @@ import Text.Printf
 
 -- | Brute force method to generate primitive Pythagorean triples.
 brute :: Integer -> [[Integer]]
-brute n = do
-    let ell = [1 .. n] :: [Integer]
-    let triple = sequence [ell, ell, ell]
-    filter (\[x, y, z] -> isppt x y z) triple
+brute n = filter (\[x, y, z] -> isppt x y z) triple
+  where
+    ell = [1 .. n] :: [Integer]
+    triple = sequence [ell, ell, ell]
 
 -- | Brute force method to generate Pythagorean triples.  This
 -- implementation uses list comprehension.
 bruteC :: Integer -> [[Integer]]
-bruteC n = do
-    let ell = [1 .. n] :: [Integer]
-    let triple = sequence [ell, ell, ell]
-    [[x, y, z] | [x, y, z] <- triple, x ^ 2 + y ^ 2 == z ^ 2]
+bruteC n = [[x, y, z] | [x, y, z] <- triple, x ^ 2 + y ^ 2 == z ^ 2]
+  where
+    ell = [1 .. n] :: [Integer]
+    triple = sequence [ell, ell, ell]
 
 -- | Euclid's method for generating primitive Pythagorean triples.
 euclid :: Integer -> [[Integer]]
-euclid n = do
-    let ell = [1 .. n] :: [Integer]
-    let pair = filter (\[x, y] -> x > y && gcd x y == 1) $ sequence [ell, ell]
-    let candidate = map (\[m, n] -> [m ^ 2 - n ^ 2, 2 * m * n, m ^ 2 + n ^ 2]) pair
-    let triple = filter (\[x, y, z] -> x <= 100 && y <= 100 && z <= 100) candidate
-    filter (\[x, y, z] -> isppt x y z) triple
+euclid n = filter (\[x, y, z] -> isppt x y z) triple
+  where
+    ell = [1 .. n] :: [Integer]
+    pair = filter (\[x, y] -> x > y && gcd x y == 1) $ sequence [ell, ell]
+    candidate = map (\[m, n] -> [m ^ 2 - n ^ 2, 2 * m * n, m ^ 2 + n ^ 2]) pair
+    triple = filter (\[x, y, z] -> x <= 100 && y <= 100 && z <= 100) candidate
 
 -- | Whether a triple of numbers is coprime.
 isCoprime :: Integral a => a -> a -> a -> Bool

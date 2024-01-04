@@ -37,10 +37,10 @@ diffSqC n
 diffSqF :: Integral a => a -> (a, a)
 diffSqF n
     | n < 1 || even n = error "Must be odd positive integer"
-    | otherwise = do
-        let pair = sequence [[0 .. n], [0 .. n]]
-        let tuple = head $ filter (\[x, y] -> x ^ 2 - y ^ 2 == n) pair
-        (head tuple, last tuple)
+    | otherwise = (head tuple, last tuple)
+  where
+    pair = sequence [[0 .. n], [0 .. n]]
+    tuple = head $ filter (\[x, y] -> x ^ 2 - y ^ 2 == n) pair
 
 -- | Every odd positive integer can be written as the difference of two squares.
 main = do
