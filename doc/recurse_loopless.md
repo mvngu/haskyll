@@ -223,6 +223,24 @@ ghci> map (\(s, t) -> s ++ t) [("pre", "view"), ("re", "do"), ("anti", "c")]
 
 <!--=========================================================================-->
 
+### DIY map
+
+We have everything we need to create our own implementation of the function
+[`map`][map]. Let's call our implementation `imap`, whose parameters are:
+
+1. A function `f` that accepts one parameter.
+1. A list $\ell$ of values.
+
+The function `f` is applied to each element of $\ell$, one at a time. The
+results of all function applications are output as a list. Here's the code:
+
+:include: file="assets/src/recurse/map.hs", line=28:31
+
+The simple definition of `imap` belies its usefulness as a technique of
+recursion.
+
+<!--=========================================================================-->
+
 ## Coffee filter
 
 You have a list some of whose elements you want to keep, while the remaining
