@@ -7,6 +7,21 @@ that way. Let's tackle some basic ideas of the language, bit by bit.
 
 <!--=========================================================================-->
 
+## Development
+
+Fork the repository and clone the fork to your local machine. Issue the
+following commands to setup everything required by the project:
+
+```sh
+$ bundle config set --local path 'vendor/bundle'
+$ bundle install
+$ npm update
+```
+
+Add your changes, then create a pull request.
+
+<!--=========================================================================-->
+
 ## Acknowledgement
 
 <!-- prettier-ignore -->
