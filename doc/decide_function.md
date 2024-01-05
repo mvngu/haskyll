@@ -290,9 +290,9 @@ Next, consider the program
 :script: file="assets/src/decide/chop.hs"
 and the definition of the function `chopSuey`. The final value as evaluated by
 the function is the output of the function application
-`capitalize $ reverse torso`. Whatever line(s) of code preceding the latter
-function application is merely a setup to get the right kind of data to feed to
-the function `capitalize`.
+`capitalize . reverse $ torso str`. Whatever line(s) of code preceding the
+latter function application is merely a setup to get the right kind of data to
+feed to the function `capitalize`.
 <!-- prettier-ignore-end -->
 
 We can draw an analogy with how complicated expressions are defined in
