@@ -5,14 +5,14 @@
 Haskell might seem like a complicated beast at first. It does not have to be
 that way. Let's tackle some basic ideas of the language, bit by bit.
 
-<!-- ====================================================================== -->
+<!--=========================================================================-->
 
 ## Acknowledgement
 
 <!-- prettier-ignore -->
 - We use the Jekyll theme [Coo][coo].
 
-<!-- ====================================================================== -->
+<!--=========================================================================-->
 
 ## License
 
