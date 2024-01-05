@@ -413,6 +413,10 @@ construction of $B$ is short and efficient. If $A$ and $B$ are structurally
 equivalent, then we can replace $A$ by $B$. The fold operation happens to be a
 short and sweet way to define many recursive functions.
 
+<!--=========================================================================-->
+
+### Examples
+
 Let's see how the universal property of fold can help us write an expression to
 calculate the length of a list. Recall from the section
 [Length of list](../recurse_example/#length-of-list) that we have the following
@@ -436,6 +440,29 @@ ingredients:
 Combine the above two ingredients to obtain the following expression:
 
 :include: file="assets/src/recurse/length.hs", line=32:33
+
+In the section [No loop for you](../recurse_loopless/#diy-map), we presented a
+homemade implementation of the library function [`map`][map]. Here's the code
+for reference:
+
+:include: file="assets/src/recurse/map.hs", line=28:31
+
+The initial value is the empty list `[]`. The binary operator is the function
+`f x acc`, which takes an element `x` of the input list, calculates the result
+`f x`, and prepends the result to the accumulator `acc`. Writing a successive
+sequence of prepending as
+
+```haskell
+ghci> 1 : 2 : 3 : []
+[1,2,3]
+ghci> 1 : (2 : (3 : []))
+[1,2,3]
+```
+
+it is clear that we can use a fold right. Here's an implementation of `map` by
+means of [`foldr`][foldr]:
+
+:include: file="assets/src/recurse/map.hs", line=33:35
 
 <!--=========================================================================-->
 
