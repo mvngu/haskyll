@@ -331,7 +331,10 @@ x
 $$
 
 where $\Delta = b^2 - 4ac$. The expression $\Delta = b^2 - 4ac$ is a setup or
-auxiliary expression to help us parse the quadratic formula.
+auxiliary expression to help us parse the quadratic formula. By the way, note
+the way we used the word "where" as a preliminary to the definition of the
+discriminant $\Delta$ and how the role of "where" corresponds to the Haskell
+keyword [`where`][where].
 
 <!-- prettier-ignore-start -->
 Finally, let's examine the program
