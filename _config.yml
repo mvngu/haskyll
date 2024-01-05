@@ -31,15 +31,15 @@ title: Haskell bit by bit
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://quacksouls.github.io/haskyll"
+url: "https://haskyll.github.io"
 
 # The project page on GitHub.
 github:
   # The project name.
-  username: quacksouls/haskyll
+  username: mvngu/haskyll
   # URL of source tree.  This will be used to properly link to source files
   # that are embedded in your document.
-  src: https://github.com/quacksouls/haskyll/blob/main
+  src: https://github.com/mvngu/haskyll/blob/main
 
 # twitter:
 #   username: twitter_username # change to your twitter username
@@ -48,11 +48,11 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright
   # owner in the Footer
-  name: Duck McSouls
+  name: Aaron Nguyen
   # email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/quacksouls # change to your github homepage
+    - https://github.com/mvngu # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -98,7 +98,7 @@ theme_mode: # [light|dark]
 # image (site avatar and images of each page) paths starting with '/'.
 #
 # e.g. 'https://cdn.com'
-img_cdn: https://raw.githubusercontent.com/quacksouls/haskyll/main/assets/img/
+img_cdn: https://raw.githubusercontent.com/mvngu/haskyll/main/assets/img/
 
 # Avatar on the sidebar.  Support local or CORS resources.
 avatar: favicons/android-chrome-192x192.png
