@@ -41,6 +41,8 @@ toc:
       url: /decide_guard/
     - title: Pattern matching
       url: /decide_pattern/
+    - title: Case-y Jones
+      url: /decide_case/
 - title: Recursion, or how I loop
   url: /recurse_README/
   subfolder:
