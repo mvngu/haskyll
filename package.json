@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quacksouls/haskyll.git"
+    "url": "git+https://github.com/mvngu/haskyll.git"
   },
-  "author": "Duck McSouls",
+  "author": "Aaron Nguyen",
   "license": "CC BY-NC-SA 4.0",
   "bugs": {
-    "url": "https://github.com/quacksouls/haskyll/issues"
+    "url": "https://github.com/mvngu/haskyll/issues"
   },
-  "homepage": "https://github.com/quacksouls/haskyll",
+  "homepage": "https://github.com/mvngu/haskyll",
   "devDependencies": {
     "eslint": "^8.54.0",
     "eslint-config-airbnb-base": "^15.0.0",
