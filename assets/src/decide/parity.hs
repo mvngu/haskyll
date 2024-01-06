@@ -24,9 +24,49 @@
 
 import Text.Printf
 
--- | The case expression.
+-- | Whether an integer is even or odd.  This implementation uses a case
+-- expression.
+parity :: Int -> String
+parity n =
+    case mod n 2 == 0 of
+        True  -> "even"
+        False -> "odd"
+
+-- | Whether an integer is even or odd.  This implementation uses a conditional
+-- expression.
+parityc :: Int -> String
+parityc n =
+    if mod n 2 == 0
+        then "even"
+        else "odd"
+
+-- | Whether an integer is even or odd.  This implementation uses a guarded
+-- equation.
+parityg :: Int -> String
+parityg n
+    | mod n 2 == 0 = "even"
+    | otherwise = "odd"
+
+-- | Whether an integer is even or odd.  This implementation uses a case
+-- expression and the "where" clause.
+parityw :: Int -> String
+parityw n =
+    case isZero of
+        True  -> "even"
+        False -> "odd"
+  where
+    isZero = mod n 2 == 0
+
+-- | Testing an integer to see whether it is even or odd.  We use various
+-- implementations for the test.
 main = do
-    let k = 6 :: Int
-    case mod k 2 == 0 of
-        True  -> printf "%d is even\n" k
-        False -> printf "%d is odd\n" k
+    let [a, b, c, d] = [-2, 0, 2, 5] :: [Int]
+    let [pa, pb, pc, pd] = [parity a, parity b, parity c, parity d]
+    let testa = pa == parityc a && pa == parityg a && pa == parityw a
+    let testb = pb == parityc b && pb == parityg b && pb == parityw b
+    let testc = pc == parityc c && pc == parityg c && pc == parityw c
+    let testd = pd == parityc d && pd == parityg d && pd == parityw d
+    printf "%d -> %s, %s\n" a (parity a) $ show testa
+    printf "%d -> %s, %s\n" b (parity b) $ show testb
+    printf "%d -> %s, %s\n" c (parity c) $ show testc
+    printf "%d -> %s, %s\n" d (parity d) $ show testd
