@@ -25,14 +25,23 @@
 import Data.Foldable
 import Text.Printf
 
--- | The prefix of a name.
-prefix :: String -> String
-prefix name
+-- | The prefix of a name.  This implementation uses a case expression.
+prefixc :: String -> String
+prefixc name
     | 0 < size && size <= 3 = name
     | otherwise =
         case size of
             0 -> ['\0']
             _ -> [name !! 0]
+  where
+    size = length name
+
+-- | The prefix of a name.  This implementation does not use a case expression.
+prefixg :: String -> String
+prefixg name
+    | size == 0 = ['\0']
+    | size <= 3 = name
+    | otherwise = [name !! 0]
   where
     size = length name
 
@@ -55,4 +64,5 @@ main = do
             , "T"
             ]
     for_ name $ \x -> do
-        printf "%s -> %s\n" x $ prefix x
+        let pre = prefixc x
+        printf "%s -> %s, %s\n" x pre $ show (pre == prefixg x)
