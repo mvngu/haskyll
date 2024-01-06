@@ -80,7 +80,7 @@ so the resulting values would compare equal according to `==`.
 equal according to `==`.
 <!-- prettier-ignore-end -->
 
-[`same.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/same.hs)
+[`same.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/same.hs)
 ```haskell
 import Text.Printf
 
@@ -104,7 +104,7 @@ any lowercase letter. Consider the program below. Why does the expression
 the operator `<` is `True`.
 <!-- prettier-ignore-end -->
 
-[`dictionary.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/dictionary.hs)
+[`dictionary.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/dictionary.hs)
 ```haskell
 import Text.Printf
 
@@ -127,7 +127,7 @@ number of correct statements, using only boolean arithmetics. Insert your code
 at the location shown in the program.
 <!-- prettier-ignore-end -->
 
-[`quiz.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/quiz.hs)
+[`quiz.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/quiz.hs)
 ```haskell
 import Text.Printf
 

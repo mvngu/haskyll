@@ -82,7 +82,7 @@ The Haskell REPL, i.e. GHCi, is suitable for quick experimentation. Sooner or
 later you would want to store Haskell code in a text file. Create a text file
 called `hello.hs` and save the following code in the file:
 
-[`hello.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello.hs)
+[`hello.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello.hs)
 ```haskell
 main = print "Hello, world"
 ```
@@ -138,7 +138,7 @@ languages that offer a REPL environment.[^b]
 Recall the "Hello, world" program from the section
 [Tales from the script](#tales-from-the-script), reproduced below:
 
-[`hello.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello.hs)
+[`hello.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello.hs)
 ```haskell
 main = print "Hello, world"
 ```
@@ -165,7 +165,7 @@ the official Haskell [playground][playground].
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 2.</strong> Edit the file
-[`hello.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello.hs)
+[`hello.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello.hs)
 to use the function [`putStr`][putStr] to print your name to standard
 output. Repeat the exercise, but using the function [`putStrLn`][putStrLn].
 <!-- prettier-ignore-end -->
@@ -200,7 +200,7 @@ computer. The command line utility [`runghc`][runghc] (also named `runhaskell`)
 offers a third way to run Haskell code. The command [`runghc`][runghc] can run
 your Haskell source file without compiling it first. Use [`runghc`][runghc] to
 run the file
-[`hello.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello.hs)
+[`hello.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello.hs)
 .
 <!-- prettier-ignore-end -->
 

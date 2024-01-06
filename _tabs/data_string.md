@@ -342,9 +342,9 @@ empty string, i.e. `""`? Why or why not?
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 2.</strong> Rewrite the programs
-[`age.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/age.hs)
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
 and
-[`circle.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/circle.hs)
+[`circle.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/circle.hs)
 to use the function [`printf`][printf] for string formatting.
 <!-- prettier-ignore-end -->
 

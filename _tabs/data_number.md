@@ -420,7 +420,7 @@ mind to prevent unexpected results in your programs or compilation errors.
 Let's learn some facts about Tabby the cat. Tabby is currently one year old. The
 Haskell program below shows Tabby's age after a given number of years.
 
-[`age.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/age.hs)
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
 ```haskell
 -- | How old Tabby will be in x years.
 main = do
@@ -441,10 +441,14 @@ Tabby's age: 1
 In 3 years time, Tabby will be: 4
 ```
 
+<!--=========================================================================-->
+
+#### Do let us show you
+
 <!-- prettier-ignore-start -->
-The file
-[`age.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/age.hs)
-shows a few new concepts.  Let's tackle each idea in turn:
+The program
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
+presents a few new concepts.  Let's tackle each idea in turn:
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
@@ -452,21 +456,97 @@ shows a few new concepts.  Let's tackle each idea in turn:
     together, one action per line. Indentation is important[^b] and allows the
     Haskell compiler to figure out whether a line of code is within, or outside
     of, the `do` block. The keyword `do` is syntactic sugar that allows you to
-    write clean and readable Haskell code.
--   The keyword `let`. Normally, you would assign a value to a variable like so:
-    `num = 42`. Inside a `do` block, you must prefix each assignment operation
-    with the keyword `let`. Within a `do` block, you would write `let num = 42`
-    instead of `num = 42`.
+    write clean and readable Haskell code, in a manner similar to how you would
+    define a function in a procedural language such as C, JavaScript, or Python.
+-   The keyword `let`. Normally, within a GHCi session you would assign a value
+    to a variable like so: `num = 42`. Inside a `do` block of a script, you must
+    prefix each assignment operation with the keyword `let`. Within a `do`
+    block, you would write `let num = 42` instead of `num = 42`.
 -   The operator [`++`][plusplus]. This operator allows you to concatenate two
-    strings.[^c]
--   The method [`show`][show]. This method converts a value to a string. In the
+    strings.[^c] Do not confuse it with the increment operator from C and
+    JavaScript.
+-   The method [`show`][show]. This method converts a value to a string,
+    provided that the value supports such a conversion. In the
     program
-[`age.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/age.hs)
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
     the variable `age` has type `Integer` and cannot be concatenated with the
     string `"Tabby's age: "`. We use `show` to convert the value of `age` to a
     string. The operator `++` can then concatenate the strings on its left- and
     right-hand sides.
 <!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+The combination of `do` and `let` allows you to mimic a procedural style of
+programming. Compare the script
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
+with its counterpart in C:
+<!-- prettier-ignore-end -->
+
+[`age.c`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.c)
+```c
+#include <stdio.h>
+
+/**
+ * How old Tabby will be in x years.
+ */
+int main() {
+    int age = 1;
+    int x = 3;
+    printf("Tabby's age: %d\n", age);
+    printf("In 3 years time, Tabby will be: %d\n", age + x);
+    return 0;
+}
+```
+
+<!-- prettier-ignore-start -->
+Here's a version of
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
+in JavaScript:
+<!-- prettier-ignore-end -->
+
+[`age.js`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.js)
+```js
+// How old Tabby will be in x years.
+const age = 1;
+const x = 3;
+console.log(`Tabby's age: ${age}`);
+console.log(`In 3 years time, Tabby will be: ${age + x}`);
+```
+
+Below is a Python version:
+
+[`age.py`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.py)
+```py
+def main():
+    """
+    How old Tabby will be in x years.
+    """
+    age = 1
+    x = 3
+    print(f"Tabby's age: {age}")
+    print(f"In 3 years time, Tabby will be: {age + x}")
+```
+
+<!--=========================================================================-->
+
+#### Data immutability
+
+In functional programming, data should be immutable. Once you have assigned a
+value to a variable, you should not assign a different value to the same
+variable. Not only can you use `let` to declare a variable and assign it a
+value, you can also use `let` to reassign a different value to the same
+variable. However, doing so would be a violation of immutability. Try to follow
+the principle of immutability as much as possible. The following program, while
+being valid Haskell code, should not be how you write functional code.
+
+[`assign.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/assign.hs)
+```haskell
+-- | Use let to reassign values to a variable.
+main = do
+    let a = 3 :: Int -- Not using this value
+    let a = 4 :: Int -- Use this new value
+    putStrLn (show a)
+```
 
 <!--=========================================================================-->
 
@@ -522,7 +602,7 @@ calculation.
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 8.</strong> Rewrite the program
-[`age.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/age.hs)
+[`age.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/age.hs)
 without using string concatenation.
 <!-- prettier-ignore-end -->
 

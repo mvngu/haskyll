@@ -1,6 +1,6 @@
 ---
 title: Recursion, or how I loop
-order: 17
+order: 18
 ---
 
 This chapter delves into what a computer does best: do something over and over

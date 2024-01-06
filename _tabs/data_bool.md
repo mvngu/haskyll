@@ -51,7 +51,7 @@ From the above table, the result of `False || True` is `True`, so is
 operands are `False`. Take a moment to use the above table and work through the
 output of the following program.
 
-[`or.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/or.hs)
+[`or.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/or.hs)
 ```haskell
 import Text.Printf
 
@@ -72,7 +72,7 @@ main = do
 
 <!-- prettier-ignore-start -->
 Hang on. What is the dollar sign [`$`][dollarSign] doing in the program
-[`or.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/or.hs)
+[`or.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/or.hs)
 ? In Haskell, the symbol `$` is the function application operator. Given a
 function `f` and an argument `x`, the result of applying `f` on `x` is written
 in Haskell as `f x`. Using the operator `$` in prefix notation, we can write
@@ -156,7 +156,7 @@ Unlike the expression `True || False`, the result of `True && False` is `False`.
 The only time when `&&` returns `True` is the expression `True && True`. Again,
 take some time to work through the boolean results of the following program.
 
-[`and.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/and.hs)
+[`and.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/and.hs)
 ```haskell
 import Text.Printf
 
@@ -185,10 +185,10 @@ main = do
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 3.</strong> Rewrite the program
-[`or.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/or.hs)
+[`or.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/or.hs)
 by using [`$`][dollarSign] to replace the outermost pairs of
 parentheses. Rewrite the program
-[`and.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/and.hs)
+[`and.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/and.hs)
 to use as few parentheses as possible.
 <!-- prettier-ignore-end -->
 
@@ -254,7 +254,7 @@ Sam likes cats XOR dogs? True
 `False`.
 <!-- prettier-ignore-end -->
 
-[`pet.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/data/pet.hs)
+[`pet.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/data/pet.hs)
 ```haskell
 import Text.Printf
 

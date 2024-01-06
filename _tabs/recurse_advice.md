@@ -1,7 +1,7 @@
 ---
 title: Recursion by numbers
 math: true
-order: 21
+order: 22
 ---
 
 > All therefore whatsoever they bid you observe, that observe and do; but do not
@@ -83,7 +83,7 @@ more suitable as it allows for arbitrary precision integers. Our function
 `A` at the end of the function's name means that it is an early version of the
 factorial function, an alpha version if you will.
 
-[`factorial.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
+[`factorial.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
 ```haskell
 factorialA :: Integer -> Integer
 ```
@@ -190,7 +190,7 @@ matching in Haskell. Perhaps you might want to use pattern matching. You might
 also want to use guarded equation as necessary. Why not both? Here is an early
 version of our implementation:
 
-[`factorial.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
+[`factorial.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
 ```haskell
 -- | The factorial of a non-negative integer.  Early version.
 factorialA :: Integer -> Integer
@@ -224,7 +224,7 @@ Expression (\ref{eqn_factorial}) already handles the case $n = 1$ in the
 recursive definition. Here's our new and improved implementation, version beta
 if you will:
 
-[`factorial.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
+[`factorial.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
 ```haskell
 -- | The factorial of a non-negative integer.  Improved version.
 factorialB :: Integer -> Integer
@@ -250,7 +250,7 @@ The function `product` together with the list range notation `[1 .. n]` handle
 the base case `n = 0` for us. Here is version 3.0 of our implementation of the
 factorial function:
 
-[`factorial.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
+[`factorial.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/solution/factorial.hs)
 ```haskell
 -- | The factorial of a non-negative integer.  Better version.
 factorialC :: Integer -> Integer

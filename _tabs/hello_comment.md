@@ -20,7 +20,7 @@ A single-line Haskell comment starts with the double dash symbol `--`. The
 "Hello, world" program from the section [Tales from the script][taleScript] can
 be documented like so:
 
-[`hello-single.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello-single.hs)
+[`hello-single.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello-single.hs)
 ```haskell
 -- The traditional greeting.
 main = print "Hello, world"
@@ -39,7 +39,7 @@ no exception. The beginning of a multiline Haskell comment is marked by the
 symbol `{-`. The end of the multiline comment is designated by `-}`. Here is the
 "Hello, world" program accompanied by a multiline comment.
 
-[`hello-multi.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello-multi.hs)
+[`hello-multi.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello-multi.hs)
 ```haskell
 {-
 This is the first program you would write when you learn a programming
@@ -60,7 +60,7 @@ pipe symbol. Each subsequent line of documentation is prefixed by `--`. Here is
 the "Hello, world" program annotated according to the Haskell way of
 documentation.
 
-[`hello-doc.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/hello/hello-doc.hs)
+[`hello-doc.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/hello/hello-doc.hs)
 ```haskell
 -- | This is the first program you would write when you learn a
 -- programming language.  This traditional program is called the

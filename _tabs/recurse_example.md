@@ -1,7 +1,7 @@
 ---
 title: Some examples
 math: true
-order: 18
+order: 19
 ---
 
 <!-- prettier-ignore-start -->
@@ -84,10 +84,10 @@ $$
 
 We now have all the ingredients we need to define `add`. Here's the code:
 
-[`add.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/add.hs)
+[`add.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/add.hs)
 ```haskell
 -- | Sum of all positive integers from 1 to n, inclusive.
-add :: (Integral a) => a -> a
+add :: Integral a => a -> a
 add 1 = 1
 add n
     | n > 1 = n + add (n - 1)
@@ -168,7 +168,7 @@ $$
 The recursive definition of the Fibonacci number $F_n$ can be translated to the
 following Haskell function:
 
-[`fibonacci.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/fibonacci.hs)
+[`fibonacci.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/fibonacci.hs)
 ```haskell
 -- | The Fibonacci numbers.
 fib :: Integer -> Integer
@@ -235,7 +235,7 @@ elements. Our base case tells us that the empty list `[]` has zero elements.
 Therefore the original list has six elements. The above description is
 translated to Haskell code as follows:
 
-[`length.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/length.hs)
+[`length.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/length.hs)
 ```haskell
 -- | The length of a list.
 size :: [a] -> Int
@@ -297,7 +297,7 @@ calculate the product $n \times \binom{n-1}{k-1}$, then divide the result by $k$
 to guarantee that the result of the division is an integer. The above are all we
 need to write our Haskell implementation of the binomial coefficients:
 
-[`binomial.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/binomial.hs)
+[`binomial.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/binomial.hs)
 ```haskell
 -- | Recursive formulation of the binomial coefficients.
 binomB :: Integer -> Integer -> Integer
@@ -305,7 +305,7 @@ binomB n 0 = 1
 binomB 0 k = 0
 binomB n k
     | n < 0 = error "Must be non-negative integer"
-    | (k > n) || (k < 0) = 0
+    | k > n || k < 0 = 0
     | n == k = 1
     | otherwise = (n * binomB (n - 1) (k - 1)) `div` k
 ```
@@ -318,7 +318,7 @@ binomB n k
 <strong>Exercise 1.</strong> In the section [Triangular numbers](#triangular-numbers), we worked through the
 process of calculating the 10-th [triangular number][triangularNumber]. The
 zeroth triangular number is defined to be 0. Modify the program
-[`add.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/add.hs)
+[`add.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/add.hs)
 to account for the zeroth triangular number.
 <!-- prettier-ignore-end -->
 

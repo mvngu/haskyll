@@ -1,7 +1,7 @@
 ---
 title: Free range numbers
 math: true
-order: 23
+order: 24
 ---
 
 [An exercise][exRange] in the section [You're not on the list][secList] briefly
@@ -98,7 +98,7 @@ ghci> enumFromThenTo 10 8 (-3)
 it or not, NASA wants you to write a program to count down to lift off for their
 upcoming rocket launch. No problem. Here's the Haskell code:
 
-[`liftoff.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/liftoff.hs)
+[`liftoff.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/liftoff.hs)
 ```haskell
 import Data.Foldable
 import Text.Printf
@@ -145,15 +145,15 @@ $n = k^2$. Determine the smallest odd integer $n > 1$ that is a perfect square.
 That's easy. Test each integer from 3 to see whether its square root is an
 integer. The following code implements the test.
 
-[`perfect.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/perfect.hs)
+[`perfect.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/perfect.hs)
 ```haskell
 import Text.Printf
 
 -- | Whether an integer is a perfect square.
 isPerfectSq :: Integer -> Bool
-isPerfectSq x = do
-    let k = floor . sqrt . fromIntegral $ x
-    k ^ 2 == x
+isPerfectSq x = k ^ 2 == x
+  where
+    k = floor . sqrt . fromIntegral $ x
 
 -- | Given a list of integers, retain those that are perfect squares.
 perfectSq :: [Integer] -> [Integer]

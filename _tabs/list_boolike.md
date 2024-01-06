@@ -1,7 +1,7 @@
 ---
 title: Bool-like
 math: true
-order: 25
+order: 26
 ---
 
 The boolean operators `&&` and `||` take boolean values as their operands.
@@ -39,7 +39,7 @@ bringing the new pets to a veterinary clinic within the last two weeks. The
 following shows the pets database and the health check status of all animals in
 Pietro's shop.
 
-[`pet.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/pet.hs)
+[`pet.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/pet.hs)
 ```haskell
 import Data.Foldable
 import Text.Printf
@@ -145,7 +145,7 @@ common, words that consist of only consonants:
 If you were to test each of the above words for vowels, the result would be
 `False`. Observe:
 
-[`word.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/word.hs)
+[`word.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/word.hs)
 ```haskell
 import Data.Foldable
 import Text.Printf
@@ -245,7 +245,7 @@ goals and statistics says the player scored $h$ non-penalty goals, then all
 goals scored by the player is non-penalty provided that $g = h$. I'm too lazy to
 check by hand. Let's delegate the manual work to Haskell:
 
-[`arsenal.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/arsenal.hs)
+[`arsenal.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/arsenal.hs)
 ```haskell
 import Text.Printf
 
@@ -337,14 +337,14 @@ True
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 1.</strong> Consider the script
-[`arsenal.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/arsenal.hs)
+[`arsenal.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/arsenal.hs)
 from the section [all](#all). Modify the script to use `any` to determine
 whether any of the goals scored were a result of a penalty kick.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 2.</strong> Recall the script
-[`pet.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/pet.hs)
+[`pet.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/pet.hs)
 from the section [and](#and). Modify the script to determine whether all birds
 have had a health check within the last 12 months. Furthermore, determine
 whether some of the birds have had a health check within the same time period.
@@ -353,7 +353,7 @@ whether some of the birds have had a health check within the same time period.
 <!-- prettier-ignore-start -->
 <strong>Exercise 3.</strong> Many words in English that do not have a vowel use the letter "Y" to simulate a
 vowel sound. Refer to the script
-[`word.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/word.hs)
+[`word.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/word.hs)
 from the section [or](#or). Modify the script to determine whether some of the
 words in the word list do not use "Y". Print such words to standard output.
 <!-- prettier-ignore-end -->
@@ -394,7 +394,7 @@ Britannica core to answer the following questions.
 the 2022---2023 soccer season in Australia.
 <!-- prettier-ignore-end -->
 
-[`sydney.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/solution/sydney.hs)
+[`sydney.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/solution/sydney.hs)
 ```haskell
 -- | Data on female players of Sydney FC during the 2022--2023 season.
 -- Each tuple follows the format:

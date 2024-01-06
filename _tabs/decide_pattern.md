@@ -16,7 +16,7 @@ Put on your traffic engineer hat. The traffic light red means stop, orange means
 wait, and green means go. We can translate the latter description to a guarded
 equation like so:
 
-[`traffic.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/traffic.hs)
+[`traffic.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/traffic.hs)
 ```haskell
 -- | Meaning of each traffic light.
 trafficg :: String -> String
@@ -29,7 +29,7 @@ trafficg light
 
 Alternatively, we can use pattern matching. How? Observe:
 
-[`traffic.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/traffic.hs)
+[`traffic.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/traffic.hs)
 ```haskell
 -- | Meaning of each traffic light.
 trafficp :: String -> String
@@ -68,7 +68,7 @@ boolean value. The negation of `True` is `False`, the negation of `False` is
 `True`. We have all the specific cases we need to implement our own negation
 function. Here's the code:
 
-[`not.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/not.hs)
+[`not.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/not.hs)
 ```haskell
 -- | Reimplementation of the library function "not".
 myNot :: Bool -> Bool
@@ -98,7 +98,7 @@ then the result is `True` regardless of whether the second operand is `True` or
 `False`. We write a pattern for each case where the first operand is `False`.
 The third (and last) case has the wildcard pattern. See below for the code:
 
-[`or.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/or.hs)
+[`or.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/or.hs)
 ```haskell
 -- | Reimplementation of the boolean operator "||".
 myOr :: Bool -> Bool -> Bool
@@ -129,7 +129,7 @@ Note that `fst` ignores the second element. That seems like a job for the
 wildcard symbol `_`. Let's implement our own version of `fst` and name it
 `firstA`.
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/first.hs)
 ```haskell
 -- | A reimplementation of the function "fst".
 firstA :: (a, b) -> a
@@ -150,7 +150,7 @@ greater than two elements. Consider a tuple of three elements such as
 `(1, 2, 3)`. The middle element is `2`. Here's a function to extract the middle
 element of any tuple of three elements:
 
-[`mid.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/mid.hs)
+[`mid.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/mid.hs)
 ```haskell
 -- | The middle element of a tuple of three elements.
 mid :: (a, b, c) -> b
@@ -165,7 +165,7 @@ Did you say you want more examples? No problem. Consider the addition of vectors
 of two elements. Adding two vectors is the same as adding their corresponding
 elements. Here's an implementation:
 
-[`vadd.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/vadd.hs)
+[`vadd.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/vadd.hs)
 ```haskell
 -- | Addition for vectors of two elements.
 vadd :: Num a => (a, a) -> (a, a) -> (a, a)
@@ -228,7 +228,7 @@ require much effort to define our own version that works for lists of two
 elements. With a little change to the function `firstA` we can define the
 counterpart of `fst` for lists. See the following:
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/first.hs)
 ```haskell
 -- | An implementation of the function "fst" for lists.
 firstB :: [a] -> a
@@ -257,7 +257,7 @@ is that you can use a powerful technique to perform pattern matching. This is
 best demonstrated via an example. We can reimplement the function `firstB` as
 follows:
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/first.hs)
 ```haskell
 -- | An implementation of the function "fst" for lists.
 firstC :: [a] -> a
@@ -288,7 +288,7 @@ ghci> firstC []
 
 We must handle the case of the empty list. No problem. Here's version 2.0:
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/first.hs)
 ```haskell
 -- | An implementation of the function "fst" for lists.
 firstD :: [a] -> a
@@ -321,7 +321,7 @@ Let's see more of the this-and-rest pattern `(x:xs)` in action. We have a
 function to extract the first element of a list. Logic dictates that we should
 have a function to extract the second element. Here goes:
 
-[`second.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/second.hs)
+[`second.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/second.hs)
 ```haskell
 -- | The second element of a list.
 secondA :: [a] -> a
@@ -337,7 +337,7 @@ to `xs`. However, we are only interested in the second element. We donut, umm...
 I mean, do not care about the `x` and the `xs`. Sounds like another job for the
 wildcard symbol `_`. Here is a different version of `secondA`.
 
-[`second.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/second.hs)
+[`second.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/second.hs)
 ```haskell
 -- | The second element of a list.
 secondB :: [a] -> a

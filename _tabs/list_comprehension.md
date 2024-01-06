@@ -1,7 +1,7 @@
 ---
 title: ¿Comprende?
 math: true
-order: 24
+order: 25
 ---
 
 List comprehension in Haskell and various other languages mimics the set-builder
@@ -187,7 +187,7 @@ right, the second generator can depend on the first. Below, we use the example
 of flattening a list of lists to demonstrate that the order of multiple
 generators is equivalent to the order of variable declaration.
 
-[`flatten.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/flatten.hs)
+[`flatten.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/flatten.hs)
 ```haskell
 -- | Flatten a list of lists.
 flat :: [[a]] -> [a]
@@ -206,7 +206,7 @@ Recall that the wildcard symbol `_` allows us to ignore various elements. In the
 section [Tuple-ware][tupleWare], we implemented the function [`fst`][fst] as
 follows:
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/first.hs)
 ```haskell
 -- | A reimplementation of the function "fst".
 firstA :: (a, b) -> a
@@ -216,7 +216,7 @@ firstA (x, _) = x
 Below, we use the wildcard `_` to implement a version of `fst` that extracts the
 first elements in a list of 2-tuples.
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/first.hs)
 ```haskell
 -- | The first elements in a list of 2-tuples.
 first :: [(a, b)] -> [a]
@@ -226,7 +226,7 @@ first xs = [x | (x, _) <- xs]
 Here's a version of [`snd`][snd] that extracts the second elements in a list of
 2-tuples:
 
-[`first.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/first.hs)
+[`first.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/first.hs)
 ```haskell
 -- | The second elements in a list of 2-tuples.
 second :: [(a, b)] -> [b]
@@ -280,15 +280,15 @@ triples][pythagoreanTriple] from the section [Free range numbers][range]? A list
 comprehension, accompanied by a guard, can be used to generate all Pythagorean
 triples not exceeding a given limit. Feast your eyes on this:
 
-[`triple.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/solution/triple.hs)
+[`triple.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/solution/triple.hs)
 ```haskell
 -- | Brute force method to generate Pythagorean triples.  This
 -- implementation uses list comprehension.
 bruteC :: Integer -> [[Integer]]
-bruteC n = do
-    let ell = [1 .. n] :: [Integer]
-    let triple = sequence [ell, ell, ell]
-    [[x, y, z] | [x, y, z] <- triple, x ^ 2 + y ^ 2 == z ^ 2]
+bruteC n = [[x, y, z] | [x, y, z] <- triple, x ^ 2 + y ^ 2 == z ^ 2]
+  where
+    ell = [1 .. n] :: [Integer]
+    triple = sequence [ell, ell, ell]
 ```
 
 The definition of `bruteC` shows that, within a generator of a list
@@ -350,7 +350,7 @@ from `"fghij"`?
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 2.</strong> In the script
-[`flatten.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/list/flatten.hs)
+[`flatten.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/list/flatten.hs)
 from the section [Multiple generators](#multiple-generators), swap around the
 order of the generators. Compile the modified script. Describe what
 happens. Explain why you got the result.
@@ -358,13 +358,13 @@ happens. Explain why you got the result.
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 3.</strong> Use list comprehension to rewrite the function `size` from the script
-[`length.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/length.hs)
+[`length.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/length.hs)
 in the section [Length of list][listLength].
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 4.</strong> Use list comprehension to implement the function `add` from the script
-[`add.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/add.hs)
+[`add.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/add.hs)
 in the section [Triangular numbers](../recurse_example/#triangular-numbers).
 <!-- prettier-ignore-end -->
 

@@ -28,7 +28,7 @@ can of sardine on Friday. Tabby would receive her usual, scheduled meal if it is
 not time for sardine. Sam translates the above logic into Haskell code as
 follows.
 
-[`sardine.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/sardine.hs)
+[`sardine.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/sardine.hs)
 ```haskell
 import Text.Printf
 
@@ -83,7 +83,7 @@ value of type `Integer`, the `else` clause must also result in a value of type
 <!-- prettier-ignore-start -->
 Let's use the above explanation of the conditional expression to understand how
 the program
-[`sardine.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/sardine.hs)
+[`sardine.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/sardine.hs)
 works. The condition is the expression `today == sardineDay`. Since the
 condition evaluates to `True`, control jumps to the `then` clause where we have
 the expression `"sardine"`. This expression is merely a string. The result of
@@ -114,12 +114,12 @@ value. It makes sense that the condition can be a chain of boolean expressions,
 connected via one or more boolean operators `||` and/or `&&`. For instance,
 although Friday is sardine day for Tabby, Sam only feeds sardine to Tabby during
 the afternoon. With the latter finer detail, Sam modifies the program
-[`sardine.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/sardine.hs)
+[`sardine.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/sardine.hs)
 as follows.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore -->
-[`sardine-time.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/sardine-time.hs)
+[`sardine-time.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/sardine-time.hs)
 ```haskell
 import Text.Printf
 
@@ -152,7 +152,7 @@ $b$ satisfy one of the following relations:
 
 The above can be translated into Haskell code as:
 
-[`nested.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/nested.hs)
+[`nested.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/nested.hs)
 ```haskell
 import Text.Printf
 
@@ -193,7 +193,7 @@ clause. No `do` block for the `then` clause. However, you require a `do` block
 for the `else` clause because it would perform two actions, one after the other.
 You translate the above description to Haskell as follows.
 
-[`double.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/double.hs)
+[`double.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/double.hs)
 ```haskell
 import Text.Printf
 
@@ -218,7 +218,7 @@ brushed and combed to help keep her coat clean. Sunday is also laundry day. The
 above chores are translated into the program below to help Sam remind herself of
 her weekend todo lists.
 
-[`weekend.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/weekend.hs)
+[`weekend.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/weekend.hs)
 ```haskell
 import Text.Printf
 
@@ -260,13 +260,13 @@ values. Repeat the exercise for the minimum of two integers.
 
 <!-- prettier-ignore-start -->
 <strong id="ex_vegetables">Exercise 4.</strong> On Monday, Sam would feed pork and mixed vegetables to Tabby. Modify the program
-[`sardine.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/sardine.hs)
+[`sardine.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/sardine.hs)
 to account for Tabby's meal on Monday.
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 <strong id="ex_current_day">Exercise 5.</strong> The program
-[`day.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/day.hs)
+[`day.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/day.hs)
 below prints the current day of the week, using functions defined in the package
 [`Data.Time`][dataTime]. The function [`getCurrentTime`][getCurrentTime] returns
 the current time in UTC format, using your computer's system clock. We then use
@@ -280,7 +280,7 @@ the resulting tuple as the variables `year`, `month`, and `day`. The function
 instead of hard coding a day string.
 <!-- prettier-ignore-end -->
 
-[`day.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/day.hs)
+[`day.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/day.hs)
 ```haskell
 import Data.Time
 import Text.Printf
@@ -295,7 +295,7 @@ main = do
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 6.</strong> The program
-[`time.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/time.hs)
+[`time.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/time.hs)
 below outputs the current time of the day in 24-hour format. The function
 [`getCurrentTime`][getCurrentTime] returns the current time in UTC format, using
 your computer's system clock. The function
@@ -310,7 +310,7 @@ then output the string `"It's high noon"`. Otherwise output the string
 `"Not yet high noon"` for all other hours.
 <!-- prettier-ignore-end -->
 
-[`time.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/time.hs)
+[`time.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/time.hs)
 ```haskell
 import Data.Time
 import Text.Printf

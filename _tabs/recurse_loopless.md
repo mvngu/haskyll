@@ -1,7 +1,7 @@
 ---
 title: No loop for you
 math: true
-order: 19
+order: 20
 ---
 
 > To iterate is human, to curse a bug divine.
@@ -21,7 +21,7 @@ Many programming languages have a looping mechanism to allow you to repeat a
 block of code a certain number of times. The following C code uses the `for`
 loop to output all integers from 1 to 10, inclusive:
 
-[`ten.c`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/ten.c)
+[`ten.c`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/ten.c)
 ```c
 #include <stdio.h>
 
@@ -39,7 +39,7 @@ int main() {
 
 The same thing can be accomplished in JavaScript as follows:
 
-[`ten.js`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/ten.js)
+[`ten.js`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/ten.js)
 ```js
 // Print all integers from 1 to 10, inclusive.
 for (let i = 1; i <= 10; i++) {
@@ -52,7 +52,7 @@ for (let i = 1; i <= 10; i++) {
 
 Here's a Python version:
 
-[`ten.py`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/ten.py)
+[`ten.py`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/ten.py)
 ```py
 # Print all integers from 1 to 10, inclusive.
 for i in range(1, 11):
@@ -67,7 +67,7 @@ mechanism. However, the function [`for_`][for_] allows us to write a looping
 construct similar to the `for` loop in C, JavaScript, Python and many other
 languages. Observe:
 
-[`ten.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/ten.hs)
+[`ten.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/ten.hs)
 ```haskell
 import Data.Foldable
 
@@ -90,7 +90,7 @@ revealed in the next section.
 
 <!-- prettier-ignore-start -->
 In the program
-[`ten.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/ten.hs)
+[`ten.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/ten.hs)
 shown at the end of the previous section, we used the function [`for_`][for_]
 to write a loop that prints all integers between 1 and 10, inclusive. The loop
 uses the symbol `\x`, something we have not seen before. It is the symbol `\`
@@ -116,7 +116,7 @@ and use lambda expressions.
 
 Recall the following program from the section [DIY](../decide_function/#diy):
 
-[`negate.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/negate.hs)
+[`negate.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/negate.hs)
 ```haskell
 -- | Reverse the sign of an integer.
 negateInt :: Integer -> Integer
@@ -140,7 +140,7 @@ ghci> (\x -> -1 * x) 12
 
 The following program:
 
-[`upper.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/upper.hs)
+[`upper.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/upper.hs)
 ```haskell
 import Data.Char
 import Text.Printf
@@ -165,7 +165,7 @@ ghci> (\x -> (toUpper $ head x) : tail x) "42 is a number"
 
 <!-- prettier-ignore-start -->
 It should be clear by now that the program
-[`ten.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/ten.hs)
+[`ten.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/ten.hs)
 from the section [One, two, skip a few](#one-two-skip-a-few) uses a lambda
 expression. Don't let the keyword `do` fool you. The keyword `do` allows us to
 write a block of sequential code as if we are programming in a language such as
@@ -221,7 +221,7 @@ application:
 As an example, suppose you want a function that adds 1 to each number in a list.
 The function below accomplishes the task:
 
-[`one.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/one.hs)
+[`one.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/one.hs)
 ```haskell
 -- | Add one to each number in a list.
 addOne :: Num a => [a] -> [a]
@@ -242,10 +242,14 @@ ghci> map (\x -> x + 1) [1 .. 10]
 [2,3,4,5,6,7,8,9,10,11]
 ```
 
+<!--=========================================================================-->
+
+### Some examples
+
 Bella manages a boutique. In preparation for an upcoming sale, Bella asks Sam to
 help her update the following prices:
 
-[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+[`discount.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/discount.hs)
 ```haskell
 -- | Current prices of items below $100.
 price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
@@ -254,17 +258,17 @@ price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
 To help boost sales, Bella offers a 15% discount on each item that is currently
 less than $100. Sam uses the program below to calculate the discounted prices:
 
-[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+[`discount.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/discount.hs)
 ```haskell
 -- | Current prices of items below $100.
 price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
 
 -- | Round a price to 2 decimal places.
 roundPrice :: Double -> Double
-roundPrice p = do
-    let factor = 10.0 ^ 2
-    let numerator = fromIntegral . round $ p * factor
-    numerator / factor
+roundPrice p = numerator / factor
+  where
+    factor = 10.0 ^ 2
+    numerator = fromIntegral . round $ p * factor
 
 -- | Apply a discount on various items.
 main = do
@@ -298,6 +302,30 @@ ghci> map (\(s, t) -> s ++ t) [("pre", "view"), ("re", "do"), ("anti", "c")]
 
 <!--=========================================================================-->
 
+### DIY map
+
+We have everything we need to create our own implementation of the function
+[`map`][map]. Let's call our implementation `imap`, whose parameters are:
+
+1. A function `f` that accepts one parameter.
+1. A list $\ell$ of values.
+
+The function `f` is applied to each element of $\ell$, one at a time. The
+results of all function applications are output as a list. Here's the code:
+
+[`map.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/map.hs)
+```haskell
+-- | An implementation of the function "map".
+imap :: (a -> b) -> [a] -> [b]
+imap _ []     = []
+imap f (x:xs) = [f x] ++ imap f xs
+```
+
+The simple definition of `imap` belies its usefulness as a technique of
+recursion.
+
+<!--=========================================================================-->
+
 ## Coffee filter
 
 You have a list some of whose elements you want to keep, while the remaining
@@ -324,7 +352,7 @@ Here is a continuation of the boutique example from the section
 [Hoogle map](#hoogle-map). Bella's boutique has items that cost more than $100.
 Here is the full price list:
 
-[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+[`discount.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/discount.hs)
 ```haskell
 -- | Current prices of items at or below $200.
 priceB = [5.00, 7.25, 10.95, 49.99, 99.95, 150.50, 175.95, 195.0] :: [Double]
@@ -333,11 +361,11 @@ priceB = [5.00, 7.25, 10.95, 49.99, 99.95, 150.50, 175.95, 195.0] :: [Double]
 <!-- prettier-ignore-start -->
 To help boost sales, Bella offers a 10% discount on the expensive items,
 i.e. those costing at least $100. Sam updates her script
-[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+[`discount.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/discount.hs)
 as follows:
 <!-- prettier-ignore-end -->
 
-[`discount.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/discount.hs)
+[`discount.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/discount.hs)
 ```haskell
 import Text.Printf
 
@@ -349,10 +377,10 @@ price = [5.00, 7.25, 10.95, 49.99, 99.95] :: [Double]
 
 -- | Round a price to 2 decimal places.
 roundPrice :: Double -> Double
-roundPrice p = do
-    let factor = 10.0 ^ 2
-    let numerator = fromIntegral . round $ p * factor
-    numerator / factor
+roundPrice p = numerator / factor
+  where
+    factor = 10.0 ^ 2
+    numerator = fromIntegral . round $ p * factor
 
 -- | Apply a discount on various items.
 main = do
@@ -395,7 +423,7 @@ You might ask: Why the obsession with numbers? How about an example relating to
 pets. You are developing a database of pet names. As a prototype, you have the
 following list of names:
 
-[`pet.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/pet.hs)
+[`pet.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/pet.hs)
 ```haskell
 -- | Database of pet names.
 pet =
@@ -427,7 +455,7 @@ string. The function [`isPrefixOf`][isPrefixOf] is perfect for the job. In
 general, you want a function that, given a prefix `prefix`, outputs all pet
 names that begin with `prefix`. Refer to the following Haskell code:
 
-[`pet.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/pet.hs)
+[`pet.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/pet.hs)
 ```haskell
 -- | All pet names that start with a given prefix.
 startsWith :: String -> [String]
@@ -464,7 +492,7 @@ We want to convert each weight to pounds and print each result to standard
 output. The conversion to pounds can be done using `map`. We then use the
 function `for_` to print each pound value to standard output. Here's our code:
 
-[`weight.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/weight.hs)
+[`weight.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/weight.hs)
 ```haskell
 import Data.Foldable
 import Text.Printf
@@ -559,7 +587,7 @@ Alice and Bob now decide to play dice. Each person rolls a die six times and
 adds up the results of the six rolls. The player who has the highest sum wins.
 Alice has written the program below to automate the gameplay.
 
-[`dice.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/dice.hs)
+[`dice.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/dice.hs)
 ```haskell
 import Control.Monad
 import System.Random.Stateful
@@ -671,7 +699,7 @@ ignores the result, which is why it suppresses the list `[(),(),()]`, unlike
 Let's return to our function for rolling a die a given number of times. In
 particular, consider the line:
 
-[`dice.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/dice.hs)
+[`dice.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/dice.hs)
 ```haskell
 roll n = replicateM n (uniformRM (1, 6) globalStdGen :: IO Int)
 ```

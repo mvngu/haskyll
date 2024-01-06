@@ -1,7 +1,7 @@
 ---
 title: Fold under pressure
 math: true
-order: 20
+order: 21
 ---
 
 Sometimes you want to traverse a list, perform an operation on each element,
@@ -19,7 +19,7 @@ The library function [`sum`][sum] takes a list of numbers and adds all those
 numbers together to result in a sum. As an exercise to help us understand how
 the function `sum` works, we implement our own version as follows:
 
-[`sum.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/sum.hs)
+[`sum.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/sum.hs)
 ```haskell
 -- | Summing a list of numbers.
 add :: Num a => [a] -> a
@@ -75,7 +75,7 @@ three parameters:[^a]
 
 We can use `foldl` to rewrite `add` as follows:
 
-[`sum.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/sum.hs)
+[`sum.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/sum.hs)
 ```haskell
 -- | Summing a list of numbers.  Use the fold operation.
 addf :: Num a => [a] -> a
@@ -425,12 +425,16 @@ construction of $B$ is short and efficient. If $A$ and $B$ are structurally
 equivalent, then we can replace $A$ by $B$. The fold operation happens to be a
 short and sweet way to define many recursive functions.
 
+<!--=========================================================================-->
+
+### Examples
+
 Let's see how the universal property of fold can help us write an expression to
 calculate the length of a list. Recall from the section
 [Length of list](../recurse_example/#length-of-list) that we have the following
 recursive definition:
 
-[`length.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/length.hs)
+[`length.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/length.hs)
 ```haskell
 -- | The length of a list.
 size :: [a] -> Int
@@ -453,10 +457,44 @@ ingredients:
 
 Combine the above two ingredients to obtain the following expression:
 
-[`length.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/recurse/length.hs)
+[`length.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/length.hs)
 ```haskell
 -- | The length of a list, using a fold operation.
 sizef = foldr (\_ acc -> 1 + acc) 0
+```
+
+In the section [No loop for you](../recurse_loopless/#diy-map), we presented a
+homemade implementation of the library function [`map`][map]. Here's the code
+for reference:
+
+[`map.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/map.hs)
+```haskell
+-- | An implementation of the function "map".
+imap :: (a -> b) -> [a] -> [b]
+imap _ []     = []
+imap f (x:xs) = [f x] ++ imap f xs
+```
+
+The initial value is the empty list `[]`. The binary operator is the function
+`f x acc`, which takes an element `x` of the input list, calculates the result
+`f x`, and prepends the result to the accumulator `acc`. Writing a successive
+sequence of prepending as
+
+```haskell
+ghci> 1 : 2 : 3 : []
+[1,2,3]
+ghci> 1 : (2 : (3 : []))
+[1,2,3]
+```
+
+it is clear that we can use a fold right. Here's an implementation of `map` by
+means of [`foldr`][foldr]:
+
+[`map.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/recurse/map.hs)
+```haskell
+-- | An implementation of the function "map".  We use a fold operation.
+imapf :: (a -> b) -> [a] -> [b]
+imapf f xs = foldr (\x acc -> f x : acc) [] xs
 ```
 
 <!--=========================================================================-->

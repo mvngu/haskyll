@@ -1,6 +1,6 @@
 ---
 title: Listless in Seattle
-order: 22
+order: 23
 ---
 
 > He's making a list\

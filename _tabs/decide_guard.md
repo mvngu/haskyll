@@ -8,7 +8,7 @@ Hi! I'm a shouty man.[^a] Do you miss the `switch` statement from languages such
 as C, Java, and JavaScript? Or the `match` statement from Python? Tired of
 writing (or reading) nested conditional expressions like the following?
 
-[`nested.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/nested.hs)
+[`nested.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/nested.hs)
 ```haskell
 import Text.Printf
 
@@ -40,7 +40,7 @@ A conditional expression can be replaced with a guarded equation. To understand
 what a guarded equation can do for you, recall the function `maxInt` from the
 section [Multiple parameters](../decide_function/#multiple-parameters):
 
-[`max.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/max.hs)
+[`max.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/max.hs)
 ```haskell
 -- | The maximum of two integers.
 maxInt :: Integer -> Integer -> Integer
@@ -52,7 +52,7 @@ maxInt x y =
 
 Here is the same function, but written as a guarded equation:
 
-[`max.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/max.hs)
+[`max.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/max.hs)
 ```haskell
 -- | The maximum of two integers.
 maxIntg :: Integer -> Integer -> Integer
@@ -140,7 +140,7 @@ follows according to their BMI.
 The information in the above table is translated to a guarded equation as
 follows.
 
-[`bmi.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/bmi.hs)
+[`bmi.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/bmi.hs)
 ```haskell
 -- | The weight status of an adult 20 years or older, based on their BMI.
 weightStatus :: Double -> String
@@ -171,7 +171,7 @@ Your mission, should you choose to accept it, is to write a function that takes
 the name of a caffeinated drink and outputs the corresponding cup size. Did you
 decline? No problem. Below is a translation of the above table to Haskell code.
 
-[`coffee.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/coffee.hs)
+[`coffee.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/coffee.hs)
 ```haskell
 -- | The cup size corresponding to a coffee beverage.
 cupSize :: String -> String
@@ -193,7 +193,7 @@ cupSize drink
 
 <!-- prettier-ignore-start -->
 <strong>Exercise 2.</strong> Rewrite the program
-[`nested.hs`](https://github.com/quacksouls/haskyll/blob/main/assets/src/decide/nested.hs)
+[`nested.hs`](https://github.com/mvngu/haskyll/blob/main/assets/src/decide/nested.hs)
 by using guarded equation.
 <!-- prettier-ignore-end -->
 
