@@ -63,3 +63,5 @@ toc:
     url: /list_comprehension/
   - title: Bool-like
     url: /list_boolike/
+- title: Function a(dd)s value
+  url: /function_README/
