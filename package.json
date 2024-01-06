@@ -1,6 +1,6 @@
 {
   "name": "haskyll",
-  "version": "0.5",
+  "version": "0.5.1",
   "description": "Haskell bit by bit",
   "main": "index.js",
   "directories": {
