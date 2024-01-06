@@ -29,19 +29,6 @@ Add your changes, then create a pull request.
 
 <!--=========================================================================-->
 
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!--=========================================================================-->
-
 ## License
 
 ![CC BY-NC-SA 4.0](assets/img/cc.png "CC BY-NC-SA 4.0")
