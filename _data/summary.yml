@@ -65,3 +65,6 @@ toc:
     url: /list_boolike/
 - title: Function a(dd)s value
   url: /function_README/
+  subfolder:
+    - title: Here's a function
+      url: /function_value/
