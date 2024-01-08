@@ -33,8 +33,8 @@ bmi weight height = weight / (height ** 2)
 weightStatus :: Double -> String
 weightStatus bm
     | bm < 18.5 = "underweight"
-    | (18.5 <= bm) && (bm <= 24.9) = "healthy weight"
-    | (25.0 <= bm) && (bm <= 29.9) = "overweight"
+    | 18.5 <= bm && bm <= 24.9 = "healthy weight"
+    | 25.0 <= bm && bm <= 29.9 = "overweight"
     | bm >= 30.0 = "obese"
     | otherwise = "unknown BMI or weight status"
 
