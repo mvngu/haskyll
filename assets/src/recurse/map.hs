@@ -65,7 +65,7 @@ main = do
     let rvrs = imap reverse str
     let testReverse = rvrs == imapf reverse str
     printf "%s -> %s, %s\n" (show str) (show rvrs) $ show testReverse
-    -- concatenate some strings.
+    -- Concatenate some strings.
     let pair = [("pre", "view"), ("re", "do"), ("anti", "c")]
     let together = imap (\(s, t) -> s ++ t) pair
     let testTo = together == imapf (\(s, t) -> s ++ t) pair
