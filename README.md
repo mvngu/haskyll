@@ -9,6 +9,16 @@ that way. Let's tackle some basic ideas of the language, bit by bit.
 
 ## Development
 
+### Pre-requisites
+
+Install the following on your local machine:
+
+-   (GNU) Make
+-   Node
+-   Ruby
+
+### Setup
+
 Fork the repository and clone the fork to your local machine. Issue the
 following commands to setup everything required by the project:
 
@@ -18,7 +28,19 @@ $ bundle install
 $ npm update
 ```
 
-Add your changes, then create a pull request.
+You need to have Ruby and Node installed in order for the above commands to run
+successfully.
+
+### Contribute
+
+Add your changes and issue the command
+
+```sh
+$ make build
+```
+
+to ensure the whole book compiles successfully. Fix any compilation, spelling,
+or other errors, then create a pull request.
 
 <!--=========================================================================-->
 
