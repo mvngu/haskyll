@@ -98,7 +98,7 @@ swap around the usual way of defining a function. Previously, we define a
 function by specifying its parameters, followed by the function definition. List
 comprehension forces us to define the function first, then specify the
 parameters.[^b] Hey, don't blame Haskell for the dyslexia. The set comprehension
-notation from mathematics does it first. Haskell see, haskell do.
+notation from mathematics does it first. Haskell see, Haskell do.
 
 <!--=========================================================================-->
 
